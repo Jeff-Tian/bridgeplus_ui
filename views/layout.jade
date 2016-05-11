@@ -1,7 +1,22 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        title= title
+        link(rel="stylesheet", href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        block header
+    body
+        block content
+        nav#footer
+            div.container
+                div.pull-left.fnav
+                    p © 2016 Bridge+ Reserved | 沪ICP备13045400号
+                div.pull-right.fnav
+                    ul.footer-social
+                        li
+                            img(src="/images/bplus_fuwuhao_noborder.jpg", width="60")
+
+        script(src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js")
+        script(src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js")
+        script(src="https://use.fontawesome.com/5abefb1f58.js")
