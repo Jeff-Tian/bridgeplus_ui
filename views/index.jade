@@ -1,7 +1,20 @@
 extends layout
 
+mixin teacher(image)
+    div
+        h3 &nbsp;
+        img(src="#{image}")
+        div.media
+            div.media-left
+                i.glyphicon.glyphicon-user(style="background-color: #A04040; color: white; height: 32px; width: 32px;")
+            div.media-body
+                p(style="font-size: smaller;") HCD 合得合伙人兼首席财务官
+                h5 周国元 Joseph Zhou
+
 block header
     link(rel='stylesheet', href='/stylesheets/index.css')
+    link(rel="stylesheet", href="/bower_components/owl.carousel/dist/assets/owl.carousel.min.css")
+    link(rel="stylesheet", href="/bower_components/owl.carousel/dist/assets/owl.theme.default.min.css")
 
 block content
     nav#tf-menu.navbar.navbar-default.navbar-fixed-top
@@ -57,12 +70,12 @@ block content
                                     a(href="#", style="border-color: #A23F43; border-width: 2px;") 进入导师平台
                 div.col-md-3.col-sm-6
                     div.widget
-                        h3 Support
-                        ul
-                            li
-                                a(href="#") Fag
-                            li
-                                a(href="#") Blog
+                        h3
+                        div.owl-carousel.owl-theme
+                            + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_osa.gif")
+                            + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_higashi.gif")
+                            + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_murakoshi.gif")
+
                 div.col-md-3.col-sm-6
                     div.widget
                         h3 Our partners
@@ -71,3 +84,21 @@ block content
                                 a(href="#") Venasdf
                             li
                                 a(href="#") asdfkj
+block js
+    script(src="/bower_components/jquery/dist/jquery.min.js")
+    script(src="/bower_components/owl.carousel/dist/owl.carousel.min.js")
+    script.
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                items: 1,
+                lazyLoad: true,
+                loop: true,
+                autoplayTimeout: 8000,
+                autoplayHoverPause: true,
+                nav: true,
+                navRewind: true,
+                smartSpeed: 500,
+                navText: ['<i class="glyphicon glyphicon-menu-left"></i>', '<i class="glyphicon glyphicon-menu-right"></i>'],
+                autoHeight: true
+            });
+        });

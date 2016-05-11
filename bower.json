@@ -1,0 +1,20 @@
+{
+  "name": "bridgeplus_ui",
+  "description": "",
+  "main": "",
+  "authors": [
+    "hcd learning team"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "owl.carousel": "^2.1.3"
+  }
+}

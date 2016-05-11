@@ -259,3 +259,30 @@ button.btn.tf-btn.btn-default {
     outline: none;
     outline-offset: none;
 }
+
+.owl-nav .owl-prev {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: .5;
+    width: 2.6rem;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    border-radius: 2px;
+    text-align: center;
+    color: white;
+    top: 50%;
+}
+
+.owl-nav .owl-next {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: .5;
+    width: 2.6rem;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    border-radius: 2px;
+    text-align: center;
+    right: 2.5rem;
+    color: white;
+    top: 50%;
+}
