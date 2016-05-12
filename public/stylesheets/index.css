@@ -286,3 +286,37 @@ button.btn.tf-btn.btn-default {
     color: white;
     top: 50%;
 }
+
+ul.about-list {
+    margin: 30px 0 0;
+}
+
+ul.about-list li {
+    display: block;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: 'Open Sans', sans-serif;
+    color: #868689;
+}
+
+ul.about-list li a {
+    color: #868689;
+}
+
+ul.about-list li span {
+    margin-right: 10px;
+}
+
+.to-right {
+    color: #868689;
+    font-size: large;
+}
+
+.to-right a {
+    color: #868689;
+}
+
+.text-column {
+    padding: 10px 30px 50px 30px;
+    border: solid 2px #C5C7C5;
+}

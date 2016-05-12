@@ -49,8 +49,8 @@ block content
 
     section#bottom
         div.container.wow.fadeInDown(data-wow-duration="1000ms", data-wow-delay="600ms")
-            div.row
-                div.col-md-5.col-sm-8
+            div.row(style="position: relative;")
+                div.col-md-4.col-sm-8
                     div.widget
                         h2 Title / Title / Title
                             | &nbsp;&nbsp;
@@ -68,6 +68,7 @@ block content
                             ul.pager(style="display: inline-block")
                                 li
                                     a(href="#", style="border-color: #A23F43; border-width: 2px;") 进入导师平台
+                div.col-md-1.col-sm-1
                 div.col-md-3.col-sm-6
                     div.widget
                         h3
@@ -78,14 +79,31 @@ block content
 
                 div.col-md-3.col-sm-6
                     div.widget
-                        h3 Our partners
-                        ul
-                            li
-                                a(href="#") Venasdf
-                            li
-                                a(href="#") asdfkj
+                        h1 &nbsp;
+                        div.text-column
+                            h3(style="white-space: nowrap;") KEY SERVICES
+                            ul.about-list
+                                li
+                                    span.glyphicon.glyphicon-picture
+                                    a(href="#") - content
+                                li
+                                    span.glyphicon.glyphicon-globe
+                                    a(href="#") - content
+                                li
+                                    span.fa.fa-dot-circle-o
+                                    a(href="#") - content
+                                li
+                                    span.glyphicon.glyphicon-list-alt
+                                    a(href="#") - content
+                                li
+                                    span.glyphicon.glyphicon-star-empty
+                                    a(href="#") - content
+                div.col-md-1.col-sm-1(style="position: static; text-align: right;")
+                    div.widget.to-right(style="position: absolute; top: 0; bottom: 0; right: 0; padding: inherit; display: inline-block;")
+                        img(src="", style="height: 100%; width: 0; visibility: hidden; border: none;")
+                        a(href="#")
+                            i.fa.fa-arrow-circle-o-right(aria-hidden="true", style="font-size: xx-large;")
 block js
-    script(src="/bower_components/jquery/dist/jquery.min.js")
     script(src="/bower_components/owl.carousel/dist/owl.carousel.min.js")
     script.
         $(document).ready(function () {
