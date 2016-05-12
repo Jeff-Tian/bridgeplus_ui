@@ -264,9 +264,9 @@ button.btn.tf-btn.btn-default {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: .5;
-    width: 2.6rem;
-    height: 3.6rem;
-    line-height: 3.6rem;
+    width: 1.6rem;
+    height: 2.3rem;
+    line-height: 2.3rem;
     border-radius: 2px;
     text-align: center;
     color: white;
@@ -277,12 +277,12 @@ button.btn.tf-btn.btn-default {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: .5;
-    width: 2.6rem;
-    height: 3.6rem;
-    line-height: 3.6rem;
+    width: 1.6rem;
+    height: 2.3rem;
+    line-height: 2.3rem;
     border-radius: 2px;
     text-align: center;
-    right: 2.5rem;
+    right: 0;
     color: white;
     top: 50%;
 }
@@ -319,4 +319,16 @@ ul.about-list li span {
 .text-column {
     padding: 10px 30px 50px 30px;
     border: solid 2px #C5C7C5;
+}
+
+#top {
+    height: 80px;
+    vertical-align: middle;
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+}
+
+#top .container {
+    padding-top: 20px;
 }
