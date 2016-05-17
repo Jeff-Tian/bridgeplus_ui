@@ -1,0 +1,51 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel .carousel-inner {
+    width: 300%;
+    position: static;
+}
+
+.carousel .item {
+    display: none;
+    text-align: center;
+}
+
+.carousel .item.active {
+    display: block;
+}
+
+.carousel .item .media {
+    text-align: left;
+}
+
+.carousel .nav-bar .prev {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: .5;
+    width: 1.6rem;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    border-radius: 2px;
+    text-align: center;
+    color: white;
+    top: 50%;
+    cursor: pointer;
+}
+
+.carousel .nav-bar .next {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: .5;
+    width: 1.6rem;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    border-radius: 2px;
+    text-align: center;
+    right: 0;
+    color: white;
+    top: 50%;
+    cursor: pointer;
+}

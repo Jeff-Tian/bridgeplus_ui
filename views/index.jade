@@ -1,20 +1,19 @@
 extends layout
 
-mixin teacher(image)
-    div
+mixin teacher(image, description, title)
+    div.item&attributes(attributes)
         h3 &nbsp;
         img(preload-src="#{image}")
         div.media
             div.media-left
                 i.fa.fa-user.icon(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px;")
             div.media-body
-                p(style="font-size: x-small;") HCD 合得合伙人兼首席财务官
-                h5 周国元 Joseph Zhou
+                p(style="font-size: x-small;") #{description}
+                h5 #{title}
 
 block header
     link(rel='stylesheet', href='/stylesheets/index.css')
-    link(rel="stylesheet", href="/bower_components/owl.carousel/dist/assets/owl.carousel.min.css")
-    link(rel="stylesheet", href="/bower_components/owl.carousel/dist/assets/owl.theme.default.min.css")
+    link(rel="stylesheet", href="/stylesheets/carousel.css")
 
 block content
     section#top
@@ -48,10 +47,16 @@ block content
                 div.col-md-3.col-sm-6
                     div.widget
                         h3
-                        div.owl-carousel.owl-theme
-                            + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_osa.gif")
-                            + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_higashi.gif")
-                            + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_murakoshi.gif")
+                        div.carousel
+                            div.carousel-inner
+                                + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_osa.gif", "HCD 合得合伙人兼首席财务官", "周国元 Joseph Zhou")(class="active")
+                                + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_higashi.gif", "test", "test")
+                                + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_murakoshi.gif", "test again", "test again")
+                            div.nav-bar
+                                div.prev
+                                    i.fa.fa-chevron-left
+                                div.next
+                                    i.fa.fa-chevron-right
 
                 div.col-md-3.col-sm-6
                     div.widget
@@ -80,41 +85,7 @@ block content
                         a(href="#")
                             i.fa.fa-arrow-circle-o-right(aria-hidden="true", style="font-size: xx-large;")
 block js
-    script(src="/bower_components/owl.carousel/dist/owl.carousel.min.js")
+    script(src="/scripts/carousel.js")
     script.
         $(document).ready(function () {
-            var deferreds = $('img[preload-src]').map(function (i, elem) {
-                var deferred = $.Deferred();
-
-                var $this = $(elem);
-                var img = new Image();
-                img.onload = function () {
-                    $this.attr('src', img.src);
-
-                    deferred.resolve(i);
-                };
-                img.src = $this.attr('preload-src');
-
-                return deferred;
-            });
-
-            $.when.apply(null, deferreds.get()).then(function () {
-                var owl = $('.owl-carousel').owlCarousel({
-                    items: 1,
-                    lazyLoad: true,
-                    loop: true,
-                    autoplayTimeout: 8000,
-                    autoplayHoverPause: true,
-                    nav: true,
-                    navRewind: true,
-                    smartSpeed: 500,
-                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
-                    autoHeight: true
-                });
-
-                owl.on('changed.owl.carousel', function (event) {
-                    // Eliminate the ghost image shadow
-                    $(event.target).find('img').toggle().toggle();
-                });
-            });
         });
