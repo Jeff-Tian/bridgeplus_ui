@@ -1,21 +1,5 @@
 $(document).ready(function () {
-    var deferreds = $('img[preload-src]').map(function (i, elem) {
-        var deferred = $.Deferred();
-
-        var $this = $(elem);
-        var img = new Image();
-        img.onload = function () {
-            $this.attr('src', img.src);
-
-            deferred.resolve(i);
-        };
-        img.src = $this.attr('preload-src');
-
-        return deferred;
-    });
-
-    $.when.apply(null, deferreds.get()).then(function () {
-        // Use preload gif to eliminate the slow animation
+    function resizeStage() {
         var $stage = $('.carousel .carousel-inner');
 
         var $items = $('.carousel .item');
@@ -27,6 +11,26 @@ $(document).ready(function () {
         }
 
         $stage.height(maxHeight + 'px');
+    }
+
+    var deferreds = $('img[preload-src]').map(function (i, elem) {
+        var deferred = $.Deferred();
+
+        var $this = $(elem);
+        var img = new Image();
+        img.onload = function () {
+            $this.attr('src', img.src);
+            resizeStage();
+
+            deferred.resolve(i);
+        };
+        img.src = $this.attr('preload-src');
+
+        return deferred;
+    });
+
+    $.when.apply(null, deferreds.get()).then(function () {
+        // Use preload gif to eliminate the slow animation
     });
 
     var $stage = $('.carousel .carousel-inner');
