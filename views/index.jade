@@ -3,7 +3,7 @@ extends layout
 mixin teacher(image)
     div
         h3 &nbsp;
-        img(src="#{image}")
+        img(preload-src="#{image}")
         div.media
             div.media-left
                 i.fa.fa-user.icon(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px;")
@@ -83,16 +83,38 @@ block js
     script(src="/bower_components/owl.carousel/dist/owl.carousel.min.js")
     script.
         $(document).ready(function () {
-            $('.owl-carousel').owlCarousel({
-                items: 1,
-                lazyLoad: true,
-                loop: true,
-                autoplayTimeout: 8000,
-                autoplayHoverPause: true,
-                nav: true,
-                navRewind: true,
-                smartSpeed: 500,
-                navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
-                autoHeight: true
+            var deferreds = $('img[preload-src]').map(function (i, elem) {
+                var deferred = $.Deferred();
+
+                var $this = $(elem);
+                var img = new Image();
+                img.onload = function () {
+                    $this.attr('src', img.src);
+
+                    deferred.resolve(i);
+                };
+                img.src = $this.attr('preload-src');
+
+                return deferred;
+            });
+
+            $.when.apply(null, deferreds.get()).then(function () {
+                var owl = $('.owl-carousel').owlCarousel({
+                    items: 1,
+                    lazyLoad: true,
+                    loop: true,
+                    autoplayTimeout: 8000,
+                    autoplayHoverPause: true,
+                    nav: true,
+                    navRewind: true,
+                    smartSpeed: 500,
+                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                    autoHeight: true
+                });
+
+                owl.on('changed.owl.carousel', function (event) {
+                    // Eliminate the ghost image shadow
+                    $(event.target).find('img').toggle().toggle();
+                });
             });
         });
