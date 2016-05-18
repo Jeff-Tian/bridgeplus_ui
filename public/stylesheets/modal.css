@@ -1,0 +1,74 @@
+
+.mask {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shadow-box {
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.71);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.71);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.71);
+    overflow: auto;
+    display: inline-block;
+    background-color: #5F5E6B;
+    position: relative;
+    text-align: left;
+}
+
+.shadow-box .content {
+    padding-top: 10px;
+}
+
+.shadow-box .close.button {
+    position: absolute;
+    padding: 4px 8px;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.shadow-box:after {
+    content: ' ';
+    float: none;
+    clear: both;
+}
+
+.black.inverted {
+    background-color: #0F1012;
+    color: white;
+}
+
+.red.inverted {
+    color: white;
+    background-color: #A43635;
+}
+
+.padded {
+    padding: 50px 15px 30px 15px;
+}
+
+.padded:after {
+    content: ' ';
+    float: none;
+    clear: both;
+}
+
+.right-margin {
+    margin-right: 15px;
+}

@@ -14,6 +14,7 @@ mixin teacher(image, description, title)
 block header
     link(rel='stylesheet', href='/stylesheets/index.css')
     link(rel="stylesheet", href="/stylesheets/carousel.css")
+    link(rel="stylesheet", href="/stylesheets/modal.css")
 
 block content
     section#top
@@ -84,6 +85,23 @@ block content
                         img(src="", style="height: 100%; width: 0; visibility: hidden; border: none;")
                         a(href="#")
                             i.fa.fa-arrow-circle-o-right(aria-hidden="true", style="font-size: xx-large;")
+
+    div.mask
+        div.center.middle.shadow-box
+            div.close.button.red.inverted &times;
+            div.black.inverted.padded.pull-right
+                div HCD 合得合伙人兼首席财务官
+                h2(style="margin-top: 0;") 周国元 Joseph Zhou
+                div.content
+                    div content / content / content
+                    div content / content / content
+                    div content / content / content
+                    div content / content / content
+                    div content / content / content
+                    div content / content / content
+                    div content / content / content
+                    div content / content / content
+            img(src="/images/zhou-guo-yuan.png")
 block js
     script(src="/scripts/carousel.js")
     script.
