@@ -1,10 +1,21 @@
 extends layout
 
+mixin modalBox(image, title, description, content)
+    div.mask&attributes(attributes)
+        div.center.middle.shadow-box
+            div.close.button.red.inverted &times;
+            div.black.inverted.padded.text.pull-right
+                div #{description}
+                h2(style="margin-top: 0;") #{title}
+                div.content
+                    | #{content}
+            img.image(src="#{image}")
+
 mixin teacher(image, description, title)
     div.item&attributes(attributes)
         h3 &nbsp;
-        img(preload-src="#{image}")
-        div.media
+        img(preload-src="#{image}", style="cursor: pointer;")&attributes(attributes.onclick)
+        div.media(style="cursor: pointer;")
             div.media-left
                 i.fa.fa-user.icon(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px;")
             div.media-body
@@ -50,9 +61,9 @@ block content
                         h3
                         div.carousel
                             div.carousel-inner
-                                + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_osa.gif", "HCD 合得合伙人兼首席财务官", "周国元 Joseph Zhou")(class="active")
-                                + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_higashi.gif", "test", "test")
-                                + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_murakoshi.gif", "test again", "test again")
+                                + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_osa.gif", "HCD 合得合伙人兼首席财务官", "周国元 Joseph Zhou")(class="active", onclick="$('.mask.zhou-guo-yuan').show()")
+                                + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_higashi.gif", "test", "test")(onclick="$('.mask.test').show()")
+                                + teacher("http://web.c-gp.com/content/themes/cgpweb/img/anime_murakoshi.gif", "test again", "test again")(onclick="$('.mask.test-again').show()")
                             div.nav-bar
                                 div.prev
                                     i.fa.fa-chevron-left
@@ -86,24 +97,15 @@ block content
                         a(href="#")
                             i.fa.fa-arrow-circle-o-right(aria-hidden="true", style="font-size: xx-large;")
 
-    div.mask
-        div.center.middle.shadow-box
-            div.close.button.red.inverted &times;
-            div.black.inverted.padded.pull-right
-                div HCD 合得合伙人兼首席财务官
-                h2(style="margin-top: 0;") 周国元 Joseph Zhou
-                div.content
-                    div content / content / content
-                    div content / content / content
-                    div content / content / content
-                    div content / content / content
-                    div content / content / content
-                    div content / content / content
-                    div content / content / content
-                    div content / content / content
-            img(src="/images/zhou-guo-yuan.png")
+    + modalBox('/images/zhou-guo-yuan.png', '周国元 Joseph Zhou', 'HCD 合得合伙人兼首席财务官', '/ content / content / content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content /')(class="zhou-guo-yuan")
+
+    + modalBox('/images/zhou-guo-yuan.png', 'test', 'test', 'test content')(class="test")
+
+    + modalBox('/images/zhou-guo-yuan.png', 'test again', 'test again', 'test again content')(class="test-again")
+
 block js
     script(src="/scripts/carousel.js")
+    script(src="/scripts/modal.js")
     script.
         $(document).ready(function () {
         });

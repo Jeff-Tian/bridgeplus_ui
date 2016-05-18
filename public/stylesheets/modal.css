@@ -1,6 +1,5 @@
 
 .mask {
-    background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0;
     left: 0;
@@ -17,6 +16,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    padding-left: 10000000px;
 }
 
 .shadow-box {
@@ -27,6 +28,14 @@
     display: inline-block;
     background-color: #5F5E6B;
     position: relative;
+    text-align: center;
+}
+
+.shadow-box .image {
+}
+
+.shadow-box .text {
+    max-width: 50%;
     text-align: left;
 }
 
@@ -60,7 +69,7 @@
 }
 
 .padded {
-    padding: 50px 15px 30px 15px;
+    padding: 50px 15px 30px 25px;
 }
 
 .padded:after {
