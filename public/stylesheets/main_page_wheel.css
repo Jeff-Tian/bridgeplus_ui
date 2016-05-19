@@ -1,0 +1,135 @@
+.wheel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #EAEAEA;
+}
+
+#logo.active {
+    background: #111;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+#logo {
+    margin: -92px 0 0 -92px;
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    position: absolute;
+    width: 184px;
+    height: 184px;
+    z-index: 3;
+    border-radius: 50em;
+}
+
+.logo_left {
+    position: absolute;
+    left: -400px;
+    top: 50%;
+    margin-top: -15px;
+    font-size: 22px;
+    line-height: 30px;
+    color: #737675;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 1000ms ease-out;
+}
+
+.logo_top {
+    background-image: url(/images/LOGO2.png);
+    background-size: cover;
+    width: 118px;
+    height: 50px;
+    position: fixed;
+    right: 50px;
+    top: 30px;
+    opacity: 0;
+    transition: all 1000ms ease-out;
+}
+
+.logo_right {
+    position: absolute;
+    right: -420px;
+    top: 50%;
+    margin-top: -19px;
+    font-size: 22px;
+    color: #737675;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 1000ms ease-out;
+    background-image: url(/images/GO.png);
+    line-height: 38px;
+    padding-right: 48px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#logo.active .logo_right,
+#logo.active .logo_left,
+#logo.active .logo_top {
+    opacity: 1;
+}
+
+#bridge_plus_wheel {
+    margin: -500px 0 0 -800px;
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    position: absolute;
+    width: 1600px;
+    height: 1000px;
+    z-index: 2;
+}
+
+#logo,
+#bridge_plus_wheel {
+    transition: transform 500ms ease-out;
+}
+
+.logo_img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /*transform: scale(0, 0);*/
+    transition: all 500ms ease-out;
+}
+
+#logo.active .logo_img {
+    opacity: 1;
+    transform: scale(1, 1);
+    background-image: url(/images/logo_circle.png);
+    background-size: cover;
+}
+
+.svg_group {
+    cursor: pointer;
+}
+
+.svg_group circle {
+    opacity: 0;
+    transform-origin: 800px 500px;
+    transition: all 300ms ease-out;
+}
+
+.svg_group:hover circle {
+    opacity: 0.65;
+    transform: scale(1, 1) !important;
+}
+
+.svg_group_addtion {
+    display: none;
+}
+
+.svg_group:hover .svg_group_addtion {
+    display: block;
+}

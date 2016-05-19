@@ -38,3 +38,7 @@ jspm_packages
 
 .idea
 bower_components
+
+public/libs
+*.db
+.DS_Store
