@@ -2,7 +2,7 @@ Raphael.fn.group = function(elements, klass) {
     var group = document.createElementNS("http://www.w3.org/2000/svg", 'g');
     group.style && (group.style.webkitTapHighlightColor = "rgba(0,0,0,0)");
     group.classList.add('svg_group');
-    group.classList.add('klass');
+    group.classList.add(klass);
     if (elements) {
         for (var i = 0, j = elements.length; i < j; i++) {
             group.appendChild(elements[i].node);
@@ -138,6 +138,7 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
             raphael.wheel(240, dataAll.slice(0, 14), 0, json, array, additionInfo);
         } else {
             inner();
+            $(document).trigger('wheel/show');
         }
     }
 
@@ -145,7 +146,6 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
         function rotate() {
             if (index == images.length) {
                 middle();
-                // BridgeWheel.logo2.attr({ opacity: 1 });
                 images.forEach(function(image, i) {
                     image.animate({
                         transform: "r" + (360 + delta * i) + ",800,500"

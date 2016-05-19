@@ -113,6 +113,7 @@ $(function() {
                     setTimeout(d, 50);
                 } else {
                     $('#logo').addClass('active');
+                    $('.logo_top').addClass('active');
                     //INTRO.intro.clear();
                     setTimeout(function() {
                         BridgeWheel.start();
@@ -169,25 +170,17 @@ $(function() {
     (function() {
         var BridgeWheel = window.BridgeWheel = {
             first: true,
-            paper: null,
             sourceArr: [],
             imgAll: [],
-            logo2: null,
-            logo3: null,
             init: function() {
                 INTRO.init();
             },
             evHandlers: function() {},
             start: function() {
                 BridgeWheel.resize();
-                //setTimeout(function() {
-                BridgeWheel.paper = new Raphael("bridge_plus_wheel", 2000, 1000);
-                BridgeWheel.sourceArr = vmvideos;
-                BridgeWheel.paper.wheel(440, BridgeWheel.sourceArr.slice(32, 51), 2, BridgeWheel.sourceArr, [], additionInfo);
-                //}, 500);
+                var paper = new Raphael("bridge_plus_wheel", 2000, 1000);
+                paper.wheel(440, vmvideos.slice(32, 51), 2, vmvideos, [], additionInfo);
             },
-            slicetoVideoInit: function(a, b, c) {},
-            slicetoVideo: function(a, b, c) {},
             resize: resizeWheel
         };
     })();
@@ -195,6 +188,95 @@ $(function() {
         resize();
         BridgeWheel.resize();
     });
+    $(document)
+        .on('wheel/show', function() {
+            var wheel_text = $('.wheel_text');
+            var wheel = $('.main_page_wheel');
+            var bottom = $('.main_page_bottom');
+            var right = $('.main_page_right');
+            $(document)
+                .on('show_group_desc', function(e, svg_group, klass) {
+                    wheel_text
+                        .hide()
+                        .each(function() {
+                            if ($(this).hasClass(klass)) {
+                                $(this).show();
+                            }
+                        });
+                })
+                .on('hide_group_desc', function(e, svg_group, klass) {
+                    wheel_text
+                        .each(function() {
+                            if ($(this).hasClass(klass)) {
+                                $(this).hide();
+                            }
+                        });
+                })
+                .on('show_wheel', function() {
+                    wheel
+                        .animate({
+                            top: 0,
+                            left: 0
+                        }, 500);
+                    bottom
+                        .animate({
+                            top: '100%',
+                            left: 0
+                        }, 500);
+                    right
+                        .animate({
+                            left: '100%'
+                        }, 500);
+                })
+                .on('show_content', function() {
+                    wheel
+                        .animate({
+                            top: '-100%',
+                            left: 0
+                        }, 500);
+                    bottom
+                        .animate({
+                            top: 0,
+                            left: 0
+                        }, 500);
+                    right
+                        .animate({
+                            left: '100%'
+                        }, 500);
+                })
+                .on('show_right', function() {
+                    wheel
+                        .animate({
+                            left: '-100%'
+                        }, 500);
+                    bottom
+                        .animate({
+                            left: '-100%'
+                        }, 500);
+                    right
+                        .animate({
+                            left: 0
+                        }, 500);
+                });
+            $('.svg_group')
+                .hover(function() {
+                    $(document).trigger('show_group_desc', this.classList);
+                }, function() {
+                    $(document).trigger('hide_group_desc', this.classList);
+                })
+                .on('click', function() {
+                    $(document).trigger('show_content', this.classList);
+                });
+        })
+        .on('click', '.logo_right', function() {
+            $(document).trigger('show_right');
+        })
+        .on('click', '.main_page_right', function() {
+            $(document).trigger('show_wheel');
+        })
+        .on('click', '.main_page_bottom', function() {
+            $(document).trigger('show_wheel');
+        });
     resize();
     BridgeWheel.init();
     BridgeWheel.evHandlers();
