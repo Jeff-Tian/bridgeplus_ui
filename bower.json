@@ -15,5 +15,8 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": "2.1.4",
+    "owl.carousel": "^2.1.3",
+    "raphael": "2.1.2"
   }
 }
