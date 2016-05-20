@@ -8,4 +8,9 @@ $(document).ready(function(){
         }
         isMenuActive = !isMenuActive;
     });
+
+    //On receive event
+    (function(){
+        $("#pic-entrance").addClass("active");
+    })();
 });
