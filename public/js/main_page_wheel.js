@@ -271,9 +271,9 @@ $(function() {
         .on('click', '.logo_right', function() {
             $(document).trigger('show_right');
         })
-        .on('click', '.main_page_right', function() {
-            $(document).trigger('show_wheel');
-        })
+        // .on('click', '.main_page_right', function() {
+        //     $(document).trigger('show_wheel');
+        // })
         .on('click', '.main_page_bottom', function() {
             $(document).trigger('show_wheel');
         });

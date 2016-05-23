@@ -12,8 +12,9 @@ $(document).ready(function(){
     //On receive event
     $(document).on("show_right", function(){
         $("#pic-entrance").addClass("active");
-    });
-    $(document).on("show_wheel", function(){
+    }).on("show_wheel", function(){
         $("#pic-entrance").removeClass("active");
+    }).on('click', '.left-arrow', function() {
+        $(document).trigger('show_wheel');
     });
 });
