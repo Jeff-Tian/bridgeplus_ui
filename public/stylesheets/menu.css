@@ -165,4 +165,5 @@
     transform-origin: 0% 50% 0;
     transform-style: preserve-3d;
     animation: rotatethreed 2s forwards;
+    animation-delay: 0.2s;
 }
