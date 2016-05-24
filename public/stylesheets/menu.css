@@ -173,7 +173,11 @@
 }
 @keyframes rotatethreed {
     0% {
-        transform: translateX(100%) perspective(600px) rotateY(90deg);
+        -webkit-transform: translateX(100%) perspective(600px) rotateY(90deg);
+           -moz-transform: translateX(100%) perspective(600px) rotateY(90deg);
+            -ms-transform: translateX(100%) perspective(600px) rotateY(90deg);
+             -o-transform: translateX(100%) perspective(600px) rotateY(90deg);
+                transform: translateX(100%) perspective(600px) rotateY(90deg);
     }
 }
 #pic-entrance.active .pic-item{
@@ -189,6 +193,7 @@
     font-family:"Microsoft YaHei, Arial";
     font-weight: bold;
     top: calc(100vh - 16em);
+    width: 100%;
 }
 #pic-entrance .pic-item.style-two .pic-text-area {
     top: calc(100vh - 36em);
@@ -289,8 +294,9 @@
 #pic-entrance .pic-item .pic-text-area .detail {
     font-size: 14px;
     text-align: left;
-    margin: 2rem;
+    margin: 2rem auto;
     opacity: 0;
+    width: 16rem;
 }
 #pic-entrance .pic-item:hover .pic-text-area .detail {
     opacity: 1;
