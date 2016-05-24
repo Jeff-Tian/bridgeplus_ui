@@ -222,10 +222,9 @@ a.fa.fa-angle-down:hover {
 }
 
 #bottom {
-    padding-top: 20px;
-    padding-bottom: 30px;
     background-color: #E6E6E4;
     color: black;
+    padding: 20px 60px 30px 60px;
 }
 
 #bottom hr {
@@ -280,28 +279,7 @@ ul.about-list li span {
     margin-right: 10px;
 }
 
-.to-right {
-    color: #868689;
-    font-size: large;
-}
-
-.to-right a {
-    color: #868689;
-}
-
 .text-column {
     padding: 10px 30px 50px 30px;
     border: solid 2px #C5C7C5;
-}
-
-#top {
-    height: 80px;
-    vertical-align: middle;
-    position: fixed;
-    z-index: -1;
-    width: 100%;
-}
-
-#top .container {
-    padding-top: 20px;
 }

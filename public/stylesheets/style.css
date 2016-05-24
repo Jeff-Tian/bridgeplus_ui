@@ -10,7 +10,7 @@ html, body {
 nav#footer {
     background: white;
     color: #333;
-    padding: 20px 0 15px 0;
+    padding: 20px 60px 15px 60px;
 }
 
 nav#footer .fnav {
@@ -57,6 +57,7 @@ nav#footer p {
     padding-left: 15px;
     margin-right: 20px;
     margin-left: 20px;
+    box-sizing: border-box;
 }
 
 .row {
