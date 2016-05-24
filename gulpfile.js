@@ -46,7 +46,7 @@ gulp.task('release', function (done) {
 
 gulp.task('jade', function (done) {
     var jadeFiles = [{
-        src: './views/index.jade',
+        src: './views/footer-template.jade',
         dest: './public/'
     }];
 
