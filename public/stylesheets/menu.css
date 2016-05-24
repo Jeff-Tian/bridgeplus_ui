@@ -191,11 +191,12 @@
     top: calc(100vh - 16em);
 }
 #pic-entrance .pic-item.style-two .pic-text-area {
-    top: calc(100vh - 32em);
+    top: calc(100vh - 36em);
 }
 #pic-entrance .pic-item .pic-text-area .intro,
 #pic-entrance .pic-item .pic-text-area .title,
 #pic-entrance .pic-item .pic-text-area .button,
+#pic-entrance .pic-item .pic-text-area .news,
 #pic-entrance .pic-item .pic-text-area .detail {
     -webkit-transform: translateY(2rem);
        -moz-transform: translateY(2rem);
@@ -211,6 +212,7 @@
 #pic-entrance .pic-item:hover .pic-text-area .intro,
 #pic-entrance .pic-item:hover .pic-text-area .title,
 #pic-entrance .pic-item:hover .pic-text-area .button,
+#pic-entrance .pic-item:hover .pic-text-area .news,
 #pic-entrance .pic-item:hover .pic-text-area .detail{
     -webkit-transform: translateY(0rem);
        -moz-transform: translateY(0rem);
@@ -270,7 +272,7 @@
          -o-transition: transform .5s;
             transition: transform .5s;
 }
-#pic-entrance .pic-item .pic-text-area.style-two .title:after {
+#pic-entrance .pic-item.style-two .pic-text-area .title:after {
     left: calc(50% - 5em);
     width: 10em;
 }
@@ -318,6 +320,45 @@
         -ms-transform: translateY(-2rem);
          -o-transform: translateY(-2rem);
             transform: translateY(-2rem);
+}
+#pic-entrance .pic-item .pic-text-area .news {
+    height: 100vh;
+    text-align: left;
+    margin-top: 2em;
+    padding-top: 1em;
+    background-color: #134d64;
+    -webkit-transform: translateY(-1rem);
+       -moz-transform: translateY(-1rem);
+        -ms-transform: translateY(-1rem);
+         -o-transform: translateY(-1rem);
+            transform: translateY(-1rem);
+}
+#pic-entrance .pic-item .pic-text-area .news .news-title{
+    margin: 1rem 2rem;
+    color: #cbcccc;
+}
+#pic-entrance .pic-item .pic-text-area .news .news-title .title-zh{
+    font-size: 16px;
+}
+#pic-entrance .pic-item .pic-text-area .news .news-title .title-en{
+    font-size: 12px;
+    font-family: "Arial";
+}
+#pic-entrance .pic-item .pic-text-area .news .news-content{
+    margin: 1rem 2rem;
+    font-size: 14px;
+}
+#pic-entrance .pic-item .pic-text-area .news .news-separator{
+    height: 1px;
+    margin: 1rem 2rem;
+    background-color: white;
+}
+#pic-entrance .pic-item .pic-text-area .news .news-logo{
+    margin: 0rem 2rem;
+    width: 30%;
+}
+#pic-entrance .pic-item .pic-text-area .news .news-more{
+    display: none;
 }
 #pic-entrance .pic-item.style-one:before {
     content: '';
