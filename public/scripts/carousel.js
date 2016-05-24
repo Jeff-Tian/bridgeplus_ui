@@ -1,8 +1,8 @@
 $(document).ready(function () {
     function resizeStage() {
-        var $stage = $('.carousel .carousel-inner');
+        var $stage = $get('.carousel .carousel-inner');
 
-        var $items = $('.carousel .item');
+        var $items = $get('.carousel .item');
         var maxHeight = 0;
         for (var i = 0; i < $items.length; i++) {
             if (maxHeight < $($items[i]).height()) {
@@ -13,7 +13,7 @@ $(document).ready(function () {
         $stage.height(maxHeight + 'px');
     }
 
-    var deferreds = $('img[preload-src]').map(function (i, elem) {
+    var deferreds = $get('img[preload-src]').map(function (i, elem) {
         var deferred = $.Deferred();
 
         var $this = $(elem);
@@ -33,10 +33,10 @@ $(document).ready(function () {
         // Use preload gif to eliminate the slow animation
     });
 
-    var $stage = $('.carousel .carousel-inner');
+    var $stage = $get('.carousel .carousel-inner');
     $stage.height($stage.height() + 'px');
 
-    $('.carousel .item').each(function () {
+    $get('.carousel .item').each(function () {
         var $this = $(this);
         $this
             .css('width', $this.closest('.carousel').width() + 'px')
@@ -45,7 +45,7 @@ $(document).ready(function () {
         ;
     });
 
-    $('.carousel .nav-bar .prev').click(function () {
+    $get('.carousel .nav-bar .prev').click(function () {
         if (running) {
             return;
         }
@@ -74,7 +74,7 @@ $(document).ready(function () {
     });
 
     var running = false;
-    $('.carousel .nav-bar .next').click(function () {
+    $get('.carousel .nav-bar .next').click(function () {
         if (running) {
             return;
         }
