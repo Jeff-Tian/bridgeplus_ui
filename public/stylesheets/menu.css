@@ -190,6 +190,9 @@
     font-weight: bold;
     top: calc(100vh - 16em);
 }
+#pic-entrance .pic-item.style-two .pic-text-area {
+    top: calc(100vh - 32em);
+}
 #pic-entrance .pic-item .pic-text-area .intro,
 #pic-entrance .pic-item .pic-text-area .title,
 #pic-entrance .pic-item .pic-text-area .button,
@@ -267,6 +270,10 @@
          -o-transition: transform .5s;
             transition: transform .5s;
 }
+#pic-entrance .pic-item .pic-text-area.style-two .title:after {
+    left: calc(50% - 5em);
+    width: 10em;
+}
 #pic-entrance .pic-item:hover .pic-text-area .title {
     font-size: 24px;
 }
@@ -305,9 +312,36 @@
     color: #656666;
 }
 #pic-entrance .pic-item .pic-text-area .button {
+    cursor: pointer;
     -webkit-transform: translateY(-2rem);
        -moz-transform: translateY(-2rem);
         -ms-transform: translateY(-2rem);
          -o-transform: translateY(-2rem);
             transform: translateY(-2rem);
+}
+#pic-entrance .pic-item.style-one:before {
+    content: '';
+    background-color: #e25a1f;
+    position: absolute;
+    top: 0px;
+    width: 28vw;
+    height: 100vh;
+    transform-origin: left bottom;
+    -webkit-transition: transform .5s;
+       -moz-transition: transform .5s;
+        -ms-transition: transform .5s;
+         -o-transition: transform .5s;
+            transition: transform .5s;
+    -webkit-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
+       -moz-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
+        -ms-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
+         -o-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
+            transform: translateY(calc(100vh - 28vw)) rotate(90deg);
+}
+#pic-entrance .pic-item.style-one:hover:before {
+    -webkit-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
+       -moz-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
+        -ms-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
+         -o-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
+            transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
 }
