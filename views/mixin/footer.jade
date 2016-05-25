@@ -1,0 +1,57 @@
+mixin modalBox(image, title, description, content)
+    div.mask&attributes(attributes)
+        div.center.middle.shadow-box
+            div.close.button.red.inverted &times;
+            div.black.inverted.padded.text.pull-right
+                div #{description}
+                h2(style="margin-top: 0;") #{title}
+                div.content
+                    | #{content}
+            img.image(src="#{image}")
+
+mixin carouselItem(image, description, title)
+    div.item&attributes(attributes)
+        h3 &nbsp;
+        img(preload-src="#{image}", style="cursor: pointer;")&attributes(attributes.onclick)
+        div.media(style="cursor: pointer;")
+            div.media-left
+                i.icon(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px; display: block;") &#9751;
+            div.media-body
+                p(style="font-size: x-small;") #{description}
+                h5 #{title}
+
+mixin carousel
+    div.widget&attributes(attributes)
+        h3
+        div.carousel
+            div.carousel-inner
+                block
+            div.nav-bar
+                div.prev
+                    | <
+                div.next
+                    | >
+
+mixin description(mainTitle, heading1, content1, heading2, content2)
+    div.widget&attributes(attributes)
+        h2#footer-title #{mainTitle}
+            | &nbsp;&nbsp;
+            i.fa.fa-youtube-play(aria-hidden="true", style="color: #ccc")
+        br
+        h4#footer-heading-1 #{heading1}
+        p#footer-content-1 #{content1}
+        br
+        hr
+        h4#footer-heading-2 #{heading2}
+        p#footer-content-2 #{content2}
+        br
+
+mixin services(title, list)
+    div.widget&attributes(attributes)
+        h1 &nbsp;
+        div.text-column
+            h3#key-services-title(style="white-space: nowrap;") #{title}
+            ul.about-list
+                each val, index in list
+                    li
+                        a(href="#{val.link}.link") - #{val.text}

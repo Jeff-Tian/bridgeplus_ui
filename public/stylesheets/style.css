@@ -10,7 +10,7 @@ html, body {
 nav#footer {
     background: white;
     color: #333;
-    padding: 20px 60px 15px 60px;
+    padding: 20px 30px 15px 60px;
 }
 
 nav#footer .fnav {
@@ -150,13 +150,38 @@ img {
     padding-right: 10px;
 }
 
+.arrow {
+    font-size: x-large;
+    color: #868689 !important;
+    text-decoration: none;
+    font-family: monospace;
+    font-weight: bold;
+    border: solid 2px #868689;
+    border-radius: 50%;
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.arrow span {
+    line-height: 100%;
+    display: block;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 1px 0 0;
+}
+
 .to-top {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.to-top i.fa {
-    font-size: xx-large;
-    color: #868689;
+.to-top a#to-top-link {
 }
