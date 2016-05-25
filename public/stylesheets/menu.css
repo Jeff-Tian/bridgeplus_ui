@@ -222,6 +222,7 @@
     transform-style: preserve-3d;
     animation: rotatethreed 2s forwards;
     animation-delay: 0.2s;
+    overflow: hidden;
 }
 
 #pic-entrance .pic-item .pic-text-area {
