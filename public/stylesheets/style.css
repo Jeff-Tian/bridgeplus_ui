@@ -107,6 +107,15 @@ nav#footer p {
     padding-left: 15px;
 }
 
+.col-md-2 {
+    width: 16.6666666667%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
 a.round-button {
     text-decoration: none;
     border: solid 2px #A23F43;

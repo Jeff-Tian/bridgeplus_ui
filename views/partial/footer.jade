@@ -6,72 +6,19 @@ div.container.to-top
 section#bottom
     div.container
         div.row(style="position: relative;")
-            div.col-md-4.group-description
-                + description('体验式学习平台', '全球领先的商战模拟', '游戏者在逼真、无风险的虚拟环境下运营一家公司。通过激励团队分享与体验式学习的方式，鼓励学员锻炼管理者的视角，全方位了解整个市场及其运作方式。', '高效的学习方式', '根据美国缅因州国家训练实验室提出的学习金字塔理论，通过体验式学习的效率可以达到75%，远远高于传统“说教式”的被动学习方式。')(data-group="svg_group_0")
-                + description('导师辅导平台', '经验与知识共享', '各行各业的大咖导师在线为大学生提供咨询辅导，为他们指点迷津，让经验与知识有效地创造价值。', '让未来不再迷茫', '让未来不再迷茫')(data-group="svg_group_1")
-                + description('职业发展平台', '如何做求职准备', '我们为每位同学建立基于大数据的人才模型，根据其求职意向，自动生成求职准备计划，推荐其能力提升学习和实践内容，帮助其达到目标。', '如何找到合适的职位', '我们基于匹配算法，为每位同学智能推荐合适的职位，并且通过机器学习，不断优化算法模型，让每次推荐更加符合同学的心意。')(data-group="svg_group_2")
-                    div
-                        | 我是导师...
-                        | &nbsp;
-                        a.round-button(href="#") 进入导师平台
-            div.col-md-4.carousel-items
-                + carousel(data-group="svg_group_0")
-                    + carouselItem("http://web.c-gp.com/content/themes/cgpweb/img/anime_osa.gif", "学生背书1", "周国元 Joseph Zhou")(class="active", onclick="$get('.mask.zhou-guo-yuan').css('display', 'flex')")
-                    + carouselItem("http://web.c-gp.com/content/themes/cgpweb/img/anime_higashi.gif", "学生背书2", "test")(onclick="$get('.mask.test').css('display', 'flex')")
-                    + carouselItem("http://web.c-gp.com/content/themes/cgpweb/img/anime_murakoshi.gif", "学生背书3", "test again")(onclick="$get('.mask.test-again').css('display', 'flex')")
-                + carousel(data-group="svg_group_1")
-                    + carouselItem("http://web.c-gp.com/content/themes/cgpweb/img/anime_osa.gif", "HCD 合得合伙人兼首席财务官", "周国元 Joseph Zhou")(class="active", onclick="$get('.mask.zhou-guo-yuan').css('display', 'flex')")
-                    + carouselItem("http://web.c-gp.com/content/themes/cgpweb/img/anime_higashi.gif", "test", "test")(onclick="$get('.mask.test').css('display', 'flex')")
-                    + carouselItem("http://web.c-gp.com/content/themes/cgpweb/img/anime_murakoshi.gif", "test again", "test again")(onclick="$get('.mask.test-again').css('display', 'flex')")
-                + carousel(data-group="svg_group_2")
-                    + carouselItem("http://web.c-gp.com/content/themes/cgpweb/img/anime_osa.gif", "HR 1 背书", "周国元 Joseph Zhou")(class="active", onclick="$get('.mask.zhou-guo-yuan').css('display', 'flex')")
-                    + carouselItem("http://web.c-gp.com/content/themes/cgpweb/img/anime_higashi.gif", "H$ 2 背书 ", "test")(onclick="$get('.mask.test').css('display', 'flex')")
-                    + carouselItem("http://web.c-gp.com/content/themes/cgpweb/img/anime_murakoshi.gif", "HR 3 背书again", "test again")(onclick="$get('.mask.test-again').css('display', 'flex')")
+            div.col-md-1
+            div.col-md-4
+                div.group-description(style="padding-right: 30px;")
+                    include footer/column-1
+            div.col-md-3.carousel-items
+                include footer/column-2
 
             div.col-md-3.services
-                + services('能力提升：', [{
-                    link: 'javascript: void(0);',
-                    text: '数据分析'
-                }, {link: 'javascript: void(0);', text: '团队合作'}, {
-                    link: 'javascript: void(0);',
-                    text: '战略思维'
-                }, {link: 'javascript: void(0);', text: '商业洞察'}, {
-                    link: 'javascript: void(0);',
-                    text: '快速学习'
-                }])(data-group="svg_group_0")
-                + services('热门主题：', [{
-                    link: 'javascript: void(0);',
-                    text: '商战点评'
-                }, {link: 'javascript: void(0);', text: '人生辅导'}, {
-                    link: 'javascript: void(0);',
-                    text: '职涯规划'
-                }, {link: 'javascript: void(0);', text: '行业经验'}, {
-                    link: 'javascript: void(0);',
-                    text: '求职技巧'
-                }])(data-group="svg_group_1")
-                + services('热门企业：', [{
-                    link: 'javascript: void(0);',
-                    text: '阿里巴巴'
-                }, {link: 'javascript: void(0);', text: '华为'}, {
-                    link: 'javascript: void(0);',
-                    text: '宝洁'
-                }, {link: 'javascript: void(0);', text: '德勤'}, {
-                    link: 'javascript: void(0);',
-                    text: '可口可乐'
-                }, {link: 'javascript: void(0);', text: 'EF'}, {
-                    link: 'javascript: void(0);', text: '中航国际'
-                }])(data-group="svg_group_2")
+                include footer/column-3
             div.col-md-1(style="position: static; text-align: right;")
-                div.widget.to-right(style="position: absolute; top: 0; bottom: 0; right: 0; padding: inherit; display: inline-block;")
-                    img(src="", style="height: 100%; width: 0; visibility: hidden; border: none;")
-                    a#to-right-link.arrow(href="javascript: void(0);", onclick="$(document).trigger('show_right');")
-                        span &rarr;
+                include footer/column-4
 
-+ modalBox('/images/zhou-guo-yuan.png', '周国元 Joseph Zhou', 'HCD 合得合伙人兼首席财务官', '/ content / content / content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content // content / content /')(class="zhou-guo-yuan")
-
-+ modalBox('/images/zhou-guo-yuan.png', 'test', 'test', 'test content')(class="test")
-
-+ modalBox('/images/zhou-guo-yuan.png', 'test again', 'test again', 'test again content')(class="test-again")
+include footer/modals
 
 script(src="/libs/jquery/dist/jquery.min.js")
 script.
