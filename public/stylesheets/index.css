@@ -1,12 +1,8 @@
-body, html {
+body, html, index-footer {
     font-family: 'Lato', sans-serif;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     color: #5a5a5a;
-}
-
-h1 {
-    text-transform: uppercase;
 }
 
 p {
@@ -172,11 +168,16 @@ a.fa.fa-angle-down:hover {
 #bottom {
     background-color: #E6E6E4;
     color: black;
-    padding: 20px 60px 30px 60px;
+    padding: 20px 30px 30px 60px;
+
+    font-family: 'Lato', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 #bottom hr {
-    border-color: black;
+    border-top: none;
+    border-bottom: dashed 1px black;
 }
 
 button.btn.tf-btn.btn-default {
@@ -221,6 +222,7 @@ ul.about-list li {
 
 ul.about-list li a {
     color: #868689;
+    text-decoration: none;
 }
 
 ul.about-list li span {
