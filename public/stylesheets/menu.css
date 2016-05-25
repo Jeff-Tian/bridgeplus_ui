@@ -179,6 +179,13 @@
              -o-transform: translateX(100%) perspective(600px) rotateY(90deg);
                 transform: translateX(100%) perspective(600px) rotateY(90deg);
     }
+    100% {
+        -webkit-transform: translateX(0%) perspective(600px) rotateY(0deg);
+           -moz-transform: translateX(0%) perspective(600px) rotateY(0deg);
+            -ms-transform: translateX(0%) perspective(600px) rotateY(0deg);
+             -o-transform: translateX(0%) perspective(600px) rotateY(0deg);
+                transform: translateX(0%) perspective(600px) rotateY(0deg);
+    }
 }
 #pic-entrance.active .pic-item{
     transform-origin: 0% 50% 0;
