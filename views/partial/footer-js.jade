@@ -1,0 +1,14 @@
+script(src="/libs/jquery/dist/jquery.min.js")
+script.
+    function $get(selector) {
+        var $selected = $(selector);
+
+        if ($selected.length) {
+            return $selected;
+        }
+
+        return $('index-footer::shadow ' + selector);
+    }
+script(src="/scripts/event-listener.js")
+script(src="/scripts/carousel.js")
+script(src="/scripts/modal.js")

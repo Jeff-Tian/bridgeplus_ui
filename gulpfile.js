@@ -48,6 +48,12 @@ gulp.task('jade', function (done) {
     var jadeFiles = [{
         src: './views/footer-template.jade',
         dest: './public/'
+    }, {
+        src: './views/index-footer-embed.jade',
+        dest: './public/'
+    }, {
+        src: './views/partial/footer-js.jade',
+        dest: './public/'
     }];
 
     return jadeFiles.forEach(function (jf) {
