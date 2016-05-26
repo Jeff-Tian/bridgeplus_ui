@@ -17,6 +17,8 @@ $(document).ready(function () {
             .hide()
         ;
 
+        console.log('hided modals: ', $('.mask').length);
+
         // Show modal on click
         $('[data-modal-selector]').on('click', function () {
             var $this = $(this);

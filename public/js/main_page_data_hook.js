@@ -252,39 +252,39 @@ var vmvideos = [{
 
 var additionInfo = [
     [{
-        url: '/images/CORPORATE_PG.png',
+        url: '/bower/bridgeplus_ui/public/images/CORPORATE_PG.png',
         width: 460,
         height: 102,
         x: 600,
         y: 120
     }, {
-        url: '/images/CORPORATE.png',
+        url: '/bower/bridgeplus_ui/public/images/CORPORATE.png',
         width: 123,
         height: 41,
         x: 739,
         y: 220
     }],
     [{
-        url: '/images/MENTOR_PG.png',
+        url: '/bower/bridgeplus_ui/public/images/MENTOR_PG.png',
         width: 245,
         height: 183,
         x: 677.5,
         y: 110
     }, {
-        url: '/images/MENTOR.png',
+        url: '/bower/bridgeplus_ui/public/images/MENTOR.png',
         width: 123,
         height: 41,
         x: 739,
         y: 290
     }],
     [{
-        url: '/images/STUDENT_PG.png',
+        url: '/bower/bridgeplus_ui/public/images/STUDENT_PG.png',
         width: 446,
         height: 207,
         x: 620,
         y: 200
     }, {
-        url: '/images/STUDENT.png',
+        url: '/bower/bridgeplus_ui/public/images/STUDENT.png',
         width: 123,
         height: 41,
         x: 739,

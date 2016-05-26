@@ -67,7 +67,7 @@ body {
 }
 
 .logo_top {
-    background-image: url(/images/LOGO2.png);
+    background-image: url(/bower/bridgeplus_ui/public/images/LOGO2.png);
     background-size: cover;
     width: 118px;
     height: 50px;
@@ -90,7 +90,7 @@ body {
     text-transform: uppercase;
     opacity: 0;
     transition: all 1000ms ease-out;
-    background-image: url(/images/GO.png);
+    background-image: url(/bower/bridgeplus_ui/public/images/GO.png);
     line-height: 38px;
     padding-right: 48px;
     background-position: right center;
@@ -156,7 +156,7 @@ body {
 #logo.active .logo_img {
     opacity: 1;
     transform: scale(1, 1);
-    background-image: url(/images/logo_circle.png);
+    background-image: url(/bower/bridgeplus_ui/public/images/logo_circle.png);
     background-size: cover;
 }
 
