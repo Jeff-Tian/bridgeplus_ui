@@ -42,3 +42,5 @@ bower_components
 public/libs
 *.db
 .DS_Store
+
+index-footer-embed.html

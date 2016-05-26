@@ -16,6 +16,12 @@ $(document).ready(function () {
             .css('padding-left', 0)
             .hide()
         ;
+
+        // Show modal on click
+        $('[data-modal-selector]').on('click', function () {
+            var $this = $(this);
+            $($this.attr('data-modal-selector')).css('display', 'flex');
+        });
     }
 
     prepare();

@@ -14,8 +14,7 @@
     "install": "^0.8.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0",
-    "webcomponentsjs": "^1.0.2"
+    "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
