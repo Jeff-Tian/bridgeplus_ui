@@ -1,5 +1,5 @@
 
-.mask {
+#index-footer .mask {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,7 +20,7 @@
     padding-left: 10000000px;
 }
 
-.shadow-box {
+#index-footer .shadow-box {
     -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.71);
     -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.71);
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.71);
@@ -31,19 +31,19 @@
     text-align: center;
 }
 
-.shadow-box .image {
+#index-footer .shadow-box .image {
 }
 
-.shadow-box .text {
+#index-footer .shadow-box .text {
     max-width: 50%;
     text-align: left;
 }
 
-.shadow-box .content {
+#index-footer .shadow-box .content {
     padding-top: 10px;
 }
 
-.shadow-box .close.button {
+#index-footer .shadow-box .close.button {
     position: absolute;
     padding: 4px 8px;
     right: 0;
@@ -52,32 +52,32 @@
     font-family: sans-serif;
 }
 
-.shadow-box:after {
+#index-footer .shadow-box:after {
     content: ' ';
     float: none;
     clear: both;
 }
 
-.black.inverted {
+#index-footer .black.inverted {
     background-color: #0F1012;
     color: white;
 }
 
-.red.inverted {
+#index-footer .red.inverted {
     color: white;
     background-color: #A43635;
 }
 
-.padded {
+#index-footer .padded {
     padding: 50px 15px 30px 25px;
 }
 
-.padded:after {
+#index-footer .padded:after {
     content: ' ';
     float: none;
     clear: both;
 }
 
-.right-margin {
+#index-footer .right-margin {
     margin-right: 15px;
 }

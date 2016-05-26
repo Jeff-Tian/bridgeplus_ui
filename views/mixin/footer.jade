@@ -12,7 +12,7 @@ mixin modalBox(image, title, description, content)
 mixin carouselItem(image, description, title)
     div.item&attributes(attributes)
         h3 &nbsp;
-        img(preload-src="#{image}", style="cursor: pointer;")&attributes(attributes.onclick)
+        img(preload-src="#{image}", style="cursor: pointer;")&attributes(attributes)
         div.media(style="cursor: pointer;")
             div.media-left
                 i.icon(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px; display: block;") &#9751;
@@ -54,4 +54,4 @@ mixin services(title, list)
             ul.about-list
                 each val, index in list
                     li
-                        a(href="#{val.link}.link") - #{val.text}
+                        a(href="#{val.link}") - #{val.text}

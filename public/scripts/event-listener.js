@@ -1,9 +1,9 @@
 (function () {
     function controlShowHideOn(parentSelector, svgGroup) {
-        $get(parentSelector)
+        $(parentSelector)
             .children()
             .each(function () {
-                var $this = $get(this);
+                var $this = $(this);
                 if ($this.attr('data-group') === svgGroup) {
                     $this.show();
                 } else {
@@ -13,7 +13,7 @@
         ;
     }
 
-    $get(document).on('show_content', function (event, source, svgGroup) {
+    $(document).on('show_content', function (event, source, svgGroup) {
         controlShowHideOn('.group-description', svgGroup);
         controlShowHideOn('.carousel-items', svgGroup);
         controlShowHideOn('.services', svgGroup);
