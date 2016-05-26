@@ -1,27 +1,27 @@
-.carousel {
+#index-footer .carousel {
     position: relative;
     overflow: hidden;
 }
 
-.carousel .carousel-inner {
+#index-footer .carousel .carousel-inner {
     width: 300%;
     position: static;
 }
 
-.carousel .item {
+#index-footer .carousel .item {
     display: none;
     text-align: center;
 }
 
-.carousel .item.active {
+#index-footer .carousel .item.active {
     display: block;
 }
 
-.carousel .item .media {
+#index-footer .carousel .item .media {
     text-align: left;
 }
 
-.carousel .nav-bar .prev {
+#index-footer .carousel .nav-bar .prev {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: .5;
@@ -35,7 +35,7 @@
     cursor: pointer;
 }
 
-.carousel .nav-bar .next {
+#index-footer .carousel .nav-bar .next {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: .5;
