@@ -16,6 +16,6 @@
   ],
   "dependencies": {
     "jquery": "2.1.4",
-    "raphael": "2.1.2",
+    "raphael": "2.1.2"
   }
 }
