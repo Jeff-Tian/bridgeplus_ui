@@ -6,6 +6,10 @@ router.get('/', function (req, res, next) {
     res.render('index', {title: 'Express'});
 });
 
+router.get('/index-footer', function (req, res, next) {
+    res.render('index-footer');
+});
+
 router.get('/healthcheck', function (req, res, next) {
     res.json({
         everything: 'is ok',
