@@ -22,6 +22,8 @@ $(document).ready(function () {
             var $this = $(this);
             $($this.attr('data-modal-selector')).css('display', 'flex');
         });
+
+        console.log('modals prepared.');
     }
 
     prepare();

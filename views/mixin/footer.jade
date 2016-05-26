@@ -14,11 +14,12 @@ mixin carouselItem(image, description, title)
         h3 &nbsp;
         img(preload-src="#{image}", style="cursor: pointer;")&attributes(attributes)
         div.media(style="cursor: pointer;")
-            div.media-left
-                i.icon(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px; display: block;") &#9751;
-            div.media-body
-                p(style="font-size: x-small;") #{description}
-                h5 #{title}
+            div.media-left(style="padding-top: 5px;")
+                img(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px; display: block;", src="images/person.png")
+            div.media-body(style="padding-top: 5px;")
+                div(style="color: #666; font-weight: bold; font-size: small; margin-top: -4px; white-space: nowrap;") #{description}
+                div.strong-content #{title}
+                br
 
 mixin carousel
     div.widget&attributes(attributes)
@@ -34,24 +35,26 @@ mixin carousel
 
 mixin description(mainTitle, heading1, content1, heading2, content2)
     div.widget&attributes(attributes)
-        h2#footer-title #{mainTitle}
+        h2.big-title#footer-title #{mainTitle}
             | &nbsp;&nbsp;
-            i.fa.fa-youtube-play(aria-hidden="true", style="color: #ccc")
+            img(aria-hidden="true", style="color: #ccc; display: none;", src="images/video.png")
         br
-        h4#footer-heading-1 #{heading1}
-        p#footer-content-1 #{content1}
+        h4.small-title#footer-heading-1 #{heading1}
+        p.footer-content#footer-content-1 #{content1}
         br
         hr
-        h4#footer-heading-2 #{heading2}
-        p#footer-content-2 #{content2}
+        h4.small-title#footer-heading-2 #{heading2}
+        p.footer-content#footer-content-2 #{content2}
         br
 
 mixin services(title, list)
     div.widget&attributes(attributes)
         h1 &nbsp;
         div.text-column
-            h3#key-services-title(style="white-space: nowrap;") #{title}
+            h3.small-title#key-services-title(style="white-space: nowrap; color: #666;") #{title}
             ul.about-list
                 each val, index in list
                     li
-                        a(href="#{val.link}") - #{val.text}
+                        a.normal-content(href="#{val.link}")
+                            img(src="#{val.image}", style="vertical-align: middle;")
+                            span(style="vertical-align: middle;") &nbsp; - #{val.text}
