@@ -1,8 +1,24 @@
 Raphael.fn.group = function(elements, klass) {
     var group = document.createElementNS("http://www.w3.org/2000/svg", 'g');
     group.style && (group.style.webkitTapHighlightColor = "rgba(0,0,0,0)");
-    group.classList.add('svg_group');
-    group.classList.add(klass);
+    if (group.classList) {
+        group.classList.add('svg_group');
+        group.classList.add(klass);
+    } else {
+        var className = (group.getAttribute('class') || '').split(' ');
+        var refresh = false;
+        if (className.indexOf('svg_group') == -1) {
+            className.push('svg_group');
+            refresh = true;
+        }
+        if (className.indexOf(klass) == -1) {
+            className.push(klass);
+            refresh = true;
+        }
+        if (refresh) {
+            group.setAttribute('class', className.join(' '));
+        }
+    }
     if (elements) {
         for (var i = 0, j = elements.length; i < j; i++) {
             group.appendChild(elements[i].node);

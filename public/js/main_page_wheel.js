@@ -28,6 +28,9 @@ $(function () {
         //});
     }
 
+    function getClassList(dom) {
+        return dom.classList || (dom.getAttribute('class') || '').split(' ');
+    }
     (function () {
         var INTRO = window.INTRO = {
             intro: null,
@@ -267,12 +270,12 @@ $(function () {
                 });
             $('.svg_group')
                 .hover(function () {
-                    $(document).trigger('show_group_desc', this.classList);
+                    $(document).trigger('show_group_desc', getClassList(this));
                 }, function () {
-                    $(document).trigger('hide_group_desc', this.classList);
+                    $(document).trigger('hide_group_desc', getClassList(this));
                 })
                 .on('click', function () {
-                    $(document).trigger('show_content', this.classList);
+                    $(document).trigger('show_content', getClassList(this));
                 });
         })
         .on('click', '.logo_right', function () {
