@@ -3,8 +3,11 @@ $(document).ready(function () {
         $('.mask .text').each(function () {
             var $this = $(this);
             var $image = $this.next('.image');
-            $this.width($image.width() + 'px');
-            $this.css('min-height', $image.height() + 'px');
+            $image.load(function () {
+                console.log('image load', this);
+                $this.css('width', $image[0].width + 'px');
+                $this.css('min-height', $image[0].height + 'px');
+            });
         });
 
         $('.mask .close.button').click(function () {
