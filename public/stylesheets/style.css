@@ -115,8 +115,9 @@
 #index-footer a.round-button {
     text-decoration: none;
     border: solid 2px #A23F43;
-    padding: 8px 12px;
+    padding: 8px 13px;
     border-radius: 30px;
+    white-space: nowrap;
 }
 
 #index-footer a.round-button:hover, a.round-button:active {
