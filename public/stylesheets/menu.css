@@ -78,7 +78,13 @@
     perspective: 1800px
 }
 
-.item-button:hover {
+a.item-button {
+    color: white;
+    text-decoration: none;
+}
+
+.item-button:hover,
+.item-button:hover a {
     color: #e61c36;
 }
 
@@ -225,17 +231,17 @@
 @keyframes rotatethreed {
     0% {
         -webkit-transform: translateX(100%) perspective(600px) rotateY(90deg);
-           -moz-transform: translateX(100%) perspective(600px) rotateY(90deg);
-            -ms-transform: translateX(100%) perspective(600px) rotateY(90deg);
-             -o-transform: translateX(100%) perspective(600px) rotateY(90deg);
-                transform: translateX(100%) perspective(600px) rotateY(90deg);
+        -moz-transform: translateX(100%) perspective(600px) rotateY(90deg);
+        -ms-transform: translateX(100%) perspective(600px) rotateY(90deg);
+        -o-transform: translateX(100%) perspective(600px) rotateY(90deg);
+        transform: translateX(100%) perspective(600px) rotateY(90deg);
     }
     100% {
         -webkit-transform: translateX(0%) perspective(600px) rotateY(0deg);
-           -moz-transform: translateX(0%) perspective(600px) rotateY(0deg);
-            -ms-transform: translateX(0%) perspective(600px) rotateY(0deg);
-             -o-transform: translateX(0%) perspective(600px) rotateY(0deg);
-                transform: translateX(0%) perspective(600px) rotateY(0deg);
+        -moz-transform: translateX(0%) perspective(600px) rotateY(0deg);
+        -ms-transform: translateX(0%) perspective(600px) rotateY(0deg);
+        -o-transform: translateX(0%) perspective(600px) rotateY(0deg);
+        transform: translateX(0%) perspective(600px) rotateY(0deg);
     }
 }
 
@@ -256,6 +262,7 @@
     top: calc(100vh - 16em);
     width: 100%;
 }
+
 #pic-entrance .pic-item.style-two .pic-text-area {
     top: calc(100vh - 36em);
 }
@@ -281,7 +288,7 @@
 #pic-entrance .pic-item:hover .pic-text-area .title,
 #pic-entrance .pic-item:hover .pic-text-area .button,
 #pic-entrance .pic-item:hover .pic-text-area .news,
-#pic-entrance .pic-item:hover .pic-text-area .detail{
+#pic-entrance .pic-item:hover .pic-text-area .detail {
     -webkit-transform: translateY(0rem);
     -moz-transform: translateY(0rem);
     -ms-transform: translateY(0rem);
@@ -348,10 +355,12 @@
     -o-transition: transform .5s;
     transition: transform .5s;
 }
+
 #pic-entrance .pic-item.style-two .pic-text-area .title:after {
     left: calc(50% - 5em);
     width: 10em;
 }
+
 #pic-entrance .pic-item:hover .pic-text-area .title {
     font-size: 24px;
 }
@@ -376,7 +385,8 @@
     opacity: 1;
 }
 
-#pic-entrance .pic-item .pic-text-area .button span {
+#pic-entrance .pic-item .pic-text-area .button span,
+#pic-entrance .pic-item .pic-text-area .button a {
     border: solid 1px #e61c36;
     border-radius: 200px;
     padding: 0.6rem 1rem;
@@ -388,11 +398,18 @@
     transition: border .5s, background-color 0.5s, color 0.5s;
 }
 
-#pic-entrance .pic-item:hover .pic-text-area .button span {
+#pic-entrance .pic-item .pic-text-area .button a {
+    color: white;
+    text-decoration: none;
+}
+
+#pic-entrance .pic-item:hover .pic-text-area .button span,
+#pic-entrance .pic-item:hover .pic-text-area .button a {
     border: solid 1px white;
 }
 
-#pic-entrance .pic-item:hover .pic-text-area .button:hover span {
+#pic-entrance .pic-item:hover .pic-text-area .button:hover span,
+#pic-entrance .pic-item:hover .pic-text-area .button:hover a {
     background-color: white;
     color: #656666;
 }
@@ -405,6 +422,7 @@
     -o-transform: translateY(-2rem);
     transform: translateY(-2rem);
 }
+
 #pic-entrance .pic-item .pic-text-area .news {
     height: 100vh;
     text-align: left;
@@ -412,38 +430,46 @@
     padding-top: 1em;
     background-color: #134d64;
     -webkit-transform: translateY(-1rem);
-       -moz-transform: translateY(-1rem);
-        -ms-transform: translateY(-1rem);
-         -o-transform: translateY(-1rem);
-            transform: translateY(-1rem);
+    -moz-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
+    transform: translateY(-1rem);
 }
-#pic-entrance .pic-item .pic-text-area .news .news-title{
+
+#pic-entrance .pic-item .pic-text-area .news .news-title {
     margin: 1rem 2rem;
     color: #cbcccc;
 }
-#pic-entrance .pic-item .pic-text-area .news .news-title .title-zh{
+
+#pic-entrance .pic-item .pic-text-area .news .news-title .title-zh {
     font-size: 16px;
 }
-#pic-entrance .pic-item .pic-text-area .news .news-title .title-en{
+
+#pic-entrance .pic-item .pic-text-area .news .news-title .title-en {
     font-size: 12px;
     font-family: "Arial";
 }
-#pic-entrance .pic-item .pic-text-area .news .news-content{
+
+#pic-entrance .pic-item .pic-text-area .news .news-content {
     margin: 1rem 2rem;
     font-size: 14px;
 }
-#pic-entrance .pic-item .pic-text-area .news .news-separator{
+
+#pic-entrance .pic-item .pic-text-area .news .news-separator {
     height: 1px;
     margin: 1rem 2rem;
     background-color: white;
 }
-#pic-entrance .pic-item .pic-text-area .news .news-logo{
+
+#pic-entrance .pic-item .pic-text-area .news .news-logo {
     margin: 0rem 2rem;
     width: 30%;
 }
-#pic-entrance .pic-item .pic-text-area .news .news-more{
+
+#pic-entrance .pic-item .pic-text-area .news .news-more {
     display: none;
 }
+
 #pic-entrance .pic-item.style-one:before {
     content: '';
     background-color: #e25a1f;
@@ -453,30 +479,32 @@
     height: 100vh;
     transform-origin: left bottom;
     -webkit-transition: transform .5s;
-       -moz-transition: transform .5s;
-        -ms-transition: transform .5s;
-         -o-transition: transform .5s;
-            transition: transform .5s;
+    -moz-transition: transform .5s;
+    -ms-transition: transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
     -webkit-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
-       -moz-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
-        -ms-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
-         -o-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
-            transform: translateY(calc(100vh - 28vw)) rotate(90deg);
+    -moz-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
+    -ms-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
+    -o-transform: translateY(calc(100vh - 28vw)) rotate(90deg);
+    transform: translateY(calc(100vh - 28vw)) rotate(90deg);
 }
+
 #pic-entrance .pic-item.style-one:hover:before {
     -webkit-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
-       -moz-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
-        -ms-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
-         -o-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
-            transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
+    -moz-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
+    -ms-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
+    -o-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
+    transform: translateY(calc(70.72vh - 14vw)) translateX(calc(14vw - 70.72vh)) rotate(45deg);
 
-/*  30% for fun
-    -webkit-transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);
-       -moz-transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);
-        -ms-transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);
-         -o-transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);
-            transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);*/
+    /*  30% for fun
+        -webkit-transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);
+           -moz-transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);
+            -ms-transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);
+             -o-transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);
+                transform: translateY(calc(50vh - 12.13vw)) translateX(calc(21vw - 86.60vh)) rotate(60deg);*/
 }
+
 #pic-entrance .pic-item.style-three:before {
     content: '';
     background-color: #e25a1f;
@@ -486,21 +514,22 @@
     height: 100vh;
     transform-origin: right bottom;
     -webkit-transition: transform .5s;
-       -moz-transition: transform .5s;
-        -ms-transition: transform .5s;
-         -o-transition: transform .5s;
-            transition: transform .5s;
+    -moz-transition: transform .5s;
+    -ms-transition: transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
     -webkit-transform: translateY(calc(100vh - 28vw)) rotate(-90deg);
-       -moz-transform: translateY(calc(100vh - 28vw)) rotate(-90deg);
-        -ms-transform: translateY(calc(100vh - 28vw)) rotate(-90deg);
-         -o-transform: translateY(calc(100vh - 28vw)) rotate(-90deg);
-            transform: translateY(calc(100vh - 28vw)) rotate(-90deg);
+    -moz-transform: translateY(calc(100vh - 28vw)) rotate(-90deg);
+    -ms-transform: translateY(calc(100vh - 28vw)) rotate(-90deg);
+    -o-transform: translateY(calc(100vh - 28vw)) rotate(-90deg);
+    transform: translateY(calc(100vh - 28vw)) rotate(-90deg);
 }
+
 #pic-entrance .pic-item.style-three:hover:before {
     /*translateY(calc(20.72px+ 14px)) translateX(calc(20.72px + 14px)) rotate(45deg);*/
     -webkit-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
-       -moz-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
-        -ms-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
-         -o-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
-            transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
+    -moz-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
+    -ms-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
+    -o-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
+    transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
 }
