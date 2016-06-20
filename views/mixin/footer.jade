@@ -59,6 +59,9 @@ mixin services(title, list)
             ul.about-list
                 each val, index in list
                     li
-                        a.normal-content(href="#{val.link}")
-                            img(src="#{val.image}", style="vertical-align: middle;")
-                            span(style="vertical-align: middle;") &nbsp; - #{val.text}
+                        a.normal-content(href="#{val.link}", title="#{val.text}")
+                            if !val.logo
+                                img(src="#{val.image}", style="vertical-align: middle;")
+                                span(style="vertical-align: middle;") &nbsp; - #{val.text}
+                            if val.logo
+                                img(src="#{val.logo}", alt="#{val.text}", style="max-height: 26px; max-width: 90%;")
