@@ -1,21 +1,8 @@
-include ../mixin/footer
-
-div.container.to-top
-    a#to-top-link.arrow(href="javascript: void(0);", onclick="$(document).trigger('show_wheel');")
-        img(src="/bower/bridgeplus_ui/public/images/up-arrow.png")
-section#bottom
+nav#footer
     div.container
-        div.row(style="position: relative;")
-            div.col-md-1
-            div.col-md-4
-                div.group-description(style="padding-right: 30px;")
-                    include footer/column-1
-            div.col-md-3.carousel-items
-                include footer/column-2
-
-            div.col-md-3.services
-                include footer/column-3
-            div.col-md-1(style="position: static; text-align: right;")
-                include footer/column-4
-
-include footer/modals
+        div.pull-left.fnav
+            p © 2016 Bridge+ Reserved | 沪ICP备13045400号
+        div.pull-right.fnav
+            ul.footer-social
+                li
+                    img(src="/bower/bridgeplus_ui/public/images/bplus_fuwuhao_noborder.jpg", width="60")

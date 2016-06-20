@@ -2,44 +2,6 @@
     box-sizing: border-box;
 }
 
-/* Footer */
-#index-footer nav#footer {
-    background: white;
-    color: #333;
-    padding: 20px 30px 15px 60px;
-}
-
-#index-footer nav#footer .fnav {
-    vertical-align: middle;
-}
-
-#index-footer ul.footer-social li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#index-footer nav#footer p {
-    font-size: 12px;
-    margin-top: 10px;
-}
-
-#index-footer #footer i.fa {
-    height: 30px;
-    width: 30px;
-    border: 2px solid #8c8c8c;
-    font-size: 20px;
-    padding: 4px 5px;
-    border-radius: 50%;
-    color: #8c8c8c;
-    transition: all 0.5s;
-}
-
-#index-footer #footer i.fa:hover {
-    background: #FCAC45;
-    border-color: #FCAC45;
-    color: #ffffff;
-}
-
 #index-footer .pull-left {
     float: left;
 }

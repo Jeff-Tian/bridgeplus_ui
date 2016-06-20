@@ -1,0 +1,64 @@
+mixin modalBox(image, title, description, content)
+    div.mask&attributes(attributes)
+        div.center.middle.shadow-box
+            div.close.button.red.inverted &times;
+            div.black.inverted.padded.text.pull-right
+                div #{description}
+                h2(style="margin-top: 0;") #{title}
+                div.content
+                    | #{content}
+            img.image(src="#{image}")
+
+mixin carouselItem(image, description, title)
+    div.item&attributes(attributes)
+        h3 &nbsp;
+        img(preload-src="#{image}", style="cursor: pointer;")&attributes(attributes)
+        div.media(style="cursor: pointer;")
+            div.media-left(style="padding-top: 5px;")
+                img(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px; display: block;", src="/bower/bridgeplus_ui/public/images/person.png")
+            div.media-body(style="padding-top: 5px;")
+                div(style="color: #666; font-weight: bold; font-size: small; margin-top: -4px; white-space: nowrap;") #{description}
+                div.strong-content #{title}
+                br
+
+mixin carousel
+    div.widget&attributes(attributes)
+        h3
+        div.carousel
+            div.carousel-inner
+                block
+            div.nav-bar
+                div.prev
+                    | &lt;
+                div.next
+                    | &gt;
+
+mixin description(mainTitle, heading1, content1, heading2, content2, nav)
+    div.widget&attributes(attributes)
+        h2.big-title#footer-title #{mainTitle}
+            | &nbsp;&nbsp;
+            img(aria-hidden="true", style="color: #ccc; display: none;", src="/bower/bridgeplus_ui/public/images/video.png")
+        br
+        h4.small-title#footer-heading-1 #{heading1}
+        p.footer-content#footer-content-1 #{content1}
+        br
+        hr
+        h4.small-title#footer-heading-2 #{heading2}
+        p.footer-content#footer-content-2 #{content2}
+        br
+        div
+            span.strong-content #{nav.text}
+            | &nbsp;
+            a.round-button.strong-content(href="#{nav.link}") #{nav.button}
+
+mixin services(title, list)
+    div.widget&attributes(attributes)
+        h1 &nbsp;
+        div.text-column
+            h3.small-title#key-services-title(style="white-space: nowrap; color: #666;") #{title}
+            ul.about-list
+                each val, index in list
+                    li
+                        a.normal-content(href="#{val.link}")
+                            img(src="#{val.image}", style="vertical-align: middle;")
+                            span(style="vertical-align: middle;") &nbsp; - #{val.text}

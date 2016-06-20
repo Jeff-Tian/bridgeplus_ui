@@ -1,0 +1,11 @@
+.body {
+    opacity: 1;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    -ms-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in
+}
+
+.body.hide {
+    opacity: 0
+}
