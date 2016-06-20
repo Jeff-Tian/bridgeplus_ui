@@ -19,3 +19,9 @@ You develop footer part using `jade` template, and run `gulp jade` to generate r
 # Routers
 http://localhost:13000 to show the index page.
 http://localhost:13000/index-footer to show only the footer.
+
+# Static resource references:
+Because this repo will be bower included into bplus_ui, so for the static resource, you should include them like this(notice the `/bower/bridgeplus_ui/public` part) :
+```
+link(rel="stylesheet", href="/bower/bridgeplus_ui/public/stylesheets/page/index_modal.css")
+```

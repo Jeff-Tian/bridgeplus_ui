@@ -23,9 +23,13 @@ $(document).ready(function () {
         console.log('hided modals: ', $('.mask').length);
 
         // Show modal on click
-        $('[data-modal-selector]').on('click', function () {
+        $('[data-modal-selector]').on('click', function ($event) {
             var $this = $(this);
-            $($this.attr('data-modal-selector')).css('display', 'flex');
+            var modalSelector = $this.attr('data-modal-selector');
+            var $modal = $(modalSelector);
+            $modal.css('display', 'flex');
+
+            $event.stopPropagation();
         });
 
         console.log('modals prepared.');
