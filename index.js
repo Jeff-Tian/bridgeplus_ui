@@ -3,7 +3,7 @@ var fs = require('fs');
 var pages = require('./util/page');
 
 module.exports = {
-    render: function(lang, page, jade, req, res, next) {
+    render: function(lang, page, req, res, next) {
         if (!(lang == 'zh' || lang == 'en')) {
             return next();
         }
@@ -17,6 +17,6 @@ module.exports = {
             lang: lang,
             title: page_info.title,
             locals: res.locals
-        }));
+        });
     }
 };
