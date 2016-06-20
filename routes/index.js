@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/:lang/:page', function(req, res, next) {
+router.get('/portal/:lang/:page', function(req, res, next) {
     var lang = req.params.lang;
     if (!(lang == 'zh' || lang == 'en')) {
         return next();
