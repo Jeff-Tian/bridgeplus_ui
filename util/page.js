@@ -1,5 +1,7 @@
 module.exports = {
     index: {
-        title: '首页'
+        zh: {
+            title: '首页'
+        }
     }
 };
