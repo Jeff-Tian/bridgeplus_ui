@@ -4,7 +4,7 @@
             .children()
             .each(function () {
                 var $this = $(this);
-                if ($this.attr('data-group') === svgGroup) {
+                if (!$this.attr('data-group') || $this.attr('data-group') === svgGroup) {
                     $this.show();
                 } else {
                     $this.hide();

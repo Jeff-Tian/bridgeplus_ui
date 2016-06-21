@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     var div = document.createElement('DIV'),
         body,
         title,
@@ -27,13 +27,12 @@ $(function() {
         }
     }
 
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (e.target.nodeName !== 'A') {
             return true;
         }
         var href = e.target.href ? e.target.href.toLowerCase() : '';
-        if (e.target.getAttribute('use-pjax') === 'false' ||
-            !href.length ||
+        if (e.target.getAttribute('use-pjax') === 'false' || !href.length ||
             (href.charAt(0) == '#') ||
             (href.indexOf('mailto:') == 0) ||
             (href.indexOf('javascript:') == 0)
@@ -44,7 +43,7 @@ $(function() {
         e.stopPropagation();
         load(href, e.target, true);
     }, false);
-    window.addEventListener("popstate", function() {
+    window.addEventListener("popstate", function () {
         if (bodyCache && bodyCache.length) {
             refresh(bodyCache.pop(), titleCache.pop(), bodyDataCache.pop());
             return;
@@ -52,7 +51,7 @@ $(function() {
         load(location.href);
     });
 
-    $(document).on('navigate', function(url) {
+    $(document).on('navigate', function (url) {
         load(url, null, true);
     });
 
@@ -61,11 +60,11 @@ $(function() {
         body = body || document.querySelector('.body');
         title = title || document.querySelector('title');
         body.classList.add('hide');
-        setTimeout(function() {
+        setTimeout(function () {
             body.innerHTML = bodyHTML;
             body.classList.remove('hide');
         }, 100);
-        Object.keys(data).forEach(function(key) {
+        Object.keys(data).forEach(function (key) {
             body.setAttribute('data-' + key, data[key]);
         });
         if (title) {
@@ -87,7 +86,7 @@ $(function() {
 
     function load(url, target, push) {
         $(document).trigger('pjax/start');
-        $.get(url, function(e, html) {
+        $.get(url, function (html) {
             body = body || document.querySelector('.body');
             title = title || document.querySelector('title');
             div.innerHTML = html;
