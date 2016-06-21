@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     var config = {
             currentW: 0,
             currentH: 0
@@ -31,12 +31,12 @@ $(function () {
     function getClassList(dom) {
         return dom.classList || (dom.getAttribute('class') || '').split(' ');
     }
-    (function () {
+    (function() {
         var INTRO = window.INTRO = {
             intro: null,
             init: init,
             arcouno: arcouno,
-            arc: function (a, b, c, d) {
+            arc: function(a, b, c, d) {
                 var angle = c;
                 var coords = this.toCoords(a, b, angle);
                 var path = "M " + coords[0] + " " + coords[1];
@@ -47,7 +47,7 @@ $(function () {
                 }
                 return path;
             },
-            toCoords: function (a, b, c) {
+            toCoords: function(a, b, c) {
                 var d = c / 180 * Math.PI,
                     e = a[0] + Math.cos(d) * b,
                     f = a[1] + Math.sin(d) * b;
@@ -78,17 +78,15 @@ $(function () {
             //    });
             line.animate({
                 path: "M 0," + config.currentH + " L " + halfWidth + "," + halfHeight
-            }, 1000, ">", function () {
+            }, 1000, ">", function() {
                 //return;
                 INTRO.arcouno();
                 line.animate({
                     path: "M " + halfWidth + "," + halfHeight + "L " + halfWidth + "," + halfHeight
-                }, 1e3, ">", function () {
-                });
+                }, 1e3, ">", function() {});
                 circleSmall.animate({
                     r: "72"
-                }, 1800, ">", function () {
-                });
+                }, 1800, ">", function() {});
                 //setTimeout(function() {
                 //    circleBig.animate({
                 //        r: "92"
@@ -113,8 +111,7 @@ $(function () {
                     r: radiusintro + 10,
                     "stroke-width": 41,
                     stroke: '#FFF'
-                }, 1e3, ">", function () {
-                });
+                }, 1e3, ">", function() {});
                 radiusintro += 40;
                 if (radiusintro < halfWidth + 150) {
                     setTimeout(d, 50);
@@ -122,11 +119,11 @@ $(function () {
                     $('#logo').addClass('active');
                     $('.logo_top').addClass('active');
                     //INTRO.intro.clear();
-                    setTimeout(function () {
+                    setTimeout(function() {
                         BridgeWheel.start();
                     }, 500);
                     return;
-                    setTimeout(function () {
+                    setTimeout(function() {
                         function a() {
                             var c = circleSmall.clone().attr({
                                 transform: "r" + rot + ",151,156t0,-10"
@@ -134,10 +131,9 @@ $(function () {
                             c.animate({
                                 transform: "r" + rot + ",151,156t0,0s0.9",
                                 opacity: 0
-                            }, 2e3, "elastic", function () {
-                            });
+                            }, 2e3, "elastic", function() {});
                             if (350 > rot) {
-                                setTimeout(function () {
+                                setTimeout(function() {
                                     a()
                                 }, 20);
                                 rot += 10;
@@ -176,17 +172,16 @@ $(function () {
             }, 4000);
         }
     })();
-    (function () {
+    (function() {
         var BridgeWheel = window.BridgeWheel = {
             first: true,
             sourceArr: [],
             imgAll: [],
-            init: function () {
+            init: function() {
                 INTRO.init();
             },
-            evHandlers: function () {
-            },
-            start: function () {
+            evHandlers: function() {},
+            start: function() {
                 BridgeWheel.resize();
                 var paper = new Raphael("bridge_plus_wheel", 2000, 1000);
                 paper.wheel(440, vmvideos.slice(32, 51), 2, vmvideos, [], additionInfo);
@@ -194,98 +189,91 @@ $(function () {
             resize: resizeWheel
         };
     })();
-    $(window).on('resize', function () {
+    $(window).on('resize', function() {
         resize();
         BridgeWheel.resize();
     });
     $(document)
-        .on('wheel/show', function () {
+        .on('wheel/show', function() {
             var wheel_text = $('.wheel_text');
             var wheel = $('.main_page_wheel');
             var bottom = $('.main_page_bottom');
             var right = $('.main_page_right');
-            $(document)
-                .on('show_group_desc', function (e, svg_group, klass) {
-                    wheel_text
-                        .hide()
-                        .each(function () {
-                            if ($(this).hasClass(klass)) {
-                                $(this).show();
-                            }
-                        });
-                })
-                .on('hide_group_desc', function (e, svg_group, klass) {
-                    wheel_text
-                        .each(function () {
-                            if ($(this).hasClass(klass)) {
-                                $(this).hide();
-                            }
-                        });
-                })
-                .on('show_wheel', function () {
-                    wheel
-                        .animate({
-                            top: 0,
-                            left: 0
-                        }, 500);
-                    bottom
-                        .animate({
-                            top: '100%',
-                            left: 0
-                        }, 500);
-                    right
-                        .animate({
-                            left: '100%'
-                        }, 500);
-                })
-                .on('show_content', function () {
-                    wheel
-                        .animate({
-                            top: '-100%',
-                            left: 0
-                        }, 500);
-                    bottom
-                        .animate({
-                            top: 0,
-                            left: 0
-                        }, 500);
-                    right
-                        .animate({
-                            left: '100%'
-                        }, 500);
-                })
-                .on('show_right', function () {
-                    wheel
-                        .animate({
-                            left: '-100%'
-                        }, 500);
-                    bottom
-                        .animate({
-                            left: '-100%'
-                        }, 500);
-                    right
-                        .animate({
-                            left: 0
-                        }, 500);
-                });
             $('.svg_group')
-                .hover(function () {
+                .hover(function() {
                     $(document).trigger('show_group_desc', getClassList(this));
-                }, function () {
+                }, function() {
                     $(document).trigger('hide_group_desc', getClassList(this));
                 })
-                .on('click', function () {
+                .on('click', function() {
                     $(document).trigger('show_content', getClassList(this));
                 });
         })
-        .on('click', '.logo_right', function () {
+        .on('click', '.logo_right', function() {
             $(document).trigger('show_right');
         })
-        // .on('click', '.main_page_right', function() {
-        //     $(document).trigger('show_wheel');
-        // })
-        .on('click', '.main_page_bottom', function () {
-            // $(document).trigger('show_wheel');
+        .on('show_group_desc', function(e, svg_group, klass) {
+            wheel_text
+                .hide()
+                .each(function() {
+                    if ($(this).hasClass(klass)) {
+                        $(this).show();
+                    }
+                });
+        })
+        .on('hide_group_desc', function(e, svg_group, klass) {
+            wheel_text
+                .each(function() {
+                    if ($(this).hasClass(klass)) {
+                        $(this).hide();
+                    }
+                });
+        })
+        .on('show_wheel', function() {
+            wheel
+                .animate({
+                    top: 0,
+                    left: 0
+                }, 500);
+            bottom
+                .animate({
+                    top: '100%',
+                    left: 0
+                }, 500);
+            right
+                .animate({
+                    left: '100%'
+                }, 500);
+        })
+        .on('show_content', function() {
+            wheel
+                .animate({
+                    top: '-100%',
+                    left: 0
+                }, 500);
+            bottom
+                .animate({
+                    top: 0,
+                    left: 0
+                }, 500);
+            right
+                .animate({
+                    left: '100%'
+                }, 500);
+        })
+        .on('show_right', function() {
+            wheel
+                .animate({
+                    left: '-100%'
+                }, 500);
+            bottom
+                .animate({
+                    left: '-100%'
+                }, 500);
+            right
+                .animate({
+                    left: 0
+                }, 500);
         });
     resize();
     BridgeWheel.init();
