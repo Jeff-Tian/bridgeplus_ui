@@ -203,3 +203,41 @@
 #index-footer .justify.aligned {
     text-align: justify;
 }
+
+#index-footer .right.aligned {
+    text-align: right;
+}
+
+#index-footer ul.horizontal {
+    list-style-type: none;
+    display: inline-block;
+}
+
+#index-footer ul.horizontal li {
+    float: left;
+    margin-right: 10px;
+}
+
+#index-footer ul.horizontal li:last-child {
+    margin-right: 0;
+}
+
+#index-footer ul.horizontal li:last-child:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+
+#index-footer .ui.embed {
+    position: relative;
+    max-width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+}
+
+#index-footer .ui.embed video {
+    width: 100% !important;
+    height: auto !important;
+}

@@ -161,3 +161,55 @@
     padding: 10px 30px 50px 30px;
     border: solid 1px #ccc;
 }
+
+#index-footer ul.horizontal.about-us.icon.links a {
+    text-decoration: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.about-us {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/aboutus.png');
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.about-us:hover,
+#index-footer ul.horizontal.about-us.icon.links a.about-us.active {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/aboutus_r.png');
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.team {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/Team.png');
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.team:hover,
+#index-footer ul.horizontal.about-us.icon.links a.team.active {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/Team_r.png');
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.video {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/bVideo.png');
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.video:hover,
+#index-footer ul.horizontal.about-us.icon.links a.video.active {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/bVideo_r.png');
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.contact-us {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/mail.png');
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.contact-us:hover,
+#index-footer ul.horizontal.about-us.icon.links a.contact-us.active {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/mail_r.png');
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.join-us {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/Join.png');
+}
+
+#index-footer ul.horizontal.about-us.icon.links a.join-us:hover,
+#index-footer ul.horizontal.about-us.icon.links a.join-us.active {
+    background-image: url('/bower/bridgeplus_ui/public/images/about-us/Join_r.png');
+}

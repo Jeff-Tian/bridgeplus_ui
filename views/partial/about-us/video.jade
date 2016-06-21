@@ -1,2 +1,24 @@
-div.ui.right.aligned.header
-    img(src="/bower/bridgeplus_ui/public/images/about-us/aboutus.png")
+div.right.aligned
+    h2
+        ul.horizontal.about-us.icon.links
+            li
+                a.about-us(href="/portal/zh/about-us", title="关于我们")
+            li
+                a.team(href="")
+            li
+                a.video
+            li
+                a.contact-us
+            li
+                a.join-us
+    br
+
+    div.ui.embed
+        br
+        br
+        video(width="320", height="240", controls)
+            source(src="http://blob.bridgeplus.cn/video/mp4/zh/Marksimos%E4%BB%8B%E7%BB%8D.mp4", type="video/mp4")
+            object#flowplayer(data="http://blob.bridgeplus.cn/flowplayer-3.2.2.swf", type="application/x-shockwave-flash", width="320", height="240")
+                param(name="movie", value="blob.bridgeplus.cn/flowplayer-3.2.2.swf")
+                param(name="allowfullscreen", value="true")
+                param(name="flashvars", value="config={'clip':{'url':'http://blob.bridgeplus.cn/EF_HD.mp4','autoPlay':false}}")
