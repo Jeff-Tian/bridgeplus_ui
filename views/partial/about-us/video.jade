@@ -1,16 +1,6 @@
 div.right.aligned
-    h2
-        ul.horizontal.about-us.icon.links
-            li
-                a.about-us(href="/portal/zh/about-us", title="关于我们")
-            li
-                a.team(href="")
-            li
-                a.video
-            li
-                a.contact-us
-            li
-                a.join-us
+    include ../../mixin/icon-switcher
+    + icon-switcher('about-us')
     br
 
     div.ui.embed
