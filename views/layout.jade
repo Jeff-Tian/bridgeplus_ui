@@ -10,6 +10,8 @@ html
         link(rel='stylesheet', href='/bower/bridgeplus_ui/public/stylesheets/page/index_style.css')
         link(rel="stylesheet", href="/bower/bridgeplus_ui/public/stylesheets/page/index_carousel.css")
         link(rel="stylesheet", href="/bower/bridgeplus_ui/public/stylesheets/page/index_modal.css")
+        link(rel="stylesheet", href="/bower/bridgeplus_ui/public/bower/owl.carousel/dist/assets/owl.carousel.min.css")
+        link(rel="stylesheet", href="/bower/bridgeplus_ui/public/bower/owl.carousel/dist/assets/owl.theme.default.min.css")
         block header
     body
         include partial/main_page_top
@@ -30,4 +32,23 @@ html
         script(src='/bower/bridgeplus_ui/public/scripts/event-listener.js')
         script(src='/bower/bridgeplus_ui/public/scripts/carousel.js')
         script(src='/bower/bridgeplus_ui/public/scripts/modal.js')
+        script(src='/bower/bridgeplus_ui/public/bower/owl.carousel/dist/owl.carousel.min.js')
+        script.
+            function prepareCarousel() {
+                $('.owl-carousel').owlCarousel({
+                    items: 1,
+                    lazyLoad: true,
+                    loop: true,
+                    autoplayTimeout: 8000,
+                    autoplayHoverPause: true,
+                    nav: true,
+                    navRewind: true,
+                    smartSpeed: 500,
+                    navText: ['<i class="" style="font-family: cursive;">&lt;</i>', '<i class="" style="font-family: cursive;">&gt;</i>'],
+                    autoHeight: true
+                });
+            }
+
+            prepareCarousel();
+
         block js

@@ -1,12 +1,13 @@
 extends ../../layout
 block header
-    link(rel="stylesheet", href="/bower/bridgeplus_ui/public/bower/owl.carousel/dist/assets/owl.carousel.min.css")
-    link(rel="stylesheet", href="/bower/bridgeplus_ui/public/bower/owl.carousel/dist/assets/owl.theme.default.min.css")
 block content
     include ../../mixin/team-members
+    include ../../mixin/icon-switcher
     #index-footer
         section#bottom
             div.container
+                div.right.aligned.pull-right
+                    + icon-switcher('team')
                 h1(style="margin-left: 80px;") 团队成员
                 div.owl-carousel.owl-theme
                     div.horizontal.very.relaxed.container
@@ -56,19 +57,3 @@ block content
                     div.container
                         p 3
 block js
-    script(src='/bower/bridgeplus_ui/public/bower/owl.carousel/dist/owl.carousel.min.js')
-    script.
-        $(function () {
-            $('.owl-carousel').owlCarousel({
-                items: 1,
-                lazyLoad: true,
-                loop: true,
-                autoplayTimeout: 8000,
-                autoplayHoverPause: true,
-                nav: true,
-                navRewind: true,
-                smartSpeed: 500,
-                navText: ['<i class="" style="font-family: cursive;">&lt;</i>', '<i class="" style="font-family: cursive;">&gt;</i>'],
-                autoHeight: true
-            });
-        });
