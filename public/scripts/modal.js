@@ -20,6 +20,8 @@ $(document).ready(function () {
             .hide()
         ;
 
+        $('.mask.darker').css('background-color', 'rgba(0, 0, 0, 0.8)');
+
         console.log('hided modals: ', $('.mask').length);
 
         // Show modal on click

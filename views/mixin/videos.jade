@@ -1,6 +1,6 @@
 mixin video(video)
     if video
-        div.ui.embed
+        div.ui.embed(data-modal-selector=".mask.#{video.className}")
             br
             video(width="160", height="120", controls="")
                 source(src="#{video.mp4}", type="video/mp4")

@@ -1,3 +1,16 @@
+mixin modalVideo(video)
+    div.mask.darker&attributes(attributes)
+        div.center.middle.shadow-box.transparent
+            div.close.button.white.outline &times;
+            div.very.padded.container
+                div.ui.embed(data-modal-selector=".mask.#{video.className}")
+                    video(width="320", height="240", controls="")
+                        source(src="#{video.mp4}", type="video/mp4")
+                        object#flowplayer(data="http://blob.bridgeplus.cn/flowplayer-3.2.2.swf", type="application/x-shockwave-flash", width="320", height="240")
+                            param(name="movie", value="blob.bridgeplus.cn/flowplayer-3.2.2.swf")
+                            param(name="allowfullscreen", value="true")
+                            param(name="flashvars", value="config={'clip':{'url':'#{video.mp4}','autoPlay':false}}")
+
 mixin modalBox(image, title, description, content)
     div.mask&attributes(attributes)
         div.center.middle.shadow-box

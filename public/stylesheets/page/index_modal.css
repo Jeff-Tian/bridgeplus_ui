@@ -18,6 +18,8 @@
     justify-content: center;
 
     padding-left: 10000000px;
+
+    z-index: 9999999;
 }
 
 #index-footer .shadow-box {
@@ -68,6 +70,12 @@
     background-color: #A43635;
 }
 
+#index-footer .white.outline {
+    color: white;
+    border: solid 1px white;
+    border-radius: 50%;
+}
+
 #index-footer .padded {
     padding: 50px 15px 30px 25px;
 }
@@ -80,4 +88,10 @@
 
 #index-footer .right-margin {
     margin-right: 15px;
+}
+
+#index-footer .shadow-box.transparent {
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
 }
