@@ -1,0 +1,25 @@
+mixin teamMember(member)
+    if member
+        div.row
+            div.col-md-4
+                p &nbsp;
+                img.circle.image(src="#{member.picture}")
+            div.col-md-8
+                h2(style="margin-bottom: 5px;")
+                    span.name #{member.name}
+                    | &nbsp;
+                    span.title(style="font-size: small; font-weight: normal;") #{member.title}
+                hr.red.solid.line
+                p #{member.intro}
+
+mixin teamMembers(members)
+    div.row
+        div.col-md-6
+            + teamMember(members[0])
+        div.col-md-6
+            + teamMember(members[1])
+    div.row
+        div.col-md-6
+            + teamMember(members[2])
+        div.col-md-6
+            + teamMember(members[3])

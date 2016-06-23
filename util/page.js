@@ -13,5 +13,10 @@ module.exports = {
         zh: {
             title: '加入我们'
         }
+    },
+    'team': {
+        zh: {
+            title: '团队成员'
+        }
     }
 };

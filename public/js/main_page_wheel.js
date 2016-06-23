@@ -285,6 +285,9 @@ $(function () {
         })
         .on('pjax/done', document, function () {
             $(document).trigger('show_content', null);
+            if (typeof prepareCarousel === 'function') {
+                setTimeout(prepareCarousel, 100);
+            }
         })
     ;
     resize();
