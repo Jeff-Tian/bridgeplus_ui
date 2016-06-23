@@ -8,5 +8,10 @@ module.exports = {
         zh: {
             title: '关于我们'
         }
+    },
+    'team': {
+        zh: {
+            title: '团队成员'
+        }
     }
 };
