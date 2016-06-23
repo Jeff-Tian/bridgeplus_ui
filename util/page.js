@@ -8,5 +8,10 @@ module.exports = {
         zh: {
             title: '关于我们'
         }
+    },
+    'join-us': {
+        zh: {
+            title: '加入我们'
+        }
     }
 };
