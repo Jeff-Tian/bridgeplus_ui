@@ -6,9 +6,10 @@ block content
     #index-footer
         section#bottom
             div.container
-                div.right.aligned.pull-right
-                    + icon-switcher('team')
-                h1(style="margin-left: 80px;") 团队成员
+                div.horizontal.very.relaxed.container
+                    div.right.aligned.pull-right
+                        + icon-switcher('team')
+                    h2.big-title 团队成员
                 div.owl-carousel.owl-theme
                     div.horizontal.very.relaxed.container
                         + teamMembers([{
@@ -54,6 +55,4 @@ block content
                             title: '技术开发总监',
                             intro: 'NET开发、数据库使用与系统架构专家,曾 供职于明基,英孚等多家跨国外企资深工程师'
                         }])
-                    div.container
-                        p 3
 block js

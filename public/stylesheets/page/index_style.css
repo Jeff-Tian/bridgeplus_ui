@@ -291,3 +291,8 @@
     right: 0;
     top: 45%;
 }
+
+#index-footer .clear {
+    clear: both;
+    float: none;
+}
