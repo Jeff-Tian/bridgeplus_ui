@@ -3,9 +3,10 @@
     -webkit-transition: opacity 100ms ease-in;
     -moz-transition: opacity 100ms ease-in;
     -ms-transition: opacity 100ms ease-in;
-    transition: opacity 100ms ease-in
+    transition: opacity 100ms ease-in;
+    overflow: auto;
 }
 
 .body.hide {
-    opacity: 0
+    opacity: 0;
 }

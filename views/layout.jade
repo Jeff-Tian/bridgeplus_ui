@@ -51,4 +51,18 @@ html
 
             prepareCarousel();
 
+            function resizeBody() {
+                var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+                var t = $('.to-top').outerHeight();
+                var f = $('#footer').outerHeight();
+                var r = h - t - f;
+                $('#index-footer').parent().height(r);
+            }
+
+            $(document)
+                    .ready(resizeBody)
+                    .on('resize', resizeBody)
+            ;
+
         block js
