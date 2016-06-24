@@ -9,6 +9,11 @@ module.exports = {
             title: '关于我们'
         }
     },
+    'contact-us': {
+        zh: {
+            title: '联系我们'
+        }
+    },
     'join-us': {
         zh: {
             title: '加入我们'
