@@ -280,6 +280,10 @@
     padding-right: 80px;
 }
 
+#index-footer .horizontal.very.padded.container {
+    padding: 15px 30px;
+}
+
 #index-footer .owl-prev {
     position: absolute;
     left: 0;
@@ -290,4 +294,9 @@
     position: absolute;
     right: 0;
     top: 45%;
+}
+
+#index-footer .clear {
+    clear: both;
+    float: none;
 }

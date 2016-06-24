@@ -1,0 +1,48 @@
+extends ../../layout
+block header
+block content
+    include ../../mixin/videos
+    include ../../mixin/icon-switcher
+    #index-footer
+        section#bottom
+            div.container
+                div.horizontal.very.relaxed.container
+                    div.right.aligned.pull-right
+                        + icon-switcher('video')
+                        div.clear
+                    h2.big-title 视频介绍
+                div.owl-carousel.owl-theme
+                    div.horizontal.very.relaxed.container
+                        + videos([{
+                            mp4: '',
+                            title: 'B+ 企业宣传视频',
+                            className: 'corp'
+                        }, {
+                            mp4: 'http://blob.bridgeplus.cn/video/mp4/zh/Marksimos%E4%BB%8B%E7%BB%8D.mp4',
+                            title: 'Marksimos介绍',
+                            className: 'marksimos-intro'
+                        }, {
+                            mp4: 'http://blob.bridgeplus.cn/video/mp4/zh/%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A.mp4',
+                            title: 'Marksimos分析报告',
+                            className: 'marksimos-report'
+                        }, {
+                            mp4: 'http://7xlpjd.com1.z0.glb.clouddn.com/video/mp4/zh/%E5%9B%A2%E9%98%9F.mov.mp4',
+                            title: 'Marksimos团队',
+                            className: 'marksimos-team'
+                        }, {
+                            mp4: 'http://7xlpjd.com1.z0.glb.clouddn.com/video/mp4/zh/%E6%88%98%E7%95%A5.mp4',
+                            title: 'Marksimos战略',
+                            className: 'marksimos-strategy'
+                        }, {
+                            mp4: 'http://7xlpjd.com1.z0.glb.clouddn.com/video/mp4/zh/%E5%81%9A%E5%86%B3%E7%AD%96.mp4',
+                            title: 'Marksimos做决策',
+                            className: 'marksimos-decision'
+                        }])
+
+        include ../../mixin/footer
+        + modalVideo({
+            mp4: 'http://blob.bridgeplus.cn/video/mp4/zh/Marksimos%E4%BB%8B%E7%BB%8D.mp4',
+            title: 'Marksimos介绍',
+            className: 'marksimos-intro'
+        })(class="corp")
+block js

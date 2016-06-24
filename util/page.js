@@ -18,5 +18,10 @@ module.exports = {
         zh: {
             title: '团队成员'
         }
+    },
+    video: {
+        zh: {
+            title: '视频介绍'
+        }
     }
 };

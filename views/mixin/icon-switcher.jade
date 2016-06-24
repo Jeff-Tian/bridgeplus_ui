@@ -5,14 +5,14 @@ mixin link(activePage, className, href, title)
         a(href="#{href}", title="#{title}", class="#{className}")
 
 mixin icon-switcher(active)
-    h2
+    h2(style="margin-bottom:0;")
         ul.horizontal.about-us.icon.links
             li
                 + link(active, 'about-us', '/portal/zh/about-us', '关于我们')
             li
                 + link(active, 'team', '/portal/zh/team', '团队成员')
             li
-                + link(active, 'video', '','视频介绍')
+                + link(active, 'video', '/portal/zh/video','视频介绍')
             li
                 + link(active, 'contact-us', '', '联系我们')
             li
