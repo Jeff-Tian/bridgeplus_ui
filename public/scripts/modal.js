@@ -38,4 +38,8 @@ $(document).ready(function () {
     }
 
     prepare();
+
+    window.modals = {
+        prepare: prepare
+    };
 });

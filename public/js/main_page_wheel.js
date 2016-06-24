@@ -288,6 +288,10 @@ $(function () {
             if (typeof prepareCarousel === 'function') {
                 setTimeout(prepareCarousel, 100);
             }
+
+            if (typeof modals.prepare === 'function') {
+                setTimeout(modals.prepare, 100);
+            }
         })
     ;
     resize();
