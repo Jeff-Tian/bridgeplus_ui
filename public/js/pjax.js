@@ -59,11 +59,17 @@ $(function () {
         $(document).trigger('pjax/refresh');
         body = body || document.querySelector('.body');
         title = title || document.querySelector('title');
-        body.classList.add('hide');
-        setTimeout(function () {
-            body.innerHTML = bodyHTML;
-            body.classList.remove('hide');
-        }, 100);
+
+        // var prevBody = document.createElement('div');
+        // prevBody.innerHTML = body.innerHTML;
+        // $(prevBody).css({
+        //     position: 'absolute',
+        //     left: '-90%',
+        //     right: '90%'
+        // });
+        // $(prevBody).insertBefore($(body));
+
+        body.innerHTML = bodyHTML;
         Object.keys(data).forEach(function (key) {
             body.setAttribute('data-' + key, data[key]);
         });

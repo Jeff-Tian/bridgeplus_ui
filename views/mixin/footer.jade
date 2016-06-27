@@ -3,7 +3,7 @@ mixin modalVideo(video)
         div.center.middle.shadow-box.transparent(style="max-width: 750px;")
             div.close.button.white.outline &times;
             div.horizontal.very.padded.container
-                video(width="640", height="480", controls)
+                video(width="640", height="480", controls, preload="none")
                     source(src="#{video.mp4}", type="video/mp4")
                     object(data="#{video.mp4}", width="640", height="480")
                         embed(src="#{video.mp4}", width="640", height="480")

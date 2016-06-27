@@ -1,13 +1,9 @@
 mixin video(video)
     if video
-        div.ui.embed(data-modal-selector=".mask.#{video.className}", style="border: solid 1px gray;")
+        div(data-modal-selector=".mask.#{video.className}", style="border: solid 1px gray;")
             br
-            //video(width="160", height="120", controls="")
-            //    source(src="#{video.mp4}", type="video/mp4")
-            //    object#flowplayer(data="http://blob.bridgeplus.cn/flowplayer-3.2.2.swf", type="application/x-shockwave-flash", width="320", height="240")
-            //        param(name="movie", value="blob.bridgeplus.cn/flowplayer-3.2.2.swf")
-            //        param(name="allowfullscreen", value="true")
-            //        param(name="flashvars", value="config={'clip':{'url':'#{video.mp4}','autoPlay':false}}")
+            //video(width="160", height="120", controls, style="width: 100%; height: 100%;")
+                source(src="#{video.mp4}", type="video/mp4")
             img(src="/bower/bridgeplus_ui/public/images/ABOUT.png")
         p
             strong #{video.title}
