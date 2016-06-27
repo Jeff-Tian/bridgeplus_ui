@@ -28,5 +28,20 @@ module.exports = {
         zh: {
             title: '视频介绍'
         }
+    },
+    'student-portal': {
+        zh: {
+            title: '我是学生'
+        }
+    },
+    'mentor-portal': {
+        zh: {
+            title: '我是导师'
+        }
+    },
+    'hr-portal': {
+        zh: {
+            title: '我是 HR'
+        }
     }
 };

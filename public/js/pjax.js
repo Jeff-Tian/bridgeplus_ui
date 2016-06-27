@@ -5,7 +5,7 @@
         var currentIndex = slidePages.indexOf(current);
         var nextIndex = slidePages.indexOf(next);
 
-        if (currentIndex === nextIndex) {
+        if (currentIndex < 0 || nextIndex < 0 || currentIndex === nextIndex) {
             return inPlaceRefresh;
         }
 
@@ -31,12 +31,12 @@
     }
 
     function returnToOriginalPos($next) {
-        $next.animate({
+        return $next.animate({
             left: '0',
             right: '0'
         }, 'slow', function () {
             $next.css('position', 'relative');
-        });
+        }).promise();
     }
 
     function placeToLeft($next) {
@@ -76,18 +76,28 @@
         then && then($prevBody, $body);
     }
 
+    function fixFooter() {
+        $('#footer').css('position', 'fixed');
+    }
+
+    function recoverFooter() {
+        $('#footer').css('position', 'relative');
+    }
+
 
     function slideToLeft($next, $prev) {
+        fixFooter();
         placeToRight($next);
         moveToLeft($prev);
-        returnToOriginalPos($next);
+        returnToOriginalPos($next).done(recoverFooter);
     }
 
 
     function slideToRight($next, $prev) {
+        fixFooter();
         placeToLeft($next);
         moveToRight($prev);
-        returnToOriginalPos($next);
+        returnToOriginalPos($next).done(recoverFooter);
     }
 
     window.animationDirector = {
@@ -156,7 +166,7 @@ $(function () {
         load(location.href);
     });
 
-    $(document).on('navigate', function (url) {
+    $(document).on('navigate', function (e, url) {
         load(url, null, true);
     });
 
@@ -184,6 +194,7 @@ $(function () {
 
         setData(data, titleHTML);
         $(document).trigger('pjax/done');
+        console.log('pjax/done');
     }
 
     function slideLeftToRight(bodyHTML, titleHTML, data) {

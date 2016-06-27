@@ -1,0 +1,44 @@
+extends ../../layout
+include ../../mixin/footer
+block content
+    #index-footer
+        section#bottom
+            div.container
+                div.row(style="position: relative;")
+                    div.col-md-1
+                    div.col-md-5
+                        div.group-description(style="padding-right: 30px;")
+                            + description('导师辅导平台', '经验与知识共享', '各行各业的大咖导师在线为大学生提供咨询辅导，为他们指点迷津，让经验与知识有效地创造价值。', '让未来不再迷茫', '大学生通过和导师的交流，打破信息壁垒，便利、精准地获取需要的经验和知识，明确方向，促进个人发展。', {
+                                text: '我是导师...',
+                                button: '进入导师平台',
+                                link: 'javascript: void(0);'
+                            })
+                    div.col-md-3.carousel-items
+                        + carousel
+                            + carouselItem("/bower/bridgeplus_ui/public/images/gif/teacher/Joseph.gif", "HCD 合得合伙人兼首席财务官", "周国元 Joseph Zhou")(class="active", data-modal-selector=".mask.zhou-guo-yuan")
+                            + carouselItem("/bower/bridgeplus_ui/public/images/gif/teacher/Anil.gif", "test again", "Anil")(data-modal-selector=".mask.anil")
+                            + carouselItem("/bower/bridgeplus_ui/public/images/gif/teacher/Oliver.gif", "test", "Oliver")(data-modal-selector=".mask.oliver")
+
+                    div.col-md-3.services
+                        + services('热门主题：', [{
+                            link: 'javascript: void(0);',
+                            text: '商战点评',
+                            image: '/bower/bridgeplus_ui/public/images/services/m1.png'
+                        }, {
+                            link: 'javascript: void(0);',
+                            text: '人生辅导',
+                            image: "/bower/bridgeplus_ui/public/images/services/m2.png"
+                        }, {
+                            link: 'javascript: void(0);',
+                            text: '职涯规划',
+                            image: '/bower/bridgeplus_ui/public/images/services/m3.png'
+                        }, {
+                            link: 'javascript: void(0);',
+                            text: '行业经验',
+                            image: "/bower/bridgeplus_ui/public/images/services/m4.png"
+                        }, {
+                            link: 'javascript: void(0);',
+                            text: '求职技巧',
+                            image: '/bower/bridgeplus_ui/public/images/services/m5.png'
+                        }])
+        include ../../partial/footer/modals

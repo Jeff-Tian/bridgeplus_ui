@@ -1,13 +1,17 @@
 $(document).ready(function () {
     function prepare() {
         $('.mask .text').each(function () {
-            var $this = $(this);
-            var $image = $this.next('.image');
-            $image.load(function () {
+            function adjustSize() {
                 console.log('image load', this);
                 $this.css('width', $image[0].width + 'px');
                 $this.css('min-height', $image[0].height + 'px');
-            });
+            }
+
+            var $this = $(this);
+            var $image = $this.next('.image');
+
+            adjustSize();
+            $image.load(adjustSize);
         });
 
         $('.mask .close.button').click(function () {
@@ -44,6 +48,11 @@ $(document).ready(function () {
     }
 
     prepare();
+
+
+    $(document).on('pjax/done', function () {
+        setTimeout(prepare, 100);
+    });
 
     window.modals = {
         prepare: prepare

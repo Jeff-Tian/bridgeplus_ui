@@ -1,0 +1,44 @@
+extends ../../layout
+include ../../mixin/footer
+block content
+    #index-footer
+        section#bottom
+            div.container
+                div.row(style="position: relative;")
+                    div.col-md-1
+                    div.col-md-5
+                        div.group-description(style="padding-right: 30px;")
+                            + description('体验式学习平台', '全球领先的商战模拟', '游戏者在逼真、无风险的虚拟环境下运营一家公司。通过激励团队分享与体验式学习的方式，鼓励学员锻炼管理者的视角，全方位了解整个市场及其运作方式。', '高效的学习方式', '根据美国缅因州国家训练实验室提出的学习金字塔理论，通过体验式学习的效率可以达到75%，远远高于传统“说教式”的被动学习方式。', {
+                                text: '我是学生...',
+                                button: '进入学生平台',
+                                link: '/study-center/'
+                            })
+                    div.col-md-3.carousel-items
+                        + carousel
+                            + carouselItem("/bower/bridgeplus_ui/public/images/gif/student/Heping.gif", "东北大学 机械工程", "何平")(class="active", data-modal-selector=".mask.he-ping")
+                            + carouselItem("/bower/bridgeplus_ui/public/images/gif/student/Katrina.gif", "华侨大学 工商管理", "陈翠萍")(data-modal-selector=".mask.chen-cuiping")
+                            + carouselItem("/bower/bridgeplus_ui/public/images/gif/student/Katherine.gif", "华东师范大学 会计学 ", "卓雪")(data-modal-selector=".mask.zhuo-xue")
+
+                    div.col-md-3.services
+                        + services('能力提升：', [{
+                            link: 'javascript: void(0);',
+                            text: '数据分析',
+                            image: '/bower/bridgeplus_ui/public/images/services/s1.png'
+                        }, {
+                            link: 'javascript: void(0);',
+                            text: '团队合作',
+                            image: "/bower/bridgeplus_ui/public/images/services/s2.png"
+                        }, {
+                            link: 'javascript: void(0);',
+                            text: '战略思维',
+                            image: '/bower/bridgeplus_ui/public/images/services/s3.png'
+                        }, {
+                            link: 'javascript: void(0);',
+                            text: '商业洞察',
+                            image: "/bower/bridgeplus_ui/public/images/services/s4.png"
+                        }, {
+                            link: 'javascript: void(0);',
+                            text: '快速学习',
+                            image: '/bower/bridgeplus_ui/public/images/services/s5.png'
+                        }])
+        include ../../partial/footer/modals

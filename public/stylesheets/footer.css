@@ -14,7 +14,7 @@
     color: #333;
     padding: 20px 30px 15px 60px;
     font-family: 'Open Sans', sans-serif;
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
     width: 100%;
     -webkit-box-sizing: border-box;

@@ -214,7 +214,23 @@ $(function () {
                     $(document).trigger('hide_group_desc', getClassList(this));
                 })
                 .on('click', function () {
-                    $(document).trigger('show_content', getClassList(this));
+                    var g = getClassList(this);
+                    var url;
+
+                    if (g.value.indexOf('svg_group_0') >= 0) {
+                        url = '/portal/zh/student-portal';
+                    }
+
+                    if (g.value.indexOf('svg_group_1') >= 0) {
+                        url = '/portal/zh/mentor-portal';
+                    }
+
+                    if (g.value.indexOf('svg_group_2') >= 0) {
+                        url = '/portal/zh/hr-portal';
+                    }
+
+                    // $(document).trigger('show_content', g);
+                    $(document).trigger('navigate', url);
                 });
         })
         .on('click', '.logo_right', function () {
@@ -268,6 +284,8 @@ $(function () {
                 .animate({
                     left: '100%'
                 }, 500);
+
+            resizeBody();
         })
         .on('show_right', function () {
             wheel
@@ -297,6 +315,24 @@ $(function () {
     resize();
     BridgeWheel.init();
     BridgeWheel.evHandlers();
+
+    function resizeBody() {
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+        console.log(h);
+
+        var t = $('.to-top').outerHeight();
+        console.log(t);
+        var f = $('#footer').outerHeight();
+        console.log(f);
+        var r = h - t - f;
+        console.log(r);
+        $('#index-footer').parent().height(r);
+    }
+
+    $(document)
+        .on('resize', resizeBody)
+    ;
 
     if (location.pathname !== '/') {
         $(document).trigger('show_content');
