@@ -5,6 +5,8 @@ mixin modalVideo(video)
             div.horizontal.very.padded.container
                 video(width="640", height="480", controls)
                     source(src="#{video.mp4}", type="video/mp4")
+                    object(data="#{video.mp4}", width="640", height="480")
+                        embed(src="#{video.mp4}", width="640", height="480")
 
 mixin modalBox(image, title, description, content)
     div.mask&attributes(attributes)

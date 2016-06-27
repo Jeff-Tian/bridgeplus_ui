@@ -11,7 +11,13 @@ $(document).ready(function () {
         });
 
         $('.mask .close.button').click(function () {
-            $(this).closest('.mask').hide();
+            var $this = $(this).closest('.mask');
+            $this.hide();
+
+            var $video = $this.find('video');
+            if ($video.length) {
+                $video[0].pause();
+            }
         });
 
         $('.mask')
