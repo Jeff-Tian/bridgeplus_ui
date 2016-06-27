@@ -6,10 +6,7 @@ block content
     #index-footer
         section#bottom
             div.container
-                div.horizontal.very.relaxed.container
-                    div.right.aligned.pull-right
-                        + icon-switcher('team')
-                    h2.big-title 团队成员
+                + footer-header('团队成员', 'team')
                 div.owl-carousel.owl-theme
                     div.horizontal.very.relaxed.container
                         + teamMembers([{

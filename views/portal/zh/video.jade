@@ -6,11 +6,7 @@ block content
     #index-footer
         section#bottom
             div.container
-                div.horizontal.very.relaxed.container
-                    div.right.aligned.pull-right
-                        + icon-switcher('video')
-                        div.clear
-                    h2.big-title 视频介绍
+                + footer-header('视频介绍', 'video')
                 div.owl-carousel.owl-theme
                     div.horizontal.very.relaxed.container
                         + videos([{

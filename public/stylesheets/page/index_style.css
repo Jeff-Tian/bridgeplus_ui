@@ -84,6 +84,15 @@
     padding-left: 15px;
 }
 
+#index-footer .col-md-7 {
+    width: 58.3333333333%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
 #index-footer .col-md-1 {
     width: 8.3333333%;
     float: left;
@@ -212,6 +221,18 @@
     font-weight: normal;
     font-size: 14pt;
     font-family: 'Microsoft YaHei', monospace;
+}
+
+#index-footer ul.footer-content {
+    margin: 0 0 0 0.7em;
+    padding: 0;
+    list-style-type: none;
+}
+
+#index-footer ul.footer-content li:before {
+    content: '-';
+    position: absolute;
+    margin-left: -0.7em;
 }
 
 #index-footer .strong-content {

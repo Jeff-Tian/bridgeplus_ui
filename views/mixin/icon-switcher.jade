@@ -17,3 +17,9 @@ mixin icon-switcher(active)
                 + link(active, 'contact-us', '/portal/zh/contact-us', '联系我们')
             li
                 + link(active, 'join-us', '/portal/zh/join-us', '加入我们')
+
+mixin footer-header(title, activeLink)
+    div.horizontal.very.relaxed.container
+        div.right.aligned.pull-right
+            + icon-switcher(activeLink)
+        h2.big-title #{title}

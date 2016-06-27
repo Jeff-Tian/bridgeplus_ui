@@ -3,10 +3,13 @@ include ../../mixin/footer
 block content
     #index-footer
         section#bottom
-            div.horizontal.very.relaxed.container
-                div.row(style="position: relative;")
-                    div.col-md-5
-                        div.group-description(style="padding-right: 30px;")
-                            include ../../partial/about-us/text
-                    div.col-md-7
-                        include ../../partial/about-us/video
+            div.container
+                include ../../mixin/icon-switcher
+                + footer-header('关于我们', 'about-us')
+                div.horizontal.very.relaxed.container
+                    div.row(style="position: relative;")
+                        div.col-md-5
+                            div.group-description(style="padding-right: 30px;")
+                                include ../../partial/about-us/text
+                        div.col-md-7
+                            include ../../partial/about-us/video

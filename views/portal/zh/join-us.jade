@@ -1,17 +1,20 @@
 extends ../../layout
 include ../../mixin/footer
+include ../../mixin/icon-switcher
+
 block content
     #index-footer
         section#bottom
             div.container
-                div.row(style="position: relative;")
-                    div.col-md-1
-                    div.col-md-5
-                        div.group-description(style="padding-right: 30px;")
-                            include ../../partial/join-us/text
-                    div.col-md-4
-                        div.group-description(style="padding-right: 30px;")
-                            include ../../partial/join-us/right-text
-                    div.col-md-2
-                        div.group-description
-                            include ../../partial/join-us/right-gif
+                + footer-header('加入我们', 'join-us')
+                div.horizontal.very.relaxed.container
+                    div.row(style="position: relative;")
+                        div.col-md-5
+                            div.group-description(style="padding-right: 30px;")
+                                include ../../partial/join-us/text
+                        div.col-md-5
+                            div.group-description(style="padding-right: 30px;")
+                                include ../../partial/join-us/right-text
+                        div.col-md-2
+                            div.group-description
+                                include ../../partial/join-us/right-gif

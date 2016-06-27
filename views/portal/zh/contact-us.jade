@@ -1,13 +1,16 @@
 extends ../../layout
 include ../../mixin/footer
+include ../../mixin/icon-switcher
+
 block content
     #index-footer
         section#bottom
             div.container
-                div.row(style="position: relative;")
-                    div.col-md-1
-                    div.col-md-6
-                        div.group-description(style="padding-right: 30px;")
-                            include ../../partial/contact-us/text
-                    div.col-md-5
-                        include ../../partial/contact-us/right-qrcode
+                + footer-header('联系我们', 'contact-us')
+                div.horizontal.very.relaxed.container
+                    div.row(style="position: relative;")
+                        div.col-md-7
+                            div.group-description(style="padding-right: 30px;")
+                                include ../../partial/contact-us/text
+                        div.col-md-5
+                            include ../../partial/contact-us/right-qrcode
