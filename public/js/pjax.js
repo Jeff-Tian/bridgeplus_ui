@@ -1,3 +1,104 @@
+(function () {
+    var slidePages = ['/portal/zh/about-us', '/portal/zh/team', '/portal/zh/video', '/portal/zh/contact-us', '/portal/zh/join-us'];
+
+    function getAnimation(current, next, inPlaceRefresh, slideLeftToRight, slideRightToLeft) {
+        var currentIndex = slidePages.indexOf(current);
+        var nextIndex = slidePages.indexOf(next);
+
+        if (currentIndex === nextIndex) {
+            return inPlaceRefresh;
+        }
+
+        return currentIndex < nextIndex ? slideLeftToRight : slideRightToLeft;
+    }
+
+    function placeToRight($next) {
+        $next.css({
+            position: 'absolute',
+            left: '100%',
+            right: '-100%'
+        });
+    }
+
+
+    function moveToLeft($prev) {
+        $prev.animate({
+            left: '-100%',
+            right: '100%'
+        }, 'slow', function () {
+            $prev.remove();
+        });
+    }
+
+    function returnToOriginalPos($next) {
+        $next.animate({
+            left: '0',
+            right: '0'
+        }, 'slow', function () {
+            $next.css('position', 'relative');
+        });
+    }
+
+    function placeToLeft($next) {
+        $next.css({
+            position: 'absolute',
+            left: '-100%',
+            right: '100%'
+        });
+    }
+
+
+    function moveToRight($prev) {
+        $prev.animate({
+            left: '100%',
+            right: '-100%'
+        }, 'slow', function () {
+            $prev.remove();
+        });
+    }
+
+
+    function cloneOldSlide(fromNode, then) {
+        var prevBody = document.createElement('div');
+        prevBody.innerHTML = fromNode.innerHTML;
+
+        var $prevBody = $(prevBody);
+        var $body = $(fromNode);
+
+        $prevBody.css({
+            position: 'absolute',
+            left: '0',
+            right: '0'
+        });
+
+        $prevBody.insertBefore($body);
+
+        then && then($prevBody, $body);
+    }
+
+
+    function slideToLeft($next, $prev) {
+        placeToRight($next);
+        moveToLeft($prev);
+        returnToOriginalPos($next);
+    }
+
+
+    function slideToRight($next, $prev) {
+        placeToLeft($next);
+        moveToRight($prev);
+        returnToOriginalPos($next);
+    }
+
+    window.animationDirector = {
+        returnToOriginalPos: returnToOriginalPos,
+        cloneOldSlide: cloneOldSlide,
+        getAnimation: getAnimation,
+        slideToLeft: slideToLeft,
+        slideToRight: slideToRight
+    };
+})();
+
 $(function () {
     var div = document.createElement('DIV'),
         body,
@@ -27,20 +128,6 @@ $(function () {
         }
     }
 
-    var slidePages = ['/portal/zh/about-us', '/portal/zh/team', '/portal/zh/video', '/portal/zh/contact-us', '/portal/zh/join-us'];
-
-    function getAnimation(current, next) {
-        var currentIndex = slidePages.indexOf(current);
-        var nextIndex = slidePages.indexOf(next);
-
-        if (currentIndex === nextIndex) {
-            return refresh;
-        }
-
-        return currentIndex < nextIndex ? slideLeftToRight : slideRightToLeft;
-
-    }
-
     document.addEventListener('click', function (e) {
         if (e.target.nodeName !== 'A') {
             return true;
@@ -58,7 +145,7 @@ $(function () {
         e.preventDefault();
         e.stopPropagation();
 
-        load(href, e.target, true, getAnimation(location.pathname, e.target.pathname));
+        load(href, e.target, true, animationDirector.getAnimation(location.pathname, e.target.pathname, refresh, slideLeftToRight, slideRightToLeft));
     }, false);
 
     window.addEventListener("popstate", function () {
@@ -73,8 +160,8 @@ $(function () {
         load(url, null, true);
     });
 
-    function refresh(bodyHTML, titleHTML, data, target) {
-        animateWith(titleHTML, data, target, function () {
+    function refresh(bodyHTML, titleHTML, data) {
+        animateWith(titleHTML, data, function () {
             body.classList.add('hide');
 
             setTimeout(function () {
@@ -89,7 +176,7 @@ $(function () {
         title = title || document.querySelector('title');
     }
 
-    function animateWith(titleHTML, data, target, animation) {
+    function animateWith(titleHTML, data, animation) {
         $(document).trigger('pjax/refresh');
         ensureBodyAndTitle();
 
@@ -99,57 +186,14 @@ $(function () {
         $(document).trigger('pjax/done');
     }
 
-    function cloneOldSlide(then) {
-        var prevBody = document.createElement('div');
-        prevBody.innerHTML = body.innerHTML;
-
-        var $prevBody = $(prevBody);
-        var $body = $(body);
-
-        $prevBody.css({
-            position: 'absolute',
-            left: '0',
-            right: '0'
-        });
-
-        $prevBody.insertBefore($body);
-
-        then && then($prevBody, $body);
-
-        return {$prevBody: $prevBody, $body: $body};
-    }
-
-    function placeToRight($next) {
-        $next.css({
-            position: 'absolute',
-            left: '100%',
-            right: '-100%'
-        });
-    }
-
-    function moveToLeft($prev) {
-        $prev.animate({
-            left: '-100%',
-            right: '100%'
-        }, 'slow', function () {
-            $prev.remove();
-        });
-    }
-
-    function slideLeftToRight(bodyHTML, titleHTML, data, target) {
-        animateWith(titleHTML, data, target, function () {
-            cloneOldSlide(function ($prev, $next) {
+    function slideLeftToRight(bodyHTML, titleHTML, data) {
+        animateWith(titleHTML, data, function () {
+            animationDirector.cloneOldSlide(body, function ($prev, $next) {
                 body.innerHTML = bodyHTML;
-
-                placeToRight($next);
-
-                moveToLeft($prev);
-
-                returnToOriginalPos($next);
+                animationDirector.slideToLeft($next, $prev);
             });
         });
     }
-
 
     function setData(data, titleHTML) {
         Object.keys(data).forEach(function (key) {
@@ -160,42 +204,13 @@ $(function () {
         }
     }
 
-    function returnToOriginalPos($next) {
-        $next.animate({
-            left: '0',
-            right: '0'
-        }, 'slow', function () {
-            $next.css('position', 'relative');
-        });
-    }
+    var slideToRight = animationDirector.slideToRight;
 
-    function placeToLeft($next) {
-        $next.css({
-            position: 'absolute',
-            left: '-100%',
-            right: '100%'
-        });
-    }
-
-    function moveToRight($prev) {
-        $prev.animate({
-            left: '100%',
-            right: '-100%'
-        }, 'slow', function () {
-            $prev.remove();
-        });
-    }
-
-    function slideRightToLeft(bodyHTML, titleHTML, data, target) {
-        animateWith(titleHTML, data, target, function () {
-            cloneOldSlide(function ($prev, $next) {
+    function slideRightToLeft(bodyHTML, titleHTML, data) {
+        animateWith(titleHTML, data, function () {
+            animationDirector.cloneOldSlide(body, function ($prev, $next) {
                 body.innerHTML = bodyHTML;
-
-                placeToLeft($next);
-
-                moveToRight($prev);
-
-                returnToOriginalPos($next);
+                slideToRight($next, $prev);
             });
         });
     }
