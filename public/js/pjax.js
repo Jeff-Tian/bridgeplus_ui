@@ -1,7 +1,14 @@
 (function () {
     var slidePages = ['/portal/zh/about-us', '/portal/zh/team', '/portal/zh/video', '/portal/zh/contact-us', '/portal/zh/join-us'];
 
-    function getAnimation(current, next, inPlaceRefresh, slideLeftToRight, slideRightToLeft) {
+    var alwaysLeftwardsSlides = ['/portal/zh/student-portal', '/portal/zh/mentor-portal', '/portal/zh/hr-portal'];
+
+    function getAnimation(current, next, inPlaceRefresh, slideLeftwards, slideRightwards) {
+        if (alwaysLeftwardsSlides.indexOf(current) >= 0 &&
+            alwaysLeftwardsSlides.indexOf(next) >= 0) {
+            return slideLeftwards;
+        }
+
         var currentIndex = slidePages.indexOf(current);
         var nextIndex = slidePages.indexOf(next);
 
@@ -9,7 +16,7 @@
             return inPlaceRefresh;
         }
 
-        return currentIndex < nextIndex ? slideLeftToRight : slideRightToLeft;
+        return currentIndex < nextIndex ? slideLeftwards : slideRightwards;
     }
 
     function placeToRight($next) {
@@ -19,8 +26,7 @@
             right: '-100%'
         });
     }
-
-
+    
     function moveToLeft($prev) {
         $prev.animate({
             left: '-100%',
@@ -139,12 +145,21 @@ $(function () {
     }
 
     document.addEventListener('click', function (e) {
-        if (e.target.nodeName !== 'A') {
+        if (e.target.nodeName !== 'A' && e.target.nodeName !== 'IMG') {
             return true;
         }
 
-        var href = e.target.href ? e.target.href.toLowerCase() : '';
-        if (e.target.getAttribute('use-pjax') === 'false' || !href.length ||
+        var current = location;
+        var next = e.target;
+
+        var href = next.href ? next.href.toLowerCase() : '';
+
+        if (e.target.nodeName === 'IMG') {
+            next = $(e.target).closest('a')[0];
+            href = next.href;
+        }
+
+        if (next.getAttribute('use-pjax') === 'false' || !href.length ||
             (href.charAt(0) == '#') ||
             (href.indexOf('mailto:') == 0) ||
             (href.indexOf('javascript:') == 0)
@@ -155,7 +170,7 @@ $(function () {
         e.preventDefault();
         e.stopPropagation();
 
-        load(href, e.target, true, animationDirector.getAnimation(location.pathname, e.target.pathname, refresh, slideLeftToRight, slideRightToLeft));
+        load(href, next, true, animationDirector.getAnimation(current.pathname, next.pathname, refresh, slideLeftToRight, slideRightToLeft));
     }, false);
 
     window.addEventListener("popstate", function () {

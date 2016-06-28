@@ -31,7 +31,7 @@
     border-radius: 2px;
     text-align: center;
     color: white;
-    top: 50%;
+    top: 45%;
     cursor: pointer;
 }
 
@@ -46,6 +46,6 @@
     text-align: center;
     right: 0;
     color: white;
-    top: 50%;
+    top: 45%;
     cursor: pointer;
 }
