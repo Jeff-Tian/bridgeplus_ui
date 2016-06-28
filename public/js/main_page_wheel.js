@@ -354,7 +354,7 @@ $(function () {
         .on('resize', resizeFooterBodyThenPrepareCarousel)
     ;
 
-    if (location.pathname !== '/') {
-        $(document).trigger('show_content');
-    }
+    // if (location.pathname.indexOf('/portal/') === 0) {
+    //     $(document).trigger('show_content');
+    // }
 });

@@ -26,7 +26,7 @@
             right: '-100%'
         });
     }
-    
+
     function moveToLeft($prev) {
         $prev.animate({
             left: '-100%',
@@ -156,7 +156,7 @@ $(function () {
 
         if (e.target.nodeName === 'IMG') {
             next = $(e.target).closest('a')[0];
-            href = next.href;
+            next && (href = next.href);
         }
 
         if (next.getAttribute('use-pjax') === 'false' || !href.length ||
