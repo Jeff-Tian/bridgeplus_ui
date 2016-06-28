@@ -170,6 +170,11 @@ $(function () {
         e.preventDefault();
         e.stopPropagation();
 
+        if (next.pathname === '/') {
+            $(document).trigger('show_wheel');
+            return false;
+        }
+
         load(href, next, true, animationDirector.getAnimation(current.pathname, next.pathname, refresh, slideLeftToRight, slideRightToLeft));
     }, false);
 
