@@ -5,6 +5,7 @@
     -ms-transition: opacity 100ms ease-in;
     transition: opacity 100ms ease-in;
     overflow: auto;
+    background-color: #f5f5f5;
 }
 
 .body.hide {

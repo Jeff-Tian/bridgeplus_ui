@@ -285,7 +285,7 @@ $(function () {
                     left: '100%'
                 }, 500);
 
-            resizeBody();
+            resizeFooterBodyThenPrepareCarousel();
         })
         .on('show_right', function () {
             wheel
@@ -316,7 +316,7 @@ $(function () {
     BridgeWheel.init();
     BridgeWheel.evHandlers();
 
-    function resizeBody() {
+    function resizeFooterBody() {
         var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
         console.log(h);
@@ -330,8 +330,28 @@ $(function () {
         $('#index-footer').parent().height(r);
     }
 
+    function prepareCarousel() {
+        $('.owl-carousel').owlCarousel({
+            items: 1,
+            lazyLoad: true,
+            loop: true,
+            autoplayTimeout: 8000,
+            autoplayHoverPause: true,
+            nav: true,
+            navRewind: true,
+            smartSpeed: 500,
+            navText: ['<i class="" style="font-family: cursive;">&lt;</i>', '<i class="" style="font-family: cursive;">&gt;</i>'],
+            autoHeight: true
+        });
+    }
+
+    function resizeFooterBodyThenPrepareCarousel() {
+        resizeFooterBody();
+        setTimeout(prepareCarousel, 500);
+    }
+
     $(document)
-        .on('resize', resizeBody)
+        .on('resize', resizeFooterBodyThenPrepareCarousel)
     ;
 
     if (location.pathname !== '/') {
