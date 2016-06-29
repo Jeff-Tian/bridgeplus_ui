@@ -509,3 +509,57 @@
         width: 48.857142857143%;
     }
 }
+
+@media screen and (max-width: 500px) {
+
+    #index-footer .col-md-4 {
+        padding-right: 4px;
+        padding-left: 4px;
+        width: 98.4%;
+    }
+
+    #index-footer .col-md-8 {
+        padding-right: 4px;
+        padding-left: 4px;
+        width: 98.4%;
+    }
+
+    #index-footer .col-md-5 {
+        padding-right: 4px;
+        padding-left: 4px;
+        width: 98.4%;
+    }
+
+    #index-footer .col-md-6 {
+        padding-right: 4px;
+        padding-left: 4px;
+        width: 98.4%;
+    }
+
+    #index-footer .col-md-7 {
+        padding-right: 4px;
+        padding-left: 4px;
+        width: 98.4%;
+    }
+
+    #index-footer .col-md-1 {
+        width: 0;
+        display: none;
+    }
+
+    #index-footer .col-md-3 {
+        padding-right: 4px;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-left: 4px;
+        width: 98.4%;
+    }
+
+    #index-footer .col-md-2 {
+        padding-right: 4px;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-left: 4px;
+        width: 98.4%;
+    }
+}
