@@ -5,7 +5,8 @@ var
     uglify = require('gulp-uglify'),
     clean = require('gulp-clean'),
     uglifyCss = require('gulp-minify-css'),
-    jade = require('gulp-jade')
+    jade = require('gulp-jade'),
+    concat = require('gulp-concat')
     ;
 
 gulp.task('build', function (done) {
@@ -20,22 +21,25 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('copy', function (done) {
-    return gulp.src(['public/**/*'])
-        .pipe(gulp.dest('dist/'))
-        ;
+    // return gulp.src(['public/**/*'])
+    //     .pipe(gulp.dest('dist/'))
+    //     ;
+    done();
 });
 
 gulp.task('uglify-js', function (done) {
-    return gulp.src('public/scripts/*.js')
+    return gulp.src(['public/scripts/*.js', 'public/js/*.js'])
         .pipe(uglify())
-        .pipe(gulp.dest('dist/scripts'))
+        .pipe(concat('all-scripts.min.js'))
+        .pipe(gulp.dest('public/scripts'))
         ;
 });
 
 gulp.task('uglify-css', function (done) {
-    return gulp.src('public/stylesheets/*.css')
+    return gulp.src(['public/stylesheets/**/*.css'])
         .pipe(uglifyCss())
-        .pipe(gulp.dest('dist/stylesheets'))
+        .pipe(concat('all-styles.min.css'))
+        .pipe(gulp.dest('public/stylesheets'))
         ;
 });
 
@@ -57,6 +61,8 @@ gulp.task('jade', function (done) {
             .pipe(jade())
             .pipe(gulp.dest(jf.dest))
         ;
+
+        done();
     });
 });
 

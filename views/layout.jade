@@ -2,14 +2,7 @@ doctype html
 html
     head
         title= title
-        link(rel='stylesheet', href='/bower/bridgeplus_ui/public/stylesheets/menu.css')
-        link(rel='stylesheet', href='/bower/bridgeplus_ui/public/stylesheets/top_wheel.css')
-        link(rel='stylesheet', href='/bower/bridgeplus_ui/public/stylesheets/body.css')
-        link(rel='stylesheet', href='/bower/bridgeplus_ui/public/stylesheets/footer.css')
-        link(rel='stylesheet', href='/bower/bridgeplus_ui/public/stylesheets/page/index.css')
-        link(rel='stylesheet', href='/bower/bridgeplus_ui/public/stylesheets/page/index_style.css')
-        link(rel="stylesheet", href="/bower/bridgeplus_ui/public/stylesheets/page/index_carousel.css")
-        link(rel="stylesheet", href="/bower/bridgeplus_ui/public/stylesheets/page/index_modal.css")
+        include partial/site-styles
         link(rel="stylesheet", href="/bower/owl.carousel/dist/assets/owl.carousel.min.css")
         link(rel="stylesheet", href="/bower/owl.carousel/dist/assets/owl.theme.default.min.css")
         block header
@@ -24,14 +17,7 @@ html
         include partial/menu
         script(src='/bower/raphael/raphael-min.js')
         script(src='/bower/jquery/dist/jquery.min.js')
-        script(src='/bower/bridgeplus_ui/public/js/raphael_plugin.js')
-        script(src='/bower/bridgeplus_ui/public/js/pjax.js')
-        script(src='/bower/bridgeplus_ui/public/js/main_page_data_hook.js')
-        script(src='/bower/bridgeplus_ui/public/js/main_page_wheel.js')
-        script(src='/bower/bridgeplus_ui/public/js/menu.js')
-        script(src='/bower/bridgeplus_ui/public/scripts/event-listener.js')
-        script(src='/bower/bridgeplus_ui/public/scripts/carousel.js')
-        script(src='/bower/bridgeplus_ui/public/scripts/modal.js')
+        include partial/site-scripts
         script(src='/bower/owl.carousel/dist/owl.carousel.min.js')
         script.
         block js
