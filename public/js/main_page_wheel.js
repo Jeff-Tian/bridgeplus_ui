@@ -217,6 +217,12 @@ $(function () {
                     var g = getClassList(this);
                     var url;
 
+                    // Some browsers have no value field of g,
+                    // and g is a plain array
+                    if (!g.value && g instanceof Array) {
+                        g.value = g;
+                    }
+
                     if (g.value.indexOf('svg_group_0') >= 0) {
                         url = '/portal/zh/student-portal';
                     }
