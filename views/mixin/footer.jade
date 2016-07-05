@@ -22,7 +22,7 @@ mixin modalBox(image, title, description, content)
 mixin carouselItem(image, description, title)
     div.item&attributes(attributes)
         h3 &nbsp;
-        img(preload-src="#{image}", style="cursor: pointer;")&attributes(attributes)
+        img(preload-src="#{image}", style="cursor: pointer; max-height: 340px;")&attributes(attributes)
         div.media(style="cursor: pointer;")
             div.media-left(style="padding-top: 5px;")
                 img(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px; display: block;", src="/bower/bridgeplus_ui/public/images/person.png")
