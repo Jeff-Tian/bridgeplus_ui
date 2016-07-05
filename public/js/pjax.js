@@ -145,7 +145,7 @@ $(function () {
     }
 
     document.addEventListener('click', function (e) {
-        if (e.target.nodeName !== 'A' && e.target.nodeName !== 'IMG') {
+        if (e.target.nodeName !== 'A') {
             return true;
         }
 
@@ -153,11 +153,6 @@ $(function () {
         var next = e.target;
 
         var href = next.href ? next.href.toLowerCase() : '';
-
-        if (e.target.nodeName === 'IMG') {
-            next = $(e.target).closest('a')[0];
-            next && (href = next.href);
-        }
 
         if (next.getAttribute('use-pjax') === 'false' || !href.length ||
             (href.charAt(0) == '#') ||
@@ -172,6 +167,7 @@ $(function () {
 
         if (next.pathname === '/') {
             $(document).trigger('show_wheel');
+            history.pushState('/', '', '/');
             return false;
         }
 

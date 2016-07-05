@@ -29,7 +29,17 @@ $(function () {
     }
 
     function getClassList(dom) {
-        return dom.classList || (dom.getAttribute('class') || '').split(' ');
+        var a = [];
+
+        if (dom.classList && (typeof dom.classList.forEach === 'function')) {
+            dom.classList.forEach(function (item) {
+                a.push(item);
+            });
+        } else {
+            a = (dom.getAttribute('class') || '').split(' ');
+        }
+
+        return a;
     }
 
     (function () {
@@ -217,21 +227,15 @@ $(function () {
                     var g = getClassList(this);
                     var url;
 
-                    // Some browsers have no value field of g,
-                    // and g is a plain array
-                    if (!g.value && g instanceof Array) {
-                        g.value = g;
-                    }
-
-                    if (g.value.indexOf('svg_group_0') >= 0) {
+                    if (g.indexOf('svg_group_0') >= 0) {
                         url = '/portal/zh/student-portal';
                     }
 
-                    if (g.value.indexOf('svg_group_1') >= 0) {
+                    if (g.indexOf('svg_group_1') >= 0) {
                         url = '/portal/zh/mentor-portal';
                     }
 
-                    if (g.value.indexOf('svg_group_2') >= 0) {
+                    if (g.indexOf('svg_group_2') >= 0) {
                         url = '/portal/zh/hr-portal';
                     }
 

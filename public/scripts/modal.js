@@ -2,7 +2,6 @@ $(document).ready(function () {
     function prepare() {
         $('.mask .text').each(function () {
             function adjustSize() {
-                console.log('image load', this);
                 $this.css('width', $image[0].width + 'px');
                 $this.css('min-height', $image[0].height + 'px');
             }
