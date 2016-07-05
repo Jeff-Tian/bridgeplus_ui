@@ -117,7 +117,7 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
                 .attr({
                     opacity: 1
                 });
-            imageNode.node.classList.add('svg_group_addtion');
+            imageNode.node.setAttribute('class', 'svg_group_addtion');
             addtion.push(imageNode);
         });
 
