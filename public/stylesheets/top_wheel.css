@@ -209,3 +209,11 @@ body {
 #bridge_plus_wheel_text .wheel_text {
     display: none;
 }
+
+#bridge_plus_intro svg {
+    -webkit-transform-origin: center 0;
+    -moz-transform-origin: center 0;
+    -ms-transform-origin: center 0;
+    transform-origin: center 0;
+    transform-origin: center 0;
+}

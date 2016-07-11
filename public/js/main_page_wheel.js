@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     var config = {
             currentW: 0,
             currentH: 0
@@ -14,7 +14,7 @@ $(function () {
     }
 
     function resizeWheel() {
-        var scale = config.currentH / 780;
+        //var scale = config.currentH / 780;
         //var scaleX = config.currentW / 2000;
         //var scale = Math.min(scaleX, scaleY);
         //$('#bridge_plus_wheel').css({
@@ -23,9 +23,13 @@ $(function () {
         //$('#logo').css({
         //    transform: 'scale3d(' + scale + ',' + scale + ',1)'
         //});
-        //$('#bridge_plus_intro').css({
-        //    transform: 'scale3d(' + scale + ',' + scale + ',1)'
-        //});
+        var intro = $('#bridge_plus_intro svg');
+        if (intro.length) {
+            var height = intro.attr('height') | 0;
+            intro.css({
+                transform: 'scale3d(' + 1 + ',' + (config.currentH / height) + ',1)'
+            });
+        }
     }
 
     function getClassList(dom) {
@@ -42,12 +46,12 @@ $(function () {
         return a;
     }
 
-    (function () {
+    (function() {
         var INTRO = window.INTRO = {
             intro: null,
             init: init,
             arcouno: arcouno,
-            arc: function (a, b, c, d) {
+            arc: function(a, b, c, d) {
                 var angle = c;
                 var coords = this.toCoords(a, b, angle);
                 var path = "M " + coords[0] + " " + coords[1];
@@ -58,7 +62,7 @@ $(function () {
                 }
                 return path;
             },
-            toCoords: function (a, b, c) {
+            toCoords: function(a, b, c) {
                 var d = c / 180 * Math.PI,
                     e = a[0] + Math.cos(d) * b,
                     f = a[1] + Math.sin(d) * b;
@@ -89,17 +93,15 @@ $(function () {
             //    });
             line.animate({
                 path: "M 0," + config.currentH + " L " + halfWidth + "," + halfHeight
-            }, 1000, ">", function () {
+            }, 1000, ">", function() {
                 //return;
                 INTRO.arcouno();
                 line.animate({
                     path: "M " + halfWidth + "," + halfHeight + "L " + halfWidth + "," + halfHeight
-                }, 1e3, ">", function () {
-                });
+                }, 1e3, ">", function() {});
                 circleSmall.animate({
                     r: "72"
-                }, 1800, ">", function () {
-                });
+                }, 1800, ">", function() {});
                 //setTimeout(function() {
                 //    circleBig.animate({
                 //        r: "92"
@@ -124,8 +126,7 @@ $(function () {
                     r: radiusintro + 10,
                     "stroke-width": 41,
                     stroke: '#FFF'
-                }, 1e3, ">", function () {
-                });
+                }, 1e3, ">", function() {});
                 radiusintro += 40;
                 if (radiusintro < halfWidth + 150) {
                     setTimeout(d, 50);
@@ -133,11 +134,11 @@ $(function () {
                     $('#logo').addClass('active');
                     $('.logo_top').addClass('active');
                     //INTRO.intro.clear();
-                    setTimeout(function () {
+                    setTimeout(function() {
                         BridgeWheel.start();
-                    }, 500);
+                    }, 1000);
                     return;
-                    setTimeout(function () {
+                    setTimeout(function() {
                         function a() {
                             var c = circleSmall.clone().attr({
                                 transform: "r" + rot + ",151,156t0,-10"
@@ -145,10 +146,9 @@ $(function () {
                             c.animate({
                                 transform: "r" + rot + ",151,156t0,0s0.9",
                                 opacity: 0
-                            }, 2e3, "elastic", function () {
-                            });
+                            }, 2e3, "elastic", function() {});
                             if (350 > rot) {
-                                setTimeout(function () {
+                                setTimeout(function() {
                                     a()
                                 }, 20);
                                 rot += 10;
@@ -187,25 +187,25 @@ $(function () {
             }, 4000);
         }
     })();
-    (function () {
+    (function() {
         var BridgeWheel = window.BridgeWheel = {
             first: true,
             sourceArr: [],
             imgAll: [],
-            init: function () {
+            init: function() {
                 INTRO.init();
             },
-            evHandlers: function () {
-            },
-            start: function () {
+            evHandlers: function() {},
+            start: function() {
                 BridgeWheel.resize();
-                var paper = new Raphael("bridge_plus_wheel", 2000, 1000);
-                paper.wheel(440, vmvideos.slice(32, 51), 2, vmvideos, [], additionInfo);
+                $('#bridge_plus_wheel').addClass('active');
+                var paper = new Raphael("bridge_plus_wheel", 1600, 1000);
+                paper.wheel(440, vmvideos.slice(7, 17), 2, vmvideos, [], additionInfo);
             },
             resize: resizeWheel
         };
     })();
-    $(window).on('resize', function () {
+    $(window).on('resize', function() {
         resize();
         BridgeWheel.resize();
     });
@@ -216,11 +216,11 @@ $(function () {
     var right = $('.main_page_right');
 
     $(document)
-        .on('wheel/show', function () {
+        .on('wheel/show', function() {
             $('.svg_group')
-                .hover(function () {
+                .hover(function() {
                     $(document).trigger('show_group_desc', getClassList(this));
-                }, function () {
+                }, function() {
                     $(document).trigger('hide_group_desc', getClassList(this));
                 })
                 .on('click', function () {
@@ -243,27 +243,27 @@ $(function () {
                     $(document).trigger('navigate', url);
                 });
         })
-        .on('click', '.logo_right', function () {
+        .on('click', '.logo_right', function() {
             $(document).trigger('show_right');
         })
-        .on('show_group_desc', function (e, svg_group, klass) {
+        .on('show_group_desc', function(e, svg_group, klass) {
             wheel_text
                 .hide()
-                .each(function () {
+                .each(function() {
                     if ($(this).hasClass(klass)) {
                         $(this).show();
                     }
                 });
         })
-        .on('hide_group_desc', function (e, svg_group, klass) {
+        .on('hide_group_desc', function(e, svg_group, klass) {
             wheel_text
-                .each(function () {
+                .each(function() {
                     if ($(this).hasClass(klass)) {
                         $(this).hide();
                     }
                 });
         })
-        .on('show_wheel', function () {
+        .on('show_wheel', function() {
             wheel
                 .animate({
                     top: 0,
@@ -279,7 +279,7 @@ $(function () {
                     left: '100%'
                 }, 500);
         })
-        .on('show_content', function () {
+        .on('show_content', function() {
             wheel
                 .animate({
                     top: '-100%',
@@ -294,10 +294,8 @@ $(function () {
                 .animate({
                     left: '100%'
                 }, 500);
-
-            resizeFooterBodyThenPrepareCarousel();
         })
-        .on('show_right', function () {
+        .on('show_right', function() {
             wheel
                 .animate({
                     left: '-100%'
@@ -311,60 +309,17 @@ $(function () {
                     left: 0
                 }, 500);
         })
-        .on('pjax/done', document, function () {
+        .on('pjax/done', document, function() {
             $(document).trigger('show_content', null);
             if (typeof prepareCarousel === 'function') {
                 setTimeout(prepareCarousel, 100);
             }
-
-            if (typeof modals.prepare === 'function') {
-                setTimeout(modals.prepare, 100);
-            }
-        })
-    ;
+        });
     resize();
     BridgeWheel.init();
     BridgeWheel.evHandlers();
 
-    function resizeFooterBody() {
-        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-        console.log(h);
-
-        var t = $('.to-top').outerHeight();
-        console.log(t);
-        var f = $('#footer').outerHeight();
-        console.log(f);
-        var r = h - t - f;
-        console.log(r);
-        $('#index-footer').parent().height(r);
-    }
-
-    function prepareCarousel() {
-        $('.owl-carousel').owlCarousel({
-            items: 1,
-            lazyLoad: true,
-            loop: true,
-            autoplayTimeout: 8000,
-            autoplayHoverPause: true,
-            nav: true,
-            navRewind: true,
-            smartSpeed: 500,
-            navText: ['<i class="" style="font-family: cursive;">&lt;</i>', '<i class="" style="font-family: cursive;">&gt;</i>'],
-            autoHeight: true
-        });
-    }
-
-    function resizeFooterBodyThenPrepareCarousel() {
-        resizeFooterBody();
-        setTimeout(prepareCarousel, 500);
-    }
-
-    $(document)
-        .on('resize', resizeFooterBodyThenPrepareCarousel)
-    ;
-
-    if (location.pathname.indexOf('/portal/') === 0) {
+    if (location.pathname !== '/') {
         $(document).trigger('show_content');
     }
 });

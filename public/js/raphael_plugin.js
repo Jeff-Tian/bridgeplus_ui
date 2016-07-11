@@ -56,8 +56,9 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
             .attr({
                 opacity: 0
             });
-        img.node.id = this.id;
+        //img.node.id = this.id;
         images.push(img);
+
         if (++imageLoadedCount == imagesTotal) {
             init();
         }
@@ -77,9 +78,26 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
     }
 
     function rotate(index, images) {
+        /*
+        210 半径的圆 24度
+
+        左侧:x: 846.729396130826, y: 295.26513844181704
+        右侧:x: 741.4729033951616, y: 205.76441587903088
+        */
+        //744.8751446550289, 205.1080700948295, 855.1248553449711, 205.1080700948295
         var max = 'M,800,500,L,862.3735072453278,206.5557197798583,A,300,300,0,0,0,737.6264927546722,206.5557197798583,z';
+        var max = 'M,800,500,L,855.1248553449711, 205.1080700948295,A,300,300,0,0,0,744.8751446550289, 205.1080700948295,z';
+        //[707.2949016875158, 214.68304511145396, 892.7050983124842, 214.68304511145396]
+        //10 pieces, radius 300
+        var max = 'M,800,500,L,892.7050983124842, 214.68304511145396,A,300,300,0,0,0,707.2949016875158, 214.68304511145396,z';
         var middle = 'M,800,500,L,844.8707740637095,274.419385507257,A,230,230,0,0,0,755.1292259362905,274.419385507257,z';
+        var middle = 'M,800,500,L,871.073908706238, 281.2570012521147,A,230,230,0,0,0,728.926091293762, 281.2570012521147,z';
+        
         var inner = 'M,800,500,L,835.6033494330103,344.0115340509082,A,160,160,0,0,0,764.3966505669897,344.0115340509082,z';
+        //10 pieces, radius 160
+        var inner = 'M,800,500,L,849.4427190999916, 347.8309573927754,A,160,160,0,0,0,750.5572809000084, 347.8309573927754,z';
+        //8 pieces, radius
+        //var inner = 'M,800,500,L,861.2293491784144, 352.1792747981941,A,160,160,0,0,0,738.7706508215856, 352.1792747981941,z';
         var slicepath = [
             //raphael.path("M,800,500,L,853.4050241495155,266.01730107636234,A,240,240,0,0,0,746.5949758504846,266.01730107636234,z")
             raphael.path(inner)
@@ -117,7 +135,7 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
                 .attr({
                     opacity: 1
                 });
-            imageNode.node.setAttribute('class', 'svg_group_addtion');
+            imageNode.node.classList.add('svg_group_addtion');
             addtion.push(imageNode);
         });
 
@@ -137,8 +155,7 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
         var scale = (radius - 100) / radius;
         scale = ((scale * 100) | 0) / 100;
         var circle = raphael.circle(800, 500, radius)
-            .attr({ fill: '#000', stroke: "none" })
-            //.attr({ opacity: 1 });
+            .attr({ fill: '#000', stroke: "none" });
         circle.node.style.transform = 'scale(' + scale + ',' + scale + ')';
 
         raphael.group([addtion[0]].concat(images, circle, addtion[1]), 'svg_group_' + index);
@@ -146,12 +163,9 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
         rotate(index, images);
         array.push(images);
         if (index == 2) {
-            //raphael.circle(808, 506, 347)
-            //    .attr({ fill: "url(http://vlog.it/img/340.png)", stroke: "none" })
-            //    .attr({ opacity: 0 });
-            raphael.wheel(340, dataAll.slice(15, 31), 1, json, array, additionInfo);
+            raphael.wheel(340, dataAll.slice(17, 27), 1, dataAll, array, additionInfo);
         } else if (index == 1) {
-            raphael.wheel(240, dataAll.slice(0, 14), 0, json, array, additionInfo);
+            raphael.wheel(240, dataAll.slice(34, 44), 0, dataAll, array, additionInfo);
         } else {
             inner();
             $(document).trigger('wheel/show');
@@ -185,7 +199,7 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
     }
 
     function inner() {
-        var b = 360 / 14;
+        var b = 36;
         var images = array[2];
         var total = images.length;
         images.forEach(function(image, index) {
@@ -213,55 +227,46 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
     }
 
     function middle() {
-        var b = 22.5;
+        var b = 36;
         var images = array[1];
         var total = images.length;
         images.forEach(function(image, index) {
-            if (index == total - 1) {
-                image
-                    .attr({ opacity: 1 })
-                    .animate({
-                        transform: "r" + (b * index) + ",800,500t0,0"
-                    }, 1000, "<>", function() {
+            image
+                .attr({ opacity: 1 })
+                .animate({
+                    transform: "r" + (b * index) + ",800,500t0,0"
+                }, 1000, "<>", function() {
+                    if (index == total - 1) {
                         outer();
                         images.forEach(function(image, i) {
                             image.animate({
                                 transform: "r" + (-360 + b * i) + ",800,500"
                             }, 30000);
                         });
-                    });
-            } else {
-                image
-                    .attr({ opacity: 1 })
-                    .animate({
-                        transform: "r" + b * index + ",800,500t0,0"
-                    }, 1e3, "<>", function() {});
-            }
+                    }
+                });
         });
     }
 
     function outer() {
         var images = array[0];
         var total = images.length;
-        var b = 20;
+        var b = 36;
         images.forEach(function(image, index) {
-            if (index == total - 1) {
-                image
-                    .attr({ opacity: 1 })
-                    .animate({ transform: "r" + b * index + ",800,500t0,0" }, 1000, "<", function() {
+            image
+                .attr({ opacity: 1 })
+                .animate({
+                    transform: "r" + b * index + ",800,500t0,0"
+                }, 1e3, "<", function() {
+                    if (index == total - 1) {
                         images.forEach(function(image, i) {
                             image.animate({
                                 transform: "r" + (360 + b * i) + ",800,500"
                             }, 3e4);
                         });
-                    });
-            } else {
-                image
-                    .attr({ opacity: 1 })
-                    .animate({
-                        transform: "r" + b * index + ",800,500t0,0"
-                    }, 1e3, "<", function() {})
-            }
+                    }
+                })
+
         });
     }
 

@@ -1,253 +1,115 @@
 var vmvideos = [{
-    "author": "yasudatakahiro",
-    "title": "\"COPY\" Official Videoclip",
-    "thumb": "http://i.vimeocdn.com/video/291709093_200x150.jpg",
-    "url": "http://vimeo.com/17902560"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_1.jpg'
 }, {
-    "author": "Ground's Oranges",
-    "title": "Prefunerale Luigi Virgillito",
-    "thumb": "http://i.vimeocdn.com/video/447164694_200x150.jpg",
-    "url": "http://vimeo.com/73141804"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_2.jpg'
 }, {
-    "author": "Mr. Kaplin",
-    "title": "Official Release: Toob \"Wavaphon\" Music Video",
-    "thumb": "http://i.vimeocdn.com/video/281268872_200x150.jpg",
-    "url": "http://vimeo.com/40648169"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_3.jpg'
 }, {
-    "author": "BKWLD",
-    "title": "BKWLD in a matter of seconds",
-    "thumb": "http://i.vimeocdn.com/video/245832886_200x150.jpg",
-    "url": "http://vimeo.com/24933302"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_4.jpg'
 }, {
-    "author": "dunun",
-    "title": "amalgamation",
-    "thumb": "http://i.vimeocdn.com/video/218886754_200x150.jpg",
-    "url": "http://vimeo.com/32351411"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_5.jpg'
 }, {
-    "author": "Nexus",
-    "title": "Avocado Go Green",
-    "thumb": "http://i.vimeocdn.com/video/454456291_200x150.jpg",
-    "url": "http://vimeo.com/78830727"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_6.jpg'
 }, {
-    "author": "Trunk Animation",
-    "title": "Major Lazer- \"Keep It Goin Louder\"",
-    "thumb": "http://i.vimeocdn.com/video/310360546_200x150.jpg",
-    "url": "http://vimeo.com/6793510"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_7.jpg'
 }, {
-    "author": "Chris Harmon",
-    "title": "Oil'd",
-    "thumb": "http://i.vimeocdn.com/video/146641111_200x150.jpg",
-    "url": "http://vimeo.com/22655744"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_8.jpg'
 }, {
-    "author": "Bet She'an Team",
-    "title": "Bet She'an",
-    "thumb": "http://i.vimeocdn.com/video/451945429_200x150.jpg",
-    "url": "http://vimeo.com/76920679"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_9.jpg'
 }, {
-    "author": "Louis Paquet",
-    "title": "Forrest Gump by Wes Anderson",
-    "thumb": "http://i.vimeocdn.com/video/472143478_200x150.jpg",
-    "url": "http://vimeo.com/92419083"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_10.jpg'
 }, {
-    "author": "2veinte",
-    "title": "For Agile Films by 2veinte",
-    "thumb": "http://i.vimeocdn.com/video/472472892_200x150.jpg",
-    "url": "http://vimeo.com/92679978"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_11.jpg'
 }, {
-    "author": "CypherAudio",
-    "title": "Hershey's - 'Happiness Is...'",
-    "thumb": "http://i.vimeocdn.com/video/27938399_200x150.jpg",
-    "url": "http://vimeo.com/6909738"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_12.jpg'
 }, {
-    "author": "beeple",
-    "title": "instrumental video nine",
-    "thumb": "http://i.vimeocdn.com/video/453513252_200x150.jpg",
-    "url": "http://vimeo.com/9800754"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_13.jpg'
 }, {
-    "author": "Jean Barnezet",
-    "title": "Ed bangers Vol 2",
-    "thumb": "http://i.vimeocdn.com/video/53821679_200x150.jpg",
-    "url": "http://vimeo.com/935862"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_14.jpg'
 }, {
-    "author": "Moop Jaw",
-    "title": "Qua - Goodmorning Sun music video (Directed by Antuong Nguyen)",
-    "thumb": "http://i.vimeocdn.com/video/17354912_200x150.jpg",
-    "url": "http://vimeo.com/5375940"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_15.jpg'
 }, {
-    "author": "Takuya Hosogane",
-    "title": "Takuya Hosogane MotionReel 2011",
-    "thumb": "http://i.vimeocdn.com/video/135868475_200x150.jpg",
-    "url": "http://vimeo.com/21151968"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_16.jpg'
 }, {
-    "author": "James Curran",
-    "title": "The Adventures of Tintin",
-    "thumb": "http://i.vimeocdn.com/video/204191730_200x150.jpg",
-    "url": "http://vimeo.com/30402976"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_17.jpg'
 }, {
-    "author": "johan rijpma",
-    "title": "Tape Generations",
-    "thumb": "http://i.vimeocdn.com/video/192629425_200x150.jpg",
-    "url": "http://vimeo.com/28826269"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_1.jpg'
 }, {
-    "author": "Royale",
-    "title": "Oreo Wonderfilled",
-    "thumb": "http://i.vimeocdn.com/video/437477845_200x150.jpg",
-    "url": "http://vimeo.com/66116612"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_2.jpg'
 }, {
-    "author": "Tomas Nilsson",
-    "title": "Slagsmålsklubben - Sponsored by destiny",
-    "thumb": "http://i.vimeocdn.com/video/3773075_200x150.jpg",
-    "url": "http://vimeo.com/3514904"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_3.jpg'
 }, {
-    "author": "Mothlight Creative",
-    "title": "Motion Design Reel",
-    "thumb": "http://i.vimeocdn.com/video/21020441_200x150.jpg",
-    "url": "http://vimeo.com/2354896"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_4.jpg'
 }, {
-    "author": "Jr.canest",
-    "title": "Resonance: The Interpreter's House",
-    "thumb": "http://i.vimeocdn.com/video/165696168_200x150.jpg",
-    "url": "http://vimeo.com/25181651"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_5.jpg'
 }, {
-    "author": "Hardy Seiler",
-    "title": "Where things come from",
-    "thumb": "http://i.vimeocdn.com/video/279551535_200x150.jpg",
-    "url": "http://vimeo.com/40459347"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_6.jpg'
 }, {
-    "author": "rich nosworthy",
-    "title": "Unified",
-    "thumb": "http://i.vimeocdn.com/video/440983567_200x150.jpg",
-    "url": "http://vimeo.com/68596504"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_7.jpg'
 }, {
-    "author": "Onesize",
-    "title": "FITC Amsterdam 2013 titles.",
-    "thumb": "http://i.vimeocdn.com/video/416466859_200x150.jpg",
-    "url": "http://vimeo.com/59892998"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_8.jpg'
 }, {
-    "author": "THE CREATIVE INFLUENCE",
-    "title": "Jessica Walsh & Stefan Sagmeister _ The Creative Influence: Ep. 2",
-    "thumb": "http://i.vimeocdn.com/video/458287788_200x150.jpg",
-    "url": "http://vimeo.com/58575990"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_9.jpg'
 }, {
-    "author": "Ian Albinson",
-    "title": "A Brief History of Title Design",
-    "thumb": "http://i.vimeocdn.com/video/317160247_200x150.jpg",
-    "url": "http://vimeo.com/20759580"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_10.jpg'
 }, {
-    "author": "Fraser Davidson",
-    "title": "Bill Maher - Irritable Bowl Syndrome",
-    "thumb": "http://i.vimeocdn.com/video/439126226_200x150.jpg",
-    "url": "http://vimeo.com/35003246"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_11.jpg'
 }, {
-    "author": "rob kent",
-    "title": "casino royale intro 720p",
-    "thumb": "http://i.vimeocdn.com/video/430824864_200x150.jpg",
-    "url": "http://vimeo.com/61960054"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_12.jpg'
 }, {
-    "author": "Danil Krivoruchko",
-    "title": "Intel Fashion show | Intro loop",
-    "thumb": "http://i.vimeocdn.com/video/168467700_200x150.jpg",
-    "url": "http://vimeo.com/25573104"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_13.jpg'
 }, {
-    "author": "Mr OIZO / Q.DUPIEUX",
-    "title": "OIZO MOUSTACHE SPECIAL ANNOUNCEMENT",
-    "thumb": "http://i.vimeocdn.com/video/109481237_200x150.jpg",
-    "url": "http://vimeo.com/17583401"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_14.jpg'
 }, {
-    "author": "Animography",
-    "title": "Isotype - Animated Typeface",
-    "thumb": "http://i.vimeocdn.com/video/445957950_200x150.jpg",
-    "url": "http://vimeo.com/71962920"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_15.jpg'
 }, {
-    "author": "Yannick Jacquet (Legoman)",
-    "title": "Mécaniques Discursives [work in progress] 2",
-    "thumb": "http://i.vimeocdn.com/video/268346538_200x150.jpg",
-    "url": "http://vimeo.com/38945809"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_16.jpg'
 }, {
-    "author": "Tektosag Records",
-    "title": "Blawan - Fram (Video Edit)",
-    "thumb": "http://i.vimeocdn.com/video/75218953_200x150.jpg",
-    "url": "http://vimeo.com/13177771"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_1.jpg'
 }, {
-    "author": "Fabricio Lima",
-    "title": "30 things at 30",
-    "thumb": "http://i.vimeocdn.com/video/432436026_200x150.jpg",
-    "url": "http://vimeo.com/62509176"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_2.jpg'
 }, {
-    "author": "SoLab",
-    "title": "Hermès x Man on the Move by Romain Laurent",
-    "thumb": "http://i.vimeocdn.com/video/472009665_200x150.jpg",
-    "url": "http://vimeo.com/91405458"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_3.jpg'
 }, {
-    "author": "Buck",
-    "title": "Umbro Blackout",
-    "thumb": "http://i.vimeocdn.com/video/174298706_200x150.jpg",
-    "url": "http://vimeo.com/26397024"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_4.jpg'
 }, {
-    "author": "Neal Coghlan",
-    "title": "BIRDMASK Visuals",
-    "thumb": "http://i.vimeocdn.com/video/348590012_200x150.jpg",
-    "url": "http://vimeo.com/50071433"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_5.jpg'
 }, {
-    "author": "Machine Molle",
-    "title": "ROYKSOPP / Remind Me / Music Video (2002)",
-    "thumb": "http://i.vimeocdn.com/video/204044099_200x150.jpg",
-    "url": "http://vimeo.com/30372022"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_6.jpg'
 }, {
-    "author": "POCKO",
-    "title": "BEN PEARCE - TED Metaphors Excerpt 1",
-    "thumb": "http://i.vimeocdn.com/video/437584087_200x150.jpg",
-    "url": "http://vimeo.com/66253104"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_7.jpg'
 }, {
-    "author": "finally.",
-    "title": "Understand Music",
-    "thumb": "http://i.vimeocdn.com/video/380549046_200x150.jpg",
-    "url": "http://vimeo.com/54763818"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_8.jpg'
 }, {
-    "author": "dlew",
-    "title": "Flying Lotus - Tiny Tortures",
-    "thumb": "http://i.vimeocdn.com/video/377516992_200x150.jpg",
-    "url": "http://vimeo.com/54585743"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_9.jpg'
 }, {
-    "author": "Berkanism",
-    "title": "NATURAL FIGHT (Find Perfect Shape)",
-    "thumb": "http://i.vimeocdn.com/video/286755621_200x150.jpg",
-    "url": "http://vimeo.com/41405220"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_10.jpg'
 }, {
-    "author": "Sunday Paper",
-    "title": "Light",
-    "thumb": "http://i.vimeocdn.com/video/191510392_200x150.jpg",
-    "url": "http://vimeo.com/28685926"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_11.jpg'
 }, {
-    "author": "weareflink",
-    "title": "Volkswagen - People's Car Project - Parking",
-    "thumb": "http://i.vimeocdn.com/video/196212132_200x150.jpg",
-    "url": "http://vimeo.com/29308144"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_12.jpg'
 }, {
-    "author": "Giant Ant",
-    "title": "WIRED // What's Inside: Play-Doh (Director's Cut)",
-    "thumb": "http://i.vimeocdn.com/video/445546104_200x150.jpg",
-    "url": "http://vimeo.com/71841985"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_13.jpg'
 }, {
-    "author": "Golden Wolf",
-    "title": "Adidas - #ALLINFORMURRAY",
-    "thumb": "http://i.vimeocdn.com/video/445698928_200x150.jpg",
-    "url": "http://vimeo.com/71976695"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_14.jpg'
 }, {
-    "author": "A N F",
-    "title": "Egyptrixx - Start from the Beginning",
-    "thumb": "http://i.vimeocdn.com/video/259770961_200x150.jpg",
-    "url": "http://vimeo.com/16660444"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_15.jpg'
 }, {
-    "author": "Plenty",
-    "title": "HBO Latinoamerica - Reel",
-    "thumb": "http://i.vimeocdn.com/video/450870325_200x150.jpg",
-    "url": "http://vimeo.com/76084225"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_16.jpg'
 }, {
-    "author": "malika favre",
-    "title": "TOTO Perfect Day",
-    "thumb": "http://i.vimeocdn.com/video/437778164_200x150.jpg",
-    "url": "http://vimeo.com/66386720"
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_17.jpg'
+}, {
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_18.jpg'
+}, {
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_19.jpg'
+}, {
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_20.jpg'
+}, {
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_21.jpg'
+}, {
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_22.jpg'
+}, {
+    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_23.jpg'
 }];
 
 var additionInfo = [
