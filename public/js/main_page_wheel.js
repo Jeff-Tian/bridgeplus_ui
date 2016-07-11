@@ -36,7 +36,7 @@ $(function() {
         var a = [];
 
         if (dom.classList && (typeof dom.classList.forEach === 'function')) {
-            dom.classList.forEach(function (item) {
+            dom.classList.forEach(function(item) {
                 a.push(item);
             });
         } else {
@@ -85,16 +85,9 @@ $(function() {
                     fill: "#111",
                     stroke: "#111"
                 });
-            //var circleBig = intro
-            //    .circle(halfWidth, halfHeight, 0)
-            //    .attr({
-            //        fill: "#e7e7e7",
-            //        stroke: "none"
-            //    });
             line.animate({
                 path: "M 0," + config.currentH + " L " + halfWidth + "," + halfHeight
             }, 1000, ">", function() {
-                //return;
                 INTRO.arcouno();
                 line.animate({
                     path: "M " + halfWidth + "," + halfHeight + "L " + halfWidth + "," + halfHeight
@@ -102,11 +95,6 @@ $(function() {
                 circleSmall.animate({
                     r: "72"
                 }, 1800, ">", function() {});
-                //setTimeout(function() {
-                //    circleBig.animate({
-                //        r: "92"
-                //    }, 1200, ">", function() {});
-                //}, 800);
                 setTimeout(d, 1100);
             });
 
@@ -137,38 +125,6 @@ $(function() {
                     setTimeout(function() {
                         BridgeWheel.start();
                     }, 1000);
-                    return;
-                    setTimeout(function() {
-                        function a() {
-                            var c = circleSmall.clone().attr({
-                                transform: "r" + rot + ",151,156t0,-10"
-                            });
-                            c.animate({
-                                transform: "r" + rot + ",151,156t0,0s0.9",
-                                opacity: 0
-                            }, 2e3, "elastic", function() {});
-                            if (350 > rot) {
-                                setTimeout(function() {
-                                    a()
-                                }, 20);
-                                rot += 10;
-                            } else {
-                                //$("body").css("background", "#111");
-                                //$('.logo_img').addClass('show');
-                                //INTRO.intro.clear();
-                            }
-                        }
-
-                        //var logodeco = new Raphael("logodeco", 390, 390);
-                        //var b = logodeco.path("M 149,23 L 153,23 L 151,30 z").attr({
-                        //    fill: "#ccc",
-                        //    opacity: 0,
-                        //    stroke: "none"
-                        //});
-                        a();
-                        //INTRO.intro.clear();
-                        //setTimeout(BridgeWheel.start, 1e3);
-                    }, 1400);
                 }
             }
         }
@@ -193,9 +149,11 @@ $(function() {
             sourceArr: [],
             imgAll: [],
             init: function() {
-                INTRO.init();
+                if (this.first) {
+                    this.first = false;
+                    INTRO.init();
+                }
             },
-            evHandlers: function() {},
             start: function() {
                 BridgeWheel.resize();
                 $('#bridge_plus_wheel').addClass('active');
@@ -223,7 +181,7 @@ $(function() {
                 }, function() {
                     $(document).trigger('hide_group_desc', getClassList(this));
                 })
-                .on('click', function () {
+                .on('click', function() {
                     var g = getClassList(this);
                     var url;
 
@@ -278,6 +236,7 @@ $(function() {
                 .animate({
                     left: '100%'
                 }, 500);
+            BridgeWheel.init();
         })
         .on('show_content', function() {
             wheel
@@ -316,10 +275,9 @@ $(function() {
             }
         });
     resize();
-    BridgeWheel.init();
-    BridgeWheel.evHandlers();
-
-    if (location.pathname !== '/') {
+    if (location.pathname == '/') {
+        BridgeWheel.init();
+    } else {
         $(document).trigger('show_content');
     }
 });
