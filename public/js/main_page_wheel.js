@@ -253,6 +253,7 @@ $(function() {
                 .animate({
                     left: '100%'
                 }, 500);
+            resizeFooterBodyThenPrepareCarousel();
         })
         .on('show_right', function() {
             wheel
@@ -273,7 +274,47 @@ $(function() {
             if (typeof prepareCarousel === 'function') {
                 setTimeout(prepareCarousel, 100);
             }
+
+            if (typeof modals.prepare === 'function') {
+                setTimeout(modals.prepare, 100);
+            }
         });
+
+    function resizeFooterBody() {
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+        console.log(h);
+
+        var t = $('.to-top').outerHeight();
+        console.log(t);
+        var f = $('#footer').outerHeight();
+        console.log(f);
+        var r = h - t - f;
+        console.log(r);
+        $('#index-footer').parent().height(r);
+    }
+
+    function prepareCarousel() {
+        $('.owl-carousel').owlCarousel({
+            items: 1,
+            lazyLoad: true,
+            loop: true,
+            autoplayTimeout: 8000,
+            autoplayHoverPause: true,
+            nav: true,
+            navRewind: true,
+            smartSpeed: 500,
+            navText: ['<i class="" style="font-family: cursive;">&lt;</i>', '<i class="" style="font-family: cursive;">&gt;</i>'],
+            autoHeight: true
+        });
+    }
+
+    function resizeFooterBodyThenPrepareCarousel() {
+        resizeFooterBody();
+        setTimeout(prepareCarousel, 500);
+    }
+
+    $(document).on('resize', resizeFooterBodyThenPrepareCarousel);
     resize();
     if (location.pathname == '/') {
         BridgeWheel.init();

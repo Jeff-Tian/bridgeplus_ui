@@ -115,10 +115,21 @@ body {
     width: 1600px;
     height: 1000px;
     z-index: 2;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transition: background-color 1000ms ease-out 500ms;
+    -moz-transition: background-color 1000ms ease-out 500ms;
+    -moz-transition: background-color 1000ms ease-out 500ms;
+    transition: background-color 1000ms ease-out 500ms;
 }
 
-#logo,
-#bridge_plus_wheel {
+#bridge_plus_wheel.active {
+    background-color: #efefef;
+}
+
+#logo {
+    -webkit-transition: transform 500ms ease-out;
+    -moz-transition: transform 500ms ease-out;
+    -moz-transition: transform 500ms ease-out;
     transition: transform 500ms ease-out;
 }
 
