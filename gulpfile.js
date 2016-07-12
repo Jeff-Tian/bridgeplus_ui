@@ -31,7 +31,7 @@ gulp.task('uglify-js', function (done) {
     return gulp.src(['public/scripts/*.js', 'public/js/*.js'])
         .pipe(uglify())
         .pipe(concat('all-scripts.min.js'))
-        .pipe(gulp.dest('public/scripts'))
+        .pipe(gulp.dest('public/dist/js'))
         ;
 });
 
@@ -39,7 +39,7 @@ gulp.task('uglify-css', function (done) {
     return gulp.src(['public/stylesheets/**/*.css'])
         .pipe(uglifyCss())
         .pipe(concat('all-styles.min.css'))
-        .pipe(gulp.dest('public/stylesheets'))
+        .pipe(gulp.dest('public/dist/css'))
         ;
 });
 
