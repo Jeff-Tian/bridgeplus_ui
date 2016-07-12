@@ -168,7 +168,7 @@ $(function() {
         e.preventDefault();
         e.stopPropagation();
 
-        load(href, node, true, animationDirector.getAnimation(location.pathname, href, refresh, slideLeftToRight, slideRightToLeft));
+        load(href, node, true, animationDirector.getAnimation(location.pathname, node.pathname, refresh, slideLeftToRight, slideRightToLeft));
     }, false);
 
     window.addEventListener("popstate", function() {
