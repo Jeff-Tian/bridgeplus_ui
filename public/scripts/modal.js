@@ -13,14 +13,30 @@ $(document).ready(function () {
             $image.load(adjustSize);
         });
 
-        $('.mask .close.button').click(function () {
-            var $this = $(this).closest('.mask');
-            $this.hide();
+        function hideModal($mask) {
+            $mask.hide();
 
-            var $video = $this.find('video');
+            var $video = $mask.find('video');
             if ($video.length) {
                 $video[0].pause();
             }
+        }
+
+        $('.mask .close.button').click(function () {
+            hideModal($(this).closest('.mask'));
+        });
+        $('.mask').click(function () {
+            hideModal($(this));
+        });
+
+        $(document).on('keydown', function (e) {
+            if (e.keyCode === 27) {
+                hideModal($('.mask'));
+            }
+        });
+
+        $('.mask .shadow-box').click(function (e) {
+            e.stopPropagation();
         });
 
         $('.mask')
