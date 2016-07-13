@@ -1,10 +1,6 @@
 mixin video(video)
     if video
-        div(data-modal-selector=".mask.#{video.className}", style="border: solid 1px gray;")
-            br
-            //video(width="160", height="120", controls, style="width: 100%; height: 100%;")
-                source(src="#{video.mp4}", type="video/mp4")
-            img(src="/bower/bridgeplus_ui/public/images/ABOUT.png")
+        div(data-modal-selector=".mask.#{video.className}", class="video-poster", style="background-image:url(#{video.poster})")
         p
             strong #{video.title}
 

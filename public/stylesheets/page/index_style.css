@@ -334,6 +334,16 @@ a.round-button:active {
     float: none;
 }
 
+#index-footer .video-poster {
+    border: solid 1px #808080;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 328px;
+    height: 110px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1500px) {
     #index-footer .col-md-4 {
         padding-right: 8px;
