@@ -23,18 +23,21 @@
     margin-left: -15px;
 }
 
-#index-footer .row:before, .container:before {
+#index-footer .row:before,
+.container:before {
     display: table;
     content: ' ';
 }
 
-#index-footer .row:after, .container:after {
+#index-footer .row:after,
+.container:after {
     clear: both;
     display: table;
     content: ' ';
 }
 
-#index-footer :after, :before {
+#index-footer:after,
+:before {
     box-sizing: border-box;
 }
 
@@ -128,7 +131,8 @@
     white-space: nowrap;
 }
 
-#index-footer a.round-button:hover, a.round-button:active {
+#index-footer a.round-button:hover,
+a.round-button:active {
     background-color: white;
 }
 
@@ -136,13 +140,16 @@
     vertical-align: middle;
 }
 
-#index-footer .media, .media-body {
+#index-footer .media,
+.media-body {
     overflow: hidden;
     zoom: 1;
     margin-top: 15px;
 }
 
-#index-footer .media-body, .media-left, .media-right {
+#index-footer .media-body,
+.media-left,
+.media-right {
     display: table-cell;
     vertical-align: top;
 }
@@ -160,7 +167,8 @@
     margin-top: 0;
 }
 
-#index-footer .media-left, .media > .pull-left {
+#index-footer .media-left,
+.media > .pull-left {
     padding-right: 10px;
 }
 
@@ -199,8 +207,7 @@
     padding-bottom: 20px;
 }
 
-#index-footer .to-top a#to-top-link {
-}
+#index-footer .to-top a#to-top-link {}
 
 #index-footer .big-title {
     color: #333333;
@@ -305,6 +312,11 @@
     padding: 35px 25px;
 }
 
+#index-footer .owl-prev i,
+#index-footer .owl-next i {
+    font-family: cursive;
+}
+
 #index-footer .owl-prev {
     position: absolute;
     left: 0;
@@ -323,42 +335,34 @@
 }
 
 @media screen and (max-width: 1500px) {
-
     #index-footer .col-md-4 {
         padding-right: 8px;
         padding-left: 8px;
     }
-
     #index-footer .col-md-8 {
         padding-right: 8px;
         padding-left: 8px;
     }
-
     #index-footer .col-md-5 {
         padding-right: 8px;
         padding-left: 8px;
     }
-
     #index-footer .col-md-6 {
         padding-right: 8px;
         padding-left: 8px;
     }
-
     #index-footer .col-md-7 {
         padding-right: 8px;
         padding-left: 8px;
     }
-
     #index-footer .col-md-1 {
         padding-right: 8px;
         padding-left: 8px;
     }
-
     #index-footer .col-md-3 {
         padding-right: 8px;
         padding-left: 8px;
     }
-
     #index-footer .col-md-2 {
         padding-right: 8px;
         padding-left: 8px;
@@ -366,42 +370,34 @@
 }
 
 @media screen and (min-width: 1200px) {
-
     #index-footer .col-md-4 {
         padding-right: 20px;
         padding-left: 20px;
     }
-
     #index-footer .col-md-8 {
         padding-right: 20px;
         padding-left: 20px;
     }
-
     #index-footer .col-md-5 {
         padding-right: 20px;
         padding-left: 20px;
     }
-
     #index-footer .col-md-6 {
         padding-right: 20px;
         padding-left: 20px;
     }
-
     #index-footer .col-md-7 {
         padding-right: 20px;
         padding-left: 20px;
     }
-
     #index-footer .col-md-1 {
         padding-right: 20px;
         padding-left: 20px;
     }
-
     #index-footer .col-md-3 {
         padding-right: 20px;
         padding-left: 20px;
     }
-
     #index-footer .col-md-2 {
         padding-right: 20px;
         padding-left: 20px;
@@ -409,50 +405,42 @@
 }
 
 @media screen and (max-width: 900px) {
-
     #index-footer .col-md-4 {
         padding-right: 8px;
         padding-left: 8px;
         width: 31.555555555556%;
     }
-
     #index-footer .col-md-8 {
         padding-right: 8px;
         padding-left: 8px;
         width: 48.222222222222%;
     }
-
     #index-footer .col-md-5 {
         padding-right: 8px;
         padding-left: 8px;
         width: 31.555555555556%;
     }
-
     #index-footer .col-md-6 {
         padding-right: 8px;
         padding-left: 8px;
         width: 48.222222222222%;
     }
-
     #index-footer .col-md-7 {
         padding-right: 8px;
         padding-left: 8px;
         width: 48.222222222222%;
     }
-
     #index-footer .col-md-1 {
         padding-right: 8px;
         padding-left: 8px;
         width: 6.555555555556%;
         display: none;
     }
-
     #index-footer .col-md-3 {
         padding-right: 8px;
         padding-left: 8px;
         width: 31.555555555556%;
     }
-
     #index-footer .col-md-2 {
         padding-right: 8px;
         padding-left: 8px;
@@ -461,48 +449,40 @@
 }
 
 @media screen and (max-width: 700px) {
-
     #index-footer .col-md-4 {
         padding-right: 4px;
         padding-left: 4px;
         width: 48.857142857143%;
     }
-
     #index-footer .col-md-8 {
         padding-right: 4px;
         padding-left: 4px;
         width: 48.857142857143%;
     }
-
     #index-footer .col-md-5 {
         padding-right: 4px;
         padding-left: 4px;
         width: 48.857142857143%;
     }
-
     #index-footer .col-md-6 {
         padding-right: 4px;
         padding-left: 4px;
         width: 48.857142857143%;
     }
-
     #index-footer .col-md-7 {
         padding-right: 4px;
         padding-left: 4px;
         width: 48.857142857143%;
     }
-
     #index-footer .col-md-1 {
         width: 0;
         display: none;
     }
-
     #index-footer .col-md-3 {
         padding-right: 4px;
         padding-left: 4px;
         width: 48.857142857143%;
     }
-
     #index-footer .col-md-2 {
         padding-right: 4px;
         padding-left: 4px;
@@ -511,48 +491,40 @@
 }
 
 @media screen and (max-width: 500px) {
-
     #index-footer .col-md-4 {
         padding-right: 4px;
         padding-left: 4px;
         width: 98.4%;
     }
-
     #index-footer .col-md-8 {
         padding-right: 4px;
         padding-left: 4px;
         width: 98.4%;
     }
-
     #index-footer .col-md-5 {
         padding-right: 4px;
         padding-left: 4px;
         width: 98.4%;
     }
-
     #index-footer .col-md-6 {
         padding-right: 4px;
         padding-left: 4px;
         width: 98.4%;
     }
-
     #index-footer .col-md-7 {
         padding-right: 4px;
         padding-left: 4px;
         width: 98.4%;
     }
-
     #index-footer .col-md-1 {
         width: 0;
         display: none;
     }
-
     #index-footer .col-md-3 {
         padding-right: 4px;
         padding-left: 4px;
         width: 98.4%;
     }
-
     #index-footer .col-md-2 {
         padding-right: 4px;
         padding-left: 4px;

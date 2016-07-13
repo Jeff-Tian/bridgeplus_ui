@@ -21,6 +21,11 @@
     text-align: left;
 }
 
+#index-footer .carousel .item img.gif {
+    height: 340px;
+    cursor: pointer;
+}
+
 #index-footer .carousel .nav-bar .prev {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);

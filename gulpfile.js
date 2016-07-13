@@ -28,7 +28,7 @@ gulp.task('copy', function (done) {
 });
 
 gulp.task('uglify-js', function (done) {
-    return gulp.src(['public/scripts/*.js', 'public/js/*.js'])
+    return gulp.src(['public/scripts/*.js'])
         .pipe(uglify())
         .pipe(concat('all-scripts.min.js'))
         .pipe(gulp.dest('public/dist/js'))
