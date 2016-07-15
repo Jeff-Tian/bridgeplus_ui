@@ -1,8 +1,11 @@
 mixin video(video)
     if video
-        div(data-modal-selector=".mask.#{video.className}", class="video-poster", style="background-image:url(#{video.poster})")
+        div.ui.embed(data-modal-selector=".mask.#{video.className}")
+            video(width="320", height="240", controls, preload="none", poster="#{video.poster}")
+                source(src="#{video.mp4}")
         p
             strong #{video.title}
+        br
 
 mixin videos(a)
     div.row
