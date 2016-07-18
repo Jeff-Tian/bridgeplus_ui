@@ -1,4 +1,4 @@
-(function() {
+(function () {
     var slidePages = ['/portal/zh/about-us', '/portal/zh/team', '/portal/zh/video', '/portal/zh/contact-us', '/portal/zh/join-us'];
 
     var alwaysLeftwardsSlides = ['/portal/zh/student-portal', '/portal/zh/mentor-portal', '/portal/zh/hr-portal'];
@@ -31,7 +31,7 @@
         $prev.animate({
             left: '-100%',
             right: '100%'
-        }, 'slow', function() {
+        }, 'slow', function () {
             $prev.remove();
         });
     }
@@ -40,7 +40,7 @@
         return $next.animate({
             left: '0',
             right: '0'
-        }, 'slow', function() {
+        }, 'slow', function () {
             $next.css('position', 'relative');
         }).promise();
     }
@@ -58,7 +58,7 @@
         $prev.animate({
             left: '100%',
             right: '-100%'
-        }, 'slow', function() {
+        }, 'slow', function () {
             $prev.remove();
         });
     }
@@ -115,36 +115,25 @@
     };
 })();
 
-$(function() {
+$(function () {
     var div = document.createElement('DIV'),
         body,
         title,
         bodyCache = [],
         bodyDataCache = [],
-        titleCache = [];
+        titleCache = [],
+        htmlCache = {}
+        ;
 
-    function addBody(html) {
-        bodyCache.push(html);
-        if (bodyCache.length > 5) {
-            bodyCache.shift();
+    function cacheRotate(cache, content) {
+        cache.push(content);
+
+        if (cache.length > 5) {
+            cache.shift();
         }
     }
 
-    function addBodyData(data) {
-        bodyDataCache.push(data);
-        if (bodyDataCache.length > 5) {
-            bodyDataCache.shift();
-        }
-    }
-
-    function addTitle(html) {
-        titleCache.push(html);
-        if (titleCache.length > 5) {
-            titleCache.shift();
-        }
-    }
-
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         var node = e.target;
         if (node.nodeName !== 'A') {
             node = $(node).closest('a');
@@ -171,7 +160,7 @@ $(function() {
         load(href, node, true, animationDirector.getAnimation(location.pathname, node.pathname, refresh, slideLeftToRight, slideRightToLeft));
     }, false);
 
-    window.addEventListener("popstate", function() {
+    window.addEventListener("popstate", function () {
         if (bodyCache && bodyCache.length) {
             refresh(bodyCache.pop(), titleCache.pop(), bodyDataCache.pop());
             return;
@@ -179,15 +168,15 @@ $(function() {
         load(location.href);
     });
 
-    $(document).on('navigate', function(e, url) {
+    $(document).on('navigate', function (e, url) {
         load(url, null, true);
     });
 
     function refresh(bodyHTML, titleHTML, data) {
-        animateWith(titleHTML, data, function() {
+        animateWith(titleHTML, data, function () {
             body.classList.add('hide');
 
-            setTimeout(function() {
+            setTimeout(function () {
                 body.innerHTML = bodyHTML;
                 body.classList.remove('hide');
             }, 100);
@@ -211,8 +200,8 @@ $(function() {
     }
 
     function slideLeftToRight(bodyHTML, titleHTML, data) {
-        animateWith(titleHTML, data, function() {
-            animationDirector.cloneOldSlide(body, function($prev, $next) {
+        animateWith(titleHTML, data, function () {
+            animationDirector.cloneOldSlide(body, function ($prev, $next) {
                 body.innerHTML = bodyHTML;
                 animationDirector.slideToLeft($next, $prev);
             });
@@ -220,7 +209,7 @@ $(function() {
     }
 
     function setData(data, titleHTML) {
-        Object.keys(data).forEach(function(key) {
+        Object.keys(data).forEach(function (key) {
             body.setAttribute('data-' + key, data[key]);
         });
         if (title) {
@@ -231,8 +220,8 @@ $(function() {
     var slideToRight = animationDirector.slideToRight;
 
     function slideRightToLeft(bodyHTML, titleHTML, data) {
-        animateWith(titleHTML, data, function() {
-            animationDirector.cloneOldSlide(body, function($prev, $next) {
+        animateWith(titleHTML, data, function () {
+            animationDirector.cloneOldSlide(body, function ($prev, $next) {
                 body.innerHTML = bodyHTML;
                 slideToRight($next, $prev);
             });
@@ -250,18 +239,38 @@ $(function() {
         return data;
     }
 
+    function getHtml(url, callback) {
+        console.log('getting ', url);
+
+        if (url.indexOf('/') === 0 && url.indexOf('//') < 0) {
+            url = location.origin + url;
+        }
+
+        if (htmlCache[url]) {
+            console.log('from cache');
+            callback(htmlCache[url]);
+        } else {
+            console.log('from server');
+            $.get(url, function (html) {
+                htmlCache[url] = html;
+
+                callback(html);
+            });
+        }
+    }
+
     function load(url, target, push, animation) {
         $(document).trigger('pjax/start');
-        $.get(url, function(html) {
+        getHtml(url, function (html) {
             body = body || document.querySelector('.body');
             title = title || document.querySelector('title');
             div.innerHTML = html;
             if (push) {
                 history.pushState(url, '', url);
-                addBody(body.innerHTML);
-                addBodyData(getData(body.attributes));
+                cacheRotate(bodyCache, body.innerHTML);
+                cacheRotate(bodyDataCache, getData(body.attributes));
                 if (title) {
-                    addTitle(title.innerHTML);
+                    cacheRotate(titleCache, title.innerHTML);
                 }
             }
             var bodyElement = div.querySelector('.body');
