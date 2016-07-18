@@ -1,4 +1,6 @@
 (function () {
+    var animationSpeed = 1000;
+
     var slidePages = ['/portal/zh/about-us', '/portal/zh/team', '/portal/zh/video', '/portal/zh/contact-us', '/portal/zh/join-us'];
 
     var alwaysLeftwardsSlides = ['/portal/zh/student-portal', '/portal/zh/mentor-portal', '/portal/zh/hr-portal'];
@@ -19,21 +21,9 @@
         return currentIndex < nextIndex ? slideLeftwards : slideRightwards;
     }
 
-    function placeToRight($next) {
-        $next.css({
-            position: 'absolute',
-            left: '100%',
-            right: '-100%'
-        });
-    }
-
     function moveToLeft($prev) {
-        $prev.animate({
-            left: '-100%',
-            right: '100%'
-        }, 'slow', function () {
-            $prev.remove();
-        });
+        $prev.addClass('slide-to-left');
+        removePrev($prev);
     }
 
     function returnToOriginalPos($next) {
@@ -45,22 +35,15 @@
         }).promise();
     }
 
-    function placeToLeft($next) {
-        $next.css({
-            position: 'absolute',
-            left: '-100%',
-            right: '100%'
-        });
+    function removePrev($prev) {
+        setTimeout(function () {
+            $prev.remove();
+        }, animationSpeed);
     }
 
-
     function moveToRight($prev) {
-        $prev.animate({
-            left: '100%',
-            right: '-100%'
-        }, 'slow', function () {
-            $prev.remove();
-        });
+        $prev.addClass('slide-to-right');
+        removePrev($prev);
     }
 
 
@@ -74,7 +57,9 @@
         $prevBody.css({
             position: 'absolute',
             left: '0',
-            right: '0'
+            right: '0',
+            height: $body.height() + 'px',
+            'background-color': $body.css('background-color')
         });
 
         $prevBody.insertBefore($body);
@@ -87,23 +72,37 @@
     }
 
     function recoverFooter() {
-        $('#footer').css('position', 'relative');
+        setTimeout(function () {
+            $('#footer').css('position', 'relative');
+        }, animationSpeed);
     }
 
 
     function slideToLeft($next, $prev) {
         fixFooter();
-        placeToRight($next);
         moveToLeft($prev);
-        returnToOriginalPos($next).done(recoverFooter);
+        $next
+            .addClass('return-to-origin-from-right');
+        setTimeout(function () {
+            $next
+                .removeClass('return-to-origin-from-right');
+        }, animationSpeed);
+        recoverFooter();
     }
 
 
     function slideToRight($next, $prev) {
         fixFooter();
-        placeToLeft($next);
         moveToRight($prev);
-        returnToOriginalPos($next).done(recoverFooter);
+
+        $next.addClass('return-to-origin-from-left');
+
+        setTimeout(function () {
+            $next
+                .removeClass('return-to-origin-from-left');
+        }, animationSpeed);
+
+        recoverFooter();
     }
 
     window.animationDirector = {

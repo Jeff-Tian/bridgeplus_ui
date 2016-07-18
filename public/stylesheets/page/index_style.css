@@ -213,21 +213,24 @@ a.round-button:active {
 #index-footer .big-title {
     color: #333333;
     font-weight: bold;
-    font-size: 28pt;
+    /*font-size: 28pt;*/
+    font-size: 22pt;
     font-family: 'Microsoft YaHei', monospace;
 }
 
 #index-footer .small-title {
     color: #333333;
     font-weight: bold;
-    font-size: 16pt;
+    /*font-size: 16pt;*/
+    font-size: 13pt;
     font-family: 'Microsoft YaHei', monospace;
 }
 
 #index-footer .footer-content {
     color: #333;
     font-weight: normal;
-    font-size: 14pt;
+    /*font-size: 14pt;*/
+    font-size: 12pt;
     font-family: 'Microsoft YaHei', monospace;
 }
 
