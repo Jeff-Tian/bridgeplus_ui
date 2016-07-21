@@ -593,3 +593,18 @@ a.round-button:active {
         border: solid 1px #ccc;
     }
 }
+
+@media screen and (max-height: 650px) {
+    #index-footer #bottom {
+        padding: 0 0 0 40px;
+    }
+
+    #index-footer .col-sm-3 {
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+    }
+
+    #index-footer .col-md-7.col-sm-5 {
+        padding-left: 150px !important;
+    }
+}

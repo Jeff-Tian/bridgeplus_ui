@@ -6,7 +6,7 @@ mixin link(activePage, className, href, title)
 
 mixin icon-switcher(active)
     h2(style="margin-bottom:0;")
-        ul.horizontal.about-us.icon.links
+        ul.horizontal.about-us.icon.links(style="margin: 0;")
             li
                 + link(active, 'about-us', '/portal/zh/about-us', '关于我们')
             li

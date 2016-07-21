@@ -2,7 +2,7 @@ mixin teamMember(member)
     if member
         div.row
             div.col-md-4
-                p &nbsp;
+                div &nbsp;
                 img.circle.image(src="#{member.picture}")
             div.col-md-8
                 h2(style="margin-bottom: 5px;")
@@ -10,7 +10,7 @@ mixin teamMember(member)
                     | &nbsp;
                     span.title(style="font-size: small; font-weight: normal;") #{member.title}
                 hr.red.solid.line
-                p #{member.intro}
+                p.clamp(title="#{member.intro}") #{member.intro}
 
 mixin teamMembers(members)
     div.row

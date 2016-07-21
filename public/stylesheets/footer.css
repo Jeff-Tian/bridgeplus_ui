@@ -12,7 +12,7 @@
 #footer {
     background: white;
     color: #333;
-    padding: 20px 30px 15px 60px;
+    padding: 10px 15px 10px 60px;
     font-family: 'Open Sans', sans-serif;
     /*position: fixed;*/
     bottom: 0;
@@ -21,7 +21,6 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     z-index: 1;
-    height: 99px;
 }
 
 #footer .fnav {
