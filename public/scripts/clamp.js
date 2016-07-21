@@ -9,5 +9,8 @@ $(function () {
 
     clamp();
 
-    $(document).on('pjax/done', clamp);
+    $(document)
+        .on('pjax/done', clamp)
+        .on('show_content', clamp)
+    ;
 });
