@@ -3,7 +3,7 @@ mixin video(video)
         div.ui.embed(data-modal-selector=".mask.#{video.className}")
             video(width="320", height="240", controls, preload="none", poster="#{video.poster}")
                 source(src="#{video.mp4}")
-        p
+        div
             strong #{video.title}
         br
 

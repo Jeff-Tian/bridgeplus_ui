@@ -56,7 +56,7 @@ mixin description(mainTitle, heading1, content1, heading2, content2, nav)
         div
             span.strong-content #{nav.text}
             | &nbsp;
-            a.round-button.strong-content(href="#{nav.link}") #{nav.button}
+            a.round-button.strong-content(href="#{nav.link}", use-pjax="false") #{nav.button}
 
 mixin services_title(title)
     div.widget&attributes(attributes)
