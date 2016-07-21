@@ -1,5 +1,6 @@
 (function () {
     var animationSpeed = 1000;
+    var animationEndEvents = 'oanimationend animationend webkitAnimationEnd';
 
     var slidePages = ['/portal/zh/about-us', '/portal/zh/team', '/portal/zh/video', '/portal/zh/contact-us', '/portal/zh/join-us'];
 
@@ -36,9 +37,9 @@
     }
 
     function removePrev($prev) {
-        setTimeout(function () {
+        $prev.bind(animationEndEvents, function () {
             $prev.remove();
-        }, animationSpeed);
+        });
     }
 
     function moveToRight($prev) {
@@ -83,10 +84,10 @@
         moveToLeft($prev);
         $next
             .addClass('return-to-origin-from-right');
-        setTimeout(function () {
+        $next.bind(animationEndEvents, function () {
             $next
                 .removeClass('return-to-origin-from-right');
-        }, animationSpeed);
+        });
         recoverFooter();
     }
 
@@ -97,10 +98,10 @@
 
         $next.addClass('return-to-origin-from-left');
 
-        setTimeout(function () {
+        $next.bind(animationEndEvents, function () {
             $next
                 .removeClass('return-to-origin-from-left');
-        }, animationSpeed);
+        });
 
         recoverFooter();
     }
