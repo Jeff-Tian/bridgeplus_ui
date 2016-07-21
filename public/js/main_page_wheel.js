@@ -162,8 +162,10 @@ $(function () {
             },
             start: function () {
                 var paper = new Raphael("bridge_plus_wheel", 1600, 1000);
-                BridgeWheel.resize();
-                paper.wheel(440, vmvideos.slice(0, 10), 2, vmvideos, [], additionInfo);
+                this.resize();
+                setTimeout(function() {
+                    paper.wheel();
+                }, 500);
             },
             resize: resizeWheel
         };
