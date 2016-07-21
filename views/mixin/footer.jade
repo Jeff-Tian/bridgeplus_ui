@@ -58,17 +58,18 @@ mixin description(mainTitle, heading1, content1, heading2, content2, nav)
             | &nbsp;
             a.round-button.strong-content(href="#{nav.link}") #{nav.button}
 
-mixin services(title, list)
+mixin services_title(title)
     div.widget&attributes(attributes)
         h1 &nbsp;
         div.text-column
             h3.small-title#key-services-title(style="white-space: nowrap; color: #666;") #{title}
-            ul.about-list
-                each val, index in list
-                    li
-                        a.normal-content(href="#{val.link}", title="#{val.text}")
-                            if !val.logo
-                                img(src="#{val.image}", style="vertical-align: middle;")
-                                span(style="vertical-align: middle;") &nbsp; - #{val.text}
-                            if val.logo
-                                img(src="#{val.logo}", alt="#{val.text}", style="max-height: 26px; max-width: 90%;")
+            block
+
+mixin services(title, list)
+    + services_title(title)&attributes(attributes)
+        ul.about-list
+            each val, index in list
+                li
+                    a.normal-content(href="#{val.link}", title="#{val.text}")
+                        img(src="#{val.image}", style="vertical-align: middle;")
+                        span(style="vertical-align: middle;") &nbsp; - #{val.text}

@@ -479,6 +479,11 @@ a.round-button:active {
         padding-left: 8px;
         width: 31.555555555556%;
     }
+
+    #index-footer .text-column {
+        padding: 5px 10px 5px 10px;
+        border: solid 1px #ccc;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -528,6 +533,11 @@ a.round-button:active {
         padding-left: 4px;
         width: 48.857142857143%;
     }
+
+    #index-footer .text-column {
+        padding: 5px 10px 5px 10px;
+        border: solid 1px #ccc;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -576,5 +586,10 @@ a.round-button:active {
         padding-right: 4px;
         padding-left: 4px;
         width: 98.4%;
+    }
+
+    #index-footer .text-column {
+        padding: 5px 10px 5px 10px;
+        border: solid 1px #ccc;
     }
 }

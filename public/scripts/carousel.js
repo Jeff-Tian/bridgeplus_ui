@@ -1,43 +1,19 @@
 $(document).ready(function () {
-    function prepareMyCarousel() {
-        console.log('preparing my carousel...');
-        function resizeStage() {
-            var $stage = $('.carousel .carousel-inner');
+    function loadImage(index, imageToLoad) {
+        var $imageToLoad = $(imageToLoad);
+        var img = new Image();
+        img.onload = function () {
+            $imageToLoad.attr('src', img.src);
+            resizeStage();
+        };
+        img.src = $imageToLoad.attr('preload-src');
+    }
 
-            var $items = $('.carousel .item');
-            var maxHeight = 0;
-            for (var i = 0; i < $items.length; i++) {
-                if (maxHeight < $($items[i]).height()) {
-                    maxHeight = $($items[i]).height();
-                }
-            }
+    function loadImages() {
+        $('img[preload-src]').map(loadImage);
+    }
 
-            $stage.height(maxHeight + 'px');
-        }
-
-        var deferreds = $('img[preload-src]').map(function (i, elem) {
-            var deferred = $.Deferred();
-
-            var $this = $(elem);
-            var img = new Image();
-            img.onload = function () {
-                $this.attr('src', img.src);
-                resizeStage();
-
-                deferred.resolve(i);
-            };
-            img.src = $this.attr('preload-src');
-
-            return deferred;
-        });
-
-        $.when.apply(null, deferreds.get()).then(function () {
-            // Use preload gif to eliminate the slow animation
-        });
-
-        var $stage = $('.carousel .carousel-inner');
-        $stage.height($stage.height() + 'px');
-
+    function adjustItemWidth() {
         $('.carousel .item').each(function () {
             var $this = $(this);
             $this
@@ -46,8 +22,30 @@ $(document).ready(function () {
                 .css('position', 'absolute')
             ;
         });
+    }
 
-        $('.carousel .nav-bar .prev').click(function () {
+    function resizeStage() {
+        var $stage = $('.carousel .carousel-inner');
+
+        var $items = $('.carousel .item');
+        var maxHeight = 0;
+        for (var i = 0; i < $items.length; i++) {
+            if (maxHeight < $($items[i]).height()) {
+                maxHeight = $($items[i]).height();
+            }
+        }
+
+        $stage.height(maxHeight + 'px');
+    }
+
+    function loadImageAndAdjustWidth() {
+        loadImages();
+        adjustItemWidth();
+    }
+
+    function clickToSlide() {
+        var running = false;
+        $(document).on('click', '.carousel .nav-bar .prev', function () {
             if (running) {
                 return;
             }
@@ -75,8 +73,7 @@ $(document).ready(function () {
 
         });
 
-        var running = false;
-        $('.carousel .nav-bar .next').click(function () {
+        $(document).on('click', '.carousel .nav-bar .next', function () {
             if (running) {
                 return;
             }
@@ -103,9 +100,12 @@ $(document).ready(function () {
         });
     }
 
-    prepareMyCarousel();
+    clickToSlide();
+    loadImageAndAdjustWidth();
 
     $(document).on('pjax/done', function () {
-        setTimeout(prepareMyCarousel, 100);
+        setTimeout(loadImageAndAdjustWidth, 100);
     });
+
+    $(window).on('resize', adjustItemWidth);
 });
