@@ -214,7 +214,7 @@ a.round-button:active {
     color: #333333;
     font-weight: bold;
     /*font-size: 28pt;*/
-    font-size: 22pt;
+    font-size: 28px;
     font-family: 'Microsoft YaHei', monospace;
 }
 
@@ -222,7 +222,7 @@ a.round-button:active {
     color: #333333;
     font-weight: bold;
     /*font-size: 16pt;*/
-    font-size: 13pt;
+    font-size: 16px;
     font-family: 'Microsoft YaHei', monospace;
 }
 
@@ -230,7 +230,7 @@ a.round-button:active {
     color: #333;
     font-weight: normal;
     /*font-size: 14pt;*/
-    font-size: 12pt;
+    font-size: 14px;
     font-family: 'Microsoft YaHei', monospace;
 }
 
@@ -248,14 +248,14 @@ a.round-button:active {
 
 #index-footer .strong-content {
     font-family: 'Microsoft YaHei', monospace;
-    font-size: 14pt;
+    font-size: 14px;
     font-weight: bold;
     color: #666;
 }
 
 #index-footer .normal-content {
     font-family: 'Microsoft YaHei', monospace;
-    font-size: 14pt;
+    font-size: 14px;
     font-weight: normal;
     color: #666;
 }

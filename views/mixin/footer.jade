@@ -21,7 +21,7 @@ mixin carouselItem(image, description, title)
     div.item&attributes(attributes)
         img(preload-src="#{image}", class="gif")&attributes(attributes)
         div.media(style="cursor: pointer;")
-            div.media-left(style="padding-top: 5px;")
+            div.media-left(style="padding-top: 5px; padding-left: 10px;")
                 img(aria-hidden="true", style="background-color: #A04040; color: white; height: 32px; line-height: 32px; width: 32px; display: block;", src="/bower/bridgeplus_ui/public/images/person.png")
             div.media-body(style="padding-top: 5px;")
                 div(style="color: #666; font-weight: bold; font-size: small; margin-top: -4px; white-space: nowrap;") #{description}
