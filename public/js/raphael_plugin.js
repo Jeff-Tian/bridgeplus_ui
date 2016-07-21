@@ -163,9 +163,9 @@ Raphael.fn.wheel = function(radius, json, index, dataAll, array, additionInfo) {
         rotate(index, images);
         array.push(images);
         if (index == 2) {
-            raphael.wheel(340, dataAll.slice(17, 27), 1, dataAll, array, additionInfo);
+            raphael.wheel(340, dataAll.slice(10, 20), 1, dataAll, array, additionInfo);
         } else if (index == 1) {
-            raphael.wheel(240, dataAll.slice(34, 44), 0, dataAll, array, additionInfo);
+            raphael.wheel(240, dataAll.slice(20, 30), 0, dataAll, array, additionInfo);
         } else {
             inner();
             $(document).trigger('wheel/show');

@@ -19,20 +19,6 @@ var vmvideos = [{
 }, {
     "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_10.jpg'
 }, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_11.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_12.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_13.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_14.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_15.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_16.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/corporate_17.jpg'
-}, {
     "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_1.jpg'
 }, {
     "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_2.jpg'
@@ -53,18 +39,6 @@ var vmvideos = [{
 }, {
     "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_10.jpg'
 }, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_11.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_12.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_13.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_14.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_15.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/mentor_16.jpg'
-}, {
     "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_1.jpg'
 }, {
     "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_2.jpg'
@@ -84,32 +58,6 @@ var vmvideos = [{
     "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_9.jpg'
 }, {
     "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_10.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_11.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_12.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_13.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_14.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_15.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_16.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_17.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_18.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_19.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_20.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_21.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_22.jpg'
-}, {
-    "thumb": '/bower/bridgeplus_ui/public/images/wheel/student_23.jpg'
 }];
 
 var additionInfo = [
