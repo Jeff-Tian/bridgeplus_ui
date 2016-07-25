@@ -10,6 +10,14 @@
     float: right;
 }
 
+#index-footer a:link {
+    text-decoration: none;
+}
+
+#index-footer a:hover {
+    text-decoration: underline;
+}
+
 #index-footer .container {
     padding-right: 15px;
     padding-left: 15px;
