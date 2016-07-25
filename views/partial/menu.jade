@@ -24,3 +24,46 @@
             .item-group
                 .item-button 微博icon
                 .item-button 微信icon
+
+        .menu-footer
+            #wechat.popup-trigger
+                img(src="/bower/bridgeplus_ui/public/images/menu/wechat-icon.png")
+
+div.popup(for="wechat")
+    img(src="/bower/bridgeplus_ui/public/images/bplus_fuwuhao_noborder.jpg")
+
+style(type="text/css").
+    .menu-footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 10px;
+    }
+
+    .popup {
+        position: absolute;
+        right: 0;
+        bottom: 50px;
+        display: none;
+        z-index: 9999;
+    }
+
+    .popup > img {
+        padding: 10px;
+        background-color: white;
+        border: solid 1px #d4d4d5;
+        box-sizing: border-box;
+    }
+
+    .popup:after {
+        content: '';
+        display: block;
+        background-color: white;
+        position: absolute;
+        left: 15px;
+        bottom: -5px;
+        border-left: solid 10px #e61c36;
+        border-right: solid 10px #e61c36;
+        border-top: solid 10px white;
+        border-bottom: 0;
+    }

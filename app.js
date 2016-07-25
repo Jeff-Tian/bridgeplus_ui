@@ -6,15 +6,18 @@ var app = express()
     .set('view engine', 'jade')
     .use(express.static(path.join(__dirname, '/public')))
     .use('/bower/bridgeplus_ui/public/', express.static(path.join(__dirname, '/public')))
+    .get('/favicon.ico', function (req, res, next) {
+        res.send('ok')
+    })
     .use(require('./routes'))
-    .use(function(req, res, next) {
+    .use(function (req, res, next) {
         res.status(200).json({
             isSuccess: false,
             code: 404,
             message: 'Not Found'
         });
     })
-    .use(function(err, req, res, next) {
+    .use(function (err, req, res, next) {
         res.status(200).json({
             isSuccess: false,
             code: err.code || 500,
