@@ -533,3 +533,38 @@ a.item-button {
     -o-transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
     transform: translateY(calc(70.72vh - 14vw)) translateX(calc(70.72vh - 14vw)) rotate(-45deg);
 }
+
+.menu-footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+}
+
+.popup {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    display: none;
+    z-index: 9999;
+}
+
+.popup > img {
+    padding: 10px;
+    background-color: white;
+    border: solid 1px #d4d4d5;
+    box-sizing: border-box;
+}
+
+.popup:after {
+    content: '';
+    display: block;
+    background-color: white;
+    position: absolute;
+    left: 15px;
+    bottom: -5px;
+    border-left: solid 10px #e61c36;
+    border-right: solid 10px #e61c36;
+    border-top: solid 10px white;
+    border-bottom: 0;
+}
