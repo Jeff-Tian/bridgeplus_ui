@@ -3,8 +3,10 @@ $(document).ready(function(){
     $(".menu-button").click(function() {
         if (!isMenuActive) {
             $(".menu").addClass("active");
+            $(".menu").removeClass("normal");
         } else {
             $(".menu").removeClass("active");
+            $(".menu").addClass("normal");
         }
         isMenuActive = !isMenuActive;
     });

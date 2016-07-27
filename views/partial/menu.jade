@@ -1,5 +1,5 @@
 .menu
-    .head(style='overflow: auto;')
+    .head
         .menu-controller
             .menu-button
                 span
@@ -20,56 +20,10 @@
                 a.item-button(href='/zh/cmpt', use-pjax="false") 我是学生
                 a.item-button(href='//www.wenjuan.com/s/bIvYra/',target='_blank',use-pjax="false") 我是导师
                 a.item-button(href='//corp.bridgeplus.cn', use-pjax="false") 我是企业
-            .item-separator
-            .item-group
-                .item-button 微博icon
-                .item-button 微信icon
-
+        div.fixed-wechat-img(for="wechat")
+            img(src="/bower/bridgeplus_ui/public/images/bplus_fuwuhao_noborder.jpg")
         .menu-footer
             #wechat.popup-trigger
                 img(src="/bower/bridgeplus_ui/public/images/menu/wechat-icon.png")
-
-div.popup(for="wechat")
-    img(src="/bower/bridgeplus_ui/public/images/bplus_fuwuhao_noborder.jpg")
-
-style(type="text/css").
-    .menu-footer {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        padding: 10px;
-    }
-
-    .popup {
-        position: absolute;
-        right: 0;
-        bottom: 50px;
-        display: block;
-        z-index: 9999;
-        opacity: 1;
-        transition: opacity, 1s
-    }
-    .popup.hover {
-        display: block;
-        opacity: 1;
-     }
-
-    .popup > img {
-        padding: 10px;
-        background-color: white;
-        border: solid 1px #d4d4d5;
-        box-sizing: border-box;
-    }
-
-    .popup:after {
-        content: '';
-        display: block;
-        background-color: white;
-        position: absolute;
-        left: 15px;
-        bottom: -5px;
-        border-left: solid 10px #e61c36;
-        border-right: solid 10px #e61c36;
-        border-top: solid 10px white;
-        border-bottom: 0;
-    }
+        div.popup(for="wechat")
+            img(src="/bower/bridgeplus_ui/public/images/bplus_fuwuhao_noborder.jpg")
