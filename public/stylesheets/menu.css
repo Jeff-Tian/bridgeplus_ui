@@ -548,40 +548,28 @@ a.item-button {
     transform: translateY(60vh) translateX(50%) rotate(45deg);
 }
 
+.menu.active .menu-footer {
+    transform: translate(300px);
+}
 .menu-footer {
-    position: absolute;
-    left: 310px;
+    position: fixed;
     bottom: 0;
     padding: 10px;
+    transition: transform 0.5s
 }
-.menu.active .popup-trigger {
-    opacity: 0;
-    cursor: initial;
+.menu.active .popup {
+    left: 300px;
 }
 .popup-trigger {
     cursor: pointer;
-    opacity: 1;
-    transition: opacity 1s;
-}
-.fixed-wechat-img {
-    text-align: center;
 }
 .popup {
-    position: absolute;
+    pointer-events: none;
+    position: fixed;
     bottom: 50px;
-    left: 310px;
-    // display: none;
     z-index: 9999;
     opacity: 0;
-    transition: opacity 1s;
-}
-.fixed-wechat-img > img {
-    padding: 10px;
-    background-color: white;
-    border: solid 1px #d4d4d5;
-    box-sizing: border-box;
-    height: 200px;
-    width: 200px; 
+    transition: opacity 0.6s;
 }
 .popup > img {
     padding: 10px;
@@ -590,19 +578,6 @@ a.item-button {
     box-sizing: border-box;
     height: 200px;
     width: 200px;
-}
-
-.fixed-wechat-img:after {
-    content: '';
-    display: none;
-    // background-color: white;
-    position: absolute;
-    left: 15px;
-    bottom: -5px;
-    border-left: solid 10px rgba(0,0,0,0);
-    border-right: solid 10px rgba(0,0,0,0);
-    border-top: solid 10px white;
-    border-bottom: 0;
 }
 .popup:after {
     content: '';

@@ -4,10 +4,8 @@ $(function () {
     }
     var popupHandler = function(handler) {
         return function(event) {
-            if ($('.menu.active').length === 0) {
-                var p = getPopupByTargetId(event);
-                p[handler]("active");
-            }
+            var p = getPopupByTargetId(event);
+            p[handler]("active");
         };
     };
     $('.popup-trigger').hover(popupHandler("addClass"), popupHandler("removeClass"));
