@@ -22,6 +22,8 @@
 
 .menu.active .head {
     transform: translate(0px);
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .menu-detail {
@@ -548,7 +550,7 @@ a.item-button {
 
 .menu-footer {
     position: absolute;
-    right: 0;
+    left: 310px;
     bottom: 0;
     padding: 10px;
 }
@@ -562,11 +564,7 @@ a.item-button {
     transition: opacity 1s;
 }
 .fixed-wechat-img {
-    position: absolute;
-    bottom: 50px;
-    left: 80px;
-    // display: none;
-    z-index: 9999;
+    text-align: center;
 }
 .popup {
     position: absolute;
