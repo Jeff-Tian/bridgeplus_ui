@@ -18,7 +18,7 @@
             .item-separator
             .item-group
                 a.item-button(href='/zh/cmpt', use-pjax="false") 我是学生
-                a.item-button(href='javascript: void(0);') 我是导师
+                a.item-button(href='//www.wenjuan.com/s/bIvYra/',target='_blank',use-pjax="false") 我是导师
                 a.item-button(href='//corp.bridgeplus.cn', use-pjax="false") 我是企业
             .item-separator
             .item-group
@@ -44,9 +44,15 @@ style(type="text/css").
         position: absolute;
         right: 0;
         bottom: 50px;
-        display: none;
+        display: block;
         z-index: 9999;
+        opacity: 1;
+        transition: opacity, 1s
     }
+    .popup.hover {
+        display: block;
+        opacity: 1;
+     }
 
     .popup > img {
         padding: 10px;
