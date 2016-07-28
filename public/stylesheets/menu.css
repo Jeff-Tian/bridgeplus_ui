@@ -408,9 +408,12 @@ a.item-button {
     transition: border .5s, background-color 0.5s, color 0.5s;
 }
 
-#pic-entrance .pic-item .pic-text-area .button a {
+#pic-entrance .pic-item .pic-text-area a {
     color: white;
     text-decoration: none;
+}
+#pic-entrance .pic-item .pic-text-area .news a {
+    display: block;
 }
 
 #pic-entrance .pic-item:hover .pic-text-area .button span,
