@@ -19,7 +19,7 @@
     "jquery-address": "https://github.com/asual/jquery-address.git",
     "owl.carousel": "2.0.0-beta.3",
     "preheating-ui": "git@bitbucket.org:hcdlearning/preheating-ui.git",
-    "competion-ui": "git@github.com:Jeff-Tian/cmpt2015-ui.git#develop-ui",
+    "competion-ui": "git@bitbucket.org:hcdlearning/cmpt2015-ui.git#develop-ui",
     "devbridge-autocomplete": "1.2.25",
     "angular-chart.js": "0.8.9",
     "angular-sanitize": "1.5.7",
@@ -27,7 +27,7 @@
     "angular-service": "https://github.com/Jeff-Tian/angular-service.git",
     "angularQueryParserModule": "angular-query-parser#^0.0.2",
     "angular-auto-complete": "angular-j-auto-complete#^1.0.0",
-    "bridgeplus_ui": "git@github.com:Jeff-Tian/bridgeplus_ui.git#develop"
+    "bridgeplus_ui": "git@bitbucket.org:hcdlearning/bridgeplus_ui.git#develop"
   },
   "devDependencies": {
     "angular-mocks": "1.4.12",
