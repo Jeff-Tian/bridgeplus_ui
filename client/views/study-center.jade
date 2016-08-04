@@ -1,0 +1,38 @@
+block customizedHead
+    include ../www/view-partial/slim-head.html
+block customizedHeader
+    div#my-header(ng-controller="AppCtrl", ng-init="current_page='study-center'", style="margin-bottom: 80px;")
+        include ../www/view-partial/header.html
+block customizedFooter
+    div#my-footer
+        include ../www/view-partial/footer.html
+        script(type="text/javascript", src="#{cdn.normal}bower/angular-ui-router/release/angular-ui-router.min.js?#{cdn.version}")
+        script(type="text/javascript", src="#{cdn.normal}js/page/opportunity-detail/menuDirective.js?#{cdn.version}")
+        script(type="text/javascript", src="#{cdn.normal}js/controllers/OpdMenuCtrl.js?#{cdn.version}")
+        script(type="text/javascript", src="#{cdn.normal}js/page/opportunity-detail/widget/competitiveness/competitiveDirective.js?#{cdn.version}")
+        script(type="text/javascript", src="#{cdn.normal}js/page/opportunity-detail/paginationDirective.js?#{cdn.version}")
+        script(type="text/javascript", src="#{cdn.normal}bower/mock-tracking/mock-tracking.js?#{cdn.version}")
+        script(type="text/javascript", src="#{trackingJs}")
+        script(type="text/javascript", src="#{cdn.cdnify('bower/angular-service/public/scripts/app.js')}")
+        script(type="text/javascript", src="#{cdn.cdnify('bower/angular-service/public/scripts/service.js')}")
+        script(type="text/javascript", src="#{cdn.cdnify('bower/angular-service/public/scripts/paginationData.js')}")
+        script(type="text/javascript", src="#{cdn.normal}js/page/study-center/app.js?#{cdn.version}")
+        script(type="text/javascript", src="#{cdn.normal}js/page/study-center/controllers.js?#{cdn.version}")
+        script(type="text/javascript", src="#{cdn.normal}js/page/study-center/services.js?#{cdn.version}")
+        script(type="text/javascript").
+            angular.element(document).ready(function () {
+                angular.bootstrap(document.getElementById('my-header'), ['bplusModule']);
+                angular.bootstrap(document.getElementById('my-footer'), ['bplusModule']);
+            });
+        include ../www/view-partial/external-js.html
+
+block content
+    div(class="ui grid container", ng-app="studyCenterModule")
+        div(class="four wide column", ng-controller="StudyCtrl")
+            bopdmenu
+        div(class="twelve wide column")
+            include course-table
+            div(ui-view="")
+            include study-plan
+            include fav
+            include my-courses

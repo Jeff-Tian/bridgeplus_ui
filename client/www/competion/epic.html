@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>赛事详情 Bridge+</title>
+    <meta name="description" content="Bridge+">
+    <link type="text/css" rel="stylesheet"
+          href="<%= cdn.normal %>bower/semantic-ui/dist/semantic.min.css?<%= cdn.version %>" media="all"/>
+    <link type="text/css" rel="stylesheet" href="<%= cdn.normal %>css/main.css?<%= cdn.version %>" media="all"/>
+    <link type="text/css" rel="stylesheet" href="<%= cdn.normal %>cmpt/dist/competion.css?<%= cdn.version %>"
+          media="all"/>
+</head>
+
+<body class="bplus" ng-init="page='<%=page%>';lang='<%=lang%>';site='bplus'" ng-app="bplus" ng-controller="AppCtrl">
+<%- include('../view-partial/header.html') -%>
+
+<div class="game-ui cloak" ng-controller="epicBaseCtrl">
+    <%- include('../view-partial/durable-message.html') -%>
+
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="four wide column">
+                <game-menu></game-menu>
+            </div>
+            <div class="twelve wide column">
+                <epic></epic>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../view-partial/footer.html') -%>
+<script src="/cmpt/config.js"></script>
+<script src="<%= cdn.normal %>cmpt/libs/jquery-qrcode/jquery.qrcode.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>cmpt/dist/main.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/competion/main.js?<%= cdn.version %>"></script>
+<script>
+    window.t_PageName = "epic";
+
+    $(function () {
+        var moduleTrack = new window.ModuleTrack('epic');
+
+        function logAndSendTrack(eventName) {
+            console.log(eventName);
+            moduleTrack.send(eventName);
+        }
+
+        function injectTrack(eventName) {
+            return function ($event) {
+
+                logAndSendTrack(eventName);
+
+                var $target = $($event.target);
+                if($target.attr('target') !== '_blank') {
+                    $event.preventDefault();
+                    
+                    window.setTimeout(function () {
+                        window.location.href = $($event.target).attr('href');
+                    }, 300);
+                }
+            }
+        }
+
+        $(document)
+                .on('click', 'a[ng-href^="/cmpt/marksimos?team_id="]', injectTrack('startGame.click'))
+                .on('click', 'button.metting-btn.create-meeting-btn', function () {
+                    logAndSendTrack('createClassroom.click');
+                })
+                .on('click', 'a.metting-btn', injectTrack('enterClassroom.click'))
+                .on('click', 'a.b-competion-gametraining-online-classroom', injectTrack('classroom.click'))
+                .on('click', 'a.b-competion-gametraining-download', injectTrack('material.click'))
+                .on('click', 'a.b-competion-gametraining-watch', injectTrack('video.click'))
+                .on('click', 'button[ng-click="toggle(tab)"]', function(){
+                    var $parent = $(this).parent();
+                    if($parent.hasClass('join')){
+                        logAndSendTrack('joinTeam.click');
+                    }
+                    else if($parent.hasClass('create')){
+                        logAndSendTrack('createTeam.click');
+                    }
+                })
+                .on('click', "div[class='join'] div[class*='tab-header'] button[class*='btn ng-binding']", function(e){
+                    var $this = $(e.target), $buttons = $this.parent().parent().find('button');
+
+                    $buttons.each(function(i, button){
+                        if($(button).is($this)){
+                            if(i === 0){
+                                logAndSendTrack('teamList.tab');
+                            }
+                            else if(i === 1){
+                                logAndSendTrack('inviteSent.tab');
+                            }
+                            else if(i === 2){
+                                logAndSendTrack('teamInvite.tab');
+                            }
+                        }
+                    });
+                })
+                .on('click', "button[ng-click='sendApply(team)']", function(){
+                    logAndSendTrack('applyTeam.click');
+                })
+                .on('click', "button[ng-click='sendInvite(person)']", function(){
+                    logAndSendTrack('inviteMember.click');
+                })
+        ;
+    });
+</script>
+<%- include('../view-partial/external-js.html') -%>
+</body>
+
+</html>

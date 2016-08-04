@@ -1,0 +1,25 @@
+{
+  "0": [
+    {
+      "name": "上海交通大学",
+      "major": "计算机工程",
+      "background": "学士",
+      "dateFrom": {
+        "value": {
+          "year": 1990,
+          "month": 9,
+          "day": 1
+        }
+      },
+      "dateTo": {
+        "value": {
+          "year": 2000,
+          "month": 10,
+          "day": 2
+        }
+      },
+      "description": "在麻省理工学院进行短期研究，完成了8个项目",
+      "tags": "海外交换 计算机"
+    }
+  ]
+}

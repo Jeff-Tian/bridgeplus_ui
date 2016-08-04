@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bridge+</title>
+    <meta name="description" content="<%= __('SEODesc_SignIn') %>">
+    <%- include('header.html') -%>
+</head>
+<body ng-controller="AppCtrl">
+<%- include('head.html') -%>
+
+<!-- Page Contents -->
+<div class="b-profile-body has-header">
+    <div class="b-profile-achievement" ng-controller="achievement">
+        <div class="b-profile-body-achievement-bg-1"></div>
+        <div class="b-profile-body-achievement-bg-2"></div>
+        <div class="b-profile-avatar">
+            <div class="progress-circle">
+                <div class="progress-pie-left">
+                    <div id="progressLeft" class="progress-left" style="transform:rotate(0deg);"></div>
+                </div>
+                <div class="progress-pie-right">
+                    <div id="progressRight" class="progress-right" style="transform:rotate(0deg);"></div>
+                </div>
+            </div>
+            <div class="b-profile-face-img" ng-mouseover="classNameFaceEdit='editHover'"
+                 ng-mouseleave="classNameFaceEdit=''" ng-click="editface()">
+                <img ng-src="{{data.face}}" class="b-profile-face">
+            </div>
+            <div id="avatarUpload" class="hidden" upload handle="handle">
+            </div>
+        </div>
+        <div class="b-profile-completetion">
+            <h2 class="b-profile-face-percentage" ng-show="dataLoaded" ng-bind-template="{{data.rate}}%"></h2>
+
+            <div class="b-profile-face-txt" ng-show="dataLoaded" ng-bind-template="{{data.tip | translate}}"></div>
+        </div>
+    </div>
+    <div class="b-profile-content">
+        <div class="ui header b-profile-tip"><%= __('ProfileHint') %></div>
+        <div class="b-profile-detail">
+            <bpluspersonalinfooverall/>
+        </div>
+        <div class="b-profile-detail">
+            <bpluseducationbackgroundall/>
+        </div>
+        <div class="b-profile-detail">
+            <bplusclubexperienceall/>
+        </div>
+        <div class="b-profile-detail">
+            <bplusworkexperienceall/>
+        </div>
+        <div class="b-profile-detail">
+            <bpluslanguageall/>
+        </div>
+        <div class="b-profile-detail">
+            <bplusskillsoverall/>
+        </div>
+        <div class="b-profile-detail">
+            <bplusawardall/>
+        </div>
+    </div>
+</div>
+<%- include('footer.html') -%>
+<!--JS-->
+<script src="<%= cdn.normal %>bower/requirejs/require.js?<%= cdn.version %>" type="text/javascript"></script>
+<script type="text/javascript">
+    require.config({
+        "waitSeconds": 0,
+        "baseUrl": "<%= cdn.normal %>bower",
+        "packages": [{
+            "name": "jquery",
+            "location": "jquery/dist",
+            "main": "jquery.min"
+        }, {
+            "name": "when",
+            "location": "when",
+            "main": "when"
+        }, {
+            "name": "bplus-ui",
+            "location": "../js"
+        }, {
+            "name": "bplus-ui-mobile",
+            "location": "../mobile"
+        }],
+        "paths": {
+            "text": "requirejs-plugins/lib/text",
+            "image": "requirejs-plugins/src/image",
+            "json": "requirejs-plugins/src/json",
+            "propertyParser": "requirejs-plugins/src/propertyParser",
+            'domReady': 'requirejs-domready/domReady',
+            "angular": "angular/angular.min",
+            "angular-translate": "angular-translate/angular-translate.min",
+            "semantic": "semantic-ui/dist/semantic.min",
+            "autoComplete": "devbridge-autocomplete/dist/jquery.autocomplete.min"
+        },
+        "shim": {
+            'angular': {
+                exports: 'angular'
+            },
+            "angular-translate": {
+                deps: ["angular"],
+                exports: "angular-translate"
+            },
+            'autoComplete': {
+                deps: ["jquery"]
+            },
+            'semantic': {
+                deps: ["jquery"]
+            }
+        }
+    });
+</script>
+<!--Page JS-->
+<script src="<%= cdn.normal %>js/page/profile/mobile-main-build.js?<%= cdn.version %>" type="text/javascript"></script>
+<script>
+    window.t_PageName = "m.profile";
+</script>
+<%- include('external-js.html') -%>
+</body>
+</html>

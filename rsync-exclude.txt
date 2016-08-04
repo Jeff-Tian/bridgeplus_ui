@@ -1,0 +1,11 @@
+.git
+artifacts
+.idea
+test
+client/grunt
+client/css
+client/js
+client/test
+client/www
+client/www/bower
+/semantic

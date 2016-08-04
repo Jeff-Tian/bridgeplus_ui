@@ -1,0 +1,233 @@
+mixin teacherCard(teacher)
+    div.column
+        div.ui.fluid.card
+            div.image(style="background-color: white; padding: 20px;")
+                img(src="#{cdn.normal}img/store/#{teacher.image}?#{cdn.version}")
+            div.content.center.aligned.centered(style="background-color: #4A4A4A!important;")
+                a.header(style="color: white!important;") #{teacher.header}
+                div.meta
+                    span.date(style="color: #aaa!important;") #{teacher.description}
+                div.description(style="color: white!important;") #{teacher.description2}
+mixin redHeader(text)
+    div.header(style="background-color: #FC3F48; color: white; text-align: center;") #{text}
+
+mixin grayContent()
+    div.image.content(style="background-color: #EFEFEF;")
+        block
+
+mixin hotLine()
+    div &nbsp;
+    div 客服热线：400-9200-152（工作日10:00 - 18:00）
+
+mixin classIntro()
+    div.ui.equal.width.grid(style="color: red;")
+        div.equal.width.row
+            div.column
+                div.ui.segment.center.aligned 赛后点评
+            div.column
+                div.ui.segment.center.aligned 市场营销
+            div.column
+                div.ui.segment.center.aligned 战略管理
+        div.equal.width.row
+            div.column
+                div.ui.segment.center.aligned 数据分析
+            div.column
+                div.ui.segment.center.aligned 团队合作
+            div.column
+                div.ui.segment.center.aligned 职业生涯辅导
+        div.equal.width.row
+            div.column
+                div.ui.segment(style="color: #838383;")
+                    div 使用流程:
+                    div 1. 在导师平台挑选你喜欢的话题和合适的时间完成订单。
+                    div 2. 在既定的时间完成上课。
+                    div 3. 课程结束后给予老师评价。
+                    + hotLine()
+
+mixin certificate(image)
+    +redHeader('中国商战模拟和体验式学习协会和Willfried 教授共同颁发')
+    div.image.content
+        div.ui.small.image
+            img(src="#{cdn.normal}img/store/willfried.png?#{cdn.version}")
+        div.description
+            div.ui.header Willfried Vanhonacker
+            div 游戏开发者
+            div 中欧国际工商学院联合创始人、前教务长
+            div 俄罗斯总统梅德韦杰夫教育顾问
+            div 商战模拟游戏专家
+    div.image.content
+        div.ui.fluid.image
+            img(src="#{cdn.normal}img/store/#{image}?#{cdn.version}")
+    div.content(style="color: #838383;")
+        div 使用流程:
+        div 1. 在［我的比赛记录］中找到你想要证书的场次。
+        div 2. 点击［获奖证书］或［参赛证明］。
+        div 3. 在预览页中选择申请寄送，填写收件信息。
+        div 4. 证书将在7个工作日之内寄出。
+        + hotLine
+
+mixin fullImage(image)
+    div.content
+        div.ui.fluid.image
+            img(src="#{cdn.normal}img/store/#{image}?#{cdn.version}")
+
+mixin imageSide(image, active)
+    if active
+        div.side.active
+            + fullImage(image)
+    else
+        div.side
+            + fullImage(image)
+
+div.ui.small.modal.one2one
+    + redHeader('全名师阵容1对1针对性辅导, 为你答疑解惑, 指点迷津')
+    + grayContent
+        div.ui.three.column.grid
+            + teacherCard({
+                image: 'Julia.png',
+                header: 'Julia 李青青',
+                description: 'HCD 合得创始人',
+                description2: '美国商战模拟游戏协会董事'
+            })
+            + teacherCard({
+                image: 'Joseph.png',
+                header: 'Joseph 周国元',
+                description: 'HCD 合得CFO',
+                description2: '曾任麦肯锡（香港）、安永（美国）'
+            })
+            + teacherCard({
+                image: 'Alice.png',
+                header: 'Alice 徐迎春',
+                description: 'HCD 合得合伙人',
+                description2: '曾任友邦集团人才管理总监'
+            })
+    + redHeader('热门主题')
+    + grayContent
+        + classIntro
+
+div.ui.small.modal.english.certificate
+    + certificate('english-certificate.png')
+
+div.ui.small.modal.chinese.certificate
+    + certificate('chinese-certificate.png')
+
+div.ui.modal.report
+    + redHeader('由跨国专家团队编写的针对性结果分析报告（英文版）')
+    div.image.content
+        div.ui.middle.aligned.centered.grid
+            div.row
+                div.column.one.wide.report.left.arrow(style="cursor: pointer;")
+                    img(src="#{cdn.normal}img/store/arrow_left.png?#{cdn.version}")
+                div.column.fourteen.wide
+                    div.ui.shape.report
+                        div.sides
+                            + imageSide('Marksimos - Feedback Report - 1099 (1)-01.jpg?#{cdn.version}', true)
+                            + imageSide('Marksimos - Feedback Report - 1099 (1)-02.png?#{cdn.version}')
+                            + imageSide('Marksimos - Feedback Report - 1099 (1)-04.jpg?#{cdn.version}')
+                            + imageSide('Marksimos - Feedback Report - 1099 (1)-06.jpg?#{cdn.version}')
+                            + imageSide('Marksimos - Feedback Report - 1099 (1)-07.jpg?#{cdn.version}')
+                            + imageSide('Marksimos - Feedback Report - 1099 (1)-08.jpg?#{cdn.version}')
+                            + imageSide('Marksimos - Feedback Report - 1099 (1)-09.jpg?#{cdn.version}')
+
+                div.column.one.wide.report.right.arrow(style="cursor: pointer;")
+                    div.ui.fluid.image
+                        img(src="#{cdn.normal}img/store/arrow_right.png?#{cdn.version}")
+
+    div.content(style="color: #838383;")
+        div.ui.centered.grid
+            div.row
+                div.column.one.wide
+                div.column.fourteen.wide
+                    div 使用流程:
+                    div 1. 在[我的比赛记录]中找到你想要报告的场次。
+                    div 2. 点击[获取参赛报告]。
+                    div 3. 在预览页中选择[申请制作]。
+                    div 4. 制作时间为3个工作日。
+                    div 5. 完成后，你可以在报告预览页完成下载。
+                    + hotLine
+                div.column.one.wide
+
+div.ui.small.modal.private.class
+    + redHeader('全名师阵容辅导，上课人数在5－10人，高互动性')
+    + grayContent
+        div.ui.three.column.grid
+            + teacherCard({
+                image: 'qian-shen.png',
+                header: 'Shen 钱申',
+                description: 'Bridge+ CTO',
+                description2: '在线教育与大数据专家'
+            })
+            + teacherCard({
+                image: 'Anil.png',
+                header: 'Anil Raparla',
+                description: '中欧商学院MBA',
+                description2: '分析报告主要撰写者'
+            })
+            + teacherCard({
+                image: 'Clara.png',
+                header: 'Clara 王渝佳',
+                description: '人力资源战略咨询师',
+                description2: '曾任沃尔玛人力资源副总'
+            })
+    + redHeader('热门主题')
+    + grayContent
+        + classIntro
+
+script.
+
+    (function (exports) {
+        function one2oneDetail() {
+            $('.ui.modal.one2one').modal('show');
+        }
+
+        function englishCertifcate() {
+            $('.ui.modal.english.certificate').modal('show');
+        }
+
+        function chineseCertficate() {
+            $('.ui.modal.chinese.certificate').modal('show');
+        }
+
+        function reportDetail() {
+            $('.ui.modal.report').modal('show');
+
+            window.setTimeout(function () {
+                console.log('shape');
+                $('.shape').shape();
+            }, 100);
+        }
+
+        function privateClass() {
+            $('.ui.modal.private.class').modal('show');
+        }
+
+        exports.interactives = {
+            one2oneDetail: one2oneDetail,
+            englishCertificate: englishCertifcate,
+            chineseCertificate: chineseCertficate,
+            reportDetail: reportDetail,
+            privateClass: privateClass
+        };
+    })(angular.bplus = angular.bplus || {});
+
+    $(function () {
+        $(document).on('click', 'a[ng-href^="javascript:"]', function ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            var action = $(this).attr('ng-href').replace('javascript:', '');
+            window.eval(action);
+        });
+
+        $(document).on('click', '.report.left.arrow', function ($event) {
+            $('.report.shape').shape('flip left');
+        });
+
+        $(document).on('click', '.report.right.arrow', function ($event) {
+            $('.report.shape').shape('flip right');
+        });
+
+        $('.fluid.image').find('img').each(function () {
+            var i = new Image();
+            i.src = $(this).attr('src');
+        });
+    });

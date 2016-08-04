@@ -1,0 +1,36 @@
+<div class="b-opd-favorite">
+    <div class="ui top attached tabular menu">
+        <a class="active item" data-tab="position">职位</a>
+        <a class="item" data-tab="company">公司</a>
+    </div>
+    <div class="ui bottom attached active tab segment" data-tab="position">
+        <div ng-if="!hasLoggedin()" class="hidedata">
+            <a href="/signin#/login?return_url=opportunity-detail%23%2Ffavorite">登录</a>
+            查看已收藏的职位。
+        </div>
+        <div ng-if="hasLoggedin()">
+            <div class="ui segment" ng-if="isSearching">搜索中。。。</div>
+            <div ng-if="!isSearching">
+                <bopdpositionpattern ng-if="data.positions.totalPage!==0" positions="data.positions"/>
+                <div ng-if="data.positions.totalPage===0" class="hidedata">
+                    你目前没有任何收藏的职位。
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="company">
+        <div ng-if="!hasLoggedin()" class="hidedata">
+            <a href="/signin#/login?return_url=opportunity-detail%23%2Ffavorite">登录</a>
+            查看已收藏的公司。
+        </div>
+        <div ng-if="hasLoggedin()">
+            <div class="ui segment" ng-if="isSearching">搜索中。。。</div>
+            <div ng-if="!isSearching">
+                <bopdcompanylistpattern ng-if="data.companies.totalPage!==0" positions="data.companies"/>
+                <div ng-if="data.companies.totalPage===0" class="hidedata">
+                    你目前没有任何收藏的公司。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

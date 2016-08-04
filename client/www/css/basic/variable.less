@@ -1,0 +1,107 @@
+/*
+* - @Bridge+
+*/
+
+// Brand color
+// -------------------------
+@color-brand: #ff3c42;
+@color-brand-light: #f3eee5;
+@color-brand-dark: #736856;
+@color-brand-darker: @color-brand - 111;
+@color-brand-dimmer: #df3b3d;
+
+@color-hcdlearning: #845497;
+@color-hcdlearning-dimmer: #6e3d82;
+
+// Grays
+// -------------------------
+@color-white: #fff;
+@color-grey-thin: #ececec;
+@color-grey-lighter: #e5e5e5;
+@color-grey-light: #ccc;
+@color-grey: #999;
+@color-grey-dark: #7d7d7d;
+@color-grey-darker: #333;
+@color-black: #000;
+@color-grey-lightest: #F0F0F0;
+@color-grey-dimmer: #6e6e6e;
+
+@color-linked-in-blue: #4666A8;
+
+// Color by status
+// -------------------------
+@color-link: #0072bb;
+@color-primary: @color-brand;
+@color-info: #f05a25;
+@color-success: #30bb15;
+@color-warning: #c0262e;
+@color-error: #fc4320;
+@color-hover: #78C7B7;
+
+// Other colors
+// -------------------------
+
+// Font size
+// -------------------------
+@fontsize-2xs: 0.75em;
+@fontsize-xxs: 0.80em;
+@fontsize-xs: 0.85em;
+@fontsize-s: 0.90em;
+@fontsize-m: 0.95em;
+@fontsize-o: 1.00em;
+@fontsize-l: 1.06em;
+@fontsize-xl: 1.13em;
+@fontsize-xxl: 1.21em;
+@fontsize-3xl: 1.30em;
+@fontsize-4xl: 1.40em;
+@fontsize-5xl: 1.50em;
+@fontsize-6xl: 1.60em;
+@fontsize-7xl: 1.70em;
+@fontsize-8xl: 1.80em;
+@fontsize-9xl: 1.90em;
+@fontsize-10xl: 2.00em;
+@fontsize-11xl: 2.10em;
+@fontsize-12xl: 2.20em;
+@fontsize-13xl: 2.30em;
+@fontsize-14xl: 2.40em;
+@fontsize-15xl: 2.60em;
+@fontsize-16xl: 2.80em;
+@fontsize-17xl: 2.70em;
+@fontsize-18xl: 3.00em;
+@fontsize-19xl: 3.50em;
+@fontsize-20xl: 4.00em;
+@fontsize-21xl: 4.50em;
+@fontsize-22xl: 5.00em;
+
+// Font family
+// -------------------------
+
+@fontfamily-general: "Helvetica Neue", Helvetica, Arial, sans-serif, "Microsoft Yahei", SimHei;
+@fontfamily-cn: "微软雅黑", "Microsoft Yahei", "黑体", Helvetica, Arial, sans-serif;
+@fontfamily-numeral: arial, Tahoma, sans-serif;
+
+@border-radius: 5px;
+@border-radius-small: 2px;
+@border-radius-large: 8px;
+@border-radius-max: 50rem;
+
+.perspective (@value) {
+    -webkit-perspective: @value; // Safari 4+, Chrome 12+
+    -moz-perspective: @value; // Firefox 10+
+    -ms-perspective: @value; // IE10+
+    perspective: @value;
+}
+
+.rotateX (@deg) {
+    -webkit-transform: rotateX(@deg);
+    -moz-transform: rotateX(@deg);
+    -ms-transform: rotateX(@deg);
+    -o-transform: rotateX(@deg);
+    transform: rotateX(@deg);
+}
+
+.opacity (@opacity) {
+    opacity: @opacity;
+    -ms-filter: ~`"progid:DXImageTransform.Microsoft.Alpha(opacity=(" + "@{opacity}" * 100 + "))"`;
+    filter: ~`"alpha(opacity = (" + "@{opacity}" * 100 + "))"`;
+}

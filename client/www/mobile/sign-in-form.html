@@ -1,0 +1,79 @@
+<% if (!device.isFromAndroid) { %>
+<form class="ui large fluid form login" ng-class="{'loading': submitting}" ng-submit="tryLogin($event)"
+      name="loginForm">
+    <div class="ui error message brand"></div>
+    <div class="ui">
+        <div class="field">
+            <div class="ui left icon input">
+                <i class="phone icon"></i>
+                <input type="text" name="mobile" placeholder="<%= __('Mobile') %>"
+                       ng-model="loginData.mobile">
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="password" placeholder="<%= __('PleaseInputPassword') %>"
+                       ng-model="loginData.password">
+            </div>
+        </div>
+        <div class="fields">
+            <div class="eight wide field">
+                <div class="ui checkbox remember-me" ng-hide="isInBindMobileMode" ng-cloak>
+                    <input type="checkbox" ng-model="loginData.rememberMe" id="remember-me-check-box">
+                    <label for="remember-me-check-box"><%= __('RememberMe') %></label>
+                </div>
+            </div>
+            <div class="eight wide field ui right aligned container subcontainer">
+                <a href="reset-password" ng-click="resetPassword($event)"><%= __('ForgotPassword') %> <i
+                        class="hidden help circle icon"></i> </a>
+            </div>
+        </div>
+        <div class="ui divider horizontal"></div>
+        <button loading type="submit" class="ui fluid large red submit button hidden mobile-button"
+                ng-disabled="!isLoginFormValid()" ng-cloak>
+            {{!isInBindMobileMode ? "<%= __('SignIn') %>" : "<%= __('绑定') %>"}}
+        </button>
+        <button loading type="submit" class="ui fluid large red submit button"
+                ng-disabled="!isLoginFormValid()" ng-cloak>
+            {{!isInBindMobileMode ? "<%= __('SignIn') %>" : "<%= __('绑定') %>"}}
+        </button>
+    </div>
+</form>
+<% } else { %>
+<form class="ui large fluid form login" ng-class="{'loading': submitting}" ng-submit="tryLogin($event)"
+      name="loginForm">
+    <div class="ui error message brand"></div>
+    <div class="ui">
+        <div class="field">
+            <input type="text" name="mobile" placeholder="<%= __('Mobile') %>"
+                   ng-model="loginData.mobile">
+        </div>
+        <div class="field">
+            <input type="password" name="password" placeholder="<%= __('PleaseInputPassword') %>"
+                   ng-model="loginData.password">
+        </div>
+        <div class="fields">
+            <div class="eight wide field">
+                <div class="ui checkbox remember-me" ng-hide="isInBindMobileMode" ng-cloak>
+                    <input type="checkbox" ng-model="loginData.rememberMe" id="remember-me-check-box">
+                    <label for="remember-me-check-box"><%= __('RememberMe') %></label>
+                </div>
+            </div>
+            <div class="eight wide field ui right aligned container subcontainer">
+                <a href="reset-password" ng-click="resetPassword($event)"><%= __('ForgotPassword') %> <i
+                        class="hidden help circle icon"></i> </a>
+            </div>
+        </div>
+        <div class="ui divider horizontal"></div>
+        <button loading type="submit" class="ui fluid large red submit button hidden mobile-button"
+                ng-disabled="!isLoginFormValid()" ng-cloak>
+            {{!isInBindMobileMode ? "<%= __('SignIn') %>" : "<%= __('绑定') %>"}}
+        </button>
+        <button loading type="submit" class="ui fluid large red submit button"
+                ng-disabled="!isLoginFormValid()" ng-cloak>
+            {{!isInBindMobileMode ? "<%= __('SignIn') %>" : "<%= __('绑定') %>"}}
+        </button>
+    </div>
+</form>
+<% } %>

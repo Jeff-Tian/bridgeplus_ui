@@ -1,0 +1,104 @@
+.b-map {
+    min-height: 60rem;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto auto;
+    background-color: #EFEFEF;
+    padding-top: 70px;
+    padding-bottom: 1rem;
+
+    .ui.vertical.menu {
+        max-width: 230px;
+        border-radius: 0;
+
+        .item {
+            border-radius: 0;
+
+            i.icon {
+                float: left;
+                background-repeat: no-repeat;
+                margin-right: 2rem;
+            }
+            i.icon.b-home {
+                background: url('/img/icon/home-active.png') no-repeat;
+                width: 32px;
+                height: 26px;
+                margin-top: -5px;
+                margin-left: 1px;
+            }
+            i.icon.b-official {
+                background: url('/img/icon/official-active.png') no-repeat;
+                width: 32px;
+                height: 32px;
+                margin-top: -8px;
+                margin-left: 0px;
+            }
+            i.icon.b-national {
+                background: url('/img/icon/national-active.png') no-repeat;
+                width: 32px;
+                height: 34px;
+                margin-top: -9px;
+                margin-left: 2.5px;
+            }
+            i.icon.b-season {
+                background: url('/img/icon/season-active.png') no-repeat;
+                width: 32px;
+                height: 29px;
+                margin-top: -6.5px;
+                margin-left: 2.5px;
+            }
+            i.icon.b-record {
+                background: url('/img/icon/record-active.png') no-repeat;
+                width: 32px;
+                height: 27px;
+                margin-top: -5.5px;
+                margin-left: 4px;
+            }
+            i.icon.b-rank {
+                background: url('/img/icon/rank-active.png') no-repeat;
+                width: 32px;
+                height: 27px;
+                margin-top: -5.5px;
+                margin-left: 2.5px;
+            }
+        }
+        .item.active, .item:hover {
+            background: #5F5F5F;
+            border-radius: 0;
+            color: @color-white;
+
+            i.icon.b-home {
+                background: url('/img/icon/home.png') no-repeat;
+            }
+            i.icon.b-official {
+                background: url('/img/icon/official.png') no-repeat;
+            }
+            i.icon.b-season {
+                background: url('/img/icon/season.png') no-repeat;
+            }
+            i.icon.b-national {
+                background: url('/img/icon/national.png') no-repeat;
+            }
+            i.icon.b-record {
+                background: url('/img/icon/record.png') no-repeat;
+            }
+            i.icon.b-rank {
+                background: url('/img/icon/rank.png') no-repeat;
+            }
+        }
+    }
+}
+@media only screen and (min-width:768px) and (max-width:992px) {
+    .b-map {
+        .ui.vertical.menu {
+            .item {
+                padding: 0.9rem 0.5rem;
+
+                i.icon {
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+}

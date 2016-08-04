@@ -1,0 +1,5 @@
+<div class="ui segments" style="margin-bottom: 20px;">
+    <opd-filter-thumb filters="filters" filter-setting="filterSetting"></opd-filter-thumb>
+    <opd-filter-item f="f" filter-setting="filterSetting" ng-repeat-start="f in filters" add-show-thumb-button="filterSetting.hasThumbView && $index === 0"></opd-filter-item>
+    <opd-sub-filter-item f="f" filter-setting="filterSetting" ng-repeat-end=""></opd-sub-filter-item>
+</div>

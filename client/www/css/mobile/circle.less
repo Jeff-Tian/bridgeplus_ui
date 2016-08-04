@@ -1,0 +1,26 @@
+.progress-circle, .progress-left, .progress-right, .progress-pie-left, .progress-pie-right {
+  width: 120px;
+  height: 120px;
+}
+.progress-pie-left, .progress-left {
+  clip: rect(0, 60px, auto, 0);
+}
+.progress-pie-right, .progress-right {
+  clip: rect(0, auto, auto, 60px);
+}
+.progress-left, .progress-right {
+  background: #2E363C;
+}
+.progress-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+}
+.progress-left, .progress-right, .progress-pie-left, .progress-pie-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress-left, .progress-right {
+  border-radius: 50%;
+}

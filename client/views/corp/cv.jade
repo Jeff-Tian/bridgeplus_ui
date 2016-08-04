@@ -1,0 +1,133 @@
+block content
+    div.corp-cv(ng-controller="cvCtrl")
+        div.ui.ten.column.centered.grid
+            div.row
+                div.ten.wide.column
+                    div.ui.top.attached.tabular.menu.tabular-menu
+                        a.active.item.menu-item(data-tab="delivered" ng-click="tabmemuClick(STATIC_PARAM.DELIVERED)") 
+                            img.ui.right.spaced.image.menu-item-image(src="#{cdn.normal}img/corp/cv_menu1.png?#{cdn.version}")
+                            | 待处理的简历
+                        a.menu-item.item(data-tab="interested" ng-click="tabmemuClick(STATIC_PARAM.INTERESTED)")
+                            img.ui.right.spaced.image.menu-item-image(src="#{cdn.normal}img/corp/cv_menu2.png?#{cdn.version}")
+                            | 有意向的简历
+                        a.menu-item.item(data-tab="pool" ng-click="tabmemuClick(STATIC_PARAM.POOL)")
+                            img.ui.right.spaced.image.menu-item-image(src="#{cdn.normal}img/corp/cv_menu3.png?#{cdn.version}")
+                            | 人才库
+                        a.menu-item-lonely.item(data-tab="deleted" ng-click="tabmemuClick(STATIC_PARAM.DELETED)")
+                            img.ui.right.spaced.image.menu-item-image(src="#{cdn.normal}img/corp/cv_menudelete.png?#{cdn.version}")
+                            | 已删除的简历
+                    div.ui.middle.attached.segment.segment-bottom-shadow.segment-menu
+                        span.inline-space 职能类别
+                        div.ui.form.inline-block.inline-space
+                            select.ui.compact.dropdown.dropdown-inline(name="select",ng-model="option.type")
+                                option(value="") 全部职能
+                                option(value="{{publishedjob}}",ng-repeat="publishedjob in publishJobs") {{publishedjob}}
+                        div.ui.checkbox.inline-block.inline-space.option-win
+                            input(type="checkbox",name="win")
+                            label 大赛优胜
+                        div.ui.checkbox.inline-block.inline-space.option-match(ng-show="displayData.currentTab!==STATIC_PARAM.POOL")
+                            input(type="checkbox",name="match")
+                            label 高匹配度
+                    div.ui.active.tab.cv-list-tab(data-tab="delivered")
+                        corp-cv-list(ng-if="displayData.currentTab===STATIC_PARAM.DELIVERED")
+                    div.ui.tab.cv-list-tab(data-tab="interested")
+                        corp-cv-list(ng-if="displayData.currentTab===STATIC_PARAM.INTERESTED")
+                    div.ui.tab.cv-list-tab(data-tab="pool")
+                        corp-cv-telent-list(ng-if="displayData.currentTab===STATIC_PARAM.POOL")
+                    div.ui.tab.cv-list-tab(data-tab="deleted")
+                        corp-cv-list(ng-if="displayData.currentTab===STATIC_PARAM.DELETED")
+                    //- the last segment will have no margin-bottom according to semantic-ui. Add an empty div to avoid it.
+                    div
+        div.ui.long.coupled.modal.corp-cv-modal.corp-cvdetail
+            div.corp-cv-detail-header.light-grey-background
+                div.corp-cv-detail-button-group
+                    button.ui.red.button(ng-click="markCV()",ng-if="resumeStatus===''")
+                        i.reply.icon
+                        | 移至有意向的简历
+                    button.ui.red.button(ng-click="payCV()",ng-if="!resumeDetail.unlocked")
+                        i.unlock.icon
+                        span 解锁联系方式
+                    button.ui.black.button(ng-click="printCV()")
+                        i.print.icon
+                        | 打印简历
+                    button.ui.black.button(ng-click="dropCV()",ng-if="resumeStatus===''||resumeStatus.status==='potential'") 
+                        i.trash.icon
+                        | 删除简历
+                    button.ui.red.button(ng-click="restoreCV()",ng-if="resumeStatus.status==='deleted'") 
+                        i.undo.icon
+                        | 恢复至有意向的简历
+                    button.right.floated.circular.ui.icon.grey.button.close
+                        i.remove.icon
+            div.corp-cv-detail-body
+                corp-cv-detail(ng-if="!isDetailLoading")
+            div.corp-cv-detail-footer
+                div.corp-cv-detail-right
+                    | Powered by Bridge+
+        div.ui.mini.modal.coupled.corp-cv-modal.corp-cvdetailerror
+            div.corp-cv-detail-body(ng-if="errorInfo.code===70008")
+                div.removeicon-container
+                    button.right.floated.circular.ui.icon.grey.button.close
+                        i.remove.icon
+                div.centered-content-container
+                    p 抱歉,您的剩余简历解锁数量不足。
+                    p 请联系您的专属招聘顾问为您开通。
+                div.blank
+                div.centered-content-container.centertext
+                    button.ui.red.button(ng-click="errorConfirm()")
+                        | 我知道了
+                div.blank
+            div.corp-cv-detail-body(ng-if="errorInfo.code!==70008")
+                div.removeicon-container
+                    button.right.floated.circular.ui.icon.grey.button.close
+                        i.remove.icon
+                div.centered-content-container
+                    p 抱歉,您刚才简历操作失败。
+                    p 请稍后尝试再次操作。
+                div.blank
+                div.centered-content-container.centertext
+                    button.ui.red.button(ng-click="errorConfirm()")
+                        | 确认
+                div.blank
+        div.ui.mini.modal.coupled.corp-cv-modal.corp-cvdetailsuccess
+            div.corp-cv-detail-body
+                div.removeicon-container
+                    button.right.floated.circular.ui.icon.grey.button.close
+                        i.remove.icon
+                div.centered-content-container
+                    p 解锁成功！ 
+                    p 剩余点数：{{couponLeft}}
+                div.blank
+                div.centered-content-container.centertext
+                    button.ui.red.button(ng-click="successConfirm()")
+                        | 确认
+                div.blank
+        div.ui.mini.modal.coupled.corp-cv-modal.corp-cvdetail-positionconfirm
+            div.corp-cv-detail-header.light-grey-background.action
+                span.title 修改关联职能
+                button.right.floated.circular.ui.icon.grey.button.cancel(ng-click="cancelDetailConfirm()")
+                    i.remove.icon
+            div.corp-cv-detail-body
+                div.blank
+                div.centered-content-container.centertext
+                    div.ui.form
+                            select.ui.compact.dropdown.dropdown-inline(name="select",ng-model="positionConfirmOption")
+                                option(value="") 全部职能
+                                option(value="{{publishedjob}}",ng-repeat="publishedjob in publishJobs") {{publishedjob}}
+                div.blank
+                div.centered-content-container.centertext.action
+                    button.ui.red.button(ng-click="confirmDetailConfirm()",ng-class="{'disabled':positionConfirmOption===''}")
+                        | 确定
+block extraJs
+    script(src="#{cdn.normal}js/page/corp/directives/corpCVList.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/page/corp/directives/corpCVTelentList.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/page/corp/directives/corpCVDetail.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/proxy/corp/main.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/proxy/corp/resource.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/proxy/corp/cv.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/page/corp/cv/main.js?#{cdn.version}")
+    script.
+        angular.module('bplusModule')
+            .run(['$rootScope', function ($rootScope) {
+                $rootScope.current_page = 'cv';
+            }])
+        ;

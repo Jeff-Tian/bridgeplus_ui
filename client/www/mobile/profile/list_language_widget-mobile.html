@@ -1,0 +1,44 @@
+<div>
+    <!--EDIT MODE-->
+    <div ng-show="property.status===ENUM_STATUS.STATUS_EDIT" class="b-profile-form">
+        <form name="language" novalidate class="ui {{isSubmitting ? 'loading' : ''}} form {{(clicked && language.$error.required) ? 'error' : ''}}">
+            <div>
+                <div class="ui error message">{{'FormRequired' | translate}}</div>
+                <div class="two fields">
+                    <div class="required field {{!clicked || data.language.id ? '' : 'error'}}">
+                        <label>{{'LanguageName' | translate}}</label>
+                        <select name="languagename" ng-model="data.language.id" ng-options="value.id as value.text for value in languages" required class="ui fluid dropdown">
+                            <option value="">{{'PleaseSelect' | translate}}</option>
+                        </select>
+                    </div>
+                    <div class="required field {{!clicked || data.proficiency.id ? '' : 'error'}}">
+                        <label>{{'Proficiency' | translate}}</label>
+                        <select name="proficiency" ng-model="data.proficiency.id" ng-options="value.id as value.text for value in proficiencys" required class="ui fluid dropdown">
+                            <option value="">{{'PleaseSelect' | translate}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>{{'Certification' | translate}}</label>
+                        <select name="certification" ng-model="data.certification.id" ng-options="value.id as value.text for value in certifications" class="ui fluid dropdown {{data.language.id === '2dc5e10f-9f2b-4fe8-a5c6-5cf5a571d38d' ? '' : 'disabled'}}">
+                            <option value="">{{'PleaseSelect' | translate}}</option>
+                        </select>
+                    </div>
+                    <div class="field {{data.language.id === '2dc5e10f-9f2b-4fe8-a5c6-5cf5a571d38d' ? '' : 'disabled'}}">
+                        <label>{{'Score' | translate}}</label>
+                        <input type="text" name="score" ng-model="data.score" />
+                    </div>
+                </div>
+                <button type="button" ng-click="submit()" ng-init="clicked=false" class="fluid ui red large button">保存</button>
+                <button type="button" ng-click="cancel()" class="b-profile-editmode-other-button fluid ui basic large button b-profile-btn-cancel">取消</button>
+                <button type="button" ng-show="data.id!==''" ng-click="del()" class="b-profile-editmode-other-button fluid ui basic large button b-profile-btn-cancel">{{'Delete' | translate}}</button>
+            </div>
+        </form>
+    </div>
+    <!--DISPLAY MODE-->
+    <div ng-show="property.status===ENUM_STATUS.STATUS_READONLY" class="b-profile-displaymode">
+        <h2 ng-bind-template="{{data.language.value}}  {{data.proficiency.value}}"  ng-click="edit()"></h2>
+        <div ng-bind-template="{{data.certification.value}}  {{data.score}}" class="b-profile-txt" ng-click="edit()"></div>
+    </div>
+</div>

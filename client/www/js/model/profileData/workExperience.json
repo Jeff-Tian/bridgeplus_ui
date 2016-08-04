@@ -1,0 +1,33 @@
+{
+    "id": "",
+    "name": "",
+    "job": {
+        "id": "",
+        "value": ""
+    },
+    "industry": {
+        "id": "",
+        "value": ""
+    },
+    "type": {
+        "id": "",
+        "value": ""
+    },
+    "dateFrom": {
+        "value": {
+            "year": "",
+            "month": "",
+            "day": ""
+        }
+    },
+    "dateTo": {
+        "value": {
+            "year": "",
+            "month": "",
+            "day": "",
+            "tillNow": false
+        }
+    },
+    "description": "",
+    "tags": ""
+}

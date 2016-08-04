@@ -1,0 +1,21 @@
+<div class="field">
+    <div class="ui left icon input">
+        <i class="mail icon"></i>
+        <input type="text" name="email"
+               placeholder="<%= __('PleaseInputTheSignedUpEmail') %>"
+               ng-model="resetData.email">
+    </div>
+</div>
+<div class="field absolute-prompt">
+    <div class="ui left icon input">
+        <i class="write icon"></i>
+        <input type="text" name="captcha" placeholder="<%= __('PleaseInputCaptcha') %>"
+               ng-model="resetData.captcha">
+        &nbsp;
+        <div captcha ng-model="resetData.captchaId" class="ui fluid b-captcha"></div>
+    </div>
+    <div class="ui right aligned container subcontainer">
+        <a href="javascript: void(0);" ng-click="refreshCaptcha()"><%=
+            __('RefreshCaptcha') %></a>
+    </div>
+</div>

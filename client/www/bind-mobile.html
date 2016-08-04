@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('SEOTitle_MobileBinding') %></title>
+    <meta name="description" content="<%= __('SEODesc_MobileBinding') %>">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-app="signIn" ng-controller="AppCtrl" class="b-background">
+<%- include('view-partial/header.html') -%>
+<div class="ui b-signin-wrapper">
+    <div class="ui column b-signin-container">
+        <div class="b-signin-wide">
+            <div class="ui center aligned container subcontainer">
+                <h2 class="grey color"><%= __('BindMobile') %></h2>
+            </div>
+
+            <div class="ui bind-mobile" ng-controller="BindMobileCtrl">
+                <register-form action="bindMobile" control="bindMobileFormCtrl"
+                               footer-tip="'绑定手机即代表你接受我们的隐私条款'"></register-form>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('view-partial/footer.html') -%>
+
+<% if (dev_mode) { %>
+<script src="js/factories/MessageStore.js"></script>
+<script src="js/factories/service.js"></script>
+<script src="js/factories/WechatLogon.js"></script>
+<script src="js/controllers/AppCtrl.js"></script>
+<script src="js/factories/FormValidation.js"></script>
+<script src="js/directives/captcha.js"></script>
+<script src="js/directives/ngEnter.js"></script>
+<script src="js/directives/dropdown.js"></script>
+<script src="js/directives/registerForm.js"></script>
+<script src="js/page/register/main.js"></script>
+
+<% } else { %>
+<script src="<%= config.normal %>js/cdn/bind-mobile.js?<%= cdn.version %>"></script>
+<% } %>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

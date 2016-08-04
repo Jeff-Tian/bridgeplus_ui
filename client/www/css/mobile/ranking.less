@@ -1,0 +1,118 @@
+.b-mobile-column-patch.column {
+    display: block!important;
+}
+.b-mobile-ranking-body {
+    background-color: #f5f5f5;
+}
+.b-mobile-ranking-option-container {
+    width: 100%;
+}
+.b-mobile-ranking-row {
+    padding: 0px!important;
+}
+.b-mobile-ranking-options {
+    padding-top: 14px!important;
+    padding-bottom: 0px!important;
+    color: white;
+    background-color: #2e363d;
+}
+.b-mobile-ranking-options.b-ranking-active {
+    color: white;
+    background-color: #ff3c42;
+}
+.b-mobile-ranking-status-deactive,
+.b-ranking-active .b-mobile-ranking-status-active {
+    display: none;
+}
+.b-mobile-ranking-status-active,
+.b-ranking-active .b-mobile-ranking-status-deactive {
+    display: inline;
+}
+.b-mobile-ranking-title1 {
+    padding-top: 0px;
+    padding-bottom: 14px;
+}
+.b-mobile-ranking-arrow {
+    display: none;
+    position: relative;
+    bottom: -8px;
+}
+.b-ranking-active .b-mobile-ranking-arrow {
+    display: inline;
+}
+.b-mobile-ranking-seperator {
+    height: 0.5em;
+}
+.b-mobile-ranking-detail-container {
+    background-color: white;
+    border-bottom: solid 1px #c7c7c7;
+}
+.b-mobile-ranking-detail-count:nth-child(2) .b-mobile-ranking-detail-container {
+    background-color: #ff3c42;
+    color: white;
+}
+.b-mobile-ranking-detail-rank {
+    text-align: left!important;
+    padding-left: 38px!important;
+}
+.b-mobile-ranking-detail-name {
+    text-align: left!important;
+    padding-left: 2em!important;
+    padding-right: 0px!important;
+}
+.b-mobile-ranking-detail-count:nth-child(2) .b-mobile-ranking-detail-container .b-mobile-ranking-detail-rank,
+.b-mobile-ranking-detail-count:nth-child(2) .b-mobile-ranking-detail-container .b-mobile-ranking-detail-name {
+    text-align: center!important;
+    padding-left: 0em!important;
+    padding-right: 0em!important;
+}
+.b-mobile-ranking-detail-count:nth-child(3) .b-mobile-ranking-detail-container .b-mobile-ranking-detail-honor:before,
+.b-mobile-ranking-detail-count:nth-child(4) .b-mobile-ranking-detail-container .b-mobile-ranking-detail-honor:before,
+.b-mobile-ranking-detail-count:nth-child(5) .b-mobile-ranking-detail-container .b-mobile-ranking-detail-honor:before {
+    content: "\00a0\00a0\00a0\00a0";
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left: 20px;
+    top: 19px;
+}
+.b-mobile-ranking-detail-count {
+    z-index: 1000;
+}
+.b-mobile-ranking-detail-count:nth-child(3) .b-mobile-ranking-detail-container .b-mobile-ranking-detail-honor:before {
+    background-image: url("/img/ranking/r1.png");
+}
+.b-mobile-ranking-detail-count:nth-child(4) .b-mobile-ranking-detail-container .b-mobile-ranking-detail-honor:before {
+    background-image: url("/img/ranking/r2.png");
+}
+.b-mobile-ranking-detail-count:nth-child(5) .b-mobile-ranking-detail-container .b-mobile-ranking-detail-honor:before {
+    background-image: url("/img/ranking/r3.png");
+}
+.b-mobile-ranking-subtitle-container {
+    position: absolute;
+    background-color: #2e363d;
+    width: 100%;
+    text-align: left;
+    padding-left: 18px;
+    left: 0px;
+    top: 47px;
+    z-index: 1000;
+}
+.b-mobile-ranking-suboption-active {
+}
+.b-mobile-ranking-suboption-active:before {
+    content: "\00a0\00a0\00a0\00a0";
+    position: absolute;
+    right: 10px;
+    background-size: 12px 8px;
+    width: 12px;
+    height: 8px;
+    top: 24px;
+    background-repeat: no-repeat;
+    background-image: url("/img/ranking/check.png");
+}
+.b-mobile-ranking-subtitle-item {
+    position: relative;
+    height: 47px;
+    padding-top: 19px;
+}

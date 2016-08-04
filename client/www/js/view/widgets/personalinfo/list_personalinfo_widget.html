@@ -1,0 +1,73 @@
+<div>
+    <!--EDIT MODE-->
+    <div ng-show="property.status===ENUM_STATUS.STATUS_EDIT" class="b-profile-right-section-form">
+        <form name="personalinfo" novalidate class="ui {{isSubmitting ? 'loading' : ''}} form {{(clicked && (!dateSelect.fulfilled || personalinfo.$error.required)) ? 'error' : ''}}">
+            <div>
+                <div class="ui error message">{{'FormRequired' | translate}}</div>
+                <div class="required field {{!clicked || data.name ? '' : 'error'}}">
+                    <label>{{'RealName' | translate}}</label>
+                    <input type="text" name="personalname" ng-model="data.name" required placeholder="" />
+                </div>
+                <div class="required field {{!clicked || data.gender ? '' : 'error'}}">
+                    <label>{{'Gender' | translate}}</label>
+                    <select name="gender" ng-model="data.gender" required class="ui fluid dropdown">
+                        <option value="">{{'PleaseSelect' | translate}}</option>
+                        <option value="U">{{'U' | translate}}</option>
+                        <option value="M">{{'Male' | translate}}</option>
+                        <option value="F">{{'Female' | translate}}</option>
+                    </select>
+                </div>
+                <div class="required field">
+                    <label>{{'Birthday' | translate}}</label>
+                    <div class="inline fields">
+                        <div class="twelve wide field">
+                            <bplusdate value="dateSelect.value" config="dateSelect.config" fulfilled="dateSelect.fulfilled" class="inline fields" />
+                        </div>
+                        <div class="four wide field">
+                            <div class="field">
+                                <div class="ui checkbox isPrivateBirthday">
+                                    <input type="checkbox" ng-model="data.dateOfBirth.isPrivate" />
+                                    <label>{{'SetPrivacy' | translate}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="required field {{!clicked || data.location ? '' : 'error'}}">
+                    <label>{{'CurrentLocation' | translate}}</label>
+                    <input type="text" name="personallocation" ng-model="data.location" required placeholder="" />
+                </div>
+                <div class="field">
+                    <label>{{'ContactAddress' | translate}}</label>
+                    <div class="inline fields">
+                        <div class="twelve wide field">
+                            <input type="text" name="personalcontractInfo" ng-model="data.contractInfo.value" placeholder="" />
+                        </div>
+                        <div class="four wide field">
+                            <div class="ui checkbox isPrivateContractInfo">
+                                <input type="checkbox" ng-model="data.contractInfo.isPrivate">
+                                <label>{{'SetPrivacy' | translate}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui three column grid">
+                    <div class="column">
+                        <button type="button" ng-click="submit()" ng-init="clicked=false" class="fluid ui red large button">{{'Save' | translate}}</button>
+                    </div>
+                    <div class="column">
+                        <button typeu="button" ng-click="cancel()" class="fluid ui basic large button b-profile-btn-cancel">{{'Cancel' | translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--DISPLAY MODE-->
+    <div ng-show="property.status===ENUM_STATUS.STATUS_READONLY" class="b-profile-right-section-displaymode">
+        <h2 ng-bind="data.name" ng-click="edit()"></h2>
+        <div class="b-profile-right-section-txt" ng-click="edit()">{{data.gender | translate}}</div>
+        <div ng-bind-template="{{'Birthday' | translate}}: {{data.dateOfBirth.displayValue}}" class="b-profile-right-section-txt" ng-click="edit()"></div>
+        <div ng-bind-template="{{'CurrentLocationIs' | translate}}{{data.location}}" class="b-profile-right-section-txt" ng-click="edit()"></div>
+        <div ng-bind-template="{{data.contractInfo.value}}" class="b-profile-right-section-txt" ng-click="edit()"></div>
+    </div>
+</div>

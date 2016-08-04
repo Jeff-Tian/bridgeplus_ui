@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('SEOTitle_SignIn') %></title>
+    <meta name="description" content="<%= __('SEODesc_SignIn') %>">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-app="signIn" ng-controller="AppCtrl" class="b-background">
+<%- include('view-partial/header.html') -%>
+<div class="ui b-signin-wrapper">
+    <div class="ui column b-signin-container b-background-lighter">
+        <div class="b-signin-wide" tab=".b-signin-wide">
+            <%- include('../views/partial/sign-in.html') -%>
+        </div>
+    </div>
+</div>
+<%- include('view-partial/footer.html') -%>
+<!--Page JS-->
+
+<script src="<%= cdn.normal %>bower/angularQueryParserModule/dist/scripts/app.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/angularQueryParserModule/dist/scripts/queryParser.js?<%= cdn.version %>"></script>
+
+<% if (dev_mode) { %>
+<script src="js/directives/captcha.js"></script>
+<script src="js/directives/ngEnter.js"></script>
+<script src="js/directives/registerForm.js"></script>
+<script src="js/directives/tab.js"></script>
+<script src="js/directives/dropdown.js"></script>
+<script src="js/controllers/LoginCtrl.js"></script>
+<script src="js/controllers/WechatLoginCtrl.js"></script>
+<script src="js/controllers/SignUpCtrl.js"></script>
+<script src="js/common/linkedInModule.js"></script>
+<script src="js/page/register/main.js"></script>
+
+<% } else { %>
+<script src="<%= config.normal %>js/cdn/sign-in.js?<%= cdn.version %>"></script>
+<% } %>
+
+<script type="text/javascript">
+    setTimeout(function () {
+        var a = document.createElement("script");
+        var b = document.getElementsByTagName("script")[0];
+        a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0035/5758.js?" + Math.floor(new Date().getTime() / 3600000);
+        a.async = true;
+        a.type = "text/javascript";
+        b.parentNode.insertBefore(a, b)
+    }, 1);
+</script>
+<%- include('view-partial/external-js.html') -%>
+</body>
+</html>

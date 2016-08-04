@@ -1,0 +1,39 @@
+.b-opd-favorite {
+    .ui.tabular.menu {
+        border-bottom: none !important;
+        .item {
+            color: white;
+            background-color: black;
+            margin-bottom: 0px !important;
+            margin-left: 1px;
+            border-top: 1px solid transparent !important;
+            border-radius: .28571429rem .28571429rem 0 0 !important;
+            &.active {
+                background-color: #F53C43;
+            }
+        }
+        & > .item:first-child {
+            border-left: none !important;
+            margin-left: 0;
+        }
+
+        &.bordered {
+            border-bottom: solid 5px @color-brand!important;
+        }
+    }
+    .ui.bottom.attached.active.tab.segment {
+        border: none !important;
+        padding: 0px !important;
+    }
+    .ui.celled.table.positions {
+        border: none !important;
+    }
+    .ui.table thead tr:first-child > th:first-child {
+        border-radius: 0 !important;
+    }
+    .hidedata {
+        height: 500px;
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+}

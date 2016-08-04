@@ -1,0 +1,27 @@
+﻿{
+    "gender": "female",
+    "progress": 15,
+    "pics": [{
+        "img": "/img/profile/achievement-img.jpg"
+    }, {
+        "img": "/img/profile/achievement-img.jpg"
+    }, {
+        "img": "/img/profile/achievement-img.jpg"
+    }, {
+        "img": "/img/profile/achievement-img.jpg"
+    }, {
+        "img": "/img/profile/achievement-img.jpg"
+    }],
+    "level": 9,
+    "score": 99,
+    "list": [{
+        "title": "分享信息到朋友圈",
+        "score": 3
+    }, {
+        "title": "邀请朋友加入",
+        "score": 5
+    }, {
+        "title": "注册成功",
+        "score": 5
+    }]
+}

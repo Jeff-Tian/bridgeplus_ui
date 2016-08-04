@@ -1,0 +1,212 @@
+/*
+* - @Bridge+
+*/
+// Page
+
+.b-signin-wrapper {
+    width: 600px;
+    margin: 6em auto 2em auto;
+}
+
+.b-signin-container {
+    width: 600px;
+    padding: 1px 50px 40px 50px;
+    background-color: @color-grey-lighter;
+}
+
+.b-step-container {
+    background-color: @color-grey-lighter;
+    padding: 1.5em 3em;
+}
+
+.b-separator {
+    border-bottom: solid 1px @color-grey;
+}
+
+.b-signin-wide {
+    width: 280px;
+    margin: 2em auto 2em auto;
+
+    form {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+.wechat.link, .wechat.link:link, .linkedin.link, .linkedin.link:link {
+    color: black;
+    cursor: pointer;
+
+    .icon {
+        color: @color-grey;
+    }
+}
+
+.wechat.link:hover, .wechat.link:active {
+    text-decoration: none;
+    cursor: pointer;
+
+    .icon {
+        color: limegreen;
+    }
+}
+
+.linkedin.link:hover, .linkedin.link:active {
+    text-decoration: none;
+    cursor: pointer;
+
+    .icon {
+        color: @color-linked-in-blue;
+    }
+}
+
+.linkedin.link .linked-in-tip {
+    font-size: xx-small;
+}
+
+.ui.secondary.pointing.menu.brand {
+    border-color: @color-brand + 111;
+
+    .active.item {
+        border-color: @color-brand;
+        border-width: 4px;
+        color: @color-brand;
+    }
+
+    .item:hover {
+        color: @color-brand;
+    }
+}
+
+.ui.brand.message {
+    background-color: @color-grey-dark;
+    border-color: @color-grey-dark;
+    box-shadow: 0 0 0 1px @color-grey-dark inset, 0 0 0 0 transparent;
+    color: white;
+    padding: 1.5em 3em;
+
+    .header {
+        color: @color-grey-lighter;
+        font-weight: normal;
+    }
+}
+
+@import "../../module/form";
+
+.shape.reset, .shape.reset-by-email, .shape.personal-history {
+    width: 100%;
+    max-width: 100%;
+    min-height: 300px;
+}
+
+.b-captcha {
+    cursor: pointer;
+    max-height: 40.1563px;
+
+    img {
+        height: 40.1563px;
+        border-radius: 0.28571429rem;
+        margin-left: 5px;
+    }
+}
+
+.b-wechat-frame {
+    min-height: 430px;
+    border: none;
+}
+
+@media all and (max-width: 414px) {
+    .b-signin-wrapper {
+        width: auto !important;
+    }
+
+    .b-signin-container {
+        width: auto !important;
+        background-color: transparent !important;
+    }
+
+    .b-signin-wide {
+        width: auto !important;
+        margin: auto !important;
+    }
+
+    .ui.secondary.pointing.menu.brand {
+        display: none !important;
+    }
+
+    .login.form .fields .eight.wide.field {
+        width: 50% !important;
+        margin: 0 !important;
+    }
+
+    .hidden.help {
+        display: inline !important;
+    }
+
+    a:not(.button), a:not(.button):link, a:not(.button):visited {
+        color: @color-black !important;
+    }
+
+    a:not(.button):hover, a:not(.button):active, a:not(.button):focus {
+        color: @color-brand !important;
+        text-decoration: none !important;
+    }
+
+    .wechat.link, .wechat.link:link, label[for=remember-me-check-box] {
+        color: @color-grey !important;
+
+        .icon {
+            color: @color-grey-dark;
+        }
+    }
+
+    .wechat.link:hover, .wechat.link:active {
+        text-decoration: none;
+
+        .icon {
+            color: limegreen;
+        }
+    }
+
+    .hidden.mobile-button {
+        display: block !important;
+
+        + div, + button {
+            display: none !important;
+        }
+    }
+
+    .ui.brand.error.message {
+        padding: 10px !important;
+    }
+
+    .b-background {
+        background-color: white !important;
+    }
+
+    .ui.brand.message {
+        background-color: @color-grey-dark;
+        border-color: @color-grey-dark;
+        box-shadow: 0 0 0 1px @color-grey-dark inset, 0 0 0 0 transparent;
+        color: white;
+        padding: 1em 3em 1em 1em;
+        margin: 1em 1.5em;
+
+        .header {
+            color: @color-grey-lighter;
+            font-weight: normal;
+            font-size: smaller;
+        }
+    }
+
+    .b-step-container {
+        background-color: transparent;
+        margin: 0 1.5em;
+        padding: 1em 0;
+
+        .ui.brand.error.message {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

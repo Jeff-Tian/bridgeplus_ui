@@ -1,0 +1,31 @@
+/*
+* - @Bridge+
+*/
+.b-client {
+    background-color: #2d363d;
+    padding: 2em 0;
+
+    > .ui.container {
+    }
+    h3 {
+        &.ui.header {
+            color: @color-white;
+            margin-bottom: 0.2em;
+            visibility: hidden;
+        }
+    }
+    .ui.list {
+        &.horizontal {
+            width: 100%;
+
+            .owl-item {
+                > .item {
+                    .ui.image {
+                        width: 145px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
+}

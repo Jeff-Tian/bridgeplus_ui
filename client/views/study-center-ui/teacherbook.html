@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>导师特约课程 Bridge+</title>
+    <meta name="description" content="Bridge+">
+    <link type="text/css" rel="stylesheet"
+          href="<%= cdn.normal %>bower/semantic-ui/dist/semantic.min.css?<%= cdn.version %>" media="all"/>
+    <link type="text/css" rel="stylesheet" href="<%= cdn.normal %>css/main.css?<%= cdn.version %>" media="all"/>
+    <link type="text/css" rel="stylesheet" href="<%= cdn.normal %>studycenter/dist/main.css?<%= cdn.version %>"
+          media="all"/>
+</head>
+
+<body class="bplus" ng-init="page='<%=page%>';lang='<%=lang%>';site='bplus'" ng-app="bplus" ng-controller="AppCtrl">
+<%- include('../../www/view-partial/header.html') -%>
+
+<div class="study-center cloak" ng-controller="studyCenterBaseCtrl">
+
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="four wide column">
+                <bopdmenu ng-controller="StudyCtrl"></bopdmenu>
+            </div>
+            <div class="twelve wide column">
+                <teacher-list></teacher-list>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../../www/view-partial/footer.html') -%>
+<%- include('footer.html') -%>
+<%- include('../../www/view-partial/external-js.html') -%>
+</body>
+
+</html>

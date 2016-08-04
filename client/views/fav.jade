@@ -1,0 +1,7 @@
+script(type="text/ng-template", id="fav.html")
+    div.b-opd-favorite
+        //include fav-old-design-title
+        div(class="ui bottom attached active tab segment b-opd-body", data-tab="teacher", style="background: transparent;", ng-controller="FavTeachersCtrl", ng-class="{'loading': fetching}")
+            + teacherTable('teachers')
+            div(class="ui horizontal divider")
+        //include fav-old-design

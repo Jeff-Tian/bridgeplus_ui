@@ -1,0 +1,35 @@
+div.ui.modal.modal-telephone(modal-telephone)
+    div.header 修改手机
+        div.btn-close
+            i.close.icon
+    div.content
+        + errorForm('changingMobile')(name="changeMobileForm", ng-submit="changeMobile()")
+            form-error
+            div.field
+                div.ui.left.icon.input.fluid
+                    i.phone.icon
+                    input(type="text", name="telephone", placeholder="请输入手机号码", ng-model="changeMobileData.mobile", ng-required="true")
+            div.field
+                div.ui.grid.CAPTCHA-grid
+                    div.ui.eleven.wide.column
+                        div.ui.left.icon.input.fluid
+                            i.write.icon
+                            input(type="text", name="CAPTCHA", placeholder="请输入图形验证", ng-model="changeMobileData.captcha", maxlength="4", ng-required="true")
+                    div.ui.five.wide.column
+                        div(captcha="", ng-model="changeMobileData.captchaId", style="height: 39px; cursor: pointer; float: right;", autocomplete="off")
+                        a(href="javascript:void(0);", ng-click="refreshCaptcha()") 换一张
+            div.field.btn-container(ng-hide="verificationButtonClicked")
+                resend-verification.fluid
+            div.field(ng-show="verificationButtonClicked")
+                div.ui.horizontal.divider
+                div.ui.left.icon.input.fluid
+                    i.write.icon
+                    input(type="text", name="verificationCode", placeholder="请输入手机验证码", ng-model="changeMobileData.verificationCode", autocomplete="off", ng-required="true", maxlength="6")
+                    | &nbsp;
+                    resend-verification
+            div.field.btn-container
+                div.ui.left.icon.input.fluid
+                    i.lock.icon
+                    input(type="password", name="password", placeholder="请输入登录密码", ng-model="changeMobileData.password", ng-required="true")
+            div.field
+                button.fluid.ui.red.button(ng-disabled="!changeMobileForm.$valid") 完成

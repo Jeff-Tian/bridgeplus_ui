@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('SEOTitle_EmailVerify') %></title>
+    <meta name="description" content="<%= __('SEODesc_EmailVerify') %>">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-controller="AppCtrl" class="b-background" ng-app="emailVerify">
+<%- include('view-partial/header.html') -%>
+<div class="ui" style="min-height: 300px; padding-top: 8em;">
+    <div style="margin: 0 auto; text-align: center;">
+        <%= __(result) %>
+    </div>
+</div>
+<%- include('view-partial/footer.html') -%>
+<script type="text/javascript">
+    angular
+            .module('emailVerify', ['pascalprecht.translate', 'ng.utils', 'bplusModule'])
+            .controller('AppCtrl', angular.bplus.AppCtrl)
+            .factory('translationLoader', angular.bplus.translationLoader)
+            .factory('FormValidation', angular.bplus.FormValidation)
+            .factory('service', angular.bplus.service)
+            .factory('MessageStore', angular.bplus.MessageStore)
+            .config(angular.bplus.translate)
+            .config(['$httpProvider', function ($httpProvider) {
+                $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+            }])
+    ;
+</script>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

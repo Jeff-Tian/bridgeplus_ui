@@ -1,0 +1,119 @@
+<table class="ui celled table positions b-opd-companylist">
+    <colgroup>
+        <col style="background-color: #F9F9F9; width: 100px; text-align: center;">
+        <col style="width: 230px; text-align: center;">
+        <col style="background-color: #F9F9F9;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>
+                <h4 class="ui white header">
+                    公司匹配度
+                    <i class="help circle icon b-opd-help-company-matching"></i>
+                </h4>
+            </th>
+            <th>
+                <h4 class="ui white header">
+                    公司
+                </h4>
+            </th>
+            <th>
+                <h4 class="ui white header">
+                    在招职位
+                </h4>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="data in displayData.data">
+            <td style="padding: 1.5em;">
+                <img class="matchlevel clickable" ng-click="displayData.onMatchlevelClick(data.match)" data-content="你与企业的匹配等级 {{data.match.toUpperCase()}}!" data-variation="inverted" ng-src="/img/opd/match_{{data.match===''?'':data.match+'b'}}.png"/>
+            </td>
+            <td class="description clickable" ng-click="displayData.onCompanyClick(data)">
+                <img ng-src="{{data.logo}}" class="left-floated-image">
+                <div class="company" ng-bind="data.display_name"></div>
+                <div class="field grey color" ng-bind-template="{{data.industry}}/{{data.nature_of_firms}}"></div>
+            </td>
+            <td class="desc" ng-click="displayData.onPositionClick(data)">
+                <h3 class="ui header">
+                    <div class="red title" href="" ng-bind-template="{{data.jobCount}}个在招职位"></div> 
+                </h3>
+                <!-- <div class="grey color">
+                    <span ng-show="data.positioninfo.newposition<1">没有新职位发布</span>
+                    <span ng-show="data.positioninfo.newposition>0">
+                        <span class="ui smooth red label" ng-bind="data.positioninfo.newposition"></span>
+                        <span ng-bind-template="有{{data.positioninfo.newposition}}个新职位你还没看过!"></span>
+                    </span>
+                    <span class="ui right floated light grey color" ng-bind="data.positioninfo.issueTime"></span>
+                </div> -->
+                <div class="removeIcon" ng-click="displayData.onDelete(data, $event)" >
+                    <div class="ui red right corner label">
+                        <i class="remove icon"></i>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr class="transparent">
+            <th colspan="10" class="ui center aligned">
+                <bopdpaginationpattern paginationData="displayData" ng-if="!isRending">
+            </th>
+        </tr>
+    </tfoot>
+</table>
+<div class="ui popup b-opd-popup-help-company-matchlevel">
+    <div class="header popup-margin">企业匹配度</div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_ab.png?<%= cdn.version %>" >
+        <span>等级A</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_bb.png?<%= cdn.version %>" >
+        <span>等级B</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_cb.png?<%= cdn.version %>" >
+        <span>等级C</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_db.png?<%= cdn.version %>" >
+        <span>等级D</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_eb.png?<%= cdn.version %>" >
+        <span>等级E</span>
+    </div>
+</div>
+<div class="ui modal b-opd-matchLevelDescription b-opd-matchLevelDescription-{{sid}}">
+    <div class="header">
+        你与企业匹配度说明
+        <i class="close grey icon inverted circular"></i>
+    </div>
+    <div class="body">
+        <div class="description">
+            <p>我们将你的简历和游戏成绩,与企业文化进行匹配,得到 ABCDE 五个等级的企业匹配度。</p>
+            <p>等级越高,代表你与企业越匹配!</p>
+        </div>
+        <div class="ui grid">
+            <div class="six wide column" >
+                <div class="detail" ng-class="{'match':choisenLevel==='a'||choisenLevel==='b'}">
+                    <div class="detail-title">你与企业匹配度A、B</div>
+                    <img class="detail-image" src="img/opd/match_ab.png?<%= cdn.version %>">
+                    <img class="detail-image" src="img/opd/match_bb.png?<%= cdn.version %>">
+                    <div class="detail-content">代表你很适合这家企业,快去投简历吧!</div>
+                </div>
+            </div>
+            <div class="ten wide column">
+                <div class="detail" ng-class="{'match': choisenLevel!=='a'&&choisenLevel!=='b'}">
+                    <div class="detail-title">你与企业匹配度C、D、E</div>
+                    <img class="detail-image" src="img/opd/match_cb.png?<%= cdn.version %>">
+                    <img class="detail-image" src="img/opd/match_db.png?<%= cdn.version %>">
+                    <img class="detail-image" src="img/opd/match_eb.png?<%= cdn.version %>">
+                    <div class="detail-content">如果你与企业匹配度在C以下,有可能你与企业并不匹配,或者是简历尚未完善,游戏成绩不高。你可以完善线上简历或进行游戏来提高与企业匹配的程度。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

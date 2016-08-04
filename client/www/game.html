@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bridge+</title>
+    <meta name="description" content="Bridge+">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-controller="AppCtrl" ng-app="bplus" ng-init="current_page='game'"
+      ng-class="{'chinese':language==='zh','english':language==='en'}">
+<%- include('view-partial/header.html') -%>
+<!-- Page Contents -->
+<div class="pusher">
+    <div class="b-game">
+        <div class="b-game-stripe animated b-fadeInUp">
+            <div class="ui container equal width grid">
+                <div class="row">
+                    <div class="column">
+                        <h2 class="ui header" ng-cloak><%= __('GameMarkSimos') %></h2>
+
+                        <div ng-cloak>
+                            <p>{{'GameMarkSimosInfo'| translate}}</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <img class="ui circular small left floated image"
+                             src="<%= cdn.normal %>img/salespage/wilfried.png">
+
+                        <h3 class="ui header" ng-cloak><%= __('GameDeveloper') %></h3>
+
+                        <p ng-cloak><%= __('GameDeveloperInfo') %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="b-process">
+            <div class="ui container">
+                <h3 class="ui header b-sp" ng-cloak><%= __('GameFeature') %></h3>
+
+                <div class="ui three column grid">
+                    <div class="column b-process-item" id="team-column">
+                        <div class="content" ng-cloak>
+                            <h4 class="ui header">
+                                <i class="users icon"></i>
+
+                                <div class="content"><%= __('GameTeamWork') %></div>
+                            </h4>
+                            <p><%= __('GameTeamWorkInfo') %></p>
+                        </div>
+                        <div class="image game-gif team-gif">
+                            <img src="<%= cdn.normal %>img/salespage/gif/team-animate.gif?<%= cdn.version %>"
+                                 width="100%">
+                        </div>
+                    </div>
+                    <div class="column b-process-item" id="game-column">
+                        <div class="content" ng-cloak>
+                            <h4 class="ui header">
+                                <i class="game icon"></i>
+
+                                <div class="content"><%= __('GameRunning') %></div>
+                            </h4>
+                            <span class="b-process-item-next">
+                                <i class="caret right icon"></i>
+                            </span>
+
+                            <p><%= __('GameRunningInfo') %></p>
+                        </div>
+                        <div class="image gaming-gif">
+                            <img src="<%= cdn.normal %>img/salespage/gif/gaming-animate.gif?<%= cdn.version %>"
+                                 width="100%">
+                        </div>
+                    </div>
+                    <div class="column b-process-item" id="win-column">
+                        <div class="content" ng-cloak>
+                            <h4 class="ui header">
+                                <i class="flag icon"></i>
+
+                                <div class="content"><%= __('GameTarget') %></div>
+                            </h4>
+                            <span class="b-process-item-next">
+                                <i class="caret right icon"></i>
+                            </span>
+
+                            <p><%= __('GameTargetInfo') %></p>
+                        </div>
+                        <div class="image winning-gif">
+                            <img src="<%= cdn.normal %>img/salespage/gif/winning-animate.gif?<%= cdn.version %>"
+                                 width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-skill">
+            <div class="ui container">
+                <div class="ui grid">
+                    <div class="seventy wide column">
+                        <div class="b-skill-topic">
+                            <img src="<%= cdn.normal %>img/salespage/topics.png?<%= cdn.version %>"
+                                 ng-show="language==='zh'">
+                            <img src="<%= cdn.normal %>img/salespage/topics-en.png?<%= cdn.version %>"
+                                 ng-show="language==='en'">
+                        </div>
+                    </div>
+                    <div class="thirty wide column">
+                        <div class="b-skill-skill">
+                            <div class="ui relaxed huge list b-game-list"
+                                 ng-class="{'huge':language==='zh','large':language==='en'}">
+                                <div class="item">
+                                    <i class="large checkmark box icon"></i>
+
+                                    <div class="content" ng-cloak>
+                                        <h3 class="ui header"><%= __('GameAcquireSkills') %></h3>
+
+                                        <div class="list">
+                                            <div class="item">
+                                                <i class="bar chart icon"></i>
+
+                                                <div class="content">
+                                                    <div class="header"><%= __('GameSkill1') %></div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <i class="users icon"></i>
+
+                                                <div class="content">
+                                                    <div class="header"><%= __('GameSkill2') %></div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <i class="cubes icon"></i>
+
+                                                <div class="content">
+                                                    <div class="header"><%= __('GameSkill3') %></div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <i class="settings icon"></i>
+
+                                                <div class="content">
+                                                    <div class="header"><%= __('GameSkill4') %></div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <i class="pie chart icon"></i>
+
+                                                <div class="content">
+                                                    <div class="header"><%= __('GameSkill5') %></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <div class="ui center aligned test-button grid">
+                    <div class="column">
+                        <a class="ui red large button b-sp"
+                           href="<%= localeLinkSwitch('/profile', '/signin#/register') %>"><%=
+                            __('GameTest') %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-popularity">
+            <div class="ui equal width grid container">
+                <div class="row">
+                    <div class="column b-theory-header" ng-cloak>
+                        <div class="content">
+                            <h3 class="ui header b-sp"><%= __('GameGetGoodComment') %></h3>
+
+                            <div>
+                                <p><%= __('GameCommentContent') %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column b-theory-content" ng-cloak>
+                        <p><%= __('GameFeedbackList1') %><br><%= __('GameFeedbackList1SubContent') %></p>
+
+                        <p class="text-right"><%= __('GameFeedbackList1Name') %></p>
+
+                        <p><%= __('GameFeedbackList2') %></p>
+
+                        <p class="text-right"><%= __('GameFeedbackList2Name') %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-events">
+            <div class="ui container" ng-controller="GameListCtrl">
+                <h3 class="ui header b-sp"><%= __('GameList') %></h3>
+
+                <div class="ui loading segment" ng-show="!top10Epics"></div>
+                <table class="ui very basic table unstackable events-table" ng-cloak ng-hide="!top10Epics">
+                    <tbody>
+                    <tr ng-repeat="epic in top10Epics" ng-class="{'disabled': hasGameEnd(epic)}">
+                        <td style="width:45%">
+                            <i class="big trophy icon" ng-class="{'disabled': hasGameEnd(epic)}"></i>
+                            {{getShortDescription(epic.title)}}
+                        </td>
+                        <td style="width:20%">已有 {{epic.memberCount || '0'}} 人参赛</td>
+                        <td style="width:15%">{{epic.game_from | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                        <td style="width:20%" class="text-right">
+                            <a class="ui red button b-normal" ng-class="{'disabled': hasGameEnd(epic)}"
+                               href="<%= localeLinkSwitch('/zh/cmpt', '/sign-in#/register') %>"><%=
+                                __('GameListStart') %></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="b-trial">
+            <div class="ui center aligned container grid">
+                <div class="column">
+                    <a class="ui red large button b-sp"
+                       href="<%= localeLinkSwitch('/zh/cmpt', '/sign-in#/register') %>"><%=
+                        __('GameListStart') %></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<%- include('view-partial/footer.html') -%>
+
+<script src="<%= cdn.normal %>js/page/game/GameListCtrl.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/game/main.js?<%= cdn.version %>"></script>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

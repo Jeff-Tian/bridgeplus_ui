@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bridge+</title>
+    <meta name="description" content="Bridgeplus - 连结学生和企业之间的桥梁">
+    <meta name="keywords" content="Bridgeplus,Bridge+,人才测评,校园招聘,在线学习">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-controller="AppCtrl" ng-app="bplus" ng-init="current_page='index'"
+      ng-class="{'chinese':language==='zh','english':language==='en'}">
+<%- include('view-partial/header.html') -%>
+<% if (typeof hcd_user === 'undefined' || !hcd_user.member_id) { %>
+<%- include('../views/partial/sign-in-widget.html') -%>
+<% } %>
+<!-- Page Contents -->
+<div class="pusher">
+    <%- include('../views/partial/carousel.html') -%>
+    <div class="page-content">
+        <div class="b-client">
+            <div class="ui container" id="b-client-content">
+                <h3 class="ui header b-sp animated" id="b-client-header" ng-cloak><%= __('IndexServiceTarget') %></h3>
+
+                <div class="ui horizontal list owl-carousel owl-theme" id="b-client-list">
+                    <div class="item">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/tencent.png?<%= cdn.version %>">
+                    </div>
+                    <div class="item">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/cocacola.png?<%= cdn.version %>">
+                    </div>
+                    <div class="item">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/huawei.png?<%= cdn.version %>">
+                    </div>
+                    <div class="item">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/tsinghua.png?<%= cdn.version %>">
+                    </div>
+                    <div class="item">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/ceibs.png?<%= cdn.version %>">
+                    </div>
+                    <div class="item">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/cas.png?<%= cdn.version %>">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-advantage">
+            <div class="ui container">
+                <h3 class="ui header b-sp" ng-cloak><%= __('IndexBusinessSimulationGame') %></h3>
+
+                <div class="ui three column grid">
+                    <div class="column b-advantage-item">
+                        <div class="image index-gif online-gif">
+                            <img src="<%= cdn.normal %>img/salespage/gif/online-animate.gif?<%= cdn.version %>"
+                                 width="160px" height="160px">
+                        </div>
+                        <div class="content">
+                            <p class="header" ng-cloak><%= __('IndexOnlineSimulation') %></p>
+
+                            <div class="description">
+                                <p ng-cloak><%= __('IndexOnlineSimulationLine1') %><br><%=
+                                    __('IndexOnlineSimulationLine2') %><br><%= __('IndexOnlineSimulationLine3') %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column b-advantage-item">
+                        <div class="image top-gif">
+                            <img src="<%= cdn.normal %>img/salespage/gif/top-animate.gif?<%= cdn.version %>"
+                                 width="160px" height="160px">
+                        </div>
+                        <div class="content">
+                            <p class="header" ng-cloak> <%= __('IndexDevelopmentTeam') %></p>
+
+                            <div class="description">
+                                <p ng-cloak><%= __('IndexDevelopmentTeamLine1') %><br><%=
+                                    __('IndexDevelopmentTeamLine2') %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column b-advantage-item">
+                        <div class="image enhance-gif">
+                            <img src="<%= cdn.normal %>img/salespage/gif/enhance-animate.gif?<%= cdn.version %>"
+                                 width="160px" height="160px">
+                        </div>
+                        <div class="content">
+                            <p class="header" ng-cloak><%= __('IndexImproveTheLevel') %></p>
+
+                            <div class="description">
+                                <p ng-cloak><%= __('IndexImproveTheLevelLine1') %><br><%=
+                                    __('IndexImproveTheLevelLine2') %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-theory">
+            <div class="ui container equal width grid">
+                <h3 class="ui header b-sp" ng-cloak><%= __('IndexLearningTheory') %></h3>
+
+                <div class="row">
+                    <div class="column b-theory-header">
+                        <div>
+                            <p ng-cloak><%= __('IndexLearningTheoryTeacherInfo') %><br><b><%=
+                                __('IndexLearningTheoryTeacher') %></b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column b-theory-content">
+                        <h3 ng-cloak><%= __('IndexLearningMethodology') %></h3>
+
+                        <p ng-cloak><%= __('IndexLearningMethodologyInfo') %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-jobs">
+            <div class="ui container">
+                <h3 class="ui header b-sp" ng-cloak><%= __('IndexGameCredits') %></h3>
+
+                <div class="ui grid">
+                    <div class="eight wide column b-jobs-pokesperson">
+                        <div class="ui items">
+                            <div class="item">
+                                <div class="ui small image">
+                                    <img src="<%= cdn.normal %>img/salespage/jobs_lijing.png?<%= cdn.version %>">
+                                </div>
+                                <div class="content">
+                                    <div class="b-jobs-pokesperson-sink">
+                                        <div class="header" ng-cloak><%= __('IndexLeader') %></div>
+                                        <div class="meta" ng-cloak><%= __('IndexLeaderMeta') %></div>
+                                        <div class="ui divider"></div>
+                                        <div class="description" ng-cloak>
+                                            <p><%= __('IndexLeaderDescription') %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eight wide column b-jobs-statistics">
+                        <div class="b-jobs-statistics-sink">
+                            <h2 class="ui sub header" ng-cloak><%= __('IndexPlatform') %></h2>
+
+                            <div class="ui horizontal statistics">
+                                <div class="statistic">
+                                    <div class="value">321</div>
+                                    <div class="label" ng-cloak><%= __('IndexPlatformJobs') %></div>
+                                </div>
+                                <div class="statistic">
+                                    <div class="value">89</div>
+                                    <div class="label" ng-cloak><%= __('IndexPlatformCompanies') %></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui grid">
+                    <div class="eight wide column">
+                        <div class="b-jobs-list">
+                            <h2 class="ui header">
+                                <i class="paste icon red"></i>
+
+                                <div class="content" ng-cloak><%= __('IndexTableInternship') %></div>
+                            </h2>
+                            <table class="ui very basic table unstackable" ng-cloak>
+                                <thead>
+                                <tr>
+                                    <th><%= __('IndexTablePosition') %></th>
+                                    <th><%= __('IndexTableCompany') %></th>
+                                    <th><%= __('IndexTablePlace') %></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><%= __('IndexTablePosition1') %></td>
+                                    <td><%= __('IndexTableCompany1') %></td>
+                                    <td><%= __('IndexTablePlace1') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('IndexTablePosition2') %></td>
+                                    <td><%= __('IndexTableCompany2') %></td>
+                                    <td><%= __('IndexTablePlace2') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('IndexTablePosition3') %></td>
+                                    <td><%= __('IndexTableCompany3') %></td>
+                                    <td><%= __('IndexTablePlace3') %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="eight wide column">
+                        <div class="b-jobs-list">
+                            <h2 class="ui header">
+                                <i class="suitcase icon red"></i>
+
+                                <div class="content" ng-cloak><%= __('IndexTableJobs') %></div>
+                            </h2>
+                            <table class="ui very basic table unstackable" ng-cloak>
+                                <thead>
+                                <tr>
+                                    <th><%= __('IndexTablePosition') %></th>
+                                    <th><%= __('IndexTableCompany') %></th>
+                                    <th><%= __('IndexTablePlace') %></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><%= __('IndexTablePosition4') %></td>
+                                    <td><%= __('IndexTableCompany4') %></td>
+                                    <td><%= __('IndexTablePlace4') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('IndexTablePosition5') %></td>
+                                    <td><%= __('IndexTableCompany5') %></td>
+                                    <td><%= __('IndexTablePlace5') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('IndexTablePosition6') %></td>
+                                    <td><%= __('IndexTableCompany6') %></td>
+                                    <td><%= __('IndexTablePlace6') %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui right aligned container b-jobs-action">
+                    <a class="ui red large button check-more-buuton b-sp"
+                       href="<%= localeLinkSwitch('/profile', '/sign-in#/register') %>"><%=
+                        __('IndexCheckMoreJobs') %></a>
+                </div>
+            </div>
+        </div>
+        <div class="b-feedback">
+            <h3 class="ui header container b-sp" ng-cloak><%= __('IndexStudentFeedback') %></h3>
+
+            <div class="owl-carousel owl-theme b-slider feedback-carousel">
+                <div class="b-slider-item">
+                    <div class="ui equal width grid ui control-container container">
+                        <div class="row">
+                            <div class="column ui items">
+                                <div class="item">
+                                    <div class="ui circular small image b-sp">
+                                        <img src="<%= cdn.normal %>img/feedback/XiaojingGuo.png?<%= cdn.version %>">
+                                    </div>
+                                    <div class="content">
+                                        <div class="header" ng-cloak><%= __('IndexStudentName1') %></div>
+                                        <div class="meta" ng-cloak><%= __('IndexStudentMeta1') %></div>
+                                        <div class="ui divider"></div>
+                                        <div class="description">
+                                            <p ng-cloak><%= __('IndexStudentDescription1') %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column ui items">
+                                <div class="item">
+                                    <div class="ui circular small image b-sp">
+                                        <img src="<%= cdn.normal %>img/feedback/JindongHe.png?<%= cdn.version %>">
+                                    </div>
+                                    <div class="content">
+                                        <div class="header" ng-cloak><%= __('IndexStudentName2') %></div>
+                                        <div class="meta" ng-cloak><%= __('IndexStudentMeta2') %></div>
+                                        <div class="ui divider"></div>
+                                        <div class="description">
+                                            <p ng-cloak><%= __('IndexStudentDescription2') %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-slider-item">
+                    <div class="ui equal width grid ui control-container container">
+                        <div class="row">
+                            <div class="column ui items">
+                                <div class="item">
+                                    <div class="ui circular small image b-sp">
+                                        <img src="<%= cdn.normal %>img/feedback/ZengChen.png?<%= cdn.version %>">
+                                    </div>
+                                    <div class="content">
+                                        <div class="header" ng-cloak><%= __('IndexStudentName3') %></div>
+                                        <div class="meta" ng-cloak><%= __('IndexStudentMeta3') %></div>
+                                        <div class="ui divider"></div>
+                                        <div class="description">
+                                            <p ng-cloak><%= __('IndexStudentDescription3') %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column ui items">
+                                <div class="item">
+                                    <div class="ui circular small image b-sp">
+                                        <img src="<%= cdn.normal %>img/feedback/JinyuShi.png?<%= cdn.version %>">
+                                    </div>
+                                    <div class="content">
+                                        <div class="header" ng-cloak><%= __('IndexStudentName4') %></div>
+                                        <div class="meta" ng-cloak><%= __('IndexStudentMeta4') %></div>
+                                        <div class="ui divider"></div>
+                                        <div class="description">
+                                            <p ng-cloak><%= __('IndexStudentDescription4') %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-slider-item">
+                    <div class="ui equal width grid ui control-container container">
+                        <div class="row">
+                            <div class="column ui items">
+                                <div class="item">
+                                    <div class="ui circular small image b-sp">
+                                        <img src="<%= cdn.normal %>img/feedback/PingHe.png?<%= cdn.version %>">
+                                    </div>
+                                    <div class="content">
+                                        <div class="header" ng-cloak><%= __('IndexStudentName5') %></div>
+                                        <div class="meta" ng-cloak><%= __('IndexStudentMeta5') %></div>
+                                        <div class="ui divider"></div>
+                                        <div class="description">
+                                            <p ng-cloak><%= __('IndexStudentDescription5') %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column ui items">
+                                <div class="item">
+                                    <div class="ui circular small image b-sp">
+                                        <img src="<%= cdn.normal %>img/feedback/LuxiLiang.png?<%= cdn.version %>">
+                                    </div>
+                                    <div class="content">
+                                        <div class="header" ng-cloak><%= __('IndexStudentName6') %></div>
+                                        <div class="meta" ng-cloak><%= __('IndexStudentMeta6') %></div>
+                                        <div class="ui divider"></div>
+                                        <div class="description">
+                                            <p ng-cloak><%= __('IndexStudentDescription6') %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-slider-item">
+                    <div class="ui equal width grid ui control-container container">
+                        <div class="row">
+                            <div class="column ui items">
+                                <div class="item">
+                                    <div class="ui circular small image b-sp">
+                                        <img src="<%= cdn.normal %>img/feedback/ZeyuLi.png?<%= cdn.version %>">
+                                    </div>
+                                    <div class="content">
+                                        <div class="header" ng-cloak><%= __('IndexStudentName7') %></div>
+                                        <div class="meta" ng-cloak><%= __('IndexStudentMeta7') %></div>
+                                        <div class="ui divider"></div>
+                                        <div class="description">
+                                            <p ng-cloak><%= __('IndexStudentDescription7') %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-trial">
+            <div class="ui center aligned container grid">
+                <div class="column">
+                    <a class="ui red large button b-sp" href="<%= localeLinkSwitch('/profile', '/signin#/register') %>"><%=
+                        __('IndexStart') %></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display:none;position:fixed;z-index:10010;left:0;top:0;background-color:rgba(0,0,0,0.8);width:100vw;height:100vh;-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;" class="urgentPopup">
+    <div style="position:absolute;color:white;top:35vh;left:20vw;width:30vw;">
+        <div style="font-size:48px;height:1em">公告</div>
+        <div style="font-size:20px;margin-top:1em;line-height:1.6em" class="content"></div>
+    </div>
+    <div style="position:absolute;top:30vh;left:50vw">
+        <img src="<%= cdn.normal %>img/newbanner.png?<%= cdn.version %>">
+        <div class="urgentCancel" style="position:absolute;color:white;top:-2em;right:-1em;width:1em;font-size:38px;cursor:pointer"> X </div>
+    </div>
+    <div style="position:absolute; bottom:25vh;left:45vw;">
+        <button class="ui red button urgentCancel" style="width:10vw;">朕知道了</button>
+    </div>
+</div>
+<%- include('view-partial/footer.html') -%>
+<!--JS-->
+<script src="<%= cdn.normal %>bower/angularQueryParserModule/dist/scripts/app.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/angularQueryParserModule/dist/scripts/queryParser.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/owl.carousel/dist/owl.carousel.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/view/widgets/carousel/carousel.js?<%= cdn.version %>"></script>
+<% if (dev_mode) { %>
+<script src="js/directives/captcha.js"></script>
+<script src="js/directives/ngEnter.js"></script>
+<script src="js/directives/registerForm.js"></script>
+<script src="js/directives/tab.js"></script>
+<script src="js/factories/WechatLogon.js"></script>
+<script src="js/controllers/LoginCtrl.js"></script>
+<script src="js/controllers/SignUpCtrl.js"></script>
+<script src="js/controllers/WechatLoginCtrl.js"></script>
+<script src="js/common/linkedInModule.js"></script>
+<script src="js/page/homepage/main.js"></script>
+
+<% } else { %>
+<script src="<%= config.normal %>js/cdn/index.js?<%= cdn.version %>"></script>
+<% } %>
+
+<script type="text/javascript">
+    setTimeout(function () {
+        var a = document.createElement("script");
+        var b = document.getElementsByTagName("script")[0];
+        a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0035/5758.js?" + Math.floor(new Date().getTime() / 3600000);
+        a.async = true;
+        a.type = "text/javascript";
+        b.parentNode.insertBefore(a, b);
+    }, 1);
+    $.get("http://blob.bridgeplus.cn/bplus_config.json"+"?"+(new Date().getTime()).toString()).then(function(ret) { 
+        if (ret && ret.displayUrgentPopup && !sessionStorage.getItem("urgentNotificationRead")) {
+            $(".urgentPopup .content").text(ret.urgentPopupContent);
+            $(".urgentPopup").show();
+            $(".urgentCancel").click(function() {
+                sessionStorage.setItem("urgentNotificationRead",true);
+                $(".urgentPopup").hide();
+            });
+        }
+    });
+</script>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

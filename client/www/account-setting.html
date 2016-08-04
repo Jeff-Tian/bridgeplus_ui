@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('SEOTitle_AccountSetting') %></title>
+    <meta name="description" content="<%= __('SEODesc_AccountSetting') %>">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-app="accountSetting" ng-controller="AppCtrl" class="b-background">
+<%- include('view-partial/header.html') -%>
+<div class="ui b-signin-wrapper" style="width: 500px;">
+    <div class="ui column b-step-container b-separator">
+        <div class="ui center aligned container subcontainer">
+            <h2 class="grey color"><%= __('AccountSetting') %></h2>
+        </div>
+    </div>
+    <div class="ui column b-step-container">
+        <div class="ui grid">
+            <div class="row">
+                <div class="three wide column middle aligned">
+                    <%= __('MobilePhone') %>
+                </div>
+                <div class="eleven wide column middle aligned left aligned"> {{memberInfo.mobile}}</div>
+                <div class="two wide column">
+                    <button class="ui large red right floated button no-wrap"
+                            onclick="$('.ui.modal.b-modify-mobile').modal('show');">
+                        <%= __('Modify') %>
+                    </button>
+                </div>
+            </div>
+            <% if (featureSwitcher.enableWechat === true) { %>
+            <div class="ui divider"></div>
+            <div class="row">
+                <div class="three wide column middle aligned"> <%= __('Wechat') %></div>
+                <div class="eleven wide column middle aligned left aligned"> {{memberInfo.wechat}}</div>
+                <div class="two wide column">
+                    <button class="ui large red right floated button no-wrap"
+                            onclick="$('.ui.modal.b-modify-wechat').modal('show');"><%= __('Modify') %>
+                    </button>
+                </div>
+            </div>
+            <% } %>
+            <div class="ui divider"></div>
+            <div class="row" ng-controller="changeEmailCtrl">
+                <div class="three wide middle aligned column"> <%= __('Email') %></div>
+                <div class="eleven wide middle aligned left aligned column">
+                    {{memberInfo.mail}}
+                    <span ng-show="memberInfo.mail" class="no-wrap">
+                        (
+                        <a href="javascript:void(0);" ng-click="SendVerificationEmail()"
+                           ng-disabled="memberInfo.is_mail_validated">
+                            {{ mailSendingText | translate}}
+                        </a>
+                        )
+                    </span>
+                </div>
+                <div class="two wide column">
+                    <button class="ui large red right floated button no-wrap"
+                            onclick="$('.ui.modal.b-modify-email').modal('show');"><%= __('Modify') %>
+                    </button>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <div class="row">
+                <div class="three wide middle aligned column"> <%= __('Password') %></div>
+                <div class="eleven wide middle aligned left aligned column"> ******</div>
+                <div class="two wide column">
+                    <button class="ui large red right floated button no-wrap"
+                            onclick="$('.ui.modal.b-modify-password').modal('show');"><%= __('Modify') %>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui modal b-modify b-modify-mobile" ng-controller="changeMobileCtrl">
+        <div class="header b-background">
+            <i class="ui large remove circle close icon"></i>
+            <%= __('ModifyMobile') %>
+        </div>
+        <div class="content">
+            <register-form action="changeMobile" control="changeMobileFormCtrl"
+                           password-placeholder="'<%= __('PleaseInputPassword') %>'"></register-form>
+        </div>
+    </div>
+    <div class="ui modal b-modify b-modify-wechat">
+        <div class="header b-background">
+            <i class="ui large remove circle close icon"></i>
+            <%= __('ModifyWechat') %>
+        </div>
+        <div class="content" ng-controller="changeWechatCtrl">
+            <iframe name="wechat-frame" class="b-wechat-frame b-background-lighter" ng-src="{{wechatQRPage}}"></iframe>
+        </div>
+    </div>
+    <div class="ui modal b-modify b-modify-email" ng-controller="changeEmailCtrl">
+        <div class="header b-background">
+            <i class="ui large remove circle close icon"></i>
+            <%= __('ModifyEmail') %>
+        </div>
+        <div class="content">
+            <form name="changeEmailForm" class="ui large form" ng-submit="changeEmail($event)">
+                <div class="ui error message brand"></div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="mail icon"></i>
+                        <input type="text" name="email"
+                               placeholder="<%= __('PleaseInputEmail') %>"
+                               ng-model="data.email">
+                    </div>
+                </div>
+                <div class="field absolute-prompt">
+                    <div class="ui left icon input">
+                        <i class="write icon"></i>
+                        <input type="text" name="captcha" placeholder="<%= __('PleaseInputCaptcha') %>"
+                               ng-model="data.captcha">
+                        &nbsp;
+                        <div captcha ng-model="data.captchaId" class="ui fluid b-captcha"></div>
+                    </div>
+                    <div class="ui right aligned container subcontainer">
+                        <a href="javascript: void(0);" ng-click="refreshCaptcha()"><%=
+                            __('RefreshCaptcha') %></a>
+                    </div>
+                </div>
+                <div class="row">&nbsp;</div>
+
+                <div class="field">
+                    <button type="submit" class="ui fluid large red submit button"
+                            ng-disabled="!isChangeEmailFormValid()">{{'Done' | translate}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="ui modal b-modify b-modify-password" ng-controller="changePasswordCtrl">
+        <div class="header b-background">
+            <i class="ui large remove circle close icon"></i>
+            <%= __('ModifyPassword') %>
+        </div>
+        <div class="content">
+            <form name="changePasswordForm" class="ui large form" ng-submit="changePassword($event)">
+                <div class="ui error message brand"></div>
+                <div class="ui">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password"
+                                   placeholder="{{'PleaseInputOldPassword' | translate}}"
+                                   ng-model="data.password">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="newPassword"
+                                   placeholder="{{'PleaseSetNewPassword' | translate}}"
+                                   ng-model="data.newPassword">
+                        </div>
+                    </div>
+                    <div class="row">&nbsp;</div>
+
+                    <div class="field">
+                        <button type="submit" class="ui fluid large red submit button"
+                                ng-disabled="!isChangePasswordFormValid()">{{'Done' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('view-partial/footer.html') -%>
+
+<% if (dev_mode) { %>
+<script src="js/directives/captcha.js"></script>
+<script src="js/directives/ngEnter.js"></script>
+<script src="js/directives/registerForm.js"></script>
+<script src="js/directives/tab.js"></script>
+<script src="js/factories/WechatLogon.js"></script>
+<script src="js/controllers/LoginCtrl.js"></script>
+<script src="js/controllers/SignUpCtrl.js"></script>
+<script src="js/page/account-setting/main.js"></script>
+
+<% } else { %>
+<script src="<%= cdn.normal %>js/cdn/account-settings.js?<%= cdn.version %>"></script>
+<% } %>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

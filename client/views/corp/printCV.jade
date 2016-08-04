@@ -1,0 +1,22 @@
+html
+    head
+        title!= title
+        link(rel="stylesheet", type="text/css", href="#{cdn.normal}css/semantic-ui/semantic.min.css?#{cdn.version}")
+        include ../../www/view-partial/slim-head.html
+        link(rel="stylesheet", type="text/css", href="#{cdn.normal}css/corp.css?#{cdn.version}")
+    body.corp-printcv
+        div(ng-app="corpModule", ng-controller="printcvCtrl")
+            div.printable-container
+                corp-cv-detail(ng-if="!isLoading")
+            div.printable-copyright
+                | Powered by Bridge+
+        include ../../www/view-partial/js.html
+        script(src="#{cdn.normal}js/widget/main.js?#{cdn.version}")
+        script(src="#{cdn.normal}js/proxy/corp/main.js")
+        script(src="#{cdn.normal}js/common/file-reader.js?#{cdn.version}")
+        script(src="#{cdn.normal}js/page/corp/app.js?#{cdn.version}")
+        script(src="#{cdn.normal}js/page/corp/directives/corpCVDetail.js?#{cdn.version}")
+        script(src="#{cdn.normal}js/proxy/corp/main.js?#{cdn.version}")
+        script(src="#{cdn.normal}js/proxy/corp/resource.js?#{cdn.version}")
+        script(src="#{cdn.normal}js/proxy/corp/cv.js?#{cdn.version}")
+        script(src="#{cdn.normal}js/page/corp/printCV/main.js?#{cdn.version}")

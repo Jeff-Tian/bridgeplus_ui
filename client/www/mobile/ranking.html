@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bridge+</title>
+    <meta name="description" content="<%= __('SEODesc_SignIn') %>">
+    <%- include('header.html') -%>
+</head>
+<body class="b-background" ng-app="mobile" ng-controller="AppCtrl">
+<%- include('head.html') -%>
+<div class="main body b-mobile has-header b-mobile-ranking-body" ng-controller="RankingCtrl">
+    <div class="ui equal width center aligned padded grid b-mobile-ranking-option-container">
+        <div class="three column row b-mobile-ranking-row">
+            <div ng-class="{'b-ranking-active':option===$index}" class="b-mobile-column-patch column b-mobile-ranking-options b-mobile-column-patch" ng-click="rankChange($index)" ng-repeat="titleOption in titleOptions">
+                <div class="b-mobile-ranking-title1" ng-bind-template="{{titleOption[0]}}{{titleOption[1]}}"></div>
+            </div>
+        </div>
+    </div>
+    <div class="b-mobile-ranking-detail-count" ng-repeat="detail in details">
+        <div class="b-mobile-ranking-detail-container ui equal width center aligned padded grid">
+            <div class="three wide column b-mobile-column-patch b-mobile-ranking-detail-rank b-mobile-ranking-detail-honor" ng-bind-template="{{detail.rank}}"></div>
+            <div class="seven wide column b-mobile-column-patch b-mobile-ranking-detail-name" ng-bind-template="{{detail.name}}"></div>
+            <div class="six wide column b-mobile-column-patch b-mobile-ranking-detail-score">
+                <i style="margin-right:0px" class="angle down icon" ng-show="$index===0" ng-click="displaySuboption=!displaySuboption"></i>
+                {{$index===0?subTitleOptions[subOption[option]]:detail.score}}
+                <div ng-show="displaySuboption" class="b-mobile-ranking-subtitle-container">
+                    <div ng-class="{'b-mobile-ranking-suboption-active':subOption[option]===$index}" class="b-mobile-ranking-subtitle-item" ng-click="subTileChange($index)" ng-repeat="subTitleOption in subTitleOptions" ng-bind-template="{{subTitleOption}}"></div>
+                </div>
+            </div>
+        </div>
+        <div class="b-mobile-ranking-seperator"></div>
+    </div>
+    <div ng-controller="RankingWechatCtrl"></div>
+</div>
+<!-- Page Contents -->
+<%- include('footer.html') -%>
+<!--JS-->
+<!--Page JS-->
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="<%= cdn.normal %>js/factories/WechatWrapper.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/ranking/RankingWechatCtrl.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/competion-ui/public/js/rankingCtrl.js?<%= cdn.version %>"></script>
+<script>
+angular
+    .module('mobile', [
+        'ng.utils',
+        'pascalprecht.translate',
+        'ui.router'
+    ])
+    .config(angular.bplus.translate)
+    .controller('AppCtrl', angular.bplus.AppCtrl)
+    .controller('RankingCtrl', angular.cmpt.rankingCtrl)
+    .controller('RankingWechatCtrl', angular.bplus.RankingWechatCtrl)
+    .factory('translationLoader', angular.bplus.translationLoader)
+    .factory('FormValidation', angular.bplus.FormValidation)
+    .factory('DeviceHelper', angular.bplus.DeviceHelper)
+    .factory('service', angular.bplus.service)
+    .factory('MessageStore', angular.bplus.MessageStore)
+    .factory('queryParser', angular.bplus.queryParser)
+    .factory('WechatWrapper', angular.bplus.WechatWrapper)
+    .factory('WechatLogon', angular.bplus.WechatLogon);
+</script>
+</body>
+</html>

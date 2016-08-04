@@ -1,0 +1,33 @@
+<div class="ui container">
+    <h3 class="ui header b-sp" ng-cloak><%= __('OpportunityWhyUs') %></h3>
+
+    <div class="ui grid">
+        <div class="eight wide column">
+            <div class="ui embed">
+                <video width="320" height="240" controls style="width: 100%; height: auto;">
+                    <source src='http://blob.bridgeplus.cn/EF_HD.mp4' type='video/mp4'/>
+                    <source src='http://blob.bridgeplus.cn/EF_HD.webm'
+                            type='video/webm; codecs="vp8, vorbis"'>
+                    <source src='http://blob.bridgeplus.cn/EF_HD.ogv'
+                            type='video/ogv; codecs="theora, vorbis"'>
+                    <object id="flowplayer"
+                            data="http://blob.bridgeplus.cn/flowplayer-3.2.2.swf"
+                            type="application/x-shockwave-flash" width="320" height="240">
+                        <param name="movie"
+                               value="blob.bridgeplus.cn/flowplayer-3.2.2.swf">
+                        <param name="allowfullscreen" value="true">
+                        <param name="flashvars"
+                               value="config={'clip':{'url':'http://blob.bridgeplus.cn/EF_HD.mp4','autoPlay':false}}">
+                    </object>
+                </video>
+            </div>
+        </div>
+        <div class="eight wide column b-opportunity-pokesperson" ng-cloak>
+            <div class="header"><%= __('OpportunityLiJing') %></div>
+            <div class="meta"><%= __('OpportunityLiJingMeta') %></div>
+            <div class="description">
+                <p><%= __('OpportunityLiJingLine1') %><br><%= __('OpportunityLiJingLine2') %></p>
+            </div>
+        </div>
+    </div>
+</div>

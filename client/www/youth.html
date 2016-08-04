@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="description" content="Bridge+全国商战模拟大赛热烈启动！万元奖金等你来挑战。玩家以团队形式在虚拟市场共同管理公司，在市场数据和竞争模式下，真实识别商业实战力">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--ICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="<%= cdn.normal %>icon/apple-icon-57x57.png?<%= cdn.version %>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<%= cdn.normal %>icon/apple-icon-60x60.png?<%= cdn.version %>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<%= cdn.normal %>icon/apple-icon-72x72.png?<%= cdn.version %>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<%= cdn.normal %>icon/apple-icon-76x76.png?<%= cdn.version %>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<%= cdn.normal %>icon/apple-icon-114x114.png?<%= cdn.version %>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<%= cdn.normal %>icon/apple-icon-120x120.png?<%= cdn.version %>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<%= cdn.normal %>icon/apple-icon-144x144.png?<%= cdn.version %>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<%= cdn.normal %>icon/apple-icon-152x152.png?<%= cdn.version %>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= cdn.normal %>icon/apple-icon-180x180.png?<%= cdn.version %>">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="<%= cdn.normal %>icon/android-icon-192x192.png?<%= cdn.version %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= cdn.normal %>icon/favicon-32x32.png?<%= cdn.version %>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<%= cdn.normal %>icon/favicon-96x96.png?<%= cdn.version %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= cdn.normal %>icon/favicon-16x16.png?<%= cdn.version %>">
+    <link rel="manifest" href="<%= cdn.normal %>icon/manifest.json?<%= cdn.version %>">
+    <link rel="shortcut icon" href="<%= cdn.normal %>icon/favicon.ico?<%= cdn.version %>"/>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<%= cdn.normal %>icon/ms-icon-144x144.png?<%= cdn.version %>">
+    <meta name="theme-color" content="#ffffff">
+    <title>E战成名</title>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css"
+          href="<%= cdn.normal %>bower/semantic-ui/dist/semantic.min.css?<%= cdn.version %>">
+    <link rel="stylesheet" type="text/css" href="<%= cdn.normal %>css/hp.css?<%= cdn.version %>">
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-controller="AppCtrl" ng-app="bplus" ng-init="current_page='poster'">
+<%- include('view-partial/header.html') -%>
+<div class="pusher">
+    <div class="hp-mastead youth">
+        <div class="ui container">
+            <div class="header-wechat">
+                <img src="<%=cdn.normal%>img/wechat/bplus_fuwuhao.jpg?<%=cdn.version%>">
+            </div>
+
+            <div class="e">
+                <a href="select-payment-method"
+                   eventName="MS2015LP.join.click"><img
+                        src="<%=cdn.normal%>img/hp/youth_e_new.png?<%=cdn.version%>"></a>
+            </div>
+
+            <p class="header-title" style="font-size: 1.3em;">今年重要的一堂</p>
+
+            <p class="header-title" style="font-size: 1.3em; font-weight: bold;">商业实战必修课</p>
+
+            <p class="header-title" style="font-size: 1.3em;">
+                12/8
+                <br/>
+                初赛截止
+            </p>
+
+            <p class="header-title" style="font-size: 1.6em;">50万奖品等你来领！</p>
+
+            <p class="header-title" style="font-size: 1.7em;">你离全国冠军只差一步！</p>
+
+            <div class="ui horizontal divider"></div>
+            <a href="select-payment-method" class="ui large red shadowed button"
+               eventName="MS2015LP.join.click"
+               style="padding-left: 5em; padding-right: 5em;">立即报名</a>
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div><i class="ui huge angle down icon"></i></div>
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+        </div>
+    </div>
+    <div class="hp-header-title">
+        <h1>大赛介绍</h1>
+    </div>
+
+    <div class="hp-white-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span>1</span> 大赛简介
+            </p>
+
+            <p class="content">
+                E战成名 - 全国商战模拟游戏大赛，是一个提供给全国顶尖青年互相交流的平台，通过合得国际授权的MarkSimos，全球顶尖的商战模拟游戏系统，我们将提供一个极致的模拟学习体验。
+            </p>
+
+            <p class="content">
+                我们将汇聚社会各界的稀缺学习资源，透过比赛的公平竞争，提供给全国最优秀的学生一个实现自己的舞台。同时以MarkSimos高度拟真的公司经营与市场竞争环境，让学生实际经历职场真实的经营问题，融会贯通商学课程中的理论，培养自身管理咨询式的数据分析、逻辑思考、问题解决的能力。
+            </p>
+
+            <div class="ui grid">
+                <div class="middle aligned row">
+                    <div class="seven wide column">
+                        <img src="<%=cdn.normal%>img/hp/mk.png?<%=cdn.version%>">
+                    </div>
+                    <div class="nine wide column text-right">
+                        <img src="<%=cdn.normal%>img/hp/mk-pc.png?<%=cdn.version%>">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hp-gray-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span>2</span> 大赛奖项
+            </p>
+
+            <div class="ui three column grid">
+                <div class="column b-process-list">
+                    <div class="content" ng-cloak>
+                        <h4 class="ui header">
+                            海外访学项目
+                        </h4>
+
+                        <p>3万元 5名</p>
+                    </div>
+                    <div class="info">
+                        <p>Bridge+ 与知名的公司合作提供冠军队伍5个免费的海外访学名额，目前暂定于新加坡与美国西岸限额自由选择。</p>
+                        <img src="<%=cdn.normal%>img/hp/prize-1.png?<%=cdn.version%>">
+                    </div>
+
+                </div>
+                <div class="column b-process-list" id="game-column">
+                    <div class="content" ng-cloak>
+                        <h4 class="ui header">
+                            Bridge+ 奖学金
+                        </h4>
+
+                        <p>总金额5万元 5名</p>
+                    </div>
+                    <div class="info">
+                        <p>我们将提供共5万元的Bridge+奖学金给分配给优胜队伍。</p>
+                        <img src="<%=cdn.normal%>img/hp/prize-2.png?<%=cdn.version%>">
+                    </div>
+                </div>
+                <div class="column b-process-list">
+                    <div class="content" ng-cloak>
+                        <h4 class="ui header">
+                            企业人才峰会门票
+                        </h4>
+
+                        <p>2千元 约250名</p>
+                    </div>
+                    <div class="info">
+                        <p>选入决赛的队伍将获邀请参与于中欧商学院与Bridge+ 共同举办的企业人才峰会，我们同时也邀请50位企业导师和你近距离接触。</p>
+                        <img src="<%=cdn.normal%>img/hp/prize-3.png?<%=cdn.version%>">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hp-white-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span>3</span> 大赛特色
+            </p>
+
+            <div class="ui grid one column">
+                <div class="middle aligned row">
+                    <div class="two wide column text-center">
+                        <img src="<%=cdn.normal%>img/hp/a.png?<%=cdn.version%>">
+                    </div>
+                    <div class="fourteen wide column">
+                        <h2 class="sub-title">
+                            高端顶级的比赛系统
+                        </h2>
+
+                        <p class="features-content">
+                            此大赛的模拟系统由中欧工商学院(CEIBS)的联合创始人主衔开发，由价值百万的管理课程改造，清华EMBA、复旦MBA、500强高管热力推荐。
+                        </p>
+                    </div>
+
+                </div>
+                <div class="middle aligned row">
+                    <div class="two wide column text-center">
+                        <img src="<%=cdn.normal%>img/hp/b.png?<%=cdn.version%>">
+                    </div>
+                    <div class="fourteen wide column">
+                        <h2 class="sub-title">
+                            世界名企都在使用的人才培训/测试系统
+                        </h2>
+
+                        <p class="features-content">
+                            此模拟系统受500强名企指定作为校招测评，参加同时提升你的综合素质，提高你获得名企offer的竞争力！
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="middle aligned row">
+                    <div class="two wide column text-center">
+                        <img src="<%=cdn.normal%>img/hp/c.png?<%=cdn.version%>">
+                    </div>
+                    <div class="fourteen wide column">
+                        <h2 class="sub-title">
+                            综合多种不同的奖金与各式福利
+                        </h2>
+
+                        <p class="features-content">
+                            总价值超过50万的奖金服务，包含海外访学、优胜奖金与企业人才峰会门票！
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="middle aligned row">
+                    <div class="two wide column text-center">
+                        <img src="<%=cdn.normal%>img/hp/d.png?<%=cdn.version%>">
+                    </div>
+                    <div class="fourteen wide column">
+                        <h2 class="sub-title">
+                            可以跨校跨院和不同背景的伙伴一起玩
+                        </h2>
+
+                        <p class="features-content">
+                            与隔壁的同学或师弟妹一起参赛，挑战来自全中国其他校园的菁英，拓展你人脉的交友圈！
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="hp-gray-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span>4</span> 大赛赛制
+            </p>
+
+            <h2 class="sub-title">你将会与5个其他的队伍同场竞技，每个场次的第一名将获得晋级。除全国冠军赛外，其馀赛事均在线上进行。</h2>
+
+            <p class="text-center time-line-img table-show">
+                <img src="<%=cdn.normal%>img/hp/time-line.png?<%=cdn.version%>">
+            </p>
+
+            <p class="text-center time-line-img mobile-show">
+                <img src="<%=cdn.normal%>img/hp/time-line-mobile.png?<%=cdn.version%>">
+            </p>
+
+            <div class="ui three column grid">
+                <div class="column b-process-item">
+                    <div class="content" ng-cloak>
+                        <h4 class="ui header">
+                            <i class="users icon"></i>
+
+                            <div class="content">组队参赛：</div>
+                        </h4>
+                        <p>5人组成一队，分任不同角色，即可开始游戏。</p>
+                    </div>
+                    <div class="image game-gif team-gif">
+                        <img src="<%= cdn.normal %>img/salespage/gif/team-animate.gif?<%= cdn.version %>"
+                             width="100%">
+                    </div>
+                </div>
+                <div class="column b-process-item">
+                    <div class="content" ng-cloak>
+                        <h4 class="ui header">
+                            <i class="game icon"></i>
+
+                            <div class="content">游戏进行：</div>
+                        </h4>
+                        <span class="b-process-item-next">
+                            <i class="caret right icon"></i>
+                        </span>
+
+                        <p>模拟公司经营，每次的决策影响公司未来。</p>
+                    </div>
+                    <div class="image gaming-gif">
+                        <img src="<%= cdn.normal %>img/salespage/gif/gaming-animate.gif?<%= cdn.version %>"
+                             width="100%">
+                    </div>
+                </div>
+                <div class="column b-process-item">
+                    <div class="content" ng-cloak>
+                        <h4 class="ui header">
+                            <i class="flag icon"></i>
+
+                            <div class="content">获胜目标：</div>
+                        </h4>
+                        <span class="b-process-item-next">
+                            <i class="caret right icon"></i>
+                        </span>
+
+                        <p>增量市场份额与累积利润最高的公司得胜。</p>
+                    </div>
+                    <div class="image winning-gif">
+                        <img src="<%= cdn.normal %>img/salespage/gif/winning-animate.gif?<%= cdn.version %>"
+                             width="100%">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="hp-white-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span>5</span> 大赛系统
+            </p>
+
+            <h2 class="sub-title">商战模拟游戏 MarkSimos</h2>
+
+            <p class="content">
+                MarkSimos模拟了一个高度竞争的新兴市场，有多家公司在该市场中平行竞争，每个小组接手管理虚拟世界中的一家公司，你们将进行4-6轮决策，每个阶段代表现实世界中的一个季度。最后以相对增加的市场份额和累计净利润决定优胜者。
+            </p>
+
+            <h2 class="sub-title text-center">
+                你只需要
+            </h2>
+
+            <div class="ui grid game">
+                <div class="column">
+                    <img class="ui avatar image small" src="<%=cdn.normal%>img/hp/icon/computer.png?<%=cdn.version%>">
+
+                    <div class="content">
+                        <p>一台电脑</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <img class="ui avatar image small" src="<%=cdn.normal%>img/hp/icon/team.png?<%=cdn.version%>">
+
+                    <div class="content">
+                        <p>三五个知己</br>（你的同事、好友、家人）</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <img class="ui avatar image small" src="<%=cdn.normal%>img/hp/icon/net.png?<%=cdn.version%>">
+
+                    <div class="content">
+                        <p>网路连接</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="sub-title text-center danger">
+                MarkSimos已被上千间中外名企使用，欢迎你来一起体验！
+            </h2>
+
+        </div>
+    </div>
+
+    <div class="hp-gray-dark-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span>6</span> 模拟学习
+            </p>
+
+            <h2 class="sub-title">游戏化学习时代的到来</h2>
+
+            <p class="content">
+                经济学家爱德华·卡斯特罗诺瓦（Edward
+                Castronova）曾指出，人类社会出现了向游戏空间“大规模迁移”的现象，全世界数亿人在游戏上投入了大量的时间。尤其是“85后”、“90后”这些所谓的“新人类”，更是伴随着多屏幕、视频游戏长大起来的技术达人、社交网络达人、游戏达人。因此，通过将游戏的元素和机制融入学习设计之中，提高学习的乐趣和学习者的参与感，成为一个自然的选择，也是大势所趋。这就是当前企业学习发展领域的热门话题——“游戏化（Gamification）”。
+            </p>
+
+            <p class="content">
+                据著名IT调研公司Gartner公司2011年预测，未来5年将有超过70%的全球性机构拥有至少一个“游戏化”的应用。Gartner分析师表示，游戏化将是一个显著的发展趋势。
+            </p>
+
+            <div class="ui grid two column">
+                <div class="sixteen wide column">
+                    <h2 class="sub-title">
+                        模拟学习缘起
+                    </h2>
+
+                    <p class="intensive-content">
+                        模拟技术最早是用于军事应用，二战时期为了降低实弹战场的伤亡率，美苏德等军事大国纷纷开始投入资金技术用模拟训练来代替实弹演习，提升士兵在战场上的反应能力和战斗能力，特别是在飞行员和宇航员等项目上，模拟训练发挥了巨大的作用，甚至对飞行员的考核之一就包含模拟飞行的训练时间。
+                    </p>
+
+                    <p class="intensive-content">
+                        上个世纪70年代，欧洲工商管理学院的Jean-Claude Larreche 和Hubert Gatignon
+                        两位教授不满于传统学习方式，开发了在“做中学”的商战模拟程序，这是根据商业运营模型为基础的一种有次序的决策练习，以提高学生决策能力。这次实验掀开了世界商战模拟游戏学习革命的序幕，成为了MarkSimos诞生的催化剂。
+                    </p>
+                </div>
+                <div class="bottom aligned row table-show">
+                    <div class="twelve wide column info-column-right">
+                        <p class="content" style="margin-bottom:10px;">
+                            世界商战模拟游戏学习革命的序幕被拉开之后，经历了无数次的迭代升级，最终由世界级营销大师温伟德教授(Wilfried Vanhonacker)
+                            指导世界一流研发团队研发出MarkSimos营销商战模拟游戏，成为商战模拟游戏的集大成者。
+                        </p>
+
+                        <div class="info-content">
+                            <p class="content">
+                                温伟德教授是世界顶级的营销大师。曾任俄罗斯总统教育改格顾问，是莫斯科SKOLKOVO商学院前院长，中欧国际工商学院联合创始人之一。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="four wide column info-column-left">
+                        <img src="<%=cdn.normal%>img/hp/wf.png?<%=cdn.version%>" style="width:100%">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="sub-title">MarkSimos - 世界顶级的学习平台</h2>
+
+            <p class="content">
+                MarkSimos商战模游戏将最先进的体验式学习、反思型学习 与 社会化学习 理念融为一体，
+                倡导“做中学”、“玩中学”、“竞争中学”。它的仿真模拟技术源自于军事仿真模拟，基于数据建模与大数据的分析技术，结合商业智能与商业视觉技术，动态再现真实的市场环境和典型的管理挑战，零风险进行重大商业竞争决策的实操练习。
+            </p>
+
+            <p class="content">
+                MarkSimos商战模拟游戏诞生之后，被合得国际带入中国，为可口可乐、TCL、腾讯、百度、中广核、拜耳、北京农商银行、OPPO、VIVO、淘宝大学、旺旺、国家广电总局等众多知名企业和机构用于培养其核心管理团队和高潜力的储备干部。
+            </p>
+
+            <div class="text-center table-show">
+                <div class="ui horizontal list partners">
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/fudan.png?<%=cdn.version%>">
+                    </div>
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/tsinghua.png?<%=cdn.version%>">
+                    </div>
+
+
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/cas.png?<%=cdn.version%>">
+                    </div>
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/shufe.png?<%=cdn.version%>">
+                    </div>
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/ceibs.png?<%=cdn.version%>">
+                    </div>
+                </div>
+                <div class="ui horizontal list partners">
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/cocacola.png?<%=cdn.version%>">
+                    </div>
+
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/bayer.png?<%=cdn.version%>">
+                    </div>
+
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/huawei.png?<%=cdn.version%>">
+                    </div>
+
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/suning.png?<%=cdn.version%>">
+                    </div>
+                    <div class="item">
+                        <img src="<%=cdn.normal%>img/hp/1x/tencent.png?<%=cdn.version%>">
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui horizontal list partners mobile-show">
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/fudan.png?<%=cdn.version%>">
+                </div>
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/tsinghua.png?<%=cdn.version%>">
+                </div>
+
+
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/cas.png?<%=cdn.version%>">
+                </div>
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/shufe.png?<%=cdn.version%>">
+                </div>
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/ceibs.png?<%=cdn.version%>">
+                </div>
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/cocacola.png?<%=cdn.version%>">
+                </div>
+
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/bayer.png?<%=cdn.version%>">
+                </div>
+
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/huawei.png?<%=cdn.version%>">
+                </div>
+
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/suning.png?<%=cdn.version%>">
+                </div>
+                <div class="item">
+                    <img src="<%=cdn.normal%>img/hp/1x/tencent.png?<%=cdn.version%>">
+                </div>
+
+            </div>
+
+            <p class="content">
+                2013年起MarkSimos模拟游戏被陆续引入清华大学、复旦大学、上海财经大学、中央财经大学、中科院、华中科技大学等国内一流院校MBA课程。
+            </p>
+        </div>
+    </div>
+
+    <div class="hp-gray-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span>7</span> 大赛主办方
+            </p>
+
+            <div class="ui grid bpuls">
+                <div class="middle aligned row">
+                    <div class="three wide column logo">
+                        <img src="<%=cdn.normal%>img/hp/b-logo.png?<%=cdn.version%>" class="b-logo">
+                    </div>
+                    <div class="thirteen wide column">
+                        <h2 class="sub-title">Bridge+</h2>
+
+                        <p class="content">
+                            Bridge+致力于将在线商战模拟游戏推广到中国的高校和年轻人群体，借助在线模拟训练和丰富的企业资源，构建从学校到企业之间的实训平台，帮助更多的年轻人实现梦想。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="hp-white-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span>8</span> 学术特别合作
+            </p>
+
+            <div class="ui grid hcd">
+                <div class="middle aligned row">
+                    <div class="three wide column logo">
+                        <img src="<%=cdn.normal%>img/hp/hcd-logo.png?<%=cdn.version%>">
+                    </div>
+                    <div class="thirteen wide column">
+                        <h2 class="sub-title">合得国际</h2>
+
+                        <p class="content">
+                            合得国际（HCD Learning）是创新学习领域的全球领导品牌，是第一个把电脑商战模拟游戏带入企业管理培训的机构, 也是拥有全球电脑商战模拟技术研发团队的机构。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hp-gray-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span>9</span> 公益特别合作
+            </p>
+
+            <div class="ui grid hcd">
+                <div class="middle aligned row">
+                    <div class="three wide column logo">
+                        <img src="<%=cdn.normal%>img/hp/tree.png?<%=cdn.version%>">
+                    </div>
+                    <div class="thirteen wide column">
+                        <h2 class="sub-title">杉树计划</h2>
+
+                        <p class="content">
+                            杉树计划CEDAR是由中欧国际工商学院校旗下中欧爱心联盟的陈瑶女士， 罗念慈先生和史丽女士在2012年发起的在中欧校友会和中欧爱心联盟领导下的公益组织，
+                            是一个旨在点燃年轻人心中的希望、提高大学生职场竞争能力和综合素质的计划，一个培养自立自信自强懂得感恩和回馈社会的卓越人才的服务平台；是一个发起于中欧、贡献于社会的项目。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hp-white-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span style="padding: 5px;">10</span> 金级合作伙伴
+            </p>
+
+            <div class="ui grid hcd">
+                <div class="middle aligned row">
+                    <div class="three wide column logo">
+                        <a href="http://www.shixiseng.com/invite/Qmi6" target="_blank">
+                            <img class="ui small image"
+                                 src="<%= cdn.normal %>img/partners/shixiseng_logo.png?<%= cdn.version %>">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hp-gray-space">
+        <div class="ui container">
+            <p class="hp-title">
+                <span style="padding: 5px;">11</span> 合作机构
+            </p>
+
+            <div class="ui grid hcd">
+                <div class="middle aligned row">
+                    <div class="three wide column logo">
+                        <a href="http://www.heibaixiaoyuan.com" target="_blank">
+                            <img class="ui small image"
+                                 src="<%= cdn.normal %>img/partners/black_white_school.png?<%= cdn.version %>">
+                        </a>
+                    </div>
+                    <div class="three wide column logo">
+                        <a href="https://itunes.apple.com/cn/app/xiao-jiang-you-huo-dong-fen/id929084571?mt=8"
+                           target="_blank">
+                            <img class="ui small image"
+                                 src="<%= cdn.normal %>img/partners/xiaojiangyou.png?<%= cdn.version %>">
+                        </a>
+                    </div>
+                    <div class="three wide column logo">
+                        <a href="" target="_blank">
+                            <img class="ui small image"
+                                 src="<%= cdn.normal %>img/partners/hi_starter_logo.png?<%= cdn.version %>">
+                        </a>
+                    </div>
+                    <div class="three wide column logo">
+                        <a href="http://mp.weixin.qq.com/s?__biz=MzA4ODU4NzgyNw==&mid=400627687&idx=1&sn=1e864b0b7b1630f292f2d42131410b2f#rd"
+                           target="_blank">
+                            <img class="ui small image"
+                                 src="<%= cdn.normal %>img/partners/shixi_plus.png?<%= cdn.version %>">
+                        </a>
+                    </div>
+                </div>
+                <div class="middle aligned row">
+                    <div class="three wide column logo">
+                        <a href="" target="_blank">
+                            <img class="ui small image"
+                                 src="<%= cdn.normal %>img/partners/beichenqingnian.png?<%= cdn.version %>">
+                        </a>
+                    </div>
+                    <div class="three wide column logo">
+                        <a href="http://www.ciweishixi.com" target="_blank">
+                            <img class="ui small image"
+                                 src="<%= cdn.normal %>img/partners/ciweishixi.png?<%= cdn.version %>">
+                        </a>
+                    </div>
+                    <div class="three wide column logo">
+                        <a href="http://www.mcthk.com" target="_blank">
+                            <img class="ui small image" src="<%= cdn.normal %>img/partners/mct.png?<%= cdn.version %>">
+                        </a>
+                    </div>
+                    <div class="three wide column logo">
+                        <a href="" target="_blank">
+                            <img class="ui small image"
+                                 src="<%= cdn.normal %>img/partners/zhangji.jpg?<%= cdn.version %>">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<%- include('view-partial/footer.html') -%>
+<script src="<%= cdn.normal %>js/factories/WechatLogon.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/controllers/AppCtrl.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/hp/main.js?<%= cdn.version %>"></script>
+<script>
+    window.t_PageName = "MS2015LP";
+</script>
+
+<%
+/*
+<script type="text/javascript"> var CE_SNAPSHOT_NAME = "bridgeplus_landing_desktop"; </script>
+<script type="text/javascript">
+    setTimeout(function () {
+        var a = document.createElement("script");
+        var b = document.getElementsByTagName("script")[0];
+        a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0035/5758.js?" + Math.floor(new Date().getTime() / 3600000);
+        a.async = true;
+        a.type = "text/javascript";
+        b.parentNode.insertBefore(a, b)
+    }, 1);
+</script>
+*/
+%>
+<%- include('view-partial/external-js.html') -%>
+</body>
+</html>

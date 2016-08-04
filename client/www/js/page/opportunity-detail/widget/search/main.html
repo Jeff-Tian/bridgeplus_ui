@@ -1,0 +1,17 @@
+<form class="ui form">
+    <div class="field">
+        <div class="ui fluid right action left icon input">
+            <i class="search icon"></i>
+            <input class="marginal-input opd-search-input" type="text" placeholder="{{options.placeholder}}" ng-model="options.searchContent">
+            <div class="ui red button opd-search-inputbutton"
+                 style="margin-left: 10px; border-top-left-radius: .28571429rem !important; border-bottom-left-radius: .28571429rem !important; padding-left: 4em; padding-right: 4em;" ng-click="options.search(options.searchContent)">
+                搜索
+            </div>
+        </div>
+    </div>
+    <div class="field"></div>
+</form>
+<div class="field" ng-show="options.candidate">
+    <strong ng-bind-template="{{options.candidate.title}}："></strong>
+    <span class="loose tag opd-search-candidate" ng-repeat="key in options.candidate.keywords" ng-bind="key" ng-click="onKeyWordClick(key)"></span>
+</div>

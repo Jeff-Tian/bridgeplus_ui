@@ -1,0 +1,32 @@
+<div class="ui large fluid inverted center aligned vertical b-profile one item menu">
+    <a></a>
+    <% if (false) { %>
+    <a class="item" href="<%= localeLink('/m/youth') %>" eventName="m.menu.competition.click"><%= __('MapNational')
+        %></a>
+    <a class="item" href="<%= localeLink('/m/national') %>" eventName="m.menu.joinGame.click"><%= __('大赛报名') %></a>
+    <% } %>
+    <a class="item" href="<%= localeLink('/m/index#weekly-competition') %>" eventName="m.menu.weeklyCompetition.click">周赛报名</a>
+    <a class="item" href="<%= localeLink('/m/profile') %>" eventName="m.menu.profile.click"><%= __('Profile') %></a>
+    <a class="item" href="<%= localeLink('/m/aboutus') %>" eventName="m.menu.aboutUs.click"><%= __('FooterAboutUs')
+        %></a>
+    <a class="item" href="<%= localeLink('/m/statement') %>" eventName="m.menu.tc.click"><%=
+        __('FooterServiceStatement') %></a>
+
+    <% if (signedIn && featureSwitcher.enableLogoutOnMobile) { %>
+    <a class="item" ng-click="signOut()"><%= __('退出登录') %></a>
+    <% } %>
+
+    <div class="ui fitted divider"></div>
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui container" ng-show="showQRCode">
+    <p style="text-align:center">
+        <img class="ui small image" style="width:110px;margin:0 auto;"
+             src="<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg?<%= cdn.version %>">
+    </p>
+
+    <p style="text-align:center"><%= __('Bridge+服务号') %></p>
+</div>

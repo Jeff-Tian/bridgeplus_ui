@@ -1,0 +1,170 @@
+block content
+    if !hcd_user
+        div
+            a(name="/register")
+            a(name="/login")
+            corp-sign-in-widget
+    div.pusher
+        include ../partial/carousel.html
+    div#sales-section(style="border: solid 1px transparent; background-color: white;")
+        div(class="ui padded container")
+            div(class="ui horizontal divider")
+            div(class="ui horizontal divider")
+            div(class="ui horizontal divider")
+            h1.centered.ui.header 精准推送人才,高效
+                div.wave
+                    img(src="#{cdn.normal}img/corp/home-page/wave_1.png?#{cdn.version}")
+            div(class="ui horizontal divider")
+            div(class="ui three column center aligned relaxed grid")
+                div.column
+                    div(style="border-right: dashed 1px #E4E4E4;")
+                        div(class="ui tiny image")
+                            img(src="#{cdn.normal}img/corp/home_icon1.png?#{cdn.version}")
+                    h2(class="ui header") 人才评价工具
+                    div.ui.horizontal.divider
+                    div(class="ui left aligned container")
+                        ul(class="ui red bulleted list")
+                            li 简历包含个人能力模型和客观评价数据
+                            li 根据多维度人才评价指标精准搜索简历
+                div.column
+                    div(style="border-right: dashed 1px #E4E4E4;")
+                        div(class="ui tiny image")
+                            img(src="#{cdn.normal}img/corp/home_icon2.png?#{cdn.version}")
+                    h2(class="ui header") 人才智能推荐
+                    div.ui.horizontal.divider
+                    div(class="ui left aligned container")
+                        ul(class="ui red bulleted list")
+                            li 系统性的获取企业岗位需求模型
+                            li 根据简历与岗位的匹配度进行推荐
+                div.column
+                    div(class="ui tiny image")
+                        img(src="#{cdn.normal}img/corp/home_icon3.png?#{cdn.version}")
+                    h2(class="ui header") 人才解决方案
+                    div.ui.horizontal.divider
+                    div(class="ui left aligned container")
+                        ol(class="ui red bulleted list")
+                            li 根据企业需求提供定制化的人才方案
+                            li 提供大数据评估的大学生人才质量报告
+            div(class="ui horizontal divider")
+            div(class="ui horizontal divider")
+            div(class="ui horizontal divider")
+    div(style="background-color: #2D353C;")
+        div.ui.basic.segment
+            div.ui.horizontal.divider
+            h1.ui.inverted.centered.header 按照效果付费, 无忧
+                div.wave
+                    img(src="#{cdn.normal}img/corp/home-page/wave_2.png?#{cdn.version}")
+            div.ui.horizontal.divider
+            div.ui.horizontal.divider
+            div.ui.horizontal.divider
+            div.ui.horizontal.divider
+            div.ui.center.aligned.container
+                div.ui.tablet.stackable.massive.steps.sharp
+                    div.step
+                        div.ui.basic.very.padded.segment
+                            div.ui.small.image
+                                img(src="#{cdn.normal}img/corp/home-page/corp.png?#{cdn.version}")
+                        div.content(style="position: absolute; top: 115%; left: 0; width: 100%;")
+                            div.title.ui.inverted.header 根据企业需求,定制岗位关键能力模型
+                            div.description.ui.inverted.header(style="color: white;") (较低的基础服务年费)
+                    div.active.step
+                        div.ui.basic.very.padded.segment
+                            div.ui.small.image
+                                img(src="#{cdn.normal}img/corp/home-page/resume.png?#{cdn.version}")
+                        div.content(style="position: absolute; top: 115%; left: 0; width: 100%;")
+                            div.title.ui.inverted.header(style="color: white;") 收到简历推送,企业面试把关
+                            div.description.ui.inverted.header(style="color: white;") (精准人才推送,按需灵活收费)
+                    div.step
+                        div.ui.basic.very.padded.segment
+                            div.ui.small.image
+                                img(src="#{cdn.normal}img/corp/home-page/contract.png?#{cdn.version}")
+                        div.content(style="position: absolute; top: 115%; left: 0; width: 100%;")
+                            div.title.ui.inverted.header 签订正式合同,真正效果保证
+                            div.description.ui.inverted.header(style="color: white;") (试用期保障,只有转正后才收取猎聘费)
+                    div.step(style="background-color: transparent; border:none; box-shadow: none; width: 0; padding: 0;")
+            div.ui.center.aligned.container
+                div.ui.horizontal.divider
+                div.ui.horizontal.divider
+                div.ui.horizontal.divider
+                div.ui.horizontal.divider
+                div.ui.horizontal.divider
+                div.ui.horizontal.divider
+                div.ui.horizontal.divider
+    div(style="background-image: url(#{cdn.normal}img/salespage/jobs_bg.png?#{cdn.version});")
+        div.ui.very.padded.container.basic.segment
+            h1.ui.inverted.header.centered 为什么企业信赖我们
+                div.wave
+                    img(src="#{cdn.normal}img/corp/home-page/wave_3.png?#{cdn.version}")
+            div.ui.horizontal.divider
+            div.ui.horizontal.divider
+            div.ui.horizontal.divider
+            div.ui.horizontal.divider
+            include ../partial/sun-meng-qing
+            div.ui.horizontal.divider
+    div#partners(style="background-color: #2D353C; position: relative;")
+        div(class="ui padded container basic segment")
+            div.ui.horizontal.divider
+            h1(class="ui white inverted centered header") 校园猎聘合作伙伴
+                div.wave
+                    img(src="#{cdn.normal}img/corp/home-page/wave_4.png?#{cdn.version}")
+            div(class="ui horizontal divider")
+            div(class="ui seven column centered grid")
+                div.row
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_1.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_2.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_3.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_4.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_5.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_6.png?#{cdn.version}")
+                div.row
+                div.row
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_7.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_8.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_9.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_10.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_11.png?#{cdn.version}")
+                    div.column
+                        div.ui.small.image
+                            img(src="#{cdn.normal}img/corp/partners/company_12.png?#{cdn.version}")
+                div.row
+            div(class="ui horizontal divider")
+            div(class="ui center aligned container")
+                a.huge(class="ui red button", style="padding-left: 4em; padding-right: 4em;", href="#/register") 立即加入
+            div.ui.horizontal.divider
+            div.ui.horizontal.divider
+
+block extraJs
+    script(src="#{cdn.normal}bower/owl.carousel/dist/owl.carousel.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/view/widgets/carousel/carousel.js?#{cdn.version}")
+    script(src="#{cdn.normal}bower/jquery-address/src/jquery.address.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/page/corp/directives/corpSignIn.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/page/corp/directives/corpRegister.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/directives/form-error.js?#{cdn.version}")
+    script.
+        angular.module('bplusModule')
+                .run(['$rootScope', function ($rootScope) {
+                    $rootScope.current_page = 'home';
+                }])
+        ;

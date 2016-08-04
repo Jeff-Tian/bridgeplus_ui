@@ -1,0 +1,3 @@
+div(class="ui center aligned container brand message-wrapper", ng-show="message || shamelessMessage", ng-cloak)
+    div(class="ui black brand message") {{message || shamelessMessage}}
+        i(class="large remove circle icon", ng-click="message = null; shamelessMessage = null")

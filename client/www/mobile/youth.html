@@ -1,0 +1,508 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>E战成名 - bridge+</title>
+    <meta name="description" content="Bridge+">
+    <%- include('header.html') -%>
+    <link rel="stylesheet" type="text/css" href="<%= cdn.normal %>css/hp.css?<%= cdn.version %>">
+</head>
+<body ng-app="mobile" ng-controller="AppCtrl">
+<%/* For wechat browser link share */%>
+<img src="<%= cdn.normal %>img/wechat/for_share.png?<%= cdn.version %>"
+     style="margin-left: -100000px; margin-top: -100000px; position: absolute; left: -10000px; top: -10000px;">
+<%- include('head.html') -%>
+
+<div class="mobile pusher" style="margin-top:30px;">
+    <div class="hp-mastead youth">
+        <div class="ui container">
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="e">
+                <a href="<%= linkSwitch('index#/select-payment-method', 'sign-in', '/m/index#/select-payment-method') %>"
+                   eventName="m.MS2015LP.join.click"><img src="<%=cdn.normal%>img/hp/youth_e_new.png?<%=cdn.version%>"></a>
+            </div>
+
+            <p class="header-title" style="font-size: 1.3em;">今年重要的一堂</p>
+
+            <p class="header-title" style="font-size: 1.3em; font-weight: bold;">商业实战必修课</p>
+
+            <p class="header-title" style="font-size: 1.3em;">
+                12/8
+                <br/>
+                初赛截止
+            </p>
+
+            <p class="header-title" style="font-size: 1.6em;">50万奖品等你来领！</p>
+
+            <p class="header-title" style="font-size: 1.7em;">你离全国冠军只差一步！</p>
+
+            <div class="ui horizontal divider"></div>
+
+            <a href="<%= linkSwitch('index#/select-payment-method', 'sign-in', '/m/index#/select-payment-method') %>"
+               eventName="m.MS2015LP.join.click"
+               class="ui large red shadowed button" style="padding-left: 5em; padding-right: 5em;">立即报名</a>
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div><i class="ui huge angle down icon"></i></div>
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+        </div>
+    </div>
+    <div style="background-color: #F0F0F0;">
+        <div>
+            <div>
+                <div class="ui four item labeled icon inverted borderless menu long-page-nav"
+                     style="border-top-left-radius: 0; -webkit-border-top-right-radius: 0; border-top: solid 2px #fd3d42; background-color: #2F363E;">
+                    <a class="item" href="#game-intro" eventName="m.MS2015LP.intro.click">
+                        <div class="ui center aligned icon">
+                            <i class="large red file text outline icon"
+                               style="color: #FF3D42!important; font-size:1.4em; margin-top: 4px;"></i>
+                        </div>
+                        <div class="ui horizontal divider"></div>
+                        <div>大赛简介</div>
+                    </a>
+                    <a class="item" href="#game-award" eventName="m.MS2015LP.prize.click">
+                        <div class="ui center aligned icon">
+                            <img class="ui mini center aligned image"
+                                 style="display: inline;"
+                                 src="<%= cdn.normal %>img/hp/dasaijiangxiang_menu.png?<%= cdn.version %>">
+                        </div>
+                        <div class="ui horizontal divider"></div>
+                        <div>
+                            大赛奖项
+                        </div>
+                    </a>
+                    <a class="item" href="#game-system" eventName="m.MS2015LP.system.click">
+                        <div class="ui center aligned icon">
+                            <img class="ui mini center aligned image" style="display: inline;"
+                                 src="<%= cdn.normal %>img/hp/dasaixitong_menu.png?<%= cdn.version %>">
+                        </div>
+                        <div class="ui horizontal divider"></div>
+                        <div>
+                            大赛系统
+                        </div>
+                    </a>
+                    <a class="item" href="#game-partners" eventName="m.MS2015LP.partner.click">
+                        <div class="ui center aligned icon">
+                            <img class="ui mini center aligned image" style="display: inline;"
+                                 src="<%= cdn.normal %>img/hp/partner_menu.png?<%= cdn.version %>">
+                        </div>
+                        <div class="ui horizontal divider"></div>
+                        <div>
+                            合作伙伴
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <a name="game-intro"></a>
+
+        <div class="ui horizontal divider"></div>
+        <div class="ui horizontal divider"></div>
+
+        <div class="ui padded container">
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <h1 class="ui header">
+                <div class="red block"></div>
+                大赛简介
+            </h1>
+            <div class="ui horizontal divider"></div>
+
+        </div>
+        <div class="ui clearing grey segment">
+            <div class="ui right floating">
+                <img class="ui tiny image" src="<%= cdn.normal %>img/hp/zuduicansai_right.png?<%= cdn.version %>">
+            </div>
+            <div class="content ui padded container">
+                <h3 class="ui header">
+                    <img src="<%= cdn.normal %>img/hp/zuduicansai.png?<%= cdn.version %>"
+                         class="ui image bottom aligned">
+
+                    组队参赛:
+                </h3>
+
+                <p>5人组成一队，分任不同角色，即可开始游戏！</p>
+            </div>
+        </div>
+        <div class="red down triangle" style="margin-left: 25%;"></div>
+
+        <div class="ui clearing grey segment">
+            <div class="ui right floating">
+                <img class="ui tiny image" src="<%= cdn.normal %>img/hp/youxijinxing_right.png?<%= cdn.version %>">
+            </div>
+            <div class="content ui padded container">
+                <h3 class="ui header">
+                    <img src="<%= cdn.normal %>img/hp/youxijinxing.png?<%= cdn.version %>"
+                         class="ui image bottom aligned">
+
+                    游戏进行:
+                </h3>
+
+                <p>团队模拟公司经营,每次的决策影响公司未来。</p>
+            </div>
+        </div>
+
+        <div class="red down triangle" style="margin-left: 25%;"></div>
+
+        <div class="ui clearing grey segment">
+            <div class="ui right floating">
+                <img class="ui tiny image" src="<%= cdn.normal %>img/hp/huoshengmubiao_right.png?<%= cdn.version %>">
+            </div>
+            <div class="content ui padded container">
+                <h3 class="ui header">
+                    <img src="<%= cdn.normal %>img/hp/huoshengmubiao.png?<%= cdn.version %>"
+                         class="ui image bottom aligned">
+
+                    获胜目标:
+                </h3>
+
+                <p>增量市场份额与累积利润最高的公司得胜!</p>
+            </div>
+        </div>
+
+        <div class="ui centered padded container center aligned">
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <img src="<%= cdn.normal %>img/hp/game_footer.png?<%= cdn.version %>" class="ui image">
+
+            <div class="ui horizontal divider"></div>
+            <p>每轮对决将与5支队伍同场竞技,仅有第一队获得晋级</p>
+
+            <p> 全国总冠军赛,出赛、复赛、决赛都将于线上举行</p>
+
+            <a class="ui large red light shadowed button left floated" href="#top" style="width: 47%;">返回置顶</a>
+            <a class="ui large red light shadowed button right floated" style="width: 47%;"
+               href="<%= linkSwitch('index#/select-payment-method', 'sign-in', '/m/index#/select-payment-method') %>"
+               eventName="m.MS2015LP.join.click">立即报名</a>
+
+            <div class="ui horizontal clearing divider"></div>
+        </div>
+        <div class="ui horizontal divider"></div>
+        <div class="ui horizontal divider"></div>
+        <a name="game-award"></a>
+
+        <div class="ui horizontal divider"></div>
+        <div class="ui horizontal divider"></div>
+
+    </div>
+    <div style="background-color: white;">
+        <div class="ui padded container">
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <h1 class="ui header">
+                <div class="red block"></div>
+                大赛奖项
+            </h1>
+            <div class="ui horizontal divider"></div>
+
+        </div>
+    </div>
+    <div class="ui clearing grey segment">
+        <div class="ui right floating">
+            <img class="ui tiny image" src="<%= cdn.normal %>img/hp/dasaijiangxiang_right.png?<%= cdn.version %>"
+                 style="margin-right: 20px;">
+        </div>
+        <div class="content ui padded container">
+            <h3 class="ui header">
+                <img src="<%= cdn.normal %>img/hp/dasaijiangxiang.png?<%= cdn.version %>"
+                     class="ui image bottom aligned" style="width: 40px!important; height: 40px!important;">
+
+                冠军队伍奖金
+            </h3>
+
+            <p>人民币5万元 B哥让你翻身校园红人</p>
+        </div>
+    </div>
+    <div class="ui horizontal divider"></div>
+
+    <div class="ui clearing grey segment">
+        <div class="ui right floating">
+            <img class="ui image" src="<%= cdn.normal %>img/hp/haiwailiuxue_right.png?<%= cdn.version %>"
+                 style="width: 100px; padding-top: 20%;">
+        </div>
+        <div class="content ui padded container">
+            <h3 class="ui header">
+                <img src="<%= cdn.normal %>img/hp/haiwailiuxue.png?<%= cdn.version %>"
+                     class="ui image bottom aligned" style="width: 40px!important; height: 40px!important;">
+
+                海外留学
+            </h3>
+
+            <p>5名优胜者 B哥带你飞带你看世界</p>
+        </div>
+    </div>
+    <div class="ui horizontal divider"></div>
+
+    <div class="ui clearing grey segment">
+        <div class="ui right floating">
+            <img class="ui image" src="<%= cdn.normal %>img/hp/liuxiufenghui_right.png?<%= cdn.version %>"
+                 style="width: 90px; margin-right: 15px;">
+        </div>
+        <div class="content ui padded container">
+            <h3 class="ui header">
+                <img src="<%= cdn.normal %>img/hp/liuxiufenghui.png?<%= cdn.version %>"
+                     class="ui image bottom aligned" style="width: 40px!important; height: 40px!important;">
+
+                青年领袖峰会邀请函
+            </h3>
+
+            <p>250位青年领袖 B哥带你进入菁英圈子</p>
+        </div>
+    </div>
+
+    <div class="ui centered padded container">
+        <div class="ui horizontal divider"></div>
+        <div class="ui horizontal divider"></div>
+        <p class="ui grey color">&nbsp;&nbsp;主办单位对于赛事运营管理有最终解释权</p>
+
+        <div class="ui horizontal divider"></div>
+        <div class="ui horizontal divider"></div>
+
+        <a class="ui large red light shadowed button left floated" href="#top" style="width: 47%;">返回置顶</a>
+        <a class="ui large red light shadowed button right floated" style="width: 47%;"
+           href="<%= linkSwitch('index#/select-payment-method', 'sign-in', '/m/index#/select-payment-method') %>"
+           eventName="m.MS2015LP.join.click">立即报名</a>
+
+        <div class="ui horizontal clearing divider"></div>
+    </div>
+    <div class="ui horizontal divider"></div>
+    <div class="ui horizontal divider"></div>
+
+    <a name="game-system"></a>
+
+    <div class="ui horizontal divider"></div>
+    <div class="ui horizontal divider"></div>
+
+    <div style="background-color: white;">
+        <div class="ui padded container">
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <h1 class="ui header">
+                <div class="red block"></div>
+                大赛系统
+            </h1>
+            <div class="ui horizontal divider"></div>
+
+            <h2 class="ui header" style="font-size: 1.5rem;">商战模拟游戏 MarkSimos</h2>
+
+            <div class="ui horizontal divider"></div>
+            <p>赛事采用高管培训界著名的商战模拟系统MarkSimos运行, 参赛者须组成5人战队,在线上虚拟环境接受一间快销品公 司董事会委任,协助经营企业在未来四个季度,获得最大市 场份额及累积利润。</p>
+
+            <div class="ui horizontal divider"></div>
+            <p>游戏期间参赛团队将与5间公司动态竞合,进行四轮商业决 策,每轮决策模拟一个季度的市场变化,在快速演化的商场 中,考验团队的海量数据分析、商业决策及合作默契。</p>
+
+            <h3 class="ui very red header middle line">
+                <div class="content" style="background-color: white; position: absolute;">你只需要&nbsp;&nbsp;</div>
+            </h3>
+            <div class="ui three basic icon borderless buttons">
+                <div class="ui white button">
+                    <img src="<%= cdn.normal %>img/hp/computer.png?<%= cdn.version %>" class="ui small image">
+
+                    <br/>
+                    一台电脑
+                </div>
+                <div class="ui button">
+                    <img src="<%= cdn.normal %>img/hp/friends.png?<%= cdn.version %>" class="ui small image">
+
+                    <br/>
+
+                    <div>三五个知己</div>
+                </div>
+                <div class="ui button">
+                    <img src="<%= cdn.normal %>img/hp/network.png?<%= cdn.version %>" class="ui small image">
+                    <br/>
+                    网路连接
+                </div>
+            </div>
+
+            <div class="ui center aligned container" style="font-size: smaller;">(你的同事、好友、家人)</div>
+
+            <h3 class="ui very red header" style="font-size:1rem;">
+                MarkSimos已被上千间中外名企使用,欢迎你来一起体验!
+            </h3>
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <a class="ui large red light shadowed button left floated" href="#top" style="width: 47%;">返回置顶</a>
+            <a class="ui large red light shadowed button right floated" style="width: 47%;"
+               href="<%= linkSwitch('index#/select-payment-method', 'sign-in', '/m/index#/select-payment-method') %>"
+               eventName="m.MS2015LP.join.click">立即报名</a>
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <a name="game-partners"></a>
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+
+        </div>
+    </div>
+
+    <div style="background-color: #F0F0F0;">
+        <div class="ui padded container">
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <h1 class="ui header">
+                <div class="red block"></div>
+                金级合作伙伴
+            </h1>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+
+            <div class="ui very padded centered center aligned container">
+                <a href="http://www.hcdlearning.com" target="_blank">
+                    <img class="ui small image" style="display: inline; width: 80px;"
+                         src="<%=cdn.normal%>img/hp/hcd-logo.png?<%=cdn.version%>">
+                </a>
+                <a href="http://www.cedar2012.org" target="_blank">
+                    <img class="ui small image" style="display: inline;"
+                         src="<%=cdn.normal%>img/hp/tree.png?<%=cdn.version%>">
+                </a>
+                <a href="http://www.shixiseng.com/invite/Qmi6" target="_blank">
+                    <img class="ui small image" style="display: inline; width: 80px;"
+                         src="<%= cdn.normal %>img/partners/shixiseng_logo.png?<%= cdn.version %>">
+                </a>
+            </div>
+        </div>
+        <div class="ui padded container">
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <h1 class="ui header">
+                <div class="red block"></div>
+                合作伙伴
+            </h1>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+
+            <div class="ui very padded centered center aligned container">
+                <a href="http://www.heibaixiaoyuan.com" target="_blank">
+                    <img class="ui small image" style="display: inline; width: 80px;"
+                         src="<%= cdn.normal %>img/partners/black_white_school.png?<%= cdn.version %>">
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://itunes.apple.com/cn/app/xiao-jiang-you-huo-dong-fen/id929084571?mt=8" target="_blank">
+                    <img class="ui small image" style="display: inline; width: 80px;"
+                         src="<%= cdn.normal %>img/partners/xiaojiangyou.png?<%= cdn.version %>">
+                </a>
+                <a href="" target="_blank">
+                    <img class="ui small image"
+                         src="<%= cdn.normal %>img/partners/hi_starter_logo.png?<%= cdn.version %>"
+                         style="display: inline; width: 90px;">
+                </a>
+
+                &nbsp;&nbsp;
+                <a href="http://mp.weixin.qq.com/s?__biz=MzA4ODU4NzgyNw==&mid=400627687&idx=1&sn=1e864b0b7b1630f292f2d42131410b2f#rd"
+                   target="_blank">
+                    <img class="ui small image" style="display: inline;"
+                         src="<%= cdn.normal %>img/partners/shixi_plus.png?<%= cdn.version %>">
+                </a>
+
+                <a href="" target="_blank">
+                    <img class="ui small image" style="display: inline; width: 80px;"
+                         src="<%= cdn.normal %>img/partners/beichenqingnian.png?<%= cdn.version %>">
+                </a>
+
+                <div class="ui horizontal divider"></div>
+
+                <a href="http://www.ciweishixi.com" target="_blank">
+                    <img class="ui small image" style="display: inline; width: 80px;"
+                         src="<%= cdn.normal %>img/partners/ciweishixi.png?<%= cdn.version %>">
+                </a>
+
+                <a href="http://www.mcthk.com" target="_blank">
+                    <img class="ui small image" style="display: inline; width: 80px;"
+                         src="<%= cdn.normal %>img/partners/mct.png?<%= cdn.version %>">
+                </a>
+
+                <a href="" target="_blank">
+                    <img class="ui small image" style="display: inline; width: 80px;"
+                         src="<%= cdn.normal %>img/partners/zhangji.jpg?<%= cdn.version %>">
+                </a>
+
+                <div class="ui horizontal divider"></div>
+
+                <img class="ui image"
+                     src="<%= cdn.normal %>img/partners/bridgeplus.png?<%= cdn.version %>">
+            </div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui left aligned container">
+                <h3 class="ui header">
+                    大赛主办方 Bridge+
+                </h3>
+
+                <div class="ui horizontal divider"></div>
+                <p>Bridge+致力于将在线商战模拟游戏推广到中国的高校和年 轻人群体,借助在线模拟训练和丰富的企业资源,构建从学 校到企业之间的实训平台,帮助更多的年轻人实现梦想。</p>
+
+                <div class="ui horizontal divider"></div>
+                <div class="ui horizontal divider"></div>
+                <a class="ui large red light shadowed button left floated" href="#top" style="width: 47%;">返回置顶</a>
+                <a class="ui large red light shadowed button right floated" style="width: 47%;"
+                   href="<%= linkSwitch('index#/select-payment-method', 'sign-in', '/m/index#/select-payment-method') %>"
+                   eventName="m.MS2015LP.join.click">立即报名</a>
+
+                <div class="ui horizontal clearing divider"></div>
+                <div class="ui horizontal divider"></div>
+                <div class="ui horizontal divider"></div>
+                <div class="ui horizontal divider"></div>
+                <div class="ui horizontal divider"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('footer.html') -%>
+<% if (dev_mode) { %>
+<script src="js/page/mobile/MobileMenuCtrl.js"></script>
+<script src="js/page/mobile/MobileHeadCtrl.js"></script>
+<script src="js/page/mobile/MobileNationalCtrl.js"></script>
+<script src="js/page/mobile/MobileIndexCtrl.js"></script>
+<script src="js/page/mobile/index.js"></script>
+
+<% } else { %>
+<script src="<%= config.normal %>js/cdn/m/youth.js?<%= cdn.version %>"></script>
+<% } %>
+<script>
+    window.t_PageName = "m.MS2015LP";
+</script>
+
+<%
+/*
+<script type="text/javascript"> var CE_SNAPSHOT_NAME = "bridgeplus_landing_mobile"; </script>
+<script type="text/javascript">
+    setTimeout(function () {
+        var a = document.createElement("script");
+        var b = document.getElementsByTagName("script")[0];
+        a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0035/5758.js?" + Math.floor(new Date().getTime() / 3600000);
+        a.async = true;
+        a.type = "text/javascript";
+        b.parentNode.insertBefore(a, b)
+    }, 1);
+</script>
+*/
+%>
+</body>
+
+</html>

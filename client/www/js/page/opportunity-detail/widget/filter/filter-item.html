@@ -1,0 +1,32 @@
+<form class="ui form">
+  <div class="ui segment detail doublelineheight"
+       ng-hide="filterSetting.showThumb" style="box-shadow: none; border-radius: 0; border: none; padding-top: 0.5em; padding-bottom: 0.5em;">
+
+      <i class="ui right floated angle large up icon" style="cursor: pointer;"
+         ng-click="filterSetting.showThumb = true" ng-if="addShowThumbButton"></i>
+
+      <strong>{{f.label}}</strong>
+      <span class="ui light label" ng-repeat="l in f.list" style="cursor: pointer;"
+            ng-class="{'red': equals(filterSetting[f.key], l), 'transparent': !equals(filterSetting[f.key], l)}"
+            ng-click="filterSetting[f.key] = l">
+          {{l.text}}
+      </span>
+
+      <span class="ui light label red" ng-show="!filterSetting.findKey(f, filterSetting[f.key].text)" ng-bind="filterSetting[f.key].text || filterSetting[f.key]"></span>
+      <div ng-show="f.autoComplete" class="input-autocomplete-container inline field">
+        <input class="input-autocomplete-input" type="text" name="filter-item-autocomplete" autocomplete datasource-bplus-autocomplete="f.autoComplete" ng-model="f.type"placeholder="{{f.autoCompletePlaceHolder}}" style="width:250px"/>
+        <button class="ui basic mini button" ng-click="filterSetting.autoCompleteConfirm(filterSetting, f, f.type)">确定</button>
+      </div>
+      <button class="ui basic mini button inline field" ng-show="f.more" ng-click="f.showMore = !f.showMore">
+          更多…
+      </button>
+      <span class="inline field" ng-show="f.type==='range'">
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <input type="text" ng-model="f.range.from" ng-change="f.range.change(f)" ng-pattern="/^[\d]+$/">
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <input type="text" ng-model="f.range.to" ng-change="f.range.change(f)" ng-pattern="/^[\d]+$/">
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span ng-bind="f.rangeLabel"></span>
+      </span>
+  </div>
+</form>

@@ -1,0 +1,156 @@
+/*
+* - @Bridge+
+*/
+.b-map {
+    .season-content {
+        margin-top: 1rem;
+
+        .timeline {
+            margin-top: 2rem;
+
+            .timeline-content {
+                padding: 1rem;
+
+                .timeline-content-grid {
+                    .column {
+                        padding-top: 2rem;
+                        padding-bottom: 2rem;
+
+                        .season-card {
+                            border-radius: 0;
+                            background-image: url("/img/salespage/season-content.png");
+                            background-repeat: no-repeat;
+                            background-position: right bottom;
+                            background-size: 55px 42px;
+                            box-shadow: 0px 2px 0px 0px #d4d4d5;
+
+                            .season-name {
+                                border-radius: 0 !important;
+                                background-image: url("/img/salespage/card-header.png");
+                                background-repeat: no-repeat;
+                                background-position: left;
+                                background-size: 48px 48px;
+
+                                .header {
+                                    color: @color-white;
+                                }
+                            }
+                            .season-dimmer {
+                                .content {
+                                    .center {
+                                    }
+                                    .dimmer-label {
+                                        background-color: transparent;
+                                        color: @color-white;
+                                        font-size: @fontsize-5xl;
+                                    }
+                                }
+                            }
+                        }
+                        .season-card:last-child, .season-card:first-child {
+                            border-radius: 0 !important;
+                        }
+                    }
+                    .twelve.wide {
+                        padding-right: 3rem;
+                    }
+                    .time-line {
+                        background-image: url("/img/salespage/time-line.png");
+                        background-repeat: no-repeat;
+                        background-position: top;
+                        background-size: 28px auto;
+                    }
+                    &.available {
+                        &.available {
+                            .time-line {
+                                background-image: url("/img/salespage/time-line-active.png");
+                            }
+                        }
+                    }
+                }
+                &.first {
+                    .timeline-content-grid {
+                        .time-line {
+                            background-image: url("/img/salespage/time-line-first.png");
+                        }
+                        &.available {
+                            .time-line {
+                                background-image: url("/img/salespage/time-line-active-first.png");
+                            }
+                        }
+                    }
+                }
+                &.last {
+                    .timeline-content-grid {
+                        .time-line {
+                            background-image: url("/img/salespage/time-line-last.png");
+                        }
+                        &.available {
+                            .time-line {
+                                background-image: url("/img/salespage/time-line-active-last.png");
+                            }
+                        }
+                    }
+                }
+                &:nth-child(odd) {
+                    background: @color-grey-lighter;
+                }
+                &:nth-child(even) {
+                    background: #dbdbdb;
+                }
+            }
+        }
+    }
+}
+.bplus {
+    .b-map {
+        background-image: url('/img/salespage/events_bg.png');
+
+        .season-content {
+            .season-card {
+                .season-name {
+                    background-color: #a8a8a8;
+                }
+                .ui.dimmer {
+                    background-color: @color-grey-dimmer;
+                }
+            }
+            .available {
+                .season-card.available {
+                    .season-name {
+                        background-color: @color-brand;
+                    }
+                    .ui.dimmer {
+                        background-color: @color-brand-dimmer;
+                    }
+                }
+            }
+        }
+    }
+}
+.hcdlearning {
+    .b-map {
+        background-image: url('/img/salespage/events_bg.png');
+
+        .season-content {
+            .season-card {
+                .season-name {
+                    background-color: #a8a8a8;
+                }
+                .ui.dimmer {
+                    background-color: @color-grey-dimmer;
+                }
+            }
+            .available {
+                .season-card.season-card.available {
+                    .season-name {
+                        background-color: @color-hcdlearning;
+                    }
+                    .ui.dimmer {
+                        background-color: @color-hcdlearning-dimmer;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "",
+    "gender": "",
+    "dateOfBirth": {
+        "value": {
+            "year": "",
+            "month": "",
+            "day": ""
+        },
+        "isPrivate": false
+    },
+    "location": "",
+    "contractInfo": {
+        "value": "",
+        "isPrivate": false
+    }
+}

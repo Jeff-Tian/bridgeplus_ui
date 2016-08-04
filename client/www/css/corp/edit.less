@@ -1,0 +1,236 @@
+.ui.container.crop-edit-container {
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+    max-width: 860px !important;
+
+    > .ui.grid {
+        margin: 0;
+        > .wide.column {
+            padding: 0;
+        }
+        > .wide.column:first-child {
+            padding-right: 2rem;
+            text-align: center;
+            .logo-container {
+                display: inline-block;
+                margin-top: 3rem;
+                width: 150px;
+                height: 150px;
+                text-align: center;
+            }
+            .btn-logo-upload {
+                margin-top: 2rem;
+                > i.icon {
+                    background: url(/img/corp/logo_upload.png) no-repeat center center;
+                    background-size: contain;
+                }
+            }
+        }
+        > .wide.column:last-child {
+            > .corp-edit-section {
+                margin-top: 1rem;
+                > .title {
+                    border-bottom: solid 2px #b7b8ba;
+                    padding: 1rem 3rem;
+                    background-color: @color-corp-table-light;
+                    cursor: pointer;
+                    > .ui.header {
+                        > i.icon {
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            background-size: contain;
+                        }
+                        > .account-info-icon {
+                            background-image: url(/img/corp/account-information.png);
+                        }
+                        > .basic-info-icon {
+                            background-image: url(/img/corp/basic-information.png);
+                        }
+                        > .company-info-icon {
+                            background-image: url(/img/corp/company-introduction.png);
+                        }
+                        > .content {
+                            color: @color-corp-text-light-grey-header;
+                        }
+                    }
+                }
+                > .form-container {
+                    border-bottom: solid 2px #b7b8ba;
+                    padding: 1rem 3rem;
+                    background-color: @color-corp-table-medium-dark;
+                    > .ui.form {
+                        > .field {
+                            > label {
+                                color: @color-corp-text-dark-grey-header;
+                            }
+                            > input.contact-input {
+                                width: calc(~"100% - 7rem");
+                            }
+                            > .contact-select {
+                                display: inline-block;
+                                margin-left: 1rem;
+                                width: 6rem;
+                                min-width: 6rem;
+                            }
+                            > textarea {
+                                border-radius: 0.28571429rem 0.28571429rem 0 0;
+                            }
+                            > .ui.bottom.attached.segment {
+                                width: 100%;
+                                margin-left: 0.5px;
+                                > .field {
+                                    > input {
+                                        width: calc(~"100% - 5rem");
+                                    }
+                                }
+                            }
+                            > .ui.button {
+                                width: 8rem;
+                            }
+                            > .prompt {
+                                position: absolute;
+                                top: -0.7rem;
+                                left: 6rem;
+                                margin-top: 0;
+                                margin-left: 0;
+                            }
+                            > .prompt:before {
+                                top: auto;
+                                bottom: -0.7em;
+                                -webkit-transform: translateX(-50%) translateY(-50%) rotate(225deg);
+                                transform: translateX(-50%) translateY(-50%) rotate(225deg);
+                            }
+                        }
+                    }
+                }
+                > .account-info-form-container {
+                    padding: 1rem 6rem 1rem 3rem;
+                    > .ui.form {
+                        > .field {
+                            > input[type="text"],
+                            > input[type="password"] {
+                                width: calc(~"100% - 3.5rem");
+                                color: @color-corp-text-dark-grey-header;
+                            }
+                            > i.icon,
+                            > button {
+                                display: inline-block;
+                                margin-top: 0.35rem;
+                                margin-left: 1.5rem;
+                                margin-right: 0;
+                                border: 0;
+                                border-radius: 50%;
+                                width: 2rem;
+                                height: 2rem;
+                                background: url(/img/corp/edit.png) no-repeat center center;
+                                background-size: contain;
+                                cursor: pointer;
+                            }
+                            > button.loading {
+                                background-image: url('');
+                            }
+                        }
+                    }
+                    > .ui.loading.form:before {
+                        width: calc(~"100% + 3rem");
+                    }
+                }
+            }
+            > .corp-edit-section:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.ui.modal.modal-password,
+.ui.modal.modal-telephone {
+    margin-left: -180px !important;
+    width: 360px !important;
+}
+
+.scrolling .ui.modal.modal-password,
+.scrolling .ui.modal.modal-telephone {
+    margin-left: auto !important;
+}
+
+.ui.modal.modal-password,
+.ui.modal.modal-telephone {
+    > .header {
+        background-color: #ddd;
+        > .btn-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            border-radius: 50%;
+            padding-bottom: 0.358rem;
+            background-color: #919296;
+            cursor: pointer;
+            i.close.icon {
+                margin-right: 0;
+                color: #fff;
+            }
+        }
+    }
+    > .content {
+        > .ui.form {
+            > .field {
+                position: relative;
+                input {
+                    padding-left: 2.5em;
+                }
+            }
+        }
+    }
+}
+
+.ui.modal.modal-password {
+    > .content {
+        > .ui.form {
+            > .btn-container {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+.ui.modal.modal-telephone {
+    > .content {
+        > .ui.form {
+            > .field {
+                > .grid.CAPTCHA-grid {
+                    margin: 0;
+                    .column {
+                        padding: 0;
+                        > img {
+                            margin-left: 4%;
+                            width: 96%;
+                            height: 2.7em;
+                        }
+                        > a,
+                        > a:visited,
+                        > a.hover {
+                            position: absolute;
+                            bottom: -1.4em;
+                            left: 50%;
+                            margin-left: -1.5em;
+                            font-size: 12px;
+                            color: @color-corp-text-red;
+                            text-decoration: none;
+                        }
+                        > a.hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            > .btn-container {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+
+.loading input {
+    z-index: -1 !important;
+}

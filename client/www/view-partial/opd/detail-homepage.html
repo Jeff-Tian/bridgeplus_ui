@@ -1,0 +1,35 @@
+<div class="b-opd-homepage">
+    <opd-search options="searchOptions"></opd-search>
+    <div class="b-opd-homepage-positions">
+        <div class="ui top attached tabular menu">
+            <a class="active item" data-tab="recommendation">推荐</a>
+            <a class="item" data-tab="hot">热门</a>
+        </div>
+        <div class="ui bottom attached active tab segment" data-tab="recommendation">
+            <div class="ui segment" ng-if="isSearchingRecommendation">搜索中。。。</div>
+            <div ng-if="!isSearchingRecommendation">
+                <div ng-if="recommendation.positions.data.length>0">
+                    <bopdpositionpattern positions="recommendation.positions"/>
+                </div>
+                <div class="ui segment" ng-if="recommendation.positions.data.length===0">尚无推荐职位信息。</div>
+            </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="hot">
+            <div class="ui segment" ng-if="isSearchingHot">搜索中。。。</div>
+            <div ng-if="!isSearchingHot">
+                <div ng-if="hot.positions.data.length>0">
+                    <bopdpositionpattern positions="hot.positions"/>
+                </div>
+                <div class="ui segment" ng-if="hot.positions.data.length===0">尚无热门职位信息。</div>
+            </div>
+        </div>
+    </div>
+<!--     <div class="b-opd-homepage-training" ng-show="trainingOpportunityList.data.length>0">
+        <div class="ui top attached tabular menu">
+            <a class="active item" data-tab="training">培训机会</a>
+        </div>
+        <div class="ui bottom attached active tab segment" data-tab="training">
+            <bopd-traininglist datalist="trainingOpportunityList"></bopd-trainingOpportunityList>
+        </div>
+    </div> -->
+</div>

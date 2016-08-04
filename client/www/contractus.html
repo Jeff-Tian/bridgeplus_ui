@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('ContractusTitle') %></title>
+    <meta name="description" content="Bridge+">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-controller="AppCtrl" ng-app="bplusModule" ng-class="{'chinese':language==='zh','english':language==='en'}">
+<%- include('view-partial/header.html') -%>
+<%- include('../views/partial/contact-us.html') -%>
+<%- include('view-partial/footer.html') -%>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

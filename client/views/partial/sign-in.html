@@ -1,0 +1,82 @@
+<div class="ui fluid two item top pointing secondary menu brand"
+     ng-hide="isInBindMobileMode" ng-controller="LoginCtrl" ng-cloak>
+    <a class="active item" data-tab="login" onclick="window.sendTrack('register.loginTab.click');"><%= __('SignIn')
+        %></a>
+    <a class="item" data-tab="register" onclick="window.sendTrack('login.registerTab.click');"><%= __('SignUp') %></a>
+</div>
+<div class="ui bottom attached tab active" data-tab="login" ng-controller="LoginCtrl">
+    <%- include('bind-mobile-tip.html') -%>
+    <form class="ui large fluid form login" ng-class="{'loading': submitting}" ng-submit="tryLogin($event)"
+          name="loginForm">
+        <div class="ui error message brand"></div>
+        <div class="ui">
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="phone icon"></i>
+                    <input type="text" name="mobile" placeholder="<%= __('Mobile') %>"
+                           ng-model="loginData.mobile">
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="lock icon"></i>
+                    <input type="password" name="password" placeholder="<%= __('PleaseInputPassword') %>"
+                           ng-model="loginData.password">
+                </div>
+            </div>
+            <div class="fields">
+                <div class="eight wide field">
+                    <div class="ui checkbox remember-me" ng-hide="isInBindMobileMode" ng-cloak>
+                        <input type="checkbox" ng-model="loginData.rememberMe" id="remember-me-check-box">
+                        <label for="remember-me-check-box"><%= __('RememberMe') %></label>
+                    </div>
+                </div>
+                <div class="eight wide field ui right aligned container subcontainer">
+                    <a href="reset-password" ng-click="resetPassword($event)"><%= __('ForgotPassword') %> <i
+                            class="hidden help circle icon"></i> </a>
+                </div>
+            </div>
+            <div class="ui divider horizontal"></div>
+            <button loading type="submit" class="ui fluid large red submit button hidden mobile-button"
+                    ng-disabled="!isLoginFormValid()" ng-cloak>
+                {{!isInBindMobileMode ? "<%= __('SignIn') %>" : "<%= __('绑定') %>"}}
+            </button>
+            <button loading type="submit" class="ui fluid large red submit button"
+                    ng-disabled="!isLoginFormValid()" ng-cloak>
+                {{!isInBindMobileMode ? "<%= __('SignIn') %>" : "<%= __('绑定') %>"}}
+            </button>
+        </div>
+    </form>
+    <div class="hidden mobile-button">
+        <a class="ui fluid large red basic button" href="#register" ng-click="register()">
+            <%= __('NoAccount') %> <%= __('SignUpNow') %>
+        </a>
+    </div>
+    <div class="ui right aligned container subcontainer">
+        <div><%= __('NoAccount') %> <a href="#register" ng-click="register()"><%= __('SignUpNow') %></a></div>
+    </div>
+    <% if (!device.isFromMobile || device.isFromWechatBrowser) { %>
+    <div class="ui divider" ng-hide="isInBindMobileMode"></div>
+    <div class="ui" ng-hide="isInBindMobileMode">
+        <%- include('third-party-sign-in.html') -%>
+    </div>
+    <% } %>
+</div>
+<div class="ui bottom attached tab" data-tab="register" ng-controller="SignUpCtrl">
+    <%- include('bind-mobile-tip-2.html') -%>
+    <div class="ui center aligned container subcontainer mobile">
+        <h2 class="grey color"><%= __('SignUp') %></h2>
+    </div>
+    <register-form action="signUp" send-tracking="sendTracking" control="registerFormCtrl"></register-form>
+
+    <div class="field ui right aligned container subcontainer">
+        <%= __('HasAccount') %> <a href="#/login" ng-click="login()"><%= __('SignInNow') %></a>
+    </div>
+</div>
+<div class="ui bottom attached tab" data-tab="wechat-logon" ng-controller="WechatLoginCtrl">
+    <iframe name="wechat-frame" class="b-wechat-frame b-background-lighter" ng-src="{{wechatQRPage}}"></iframe>
+    <button type="reset" class="ui fluid large red basic button" ng-click="cancelWechatLogin()"
+            ng-class="{'inverted': invertCancelButtonTheme}"><%=
+        __('Cancel') %>
+    </button>
+</div>

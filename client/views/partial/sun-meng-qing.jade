@@ -1,0 +1,16 @@
+div.ui.container
+    div.ui.middle.aligned.two.column.centered.grid
+        div.row
+            div.column
+                div.ui.embed
+                    video(width="320", height="240", controls, style="width: 100%; height: auto;")
+                        source(src="http://blob.bridgeplus.cn/EF_HD.mp4", type="video/mp4")
+                        source(src="http://blob.bridgeplus.cn/EF_HD.webm", type="video/webm; codecs='vp8, vorbis'")
+                        source(src="http://blob.bridgeplus.cn/EF_HD.ogv", type="video/ogv; codecs='theora, vorbis'")
+            div.column
+                h2.ui.header #{__('OpportunityLiJing')}
+                    div.sub.header
+                        strong #{__('OpportunityLiJingMeta')}
+                div.ui.horizontal.divider
+                p #{__('OpportunityLiJingLine1')}
+                p #{__('OpportunityLiJingLine2')}

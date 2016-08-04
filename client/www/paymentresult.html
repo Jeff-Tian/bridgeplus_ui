@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:wb="http://open.weibo.com/wb"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Bridge+</title>
+
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" /> -->
+    <!-- <link href="favicon.ico" rel="icon" type="image/x-icon" /> -->
+    <!-- <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" /> -->
+
+    <%- include('view-partial/head.html') -%>
+
+    <!-- <link href="bower/semantic-ui/dist/semantic.css" rel="stylesheet" type="text/css" /> -->
+
+    <script type="text/javascript">document.documentElement.className = document.documentElement.className.replace(new RegExp('(^|\\s)no-js(\\s|$)'), '$1' + 'js' + '$2');</script>
+</head>
+<body ng-controller="AppCtrl" ng-app="bplusModule">
+<!-- Header Begin -->
+<%- include('view-partial/header.html') -%>
+<!-- Header End -->
+
+<!-- Page Contents -->
+<div class="b-paymentresult-container">
+    <div class="b-paymentresult-success">
+        <div class="ui centered grid">
+            <div class="seven wide column">
+                <div class="b-paymentresult-success-pic">&nbsp;</div>
+                <div class="b-paymentresult-button-container">
+                    <a href="/" class="ui button b-paymentresult-button">确定</a>
+                </div>
+                <div class="b-paymentresult-text">感谢您的购买，我们将尽快与您取得联系，或拨打我们的热线电话 <strong>021-2612 2188</strong></div>
+            </div>
+        </div>
+    </div>
+    <div class="b-paymentresult-failure">
+        <div class="ui centered grid">
+            <div class="seven wide column">
+                <div class="b-paymentresult-failure-pic">&nbsp;</div>
+                <div class="b-paymentresult-button-container">
+                    <a href="/zh/cmpt/national?series_id=<%= config.competitions['national-2015'].seriesId %>"
+                       class="ui button b-paymentresult-button">返回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui centered grid">
+        <div class="b-paymentresult-refund-text">
+            <img src="<%= cdn.normal %>img/upsell/icon-refund.png?<%= cdn.version %>" class="ui right spaced image">14天无理由退款
+        </div>
+    </div>
+</div>
+<!-- Footer Begin -->
+<%- include('view-partial/footer.html') -%>
+<!-- Footer End -->
+<script type="text/javascript">
+    if (location.search.indexOf("isSuccess=true") > -1) {
+        window.t_PageName = "paymentresultSuccess";
+        $(".b-paymentresult-success").show();
+    } else {
+        window.t_PageName = "paymentresultFailure";
+        $(".b-paymentresult-failure").show();
+    }
+    var moduleTrack = new window.ModuleTrack('paymentresult');
+</script>
+<%- include('view-partial/external-js.html') -%>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="b-profile-form-textarea-tags">
+    <textarea name="description" ng-model="description"></textarea>
+    <div class="b-profile-form-textarea-tags-tag-container">
+        <div class="inline fields">
+            <div class="field">
+                <label><i class="tags icon"></i><span>{{'Tag' | translate}}</span></label>
+                <input name="taginput" type="text" placeholder="" ng-model="displayData.tags" ng-change="inputChange()" />
+                <div ng-show="false">
+                    <ul>
+                        <li ng-repeat="candidate in displayData.candidates track by $index" ng-bind="candidate" ng-click="candidateClick(candidate)"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+mixin errorForm(loadingCondition)
+    form.ui.form(ng-class="{'loading': #{loadingCondition}, 'error': (errorMessages || $root.errorMessages).length}")&attributes(attributes)
+        block

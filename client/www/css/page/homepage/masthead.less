@@ -1,0 +1,53 @@
+/*
+* - @Bridge+
+*/
+.b-masthead {
+    height: 50rem;
+
+    .owl-theme {
+        .owl-stage-outer {
+            z-index: -1;
+        }
+        .owl-nav {
+            .owl-prev, .owl-next {
+                top: 42%;
+                // calc(50% - 3rem);
+            }
+        }
+        .owl-dots {
+            margin-top: -23px !important;
+        }
+    }
+    .b-slider {
+        overflow: hidden;
+
+        .b-slider-item {
+            width: 100%;
+            min-height: 50rem;
+            overflow: hidden;
+        }
+        h1.ui.header {
+            color: @color-white;
+            font-size: @fontsize-14xl;
+            font-weight: normal;
+            margin-top: 8em;
+        }
+        h2 {
+            color: @color-white;
+            font-size: @fontsize-3xl;
+            font-weight: normal;
+            line-height: 1.6em;
+        }
+    }
+    .first-item, .second-item, .third-item, .fourth-item, .fifth-item {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 50rem;
+        background-color: @color-grey;
+        max-height: 50rem;
+    }
+    .fourth-item {
+        background-position: left center;
+    }
+}

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('SEOTitle_SelectPaymentMethod') %></title>
+    <meta name="description" content="<%= __('SEODesc_SelectPaymentMethod') %>">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-app="selectPaymentMethod" ng-controller="AppCtrl" class="b-background">
+<%- include('view-partial/header.html') -%>
+<div class="ui b-signin-wrapper" style="width: 800px;">
+
+    <div ui-view class="main body b-mobile back-color white color shadowed has-header">
+    </div>
+
+    <script type="text/ng-template" id="select-payment-method.html">
+        <div class="ui clearing horizontal divider"></div>
+
+        <div class="ui b-step-container">
+            <div class="ui left aligned container subcontainer">
+                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<%= __('选择支付款项:') %></h5>
+
+                <div class="ui divider"></div>
+            </div>
+        </div>
+        <div class="ui b-step-container" style="padding-top: 0">
+            <div class="ui centered padded center aligned container subcontainer"
+                 ng-controller="SelectPaymentMethodCtrl">
+                <table class="ui right floated very basic table" style="width: 550px;">
+                    <tbody>
+                    <tr style="border-bottom: none;">
+                        <td>
+                            <p style="padding-left: 75px;">
+                            </p>
+
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="howMuch" tabindex="0"
+                                       ng-model="offerData.kind" value="first"
+                                       ng-class="{'disabled': offerData.kind !== 'first'}"
+                                       class="hidden">
+                                <label>
+                                    <button class="ui large red button"
+                                            ng-class="{'disabled': offerData.kind !== 'first'}"
+                                            style="margin-top: -0.5em; width: 120px;">
+                                        {{350 |
+                                        currency: "¥ "}}
+                                    </button>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+
+                            <ul style="padding: 0; margin: 0; list-style-position: inside;">
+                                <li>1对1专家点评</li>
+                                <li>比赛结果分析报告</li>
+                                <li>纸质精美证书</li>
+                                <li>报名费</li>
+                            </ul>
+                        </td>
+                        <td>
+
+                            <button class="ui yellow button" ng-click="showGameDetailModal()"
+                                    style="position: relative;">
+
+                                <img src="<%= cdn.normal %>img/pay/light.png?<%= cdn.version %>"
+                                     class="ui tiny image"
+                                     style="width: 20px; position: absolute; right: -10px; top: -10px;">
+                                <%= __('了解物超所值') %>
+
+                            </button>
+                        </td>
+                    </tr>
+                    <tr style="border-bottom: none;">
+                        <td style="border-top: none; padding-top:30px">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="howMuch" checked="checked" tabindex="0"
+                                       ng-model="offerData.kind" value="second"
+                                       ng-class="{'disabled': offerData.kind !== 'second'}"
+                                       class="hidden">
+                                <label>
+                                    <button class="ui large red button"
+                                            ng-class="{'disabled': offerData.kind !== 'second'}"
+                                            style="margin-top: -0.5em; width: 120px;">
+                                        {{180 |
+                                        currency: "¥ "}}
+                                    </button>
+                                </label>
+
+                                <p class="b-payment-crown">
+                                    <img src="<%= cdn.normal %>img/pay/crown.png?<%=cdn.version %>"
+                                         style="width: 20px;">
+                                </p>
+                            </div>
+                        </td>
+                        <td style="border-top: none;">
+
+                            <ul style="padding: 1em 0 0 0; margin: 0; list-style-position: inside;">
+                                <li>小组专家点评</li>
+                                <li>纸质精美证书</li>
+                                <li>报名费</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-top: none; padding-top:40px">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="howMuch" tabindex="0" class="hidden" ng-model="offerData.kind"
+                                       value="third" ng-class="{'disabled': offerData.kind !== 'third'}">
+                                <label>
+                                    <button class="ui large red button"
+                                            ng-class="{'disabled': offerData.kind !== 'third'}"
+                                            style="margin-top: -0.5em; width: 120px;">
+                                        {{50 |
+                                        currency: "¥ "}}
+                                    </button>
+                                </label>
+                            </div>
+                        </td>
+                        <td style="border-top: none; padding-top:30px">
+
+                            <ul style="padding: 0; margin: 0; list-style-position: inside;">
+                                <li>报名费</li>
+                            </ul>
+                        </td>
+                        <td style="border-top: none;">
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="ui clearing horizontal fitted divider" style="margin: 0;"></div>
+                <h5 class="ui left aligned header">&nbsp;&nbsp;&nbsp;&nbsp;<%= __('选择支付方式:') %></h5>
+
+                <div class="ui clearing divider"></div>
+                <div class="ui horizontal divider"></div>
+                <% if (!device.isFromWechatBrowser) { %>
+                <form name="alipayForm" novalidate class="ui form alipay-form" ng-submit="pcAlipay($event)">
+                    <div class="ui error message brand"></div>
+
+                    <button loading type="submit" class="ui basic white background button "
+                            style="padding-left: 8em; padding-right: 8em;">
+                        <img class="ui middle aligned" style="height: 25px;"
+                             src="<%= cdn.normal %>img/icon/alipay.png?<%= cdn.version %>">
+                        <%= __('支付宝支付') %>
+                    </button>
+                </form>
+                <% } %>
+                <div class="ui horizontal divider"></div>
+                <div class="ui divider" style="border-top-style:dashed"></div>
+                <div class="ui horizontal divider"></div>
+                <div class="ui horizontal divider"></div>
+                <form name="redemptionForm" novalidate class="ui form redemption-form"
+                      ng-submit="buyWithRedemptionCode($event)">
+                    <div class="ui error message brand"></div>
+                    <div class="inline fields">
+                        <label>&nbsp;&nbsp;&nbsp;&nbsp;<%= __('使用邀请码参赛:') %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+
+                        <div class="field">
+                            <input type="text" style="width:390px" placeholder="" ng-required="true"
+                                   ng-model="payData.redemptionCode">
+                        </div>
+                        <div class="field">
+                            <button class="ui red right floated button" ng-disabled="!redemptionForm.$valid"
+                                    type="submit"
+                                    style="padding-left: 2em; padding-right: 2em;">
+                                <%=
+                                __('确定') %>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ui horizontal divider"></div>
+                    <div class="ui horizontal divider"></div>
+                    <div class="ui segment" style="width: 350px; margin: 0 auto;">
+                        <div class="ui items">
+                            <div class="item">
+                                <div class="ui tiny image" style="width: 0;"></div>
+                                <div class="middle aligned content" style="padding-left: 0;">
+                                    <h5 class="ui left aligned header">没有邀请码？
+                                        <div class="sub header">
+                                            扫码关注服务号回复"邀请码"立即赢取！
+                                        </div>
+                                    </h5>
+                                </div>
+                                <div class="ui middle aligned tiny image">
+                                    <img src="<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg?<%= cdn.version %>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <%- include('view-partial/game-detail-modal.html') -%>
+    </script>
+
+    <script type="text/ng-template" id="interest.html">
+        <div class="grey background b-mobile stretch" ng-cloak>
+            <h3 class="ui center aligned header" style="margin-top: 1rem;">
+                <%= __('我感兴趣的学习机会') %>
+            </h3>
+
+            <form class="ui form interests-form" name="interest-form" novalidate ng-submit="saveInterests()">
+                <div class="ui error message brand"></div>
+                <div class="ui white background">
+                    <div class="ui container">
+                        <div class="ui horizontal divider"></div>
+                        <div class="ui items">
+                            <div class="item">
+                                <div class="middle aligned content">
+                                    <div class="ui tiny image">
+                                        <img src="<%= cdn.normal %>img/my-interests/business-english.png?<%= cdn.version %>">
+                                    </div>
+                                    <a class="header">&nbsp;&nbsp;<%= __('商务英语') %></a>
+
+                                    <div class="ui right floated toggle checkbox">
+                                        <div class="ui horizontal divider"></div>
+                                        <input type="checkbox" ng-model="interests.businessEnglish">
+                                        <label class="b-profile-checkbox-label">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+                            <div class="item">
+                                <div class="middle aligned content">
+                                    <div class="ui tiny image">
+                                        <img src="<%= cdn.normal %>img/my-interests/oversees-study.png?<%= cdn.version %>">
+                                    </div>
+                                    <a class="header">&nbsp;&nbsp;<%= __('海外游学') %></a>
+
+                                    <div class="ui right floated toggle checkbox">
+                                        <div class="ui horizontal divider"></div>
+                                        <input type="checkbox" ng-model="interests.overseesStudy">
+                                        <label class="b-profile-checkbox-label">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui divider"></div>
+                            <div class="item">
+                                <div class="middle aligned content">
+                                    <div class="ui tiny image">
+                                        <img src="<%= cdn.normal %>img/my-interests/it-training.png?<%= cdn.version %>">
+                                    </div>
+                                    <a class="header">&nbsp;&nbsp;<%= __('IT培训') %></a>
+
+                                    <div class="ui right floated toggle checkbox">
+                                        <div class="ui horizontal divider"></div>
+                                        <input type="checkbox" ng-model="interests.itTraining">
+                                        <label class="b-profile-checkbox-label">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui divider"></div>
+                            <div class="item">
+                                <div class="middle aligned content">
+                                    <div class="ui tiny image">
+                                        <img src="<%= cdn.normal %>img/my-interests/mba.png?<%= cdn.version %>">
+                                    </div>
+                                    <a class="header">&nbsp;&nbsp;<%= __('MBA') %></a>
+
+                                    <div class="ui right floated toggle checkbox">
+                                        <div class="ui horizontal divider"></div>
+                                        <input type="checkbox" ng-model="interests.mba">
+                                        <label class="b-profile-checkbox-label">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui divider"></div>
+                            <div class="item">
+                                <div class="middle aligned content">
+                                    <div class="ui tiny image">
+                                        <img src="<%= cdn.normal %>img/my-interests/accounting.png?<%= cdn.version %>">
+                                    </div>
+                                    <a class="header">&nbsp;&nbsp;<%= __('财务会计') %></a>
+
+                                    <div class="ui right floated toggle checkbox">
+                                        <div class="ui horizontal divider"></div>
+                                        <input type="checkbox" ng-model="interests.accounting">
+                                        <label class="b-profile-checkbox-label">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui horizontal divider"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui container">
+                    <div class="filed">
+                        <textarea placeholder="<%= __('输入其他你感兴趣的') %>" rows="2" ng-model="interests.other"></textarea>
+                    </div>
+                    &nbsp;
+                    <button type="submit" class="ui red fluid button"><%= __('确定') %></button>
+                    &nbsp;
+                </div>
+            </form>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="paid.html">
+        <div class="ui center aligned container subcontainer b-background-lighter" ng-show="!showPaid">
+            <div class="ui very padded loading vertical segment">
+            </div>
+        </div>
+        <div class="ui center aligned container subcontainer b-background-lighter" ng-cloak ng-show="showPaid">
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+
+            <i class="ui green massive checkmark icon"></i>
+
+            <h5 class="ui header">
+                <%= __('您已经付费报名成功！') %>
+                <div class="ui horizontal divider"></div>
+                <div class="sub header"><%= __('别忘了在报名截止前完成组队！') %></div>
+                <div class="sub header"><%= __('用你的专属兑换码 {{code}} 邀请小伙伴，即可免费参赛！（限额邀请三人）', {code: '{{generatedCode}}'})
+                    %>
+                </div>
+            </h5>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <p><span count-down href="/zh/cmpt">5</span> 秒后自动进入游戏页面，如果页面没有自动跳转，<a href="/zh/cmpt">请点击这里立即参赛！</a></p>
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <p><%= __('了解组队方法、获取培训资料、掌握赛事动态') %></p>
+
+            <p><%= __('请关注Bridge+服务号') %></p>
+
+            <img src="<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg?<%= cdn.version %>">
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+        </div>
+    </script>
+</div>
+
+<%- include('view-partial/footer.html') -%>
+
+<% if (dev_mode) { %>
+<script src="bower/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="js/factories/DeviceHelper.js"></script>
+<script src="js/directives/countDown.js"></script>
+<script src="js/factories/WechatWrapper.js"></script>
+<script src="js/page/mobile/SelectPaymentMethodCtrl.js"></script>
+<script src="js/page/mobile/MobilePaidCtrl.js"></script>
+<script src="js/page/mobile/SelectInterestCtrl.js"></script>
+<script src="js/page/select-payment-method/main.js"></script>
+
+<% } else { %>
+<script src="<%= config.normal %>js/cdn/pc-select-payment-method.js?<%= cdn.version %>"></script>
+<% } %>
+<script>
+    (function () {
+        function sendPageTrack(sender, hash) {
+            if (hash.indexOf('paid/') >= 0) {
+                sender.send('MS2015Paid');
+            }
+            else if (hash.indexOf('select-payment-method') >= 0) {
+                sender.send('MS2015Pay');
+            }
+        }
+
+        var moduleTrack = new window.ModuleTrack(null, function (sender, args) {
+            sendPageTrack(sender, args.hash);
+        });
+
+        sendPageTrack(moduleTrack, moduleTrack.currentHash());
+    })();
+</script>
+<script type="text/javascript">
+    setTimeout(function () {
+        var a = document.createElement("script");
+        var b = document.getElementsByTagName("script")[0];
+        a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0035/5758.js?" + Math.floor(new Date().getTime() / 3600000);
+        a.async = true;
+        a.type = "text/javascript";
+        b.parentNode.insertBefore(a, b)
+    }, 1);
+</script>
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

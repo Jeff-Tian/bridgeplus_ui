@@ -1,0 +1,257 @@
+<div class="rank-content">
+    <div class="ui top attached tabular menu rank-menu">
+        <a class="item active" data-tab="first">{{'MapRankingList' | translate}}</a>
+        <a class="item" data-tab="second">
+            <div class="content">
+
+                <div class="ui inline dropdown">
+                    <div class="text">{{'RankDongBeiDivision' | translate}}</div>
+                    <i class="dropdown icon"></i>
+
+                    <div class="menu rank-drop-menu">
+                        <div class="item" ng-class="{'active':c.value===selectCategory}" ng-repeat="c in catetories"
+                             data-text="{{c.title | translate}}" data-value="{{c.value}}">{{c.title | translate}} <i
+                                class="checkmark icon" ng-show="c.value===selectCategory"></i></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <div class="ui basic button wechat-button rank-wechat-share"
+             ng-show="showQRCode"
+             data-html="<img src='<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg?<%= cdn.version %>' class='ui large image'>"
+             data-position="bottom center">
+            <i class="wechat icon"></i>{{'MapRankWechatShare' | translate}}
+        </div>
+    </div>
+    <div class="ui bottom attached tab segment rank-segment active" data-tab="first">
+        <table class="ui table center aligned rank-table" ng-cloak>
+            <thead>
+            <tr>
+                <th class="bottom aligned">{{'MapRankRank' | translate}}</th>
+                <th class="bottom aligned">{{'MapRankPalyer' | translate}}</th>
+                <th class="ability">
+                    <i class="home big icon"></i>
+                    <br>{{'MapRankAverageAbility' | translate}}
+                </th>
+                <th class="ability">
+                    <i class="bar chart big icon"></i>
+                    <br>{{'MapRankSkill1' | translate}}
+                </th>
+                <th class="ability">
+                    <i class="users big icon"></i>
+                    <br>{{'MapRankSkill2' | translate}}
+                </th>
+                <th class="ability">
+                    <i class="calculator big icon"></i>
+                    <br>{{'MapRankSkill3' | translate}}
+                </th>
+                <th class="ability">
+                    <i class="bullseye big icon"></i>
+                    <br>{{'MapRankSkill4' | translate}}
+                </th>
+                <th class="ability">
+                    <i class="comments outline big icon"></i>
+                    <br>{{'MapRankSkill5' | translate}}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <img src="/img/icon/crown.png" class="crown">
+                    <h5>1</h5>
+                </td>
+                <td class="avatar">
+                    <img class="ui middle aligned b-tiny image" src="/img/salespage/wilfried.png"> 天宝
+                </td>
+                <td class="error">5</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>7</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="/img/icon/crown.png" class="crown">
+                    <h5>2</h5>
+                </td>
+                <td class="avatar">
+                    <img class="ui middle aligned b-tiny image" src="/img/salespage/wilfried.png"> 周星星
+                </td>
+                <td class="error">5</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>7</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="/img/icon/crown.png" class="crown">
+                    <h5>3</h5>
+                </td>
+                <td class="avatar">
+                    <img class="ui middle aligned b-tiny image" src="/img/salespage/wilfried.png"> 林志玲
+                </td>
+                <td class="error">5</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>7</td>
+                <td>10</td>
+            </tr>
+            <tr class="null-tr">
+                <td colspan="8"></td>
+            </tr>
+            <tr class="second-table-tr">
+                <td>
+                    <h5>90</h5>
+                </td>
+                <td class="avatar">
+                    <img class="ui middle aligned b-tiny image" src="/img/salespage/wilfried.png"> 范冰冰
+                </td>
+                <td class="error">5</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>7</td>
+                <td>10</td>
+            </tr>
+            <tr class="error">
+                <td>
+                    <h5>91</h5>
+                </td>
+                <td class="avatar">
+                    <img class="ui middle aligned b-tiny image" src="/img/salespage/wilfried.png"> 陈大民
+                </td>
+                <td class="error">5</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>7</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>92</h5>
+                </td>
+                <td class="avatar">
+                    <img class="ui middle aligned b-tiny image" src="/img/salespage/wilfried.png"> 郭晓静
+                </td>
+                <td class="error">5</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>7</td>
+                <td>10</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ui bottom attached tab segment rank-segment" data-tab="second">
+        <table class="ui table center aligned rank-table">
+            <thead>
+            <tr>
+                <th>{{'MapRankRank' | translate}}</th>
+                <th>{{'MapRankPopularity' | translate}}</th>
+                <th>{{'MapRankTeamName' | translate}}</th>
+                <th width="70%">{{'MapRankTeamMember' | translate}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <img src="/img/icon/crown.png" class="crown">
+                    <h5>1</h5>
+                </td>
+                <td>10</td>
+                <td>无敌铁金刚-{{selectCategory}}</td>
+                <td>
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="/img/icon/crown.png" class="crown">
+                    <h5>2</h5>
+                </td>
+                <td>9</td>
+                <td>听妈妈的话-{{selectCategory}}</td>
+                <td>
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="/img/icon/crown.png" class="crown">
+                    <h5>3</h5>
+                </td>
+                <td>8</td>
+                <td>OpenMind-{{selectCategory}}</td>
+                <td>
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                </td>
+            </tr>
+            <tr class="null-tr">
+                <td colspan="8"></td>
+            </tr>
+            <tr class="second-table-tr">
+                <td>
+                    <h5>90</h5>
+                </td>
+                <td>4</td>
+                <td>今生今世-{{selectCategory}}</td>
+                <td>
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                </td>
+            </tr>
+            <tr class="error">
+                <td>
+                    <h5>91</h5>
+                </td>
+                <td>3</td>
+                <td>陈大民的团队-{{selectCategory}}</td>
+                <td>
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>92</h5>
+                </td>
+                <td>2</td>
+                <td>绿巨人-{{selectCategory}}</td>
+                <td>
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-f ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                    <img class="gender-m ui middle aligned b-tiny image" src="/img/salespage/wilfried.png">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

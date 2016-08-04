@@ -1,0 +1,21 @@
+<div class="field {{(config.showYear && !value.tillNow && config.displayError) ? ((displayData.value && displayData.value.year) ? '' : 'error') : ''}}">
+    <select name="year" ng-change="selectYear()" ng-show="config.showYear" ng-model="displayData.value.year" ng-options="year.id as year.value for year in displayData.years" class="ui fluid dropdown b-prifile-date-select-box ">
+        <option value="">{{'PleaseSelect' | translate}}</option>
+    </select>
+    <label ng-show="config.showYear">{{'FormYear' | translate}}</label>
+    <div ng-show="config.showYear" class="p-profile-form-bplusdate-select-alt">(YYYY)</div>
+</div>
+<div class="field {{(config.showMonth && !value.tillNow && config.displayError) ? ((displayData.value && displayData.value.month) ? '' : 'error') : ''}}">
+    <select name="month" ng-change="selectMonth()" ng-show="config.showMonth" ng-model="displayData.value.month" ng-options="month.id as month.value for month in displayData.months" class="ui fluid dropdown b-prifile-date-select-box ">
+        <option value="">{{'PleaseSelect' | translate}}</option>
+    </select>
+    <label ng-show="config.showMonth">{{'FormMonth' | translate}}</label>
+    <div ng-show="config.showMonth" class="p-profile-form-bplusdate-select-alt">(MM)</div>
+</div>
+<div class="field {{(config.showDay && !value.tillNow && config.displayError) ? ((displayData.value && displayData.value.day) ? '' : 'error') : ''}}">
+    <select name="day" ng-show="config.showDay" ng-model="displayData.value.day" ng-options="day.id as day.value for day in displayData.days" class="ui fluid dropdown b-prifile-date-select-box ">
+        <option value="">{{'PleaseSelect' | translate}}</option>
+    </select>
+    <label ng-show="config.showDay">{{'FormDay' | translate}}</label>
+    <div ng-show="config.showDay" class="p-profile-form-bplusdate-select-alt">(DD)</div>
+</div>

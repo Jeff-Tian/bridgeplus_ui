@@ -1,0 +1,48 @@
+@import "../basic/variable";
+
+.ui.brand.error.message {
+    background-color: @color-brand-darker;
+    border-color: @color-brand-darker;
+    box-shadow: 0 0 0 1px @color-brand-darker inset, 0 0 0 0 transparent;
+    color: white;
+    padding: 5px 10px;
+    font-size: smaller;
+    position: relative;
+
+    .list {
+        list-style-type: none;
+        margin-right: 20px;
+
+        li {
+            margin: 0;
+        }
+
+        li::before {
+            content: '';
+        }
+
+        li:nth-child(n+3) {
+            display: none;
+        }
+    }
+
+    .remove.circle.icon {
+        position: absolute;
+        right: 5px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        display: block;
+        margin: auto 0 auto auto;
+        cursor: pointer;
+    }
+}
+
+.ui.form .fields.error .field textarea, .ui.form .fields.error .field select, .ui.form .fields.error .field input:not([type]), .ui.form .fields.error .field input[type="date"], .ui.form .fields.error .field input[type="datetime-local"], .ui.form .fields.error .field input[type="email"], .ui.form .fields.error .field input[type="number"], .ui.form .fields.error .field input[type="password"], .ui.form .fields.error .field input[type="search"], .ui.form .fields.error .field input[type="tel"], .ui.form .fields.error .field input[type="time"], .ui.form .fields.error .field input[type="text"], .ui.form .fields.error .field input[type="url"], .ui.form .field.error textarea, .ui.form .field.error select, .ui.form .field.error input:not([type]), .ui.form .field.error input[type="date"], .ui.form .field.error input[type="datetime-local"], .ui.form .field.error input[type="email"], .ui.form .field.error input[type="number"], .ui.form .field.error input[type="password"], .ui.form .field.error input[type="search"], .ui.form .field.error input[type="tel"], .ui.form .field.error input[type="time"], .ui.form .field.error input[type="text"], .ui.form .field.error input[type="url"] {
+    border-color: @color-brand;
+}
+
+.field.error.absolute-prompt .ui.red.pointing.prompt {
+    position: absolute;
+    z-index: 999;
+}

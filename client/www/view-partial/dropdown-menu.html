@@ -1,0 +1,16 @@
+<div class="ui right dropdown b-profile item" ng-cloak>
+    <img ng-src="{{memberInfo.avatar ? getAvatarUrl(memberInfo.avatar, '-minor') : '<%= cdn.normal %>img/anonymous_default.png?<%= cdn.version %>'}}"
+         class="ui circular image avatar">
+    <span class="ui button">{{memberInfo.displayName}} <i class="large angle down icon"></i></span>
+
+    <div class="ui inverted vertical center aligned b-profile menu">
+        <img
+                ng-src="{{memberInfo.avatar ? getAvatarUrl(memberInfo.avatar, '-small') : (memberInfo.gender.toString().toUpperCase() !== 'F' ? '<%= cdn.normal %>img/male_default.png?<%= cdn.version %>' : '<%= cdn.normal %>img/female_default.png?<%= cdn.version %>')}}"
+                class="ui circular image avatar">
+        <a class="center aligned item" href="<%= localeLink('profile') %>"><%= __('Profile') %></a>
+        <a class="center aligned item" href="/store/my-account"><%= __('我的账户') %></a>
+        <a class="center aligned item" href="<%= localeLink('account-setting') %>"><%=
+            __('AccountSetting') %></a>
+        <a class="center aligned item" ng-click="signOut()"><%= __('SignOut') %></a>
+    </div>
+</div>

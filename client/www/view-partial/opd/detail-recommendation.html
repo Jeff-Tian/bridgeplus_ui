@@ -1,0 +1,90 @@
+<div class="b-opd-favorite">
+    <div ng-if="!hasLoggedin()" class="ui segment">
+        <a href="/signin#/login?return_url=opportunity-detail%23%2Frecommended-positions">登录</a>
+        查看推荐职位。
+    </div>
+    <div ng-if="hasLoggedin()">
+        <div class="ui segment" ng-if="isSearching">搜索中。。。</div>
+        <div ng-if="!isSearching">
+            <div class="ui top attached tabular menu">
+                <a class="active item" data-tab="recommendation">推荐职位</a>
+                <a class="item" data-tab="subscribe">我的订阅</a>
+                <a class="item" data-tab="competency">我有竞争力的</a>
+                <!-- <a class="item" data-tab="relevant">他人在看</a> -->
+            </div>
+            <div class="ui bottom attached active tab segment" data-tab="recommendation">
+                <div class="ui segment" ng-if="isRecommendPositionSearching">搜索中。。。</div>
+                <div ng-if="!isRecommendPositionSearching">
+                    <bopdpositionpattern positions="data.recommendPositions"/>
+                </div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="competency">
+                <div class="ui segment" ng-if="isCompetivePositionSearching">搜索中。。。</div>
+                <div ng-if="!isCompetivePositionSearching">
+                    <bopdpositionpattern positions="data.competivePositions"/>
+                </div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="subscribe">
+                <form name="filterForm" class="ui form">
+                    <!-- <div class="ui bk-color-coral-red inverted vertical padded segment">
+                        <h4 class="ui white header">每周一将通知您最新订阅职位！</h4>
+                        <h4 class="ui white disabled header">
+                            同步发送到
+                            &nbsp;&nbsp;
+                            <div class="ui checkbox">
+                                <input type="checkbox">
+                                <label style="color: inherit;">微信</label>
+                            </div>
+                            &nbsp;&nbsp;
+                            <div class="ui checkbox">
+                                <input type="checkbox">
+                                <label style="color: inherit;">Email</label>
+                            </div>
+                        </h4>
+                    </div> -->
+                    <div class="ui segments" style="border: none; box-shadow: none;">
+                        <div class="ui segment">
+                            <h4 class="ui header">
+                                <i class="ui right floated large angle up icon" style="cursor: pointer;"
+                                   ng-click="hideFilters = true" ng-hide="hideFilters"></i>
+                                <i class="ui right floated large angle down icon" style="cursor: pointer;"
+                                   ng-click="hideFilters = false" ng-show="hideFilters"></i>
+                                订阅条件
+                            </h4>
+                        </div>
+                        <div ng-if="hideFilters" class="ui segment doublelineheight">
+                            <span ng-repeat="item in filters">
+                                <strong>{{item.label}}</strong>
+                                <span class="ui light red label">{{filterSetting[item.key].text || filterSetting[item.key]}}</span>
+                                <span>&nbsp;&nbsp;</span>
+                            </span>
+                        </div>
+                        <div  ng-if="!hideFilters" class="ui fitted divider" style="margin: 0;"></div>
+                        <opd-filter-item ng-repeat-start="f in filters" f="f" filter-setting="filterSetting" ng-if="!hideFilters">{{filters}}</opd-filter-item>
+                        <opd-sub-filter-item ng-repeat-end f="f" filter-setting="filterSetting" ng-if="!hideFilters">{{filterSetting}}</opd-sub-filter-item>
+        <!--                 <div class="ui segment inline fields" style="border-top: none; border-bottom: none;"
+                             ng-hide="hideFilters">
+                            <strong ng-bind="'职\u2001\u2001位：&nbsp&nbsp&nbsp'"></strong>
+                                <input style="width:80%" class="marginal-input opd-search-input" type="text" placeholder="请输入想订阅的职位" ng-model="position">
+                        </div>
+         -->
+                        <div class="ui right floated field vertical horizontal padded segment" style="border-top: none;" ng-hide="hideFilters">
+                            <button type="submit" class="ui red large button" ng-click="subscribe()" ng-show="!hasSubscribed">开始订阅</button>
+                            <button type="submit" class="ui red large button" ng-click="subscribe()" ng-show="hasSubscribed">修改订阅</button>
+                            <button type="reset" class="ui basic large button" ng-click="subscribeCancel()">取消</button>
+                        </div>
+
+                        <div class="ui clearing horizontal divider"></div>
+                    </div>
+                    <div class="ui segment" ng-if="isSubscriptionSearching">搜索中。。。</div>
+                    <div ng-if="!isSubscriptionSearching">
+                        <div class="ui bk-color-coral-red inverted vertical padded segment" ng-show="data.subscribePositions.data.length===0">
+                            <p>尚无职位信息。</p>
+                        </div>
+                        <bopdpositionpattern positions="data.subscribePositions" ng-show="data.subscribePositions.data.length>0"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

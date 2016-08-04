@@ -1,0 +1,146 @@
+@import "../basic/variable";
+
+.ui.fluid.two.item.top.pointing.secondary.menu.brand {
+    display: none;
+}
+.mobile .b-signin-wrapper {
+    width: auto !important;
+}
+.mobile .b-signin-container {
+    margin-top: 5em;
+    width: auto !important;
+    background-color: transparent !important;
+    padding: 0 1em;
+}
+.mobile .b-signin-wide {
+    width: auto !important;
+    margin: auto !important;
+}
+.mobile .ui.secondary.pointing.menu.brand {
+    display: none !important;
+}
+.mobile .login.form {
+    margin-bottom: 1em;
+}
+.mobile .login.form .fields .eight.wide.field {
+    width: 50% !important;
+    margin: 0 !important;
+}
+.mobile .hidden.help {
+    display: inline !important;
+}
+.mobile a:not(.button), a:not(.button):link, a:not(.button):visited {
+    color: @color-black !important;
+}
+.mobile a:not(.button):hover, a:not(.button):active, a:not(.button):focus {
+    color: @color-brand !important;
+    text-decoration: none !important;
+}
+.mobile .wechat.link, .wechat.link:link, label[for=remember-me-check-box] {
+    color: @color-grey !important;
+
+    .icon {
+        color: @color-grey-dark;
+    }
+}
+.mobile .wechat.link:hover, .wechat.link:active {
+    text-decoration: none;
+
+    .icon {
+        color: limegreen;
+    }
+}
+.mobile .hidden.mobile-button {
+    display: block !important;
+
+    + div, + button {
+        display: none !important;
+    }
+}
+.mobile .ui.brand.error.message {
+    padding: 10px !important;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+}
+.mobile .ui.brand.message {
+    background-color: @color-grey-dark;
+    border-color: @color-grey-dark;
+    box-shadow: 0 0 0 1px @color-grey-dark inset, 0 0 0 0 transparent;
+    color: white;
+    padding: 1em 3em 1em 1em;
+    margin: 1em 1.5em;
+
+    .header {
+        color: @color-grey-lighter;
+        font-weight: normal;
+        font-size: smaller;
+    }
+}
+.mobile .b-step-container {
+    background-color: transparent;
+    margin: 0 1.5em;
+    padding: 1em 0;
+
+    .ui.brand.error.message {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.ui.brand.error.message {
+    background-color: @color-brand-darker;
+    border-color: @color-brand-darker;
+    box-shadow: 0 0 0 1px @color-brand-darker inset, 0 0 0 0 transparent;
+    color: white;
+    padding: 5px 10px;
+    font-size: smaller;
+    position: relative;
+
+    .list {
+        list-style-type: none;
+        margin-right: 20px;
+
+        li {
+            margin: 0;
+        }
+        li::before {
+            content: '';
+        }
+        li:nth-child(n+3) {
+            display: none;
+        }
+    }
+    .remove.circle.icon {
+        position: absolute;
+        right: 5px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        display: block;
+        margin: auto 0 auto auto;
+        cursor: pointer;
+    }
+}
+.b-signin-wide .ui.container.subcontainer.mobile {
+    margin-bottom: 2em;
+    margin-top: -2em;
+}
+.b-captcha img {
+    height: 40px !important;
+}
+.privacy-declaration {
+    display: none;
+}
+.b-sign-in-position {
+    .privacy-declaration {
+        display: block;
+    }
+}
+.b-signin-wrapper {
+    .privacy-declaration {
+        display: block;
+    }
+}
+.mobile-hidden {
+    display: none !important;
+}

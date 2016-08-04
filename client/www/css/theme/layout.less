@@ -1,0 +1,224 @@
+/*
+* - @Bridge+
+*/
+.color-brand {
+    color: @color-brand !important;
+}
+
+.bk-color-brand {
+    background-color: @color-brand !important;
+}
+
+.color-coral-red {
+    color: #F53C43 !important;
+}
+
+.bk-color-coral-red {
+    background-color: #F53C43 !important;
+}
+
+a, a:link, a:visited {
+    color: @color-brand;
+}
+
+a:hover, a:active, a:focus {
+    color: @color-brand;
+    text-decoration: underline;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.ui.container {
+    min-width: 723px;
+}
+
+.ui.container.subcontainer, .subcontainer .ui.container {
+    min-width: 0 !important;
+}
+
+img.gender-m {
+    border: 2px solid #0075D5;
+    border-radius: 50%;
+}
+
+img.gender-f {
+    border: 2px solid #FF6858;
+    border-radius: 50%;
+}
+
+.ui.b-tiny.images .image, .ui.b-tiny.images img, .ui.b-tiny.images svg, .ui.b-tiny.image {
+    width: 66px;
+    height: auto;
+    font-size: 0.8em;
+}
+
+body.pushable {
+    .pusher {
+        background-color: #DCDCDC;
+        min-height: 40rem;
+    }
+}
+
+.page-content {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.grey.color {
+    color: @color-grey-dark;
+}
+
+@import './message';
+
+.ui.durable-message-wrapper {
+    width: 100%;
+
+    .ui.message {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.5) !important;
+        font-size: larger;
+        padding: 10px 20px 10px 20px;
+        box-shadow: 0 0 0 0;
+        border: none;
+
+        a {
+            color: white;
+        }
+
+        .more {
+            color: white;
+            font-size: 70%;
+            cursor: pointer;
+        }
+
+        .remove.icon, .circle.icon {
+            cursor: pointer;
+            margin-left: 20px;
+            margin-right: 0;
+            letter-spacing: 2em;
+        }
+    }
+}
+
+.avatar-minor {
+    background-color: @color-grey-light;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+
+    .avatar {
+        color: @color-grey-darker;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.no-padded.field {
+    padding: 0 !important;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.b-background {
+    background-color: @color-grey-lightest !important;
+}
+
+.b-background-lighter {
+    background-color: @color-grey-lighter !important;
+}
+
+.half-wide {
+    width: 50% !important;
+}
+
+.left.floated {
+    float: left;
+}
+
+.right.floated {
+    float: right;
+}
+
+.hidden, .mobile {
+    display: none !important;
+}
+
+.side.hidden {
+    display: block !important;
+}
+
+.privacy-declaration {
+    display: none;
+}
+
+.b-sign-in-position {
+    .privacy-declaration {
+        display: block;
+    }
+}
+
+.b-signin-wrapper {
+    .privacy-declaration {
+        display: block;
+    }
+}
+
+.b-reset-password {
+    .privacy-declaration {
+        display: none;
+    }
+}
+
+.middle.aligned {
+    vertical-align: middle;
+}
+
+.white.background.button {
+    background-color: white !important;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .35) inset !important;
+}
+
+.white.background.button:active, .white.background.button:hover {
+    background-color: inherit;
+}
+
+@media all and (max-width: 414px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+
+    .mobile {
+        display: block !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .ui.container {
+        width: 1130px;
+    }
+}

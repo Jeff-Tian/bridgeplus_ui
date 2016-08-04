@@ -1,0 +1,44 @@
+form.ui.form(name="corpBasicInfoForm", ng-submit="saveCorpBasicInfo()", ng-class="{'loading': savingCorpBasicProfile}")
+    div.field
+        label 公司名称
+        input(type="text", name="corporation", readonly, disabled="disabled", ng-model="corpProfile.name")
+    div.field
+        label 行业
+        //select.ui.fluid.search.dropdown(ng-model="corpProfile.industry", name="industry", remoteUrl="#{serviceUrls.corp.resources.industry}", search-dropdown="", allow-additions="false", use-labels="false")
+        //    option(value="") 请输入...
+        select.ui.fluid.search.dropdown(ng-model="corpProfile.industry_id", name="industry", search-dropdown="", allow-additions="false", use-labels="false", ng-class="{'loading': fetchingIndustries}")
+            option(value="") 请选择...
+            option(value="{{o.value}}", ng-repeat="o in industries") {{o.name}}
+    div.field
+        label 规模
+        select.ui.fluid.search.dropdown(ng-model="corpProfile.scale_id", name="scale", search-dropdown="", allow-addtions="false", use-labels="false", ng-class="{'loading': fetchingScales}")
+            option(value="") 请选择...
+            option(value="{{o.value}}", ng-repeat="o in corpScales") {{o.name}}
+    div.field
+        label 性质
+        select.ui.fluid.search.dropdown(ng-model="corpProfile.nature_of_firms_id", name="nature_of_firms", search-dropdown="", allow-additions="false", use-labels="false", ng-class="{'loading': fetchingNatureOfFirms}")
+            option(value="") 请选择...
+            option(value="{{o.value}}", ng-repeat="o in natureOfFirms") {{o.name}}
+    div.field
+        label 主页
+        input(type="text", name="homepage", ng-model="corpProfile.website")
+    div.field
+        label 地点
+        input(type="text", name="address", ng-model="corpProfile.location")
+    div.field
+        label 联系人
+        input(class="contact-input", type="text", name="contact", ng-model="corpProfile.contact")
+        div.ui.selection.dropdown.contact-select(selection-dropdown)
+            input(type="hidden", name="contact_gender", ng-model="corpProfile.contact_gender", value="U")
+            i.dropdown.icon
+            div.text --
+            div.menu
+                div.item(data-value="U") --
+                div.item(data-value="M") 先生
+                div.item(data-value="F") 女士
+    div.field
+        label 职位
+        input(type="text", name="position", ng-model="corpProfile.contact_position")
+    div.field
+        button.ui.red.button(type="submit") 保存
+        div.ui.basic.button(type="reset") 取消

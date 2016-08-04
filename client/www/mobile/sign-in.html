@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('SEOTitle_SignIn') %></title>
+    <meta name="description" content="<%= __('SEODesc_SignIn') %>">
+    <%- include('header.html') -%>
+    <link rel="stylesheet" type="text/css" href="<%= cdn.normal %>css/pc-mobile.css?<%= cdn.version %>">
+</head>
+<body ng-app="signIn" ng-controller="AppCtrl" class="b-background mobile">
+<%- include('head.html') -%>
+<div class="ui b-signin-wrapper padded container subcontainer">
+    <div class="ui column b-signin-container b-background-lighter padded container subcontainer"
+         style="margin-top: 2em;">
+        <div class="b-signin-wide padded" tab=".b-signin-wide">
+            <div class="ui bottom attached tab active" data-tab="login" ng-controller="LoginCtrl">
+                <div ng-show="isInBindMobileMode">
+                    <%- include('../../views/partial/bind-mobile-tip.html') -%>
+                    <br/>
+                </div>
+
+                <h2 class="ui center aligned header grey color" ng-hide="isInBindMobileMode" ng-controller="LoginCtrl">
+                    <%= __('SignIn') %></h2>
+                <%- include('sign-in-form.html') -%>
+                <a class="ui fluid large red basic button" href="#register" ng-click="register()">
+                    <%= __('NoAccount') %> <%= __('SignUpNow') %>
+                </a>
+
+                <div class="ui divider" ng-hide="isInBindMobileMode" ng-cloak></div>
+                <div class="ui" ng-hide="isInBindMobileMode" ng-cloak>
+                    <%- include('../../views/partial/third-party-sign-in.html') -%>
+                </div>
+            </div>
+            <div class="ui bottom attached tab" data-tab="register" ng-controller="SignUpCtrl">
+
+                <div ng-show="isInBindMobileMode" ng-controller="LoginCtrl">
+                    <%- include('../../views/partial/bind-mobile-tip-2.html') -%>
+                    <br/>
+                </div>
+
+                <h2 class="ui center aligned header grey color" ng-hide="isInBindMobileMode" ng-controller="LoginCtrl">
+                    <%= __('SignUp') %></h2>
+                <register-form action="signUp" send-tracking="sendTracking" control="registerFormCtrl"></register-form>
+
+                <div class="ui horizontal divider"></div>
+                <a class="field ui fluid red basic button" href="#/login" ng-click="login()">
+                    <%= __('HasAccount') %> <%= __('SignInNow') %>
+                </a>
+            </div>
+            <div class="ui bottom attached tab" data-tab="wechat-logon" ng-controller="WechatLoginCtrl">
+                <iframe name="wechat-frame" class="b-wechat-frame b-background-lighter"
+                        ng-src="{{wechatQRPage}}"></iframe>
+                <button type="reset" class="ui fluid large red basic button" ng-click="cancelWechatLogin()"
+                        ng-class="{'inverted': invertCancelButtonTheme}"><%=
+                    __('Cancel') %>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('footer.html') -%>
+
+<script src="<%= cdn.normal %>bower/angularQueryParserModule/dist/scripts/app.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/angularQueryParserModule/dist/scripts/queryParser.js?<%= cdn.version %>"></script>
+<% if (dev_mode) { %>
+<script src="js/factories/FormValidation.js"></script>
+<script src="js/directives/captcha.js"></script>
+<script src="js/directives/ngEnter.js"></script>
+<script src="js/directives/registerForm.js"></script>
+<script src="js/directives/tab.js"></script>
+<script src="js/directives/dropdown.js"></script>
+<script src="js/common/linkedInModule.js"></script>
+<script src="js/controllers/LoginCtrl.js"></script>
+<script src="js/controllers/WechatLoginCtrl.js"></script>
+<script src="js/controllers/SignUpCtrl.js"></script>
+<script src="js/page/register/main.js"></script>
+
+<% } else { %>
+<script src="<%= config.normal %>js/cdn/m/sign-in.js?<%= cdn.version %>"></script>
+<% } %>
+<%- include('external-js.html') -%>
+<script type="text/javascript">
+    setTimeout(function () {
+        var a = document.createElement("script");
+        var b = document.getElementsByTagName("script")[0];
+        a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0035/5758.js?" + Math.floor(new Date().getTime() / 3600000);
+        a.async = true;
+        a.type = "text/javascript";
+        b.parentNode.insertBefore(a, b)
+    }, 1);
+</script>
+</body>
+
+</html>

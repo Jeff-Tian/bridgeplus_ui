@@ -1,0 +1,14 @@
+<div>
+    <opd-search options="searchOptions"></opd-search>
+    <opd-filter filters="filters" filter-setting="filterSetting"></opd-filter>
+    <opd-inline-filter filters="sortingAndFilter" filter-setting="sortingAndFilterSetting"></opd-inline-filter>
+
+    <div class="search-list">
+        <div class="ui segment" ng-if="isSearching">搜索中。。。</div>
+        <div ng-if="!isSearching">
+            <div ng-bind-template="职位 ({{searchList.totalPage}})">职位</div>
+            <bopdpositionpattern positions="searchList" ng-if="searchList.totalPage>0"></bopdpositionpattern>
+            <div class="ui segment" ng-if="searchList.totalPage===0">无搜索结果</div> 
+        </div>
+    </div>
+</div>

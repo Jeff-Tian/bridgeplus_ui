@@ -1,0 +1,496 @@
+/*
+* - @Bridge+ Profile
+*/
+
+// Page
+@import "./circle.less";
+
+// Profile
+@media only screen and (max-width: 767px) {
+    .ui.grid.container {
+        width: calc( 723px + 26px ) !important;
+    }
+}
+
+body.pushable > .pusher,
+.pusher,
+.b-profile-body {
+    background-color: #efefef;
+}
+.b-profile-body {
+  overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  .b-profile-body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 768px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .b-profile-body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1646px;
+  }
+}
+.b-profile-body-bg-1 {
+  position: absolute;
+  top: -66px;
+  left: -450px;
+  width: 500px;
+  height: 500px;
+  background-color: #df363d;
+}
+.b-profile-body-bg-specific.b-profile-body-bg-1 {
+    top: -30px;
+}
+.b-profile-body-bg-2 {
+  position: absolute;
+  top: -439px;
+  left: -154px;
+  width: 305px;
+  height: calc(1500px);
+  background-color: #ff3b42;
+  transform: rotate(30deg);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .b-profile-body-bg-1 {
+    height: 400px;
+  }
+  .b-profile-body-bg-2 {
+    top: -426px;
+    left: -165px;
+    width: 252px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .b-profile-body-bg-1 {
+    height: 320px;
+  }
+  .b-profile-body-bg-2 {
+    top: -408px;
+    left: -162px;
+    width: 179px;
+  }
+}
+
+.b-profile-li > .item > .icon {
+    background: url(/img/profile/icon_profile_li.png) no-repeat center top;
+}
+
+.b-profile-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.b-profile-banner .img {
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    padding: 0;
+    min-width: 100%;
+    max-width: 1646px;
+    max-height: 235px;
+    min-height: 96px;
+    line-height: 0;
+}
+.b-profile-banner .img img {
+    width: 100%;
+    max-height: 235px;
+    min-height: 96px;
+}
+.b-profile-banner-btns {
+    margin-top: -3.5rem;
+    padding-right: 0.3rem;
+    height: 3.5rem;
+    text-align: right;
+}
+.b-profile-banner-btns a,
+.b-profile-banner-btns a:visited,
+.b-profile-banner-btns a:hover {
+    display: inline-block;
+    margin-left: 1rem;
+    width: 1.77em;
+    height: 1.5em;
+    text-decoration: none;
+}
+.b-profile-banner-btns a i.icon,
+.b-profile-banner-btns a:visited i.icon,
+.b-profile-banner-btns a:hover i.icon {
+   color: grey;
+}
+.b-profile-banner-btns.hover a i.icon,
+.b-profile-banner-btns.hover a:visited i.icon,
+.b-profile-banner-btns.hover a:hover i.icon {
+    color: #fff;
+}
+
+.b-profile-main {
+    padding-top: 3em !important;
+    padding-bottom: 2em !important;
+}
+
+.b-profile-left-section {
+    position: relative;
+    margin-bottom: 1em;
+    border-bottom: solid 2px #BEBEBE;
+    padding: 2em 1em;
+    background-color: #fff;
+}
+.b-profile-face {
+    position: absolute;
+    z-index: 1;
+    top: -71px;
+    left: 0;
+}
+.b-profile-face-line {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background-color: #fff;
+}
+.b-profile-face-percentage,
+.b-profile-face-txt {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    color: #fff;
+    line-height: 26px;
+    white-space: nowrap;
+}
+.b-profile-face-percentage {
+    width: 70px;
+    font-size: 26px;
+    margin-left: -25px;
+    text-align: center;
+}
+.b-profile-face-txt {
+    margin-left: 52px;
+}
+.b-profile-face-img {
+    border-radius: 50%;
+    cursor: pointer;
+}
+.b-profile-face img {
+    margin: 6%;
+    width: 88%;
+    border-radius: 50%;
+}
+.b-profile-face img.edit {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.b-profile-face img.editHover {
+    display: block;
+}
+
+.b-profile-face {
+    width: 142px;
+    height: 142px;
+    /* background-color: #2E363C; */
+    border-radius: 50%;
+}
+.b-profile-face .progress-circle {
+    position: absolute;
+    z-index: -1;
+    /* margin: 2px; */
+}
+.b-profile-face .progress-circle,
+.b-profile-face .progress-left,
+.b-profile-face .progress-right,
+.b-profile-face .progress-pie-left,
+.b-profile-face .progress-pie-right {
+    width: 142px;
+    height: 142px;
+}
+.b-profile-face .progress-pie-left,
+.b-profile-face .progress-left {
+    clip: rect(0, 71px, auto, 0);
+}
+.b-profile-face .progress-pie-right,
+.b-profile-face .progress-right {
+    clip: rect(0, auto, auto, 71px);
+}
+.b-profile-face .progress-circle {
+    background: #fff;
+}
+.b-profile-face .progress-left,
+.b-profile-face .progress-right {
+    background: #2E363C;
+}
+
+.b-profile-preview {
+    padding-top: 24px;
+    text-align: right;
+}
+@media only screen and (max-width: 991px) {
+    .b-profile-face {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: -50%;
+        margin-left: 11%;
+    }
+    .b-profile-preview {
+        margin-top: 1em;
+        padding-top: 0;
+        text-align: center;
+    }
+}
+.b-profile-preview i {
+    background: url(/img/profile/icon_profile_preview.png) no-repeat center center;
+    background-size: cover;
+}
+
+.b-profile-achievement {
+    margin-left: 4.25em;
+    margin-right: 1em;
+}
+.b-profile-achievement .ui.grid {
+    margin-left: -0.1rem;
+}
+.b-profile-achievement .ui.grid > .column {
+    padding: 0.1rem !important;
+}
+.b-profile-achievement .column img {
+    width: 100%;
+}
+.b-profile-achievement-imgs {
+    margin-top: 1.5rem !important;
+}
+.b-profile-achievement-imgs i {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.b-profile-achievement-imgs-fraction i {
+    background-image: url(/img/profile/icon_profile_fraction.png);
+}
+.b-profile-achievement-imgs-level i {
+    background-image: url(/img/profile/icon_profile_level.png);
+}
+
+.b-profile-growing {
+    margin-left: 4.25em;
+}
+.b-profile-growing .b-profile-li > .item > .icon {
+    background-position: center 4px;
+}
+.b-profile-growing .content {
+    line-height: 1.5rem !important;
+}
+.b-profile-growing-buttons {
+    margin: 1rem 2rem 0 2em;
+}
+.b-profile-growing-buttons button {
+    margin-top: 1rem !important;
+}
+
+.b-profile-right-tip {
+    position: absolute;
+    top: -1.26rem;
+}
+.b-profile-right-section {
+    position: relative;
+    margin-bottom: 1em;
+    color: #787878;
+}
+.b-profile-right-section-header {
+    margin: 0 !important;
+    border: 0  !important;
+    border-bottom: solid 2px #BEBEBE !important;
+    padding: 1rem 2rem !important;
+    background-color: #fff;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    cursor: pointer;
+}
+.b-profile-right-section-header:hover {
+    background-color: #e6e6e6;
+    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.b-profile-right-section-header-hover {
+    cursor: default !important;
+}
+.b-profile-right-section-header-hover:hover {
+    background-color: #fff;
+    box-shadow: none;
+}
+.b-profile-right-section-header > .ui.header {
+    margin-bottom: 0;
+}
+.b-profile-right-section-header > .ui.header > .content {
+    font-weight: normal;
+    color: #787878;
+}
+.b-profile-right-section-header > .ui.header > .icon {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.b-profile-right-section-tip-fill img {
+    width: 1.8em !important;
+}
+.b-profile-right-section-header > .ui.header.b-profile-right-section-tip-fill > .content {
+    color: #deddde;
+}
+.b-profile-right-section-header > .ui.header.red > .content {
+    color: #db2828 !important;
+}
+.b-profile-right-section-personalinfo .b-profile-right-section-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_personal.png);
+}
+.b-profile-right-section-skills .b-profile-right-section-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_skill.png);
+}
+.b-profile-right-section-educationbackground .b-profile-right-section-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_education.png);
+}
+.b-profile-right-section-clubexperience .b-profile-right-section-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_league.png);
+}
+.b-profile-right-section-workingexperience .b-profile-right-section-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_experience.png);
+}
+.b-profile-right-section-language .b-profile-right-section-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_language.png);
+}
+.b-profile-right-section-award .b-profile-right-section-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_award.png);
+}
+.b-profile-right-section-section {
+    margin-bottom: 1px;
+}
+.b-profile-right-section-section:last-child {
+    margin-bottom: 0;
+}
+.b-profile-right-section-form form,
+.b-profile-right-section-displaymode {
+    padding: 1.5rem 2rem;
+}
+.b-profile-right-section-form {
+    background-color: #e5e5e5;
+}
+.b-profile-right-section-form .ui.basic.button.b-profile-btn-cancel {
+    background-color: #fff !important;
+    box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset !important;
+}
+.b-profile-right-section-form .ui.basic.button.b-profile-btn-cancel:hover {
+    color: #fff !important;
+    background-color: #ddd !important;
+    box-shadow: 0px 0px 0px 1px #fff inset !important;
+}
+.b-profile-right-section-form .ui.form bplusdate.inline.fields .field > :first-child {
+    margin-right: 0.5em !important;
+}
+.p-profile-right-section-form-bplusdate {
+    position: relative;
+}
+.p-profile-right-section-form-bplusdate-select-alt {
+  padding-left: 8px;
+}
+.p-profile-right-section-form-bplusdate-shortline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.5rem;
+    margin-left: -2rem;
+    width: 2rem;
+    height: 0.25rem;
+    background-color: black;
+}
+html.bplus-lng-en .p-profile-right-section-form-bplusdate-shortline {
+    margin-top: -0.5rem;
+}
+
+.b-prifile-date-select-box {
+    max-width: 104px;
+}
+
+.b-profile-right-section-clubexperience .p-profile-right-section-form-bplusdate-shortline,
+.b-profile-right-section-educationbackground .p-profile-right-section-form-bplusdate-shortline,
+.b-profile-right-section-workingexperience .p-profile-right-section-form-bplusdate-shortline {
+    top: 64px;
+    left: initial;
+    right: 10%;
+}
+.b-profile-right-section-clubexperience .p-profile-right-section-form-bplusdate .eight.wide.column,
+.b-profile-right-section-educationbackground .p-profile-right-section-form-bplusdate-shortline,
+.b-profile-right-section-workingexperience .p-profile-right-section-form-bplusdate .eight.wide.column {
+    padding-bottom: 0 !important;
+}
+.b-profile-right-section-clubexperience .p-profile-right-section-form-bplusdate .eight.wide.column.p-profile-right-section-form-bplusdate-row-bottom,
+.b-profile-right-section-educationbackground .p-profile-right-section-form-bplusdate .eight.wide.column.p-profile-right-section-form-bplusdate-row-bottom,
+.b-profile-right-section-workingexperience .p-profile-right-section-form-bplusdate .eight.wide.column.p-profile-right-section-form-bplusdate-row-bottom {
+    padding-top: 0;
+    padding-bottom: 1rem !important;
+}
+.b-profile-right-section-form-textarea-tags {
+    ;
+}
+.ui.form .b-profile-right-section-form-textarea-tags textarea {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.b-profile-right-section-form-textarea-tags .b-profile-right-section-form-textarea-tags-tag-container {
+    border: solid 1px rgba(34, 36, 38, 0.15);
+    border-top: 0;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0 0 0.28571429rem 0.28571429rem;
+}
+.ui.form .b-profile-right-section-form-textarea-tags .inline.fields:last-child {
+    margin-bottom: 0;
+}
+.ui.form .b-profile-right-section-form-textarea-tags .inline.fields .field {
+    padding-right: 0;
+    width: 100%;
+    text-align: center;
+}
+.ui.form .b-profile-right-section-form-textarea-tags .inline.fields .field > :first-child i.icon {
+    margin-right: 0.75rem;
+}
+.ui.form .b-profile-right-section-form-textarea-tags .inline.fields .field > input {
+    width: 84%;
+}
+.b-profile-right-section-displaymode {
+    color: #323232;
+    background-color: #fff;
+}
+.b-profile-right-section-txt {
+    margin-bottom: 1rem;
+    color: #787878;
+}
+.b-profile-right-section-txt:last-child {
+    margin-bottom: 0;
+}
+.b-profile-right-section-txt > .b-profile-right-section-txt-tags {
+    margin-right: 0.5em;
+}
+.b-profile-right-section-displaymode h2:hover,
+.b-profile-right-section-txt:hover {
+    background-color: #dedede;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+}
+.b-profile-right-section-displaymode h2:hover {
+    background-image: url(/img/profile/icon_profile_edit_title.png);
+}
+.b-profile-right-section-txt:hover {
+    background-image: url(/img/profile/icon_profile_edit_text.png);
+}
+.b-profile-right-section-displaymode h2,
+.b-profile-right-section-txt {
+    cursor: pointer;
+}
+.b-profile-right-section-btn-append button {
+    color: #fff !important;
+    border-radius: 0 !important;
+}

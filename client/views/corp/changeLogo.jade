@@ -1,0 +1,12 @@
+mixin fileInput()
+    input(type="file", style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; height: 100%; width: 100%; z-index: 100; padding-left: 2000px; cursor: pointer; border: none; outline: none;", accept=".png,.gif,.jpeg,.jpg", fileread="basicInfo.avatar", file-changed-handler="fileChanged")
+
+div.ui.vertical.segment(ng-class="{'loading': uploading}",style="position: relative; overflow: hidden;")
+    div.logo-container
+        div.ui.fluid.image(style="background-color: #31373e;")
+            img(style="height:100%;", ng-src="{{avatarUrl}}", ng-style="!avatarUrl && {'width': '0'} || !!avatarUrl && {'width': '100%'}")
+            + fileInput
+    div.ui.red.button.btn-logo-upload(style="position: relative;")
+        i.icon
+        span 公司LOGO上传
+        + fileInput

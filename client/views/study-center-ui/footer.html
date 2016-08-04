@@ -1,0 +1,143 @@
+<script src="/studycenter/config.js"></script>
+<script src="<%= cdn.normal %>studycenter/dist/main.js?<%= cdn.version %>"></script>
+<script type="text/javascript" src="<%= cdn.cdnify('js/page/opportunity-detail/menuDirective.js') %>"></script>
+<script src="<%= cdn.normal %>bower/mock-tracking/mock-tracking.js?<%= cdn.version %>"></script>
+<script src="<%= config.trackingJs %>?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/studycenter/main.js?<%= cdn.version %>"></script>
+
+<script type="text/javascript">
+    angular.module('bplus')
+            .factory('trackLinkClick', ['tracking', function (tracking) {
+                return {
+                    hijack: function ($event, $currentTarget, trackingName, data) {
+                        var url = $currentTarget.attr("href");
+                        var target = $currentTarget.attr('target');
+
+                        if (url && (!target || target !== '_blank')) {
+                            $event.preventDefault();
+                            $event.stopPropagation();
+                        }
+
+                        tracking.send(trackingName, data, function () {
+                            if (url && (!target || target !== '_blank')) {
+                                window.location.href = url;
+                            }
+                        });
+                    }
+                };
+            }])
+            .controller('teacherCourseTrackingCtrl', ['tracking', 'trackLinkClick', 'url', function (tracking, trackLinkClick, url) {
+                tracking.send('studyCenterMentorCourses');
+
+                var referrer = url.parse(document.referrer);
+
+                if (referrer.pathname.match(/\/study-center\/teacher\.html/i)) {
+                    tracking.send('studyCenterMentorDetail.mentorCourses.click');
+                }
+
+                $(function () {
+                    $(document).on('click', '.teacher-avatar .avatar a img', function ($event) {
+                        var $currentTarget = $($event.currentTarget).parent();
+
+                        trackLinkClick.hijack($event, $currentTarget, 'studyCenterMentorCourses.teacherImage.click');
+                    });
+
+                    $(document).on('click', '.teacher-avatar-inner .teacher-brief a', function ($event) {
+                        trackLinkClick.hijack($event, $($event.currentTarget), 'studyCenterMentorCourses.teacherName.click');
+                    });
+
+                    $(document).on('click', '.teacher_classes .course-item .teacher-avatar+div > a', function ($event) {
+                        trackLinkClick.hijack($event, $($event.currentTarget), 'studyCenterMentorCourses.courseName.click');
+                    });
+
+                    $(document).on('click', '.teacher_classes .course-item .course-date a', function ($event) {
+                        trackLinkClick.hijack($event, $($event.currentTarget), 'studyCenterMentorCourses.joinCourse.click	');
+                    });
+
+                    var $activeSorting = $('.sort-grid .filter-value ul li a.active');
+
+                    if ($activeSorting.length) {
+                        tracking.send('studyCenterMentorCourses.orderBy.tab', {
+                            rule: $activeSorting.attr('data-tracking') || $activeSorting.text()
+                        });
+                    }
+
+                    $(document).on('click', '.sort-grid .filter-value ul li a', function ($event) {
+                        var $currentTarget = $($event.currentTarget);
+                        trackLinkClick.hijack($event, $currentTarget, 'studyCenterMentorCourses.orderBy.tab', {
+                            rule: $currentTarget.attr('data-tracking') || $currentTarget.text()
+                        });
+                    });
+                });
+            }])
+            .controller('teacherDetailTrackingCtrl', ['tracking', 'trackLinkClick', '$timeout', function (tracking, trackLinkClick, $timeout) {
+                tracking.send('studyCenterMentorDetail');
+
+                function trySendMentorCoursesClickTracking() {
+                    var $selectedTab = $('.teacher-panel .tabs .header .btn.selected:first-child');
+
+                    if ($selectedTab.length) {
+                        tracking.send('studyCenterMentorDetail.courses.tab');
+
+                        firstClickTrackingSent = true;
+                    } else if (!firstClickTrackingSent) {
+                        $timeout(trySendMentorCoursesClickTracking, 500);
+                    }
+                }
+
+                function trySendCommentsClickTracking() {
+                    var $selectedTab = $('.teacher-panel .tabs .header .btn.selected:nth-child(2)');
+
+                    if ($selectedTab.length) {
+                        tracking.send('studyCenterMentorDetail.comments.tab');
+
+                        firstClickTrackingSent = true;
+                    } else if (!firstClickTrackingSent) {
+                        $timeout(trySendCommentsClickTracking, 500);
+                    }
+                }
+
+                trySendMentorCoursesClickTracking();
+                trySendCommentsClickTracking();
+
+                var firstClickTrackingSent = false;
+                $(document).on('click', '.teacher-panel .tabs .header .btn:first-child', function ($event) {
+                    var $currentTarget = $($event.currentTarget);
+                    trackLinkClick.hijack($event, $currentTarget, 'studyCenterMentorDetail.courses.tab');
+
+                    firstClickTrackingSent = true;
+                });
+
+                $(document).on('click', '.teacher-panel .tabs .header .btn:nth-child(2)', function ($event) {
+                    var $currentTarget = $($event.currentTarget);
+                    trackLinkClick.hijack($event, $currentTarget, 'studyCenterMentorDetail.comments.tab');
+
+                    firstClickTrackingSent = true;
+                });
+
+                $(document).on('click', '.teacher-avatar-inner .avatar a img', function ($event) {
+                    var $currentTarget = $($event.currentTarget).parent();
+
+                    trackLinkClick.hijack($event, $currentTarget, 'studyCenterMentorDetail.teacherImage.click');
+                });
+
+                $(document).on('click', '.teacher-avatar-inner .teacher-brief a', function ($event) {
+                    trackLinkClick.hijack($event, $($event.currentTarget), 'studyCenterMentorDetail.teacherName.click');
+                });
+
+                $(document).on('click', '.course-item .teacher-avatar + div a', function ($event) {
+                    trackLinkClick.hijack($event, $($event.currentTarget), 'studyCenterMentorDetail.courseName.click');
+                });
+
+                $(document).on('click', '.course-item .register-btn', function ($event) {
+                    trackLinkClick.hijack($event, $($event.currentTarget), 'studyCenterMentorDetail.joinCourse.click');
+                });
+
+                $(document).on('mousedown', '.teacher-about .opearions button:first-child', function ($event) {
+                    tracking.send('studyCenterMentorDetail.addFavorite.click');
+                });
+            }])
+            .controller('studyCenterTrackingCtrl', ['tracking', function (tracking) {
+            }])
+    ;
+</script>

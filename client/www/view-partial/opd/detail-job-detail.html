@@ -1,0 +1,160 @@
+<div ng-if="isSearching" class="ui segment">正在加载，请稍后。。</div>
+<div ng-if="!isSearching" class="b-opd-content-detail-job-detail-container">
+    <div class="my-header section">
+        <div class="ui grid">
+            <div class="two wide center aligned column">
+                职位匹配度<br/>
+                <img ng-src="/img/opd/match_{{jobData.matchLevel}}.png"/>
+            </div>
+            <div class="two wide center aligned column">
+                你的竞争力<br/>
+                <bopdcompetitiveness data="jobData" ng-if="jobData.progressRate!==''"></bopdcompetitiveness>
+                <img ng-if="jobData.progressRate===''" ng-src="img/opd/rate_.png?<%= cdn.version %>"/>
+            </div>
+            <div class="eleven wide column content">
+                <div class="department-updatedatetime">
+                    <a href="#/job/corporation/{{companyData.id}}">{{companyData.displayname}}</a>
+                    <span class="updatedatetime">
+                        <span ng-show="jobData.issueTime !== ''">发布时间：</span>
+                        <span class="date">{{jobData.issueTime}}</span>
+                        <span class="enddatetime" ng-bind-template="({{jobData.positionAdditional.expireDate}}结束招聘)"></span>
+                    </span> 
+                </div>
+                <div class="position-city-count">
+                    <span class="internship">{{jobData.position.certification}}</span>
+                    <span class="position">{{jobData.position.name}}
+                    </span>
+                    <span class="city">[
+                        <span class="name">{{jobData.location}}</span>
+                    ]</span>
+<!--                     <span class="count">×
+                        <span class="count-num">2
+                        </span>
+                    </span> -->
+                </div>
+                <div ng-if="!isLoggedin" class="level-percentage">
+                    <a ng-href="/signin#/login?return_url=opportunity-detail%23%2Fjob%2F{{jobData.jobID}}">登录</a>
+                    得知你的职位匹配等级与竞争力!
+                </div>
+                <div ng-if="isLoggedin" class="level-percentage">你的职位匹配等级
+                    <span class="level" ng-bind="jobData.matchLevel.toUpperCase()"></span> ，赢过
+                    <span class="percentage">{{jobData.progressRate}}</span>%的竞争对手！快投个简历试试看！
+                </div>
+            </div>
+<!--             <div class="one wide column">
+                <a href="javascript:void(0)" class="wechat-qrcode"><span style="background-image:url(/img/b-wechat.jpg);"><span></span></span></a>
+            </div> -->
+        </div>
+    </div>
+    <div class="chart section" ng-controller="RadarCtrl" ng-show="labels.length>0">
+        <div class="ui grid">
+            <div class="six wide center aligned column competence">
+                <div class="title">职场能力需求</div>
+                <canvas id="radar" class="chart chart-radar"
+                        chart-data="data" chart-labels="labels" style="height: 300px; width: 300px;" chart-colours="colors" chart-options="options">
+                    {{data}}
+                </canvas>
+            </div>
+            <!-- <div class="nine wide right floated center aligned column career" ng-controller="LineCtrl">
+                <div class="title">职业生涯</div>
+                <canvas id="line" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick" >
+                </canvas>
+            </div> -->
+        </div>
+        <div class="hr"></div>
+    </div>
+    <div class="feature section">
+        <div class="poster">{{jobData.positionAdditional.slogan}}</div>
+        <div class="tags">
+            <span class="ui label" ng-repeat="tag in jobData.positionAdditional.slogan_tags">{{tag}}</span>
+        </div>
+        <div class="address">
+            <i class="marker icon"></i>
+            <span class="title">工作地点：</span>
+            <a ng-href="http://map.baidu.com/m?word={{jobData.location|encodeURIComponent}}&fr=ps01000" target="_blank">{{jobData.location}}</a>
+        </div>
+        <div class="internship" ng-show="jobData.positionAdditional.internshipWorkingInfo!==''">
+            <i class="suitcase icon"></i>
+            <span class="title">实习要求：</span>
+            {{jobData.positionAdditional.internshipWorkingInfo}}
+        </div>
+        <div class="hr"></div>
+    </div>
+    <div class="desc section">
+        <div class="title">职位描述</div>
+        <div ng-include="'jobDescription.html'"></div>
+    </div>
+    <!-- todo -->
+    <div class="operation section" ng-if="isLoggedin">
+        <div class="ui grid">
+            <div class="ten wide column">
+                <div class="resume">
+                    你有一份线上简历可以投递<a class="btn-edit" href="/profile"><i
+                        class="big write icon"></i>编辑</a>
+                </div>
+            </div>
+            <div class="six wide right aligned column">
+                <a class="ui large red button{{hasCollected ? ' disabled' : ''}}" ng-click="onCollectClick()"><i class="favorite icon"></i>{{hasCollected ? "已收藏" : "收藏职位"}}</a>
+                <a class="ui large red button{{hasSent ? ' disabled' : ''}}" ng-click="onApplyClick()"><i class="mail icon"></i>{{hasSent ? "已投递" : "投个简历"}}</a>
+            </div>
+        </div>
+    </div>
+    <!-- todoend -->
+    <div class="operation section" ng-if="!isLoggedin">
+        <a ng-href="/signin#/login?return_url=opportunity-detail%23%2Fjob%2F{{jobData.jobID}}">登录</a>
+                    进行职位收藏或者简历投递
+    </div>
+    <div class="corporation section">
+        <a class="ui large header" href="#/job/corporation/{{companyData.id}}" style="display:block">{{companyData.displayname}}</a>
+        <div class="ui items">
+            <div class="item">
+                <div class="image">
+                    <img ng-src="{{companyData.logo}}">
+                </div>
+                <div class="content">
+                    <div class="ui header">{{companyData.abstraction}}</div>
+                    <div class="ui grid">
+                        <div class="eight wide column"><span class="ui tiny header">领域：</span>{{companyData.industry}}</div>
+                        <div class="eight wide column"><span class="ui tiny header">性质：</span>{{companyData.nature_of_firms}}</div>
+                        <div class="eight wide column"><span class="ui tiny header">规模：</span>{{companyData.scale}}</div>
+                        <div class="eight wide column"><span class="ui tiny header">主页：</span><a
+                                ng-href="{{companyData.website}}" target="_blank">{{companyData.website}}</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--     <div class="similar">
+        <div class="ui top attached tabular menu">
+            <div class="active item">
+                <div class="ui header">相似职位</div>
+            </div>
+        </div>
+        <bopdpositionpattern positions="similarJobList"/>
+    </div> -->
+
+<!--     <div class="training-opportunity">
+        <div class="ui top attached tabular menu">
+            <div class="active item">
+                <div class="ui header">相关培训机会</div>
+            </div>
+        </div>
+        <bopd-traininglist datalist="trainingOpportunityList"></bopd-traininglist>
+    </div> -->
+</div>
+
+<div class="ui modal modal-send-resume">
+    <i class="close icon"></i>
+    <div class="header">投个简历</div>
+    <div class="content">
+        <p>确定投递：</p>
+        <p>{{companyData.name}}的</p>
+        <p>{{jobData.position.name}}?</p>
+    </div>
+    <div class="actions">
+        <div class="ui large red approve button">投个简历</div>
+        <div class="ui large basic cancel button">取消</div>
+    </div>
+</div>

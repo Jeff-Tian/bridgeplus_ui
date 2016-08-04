@@ -1,0 +1,38 @@
+{
+  "0": [
+    {
+      "name": "Hello, world",
+      "gender": "男",
+      "dateOfBirth": {
+        "value": {
+          "year": 1949,
+          "month": 10,
+          "day": 1
+        },
+        "isPrivate": false
+      },
+      "location": "Shanghai",
+      "contractInfo": {
+        "value": "Huangpu",
+        "isPrivate": false
+      }
+    },
+    {
+      "name": "Hello, world 2",
+      "gender": "女",
+      "dateOfBirth": {
+        "value": {
+          "year": 2015,
+          "month": 9,
+          "day": 1
+        },
+        "isPrivate": false
+      },
+      "location": "Beijing",
+      "contractInfo": {
+        "value": "Sihuan",
+        "isPrivate": false
+      }
+    }
+  ]
+}

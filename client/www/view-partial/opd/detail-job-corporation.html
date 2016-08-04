@@ -1,0 +1,130 @@
+﻿<div ng-if="isSearching" class="ui segment">正在加载，请稍后。。</div>
+<div ng-if="!isSearching" class="b-opd-content-detail-job-corporation-container">
+    <div class="corporation section">
+        <div class="ui large header">{{companyData.displayname}}</div>
+        <div class="ui items">
+            <div class="item">
+                <div class="image">
+                    <img ng-src="{{companyData.logo}}">
+                </div>
+                <div class="content">
+                    <div class="ui header">{{companyData.name}}</div>
+                    <div class="ui grid">
+                        <div class="eight wide column"><span class="ui tiny header">领域：</span>{{companyData.industry}}</div>
+                        <div class="eight wide column"><span class="ui tiny header">规模：</span>{{companyData.scale}}</div>
+                        <div class="eight wide column"><span class="ui tiny header">性质：</span>{{companyData.nature_of_firms}}</div>
+                        <div class="eight wide column"><span class="ui tiny header">主页：</span><a ng-href="{{companyData.website}}" target="_blank">{{companyData.website}}</a></div>
+                        <div class="eight wide column">
+                            <span class="ui tiny header">地址：</span>
+                            <a ng-href="http://map.baidu.com/m?word={{companyData.location|encodeURIComponent}}&fr=ps01000" target="_blank">{{companyData.location}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--         <a href="javascript:void(0)" class="wechat-qrcode"><span style="background-image:url(/img/b-wechat.jpg);"><span></span></span></a> -->
+    </div>
+    <div class="chart section">
+        <div class="ui grid">
+            <div class="six wide center aligned column feature-chart" ng-controller="RadarCtrlCorporation">
+                <div class="title">公司特点</div>
+                <canvas id="radar" class="chart chart-radar"
+                        chart-data="data" chart-labels="labels" style="height: 300px; width: 300px;" chart-colours="colors" chart-options="options">
+                    {{data}}
+                </canvas>
+            </div>
+            <div class="nine wide right floated center aligned column feature">
+                <div class="title">{{companyData.abstraction}}</div>
+                <div class="tags">
+                    <span class="ui label" ng-repeat="tag in companyData.tags">{{tag}}</span>
+                </div>
+                <div class="desc">
+                    <img ng-src="/img/opd/match_{{companyData.match===''?'':companyData.match+'b'}}.png" />
+                    <span ng-if="isLoggedin">企业文化契合度高，
+                        <a ng-click="onLookupPosition()" style="cursor: pointer">看看最新职缺</a>
+                    ！</span>
+                    <span ng-if="!isLoggedin"><a ng-href="/signin#/login?return_url=opportunity-detail%23%2Fjob%2Fcorporation%2F{{companyData.id}}">登录</a>
+                    查看企业文化契合度</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-jobs">
+        <div class="ui top attached tabular menu">
+            <div class="active item opd-intro-company-company" data-tab="first">
+                <div class="ui header">公司介绍</div>
+            </div>
+            <div class="item opd-intro-company-position" data-tab="second">
+                <div class="ui header">公司在招职位（{{searchList.totalPage}}）</div>
+            </div>
+        </div>
+        <div class="ui bottom attached tab segment active desc" data-tab="first">
+            <div ng-include="'companyDescription.html'"></div>
+        </div>
+        <div class="ui bottom attached tab segment recruit" data-tab="second">
+            <div class="count-container">
+                共有{{searchList.totalPage}}个在招职位
+                <!-- <opd-inline-filter filters="recruitFilter" filter-setting="recruitFilterSetting"></opd-inline-filter> -->
+            </div>
+            <div class="ui segment" ng-if="isContentSearching">搜索中。。。</div>
+            <div ng-if="!isContentSearching" style="margin:0em -1em 0em -1em;">
+                <br>
+                <bopdpositionpattern positions="searchList" ng-if="searchList.totalPage>0"></bopdpositionpattern>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="operation">
+            <a class="ui large red button{{hasCollected ? ' disabled' : ''}}" ng-click="onCollectClick()"><i class="favorite icon"></i>{{hasCollected ? "已收藏" : "收藏公司"}}</a>
+        </div>
+        <div class="hr"></div>
+    </div>
+<!--     <div class="more-corporation">
+        <div class="ui top attached tabular menu">
+            <div class="active item">
+                <div class="ui header">看了该公司的人还看过</div>
+            </div>
+        </div>
+        <div class="ui three column grid">
+            <a href="#/job/corporation/111111" class="column">
+                <div class="ui items">
+                    <div class="item">
+                        <div class="image">
+                            <img src="">
+                        </div>
+                        <div class="content">
+                            <div class="ui header">苹果公司</div>
+                            <div>电脑设备/外企</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#/job/corporation/222222" class="column">
+                <div class="ui items">
+                    <div class="item">
+                        <div class="image">
+                            <img src="">
+                        </div>
+                        <div class="content">
+                            <div class="ui header">大众汽车</div>
+                            <div>汽车零售/外企</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#/job/corporation/333333" class="column">
+                <div class="ui items">
+                    <div class="item">
+                        <div class="image">
+                            <img src="">
+                        </div>
+                        <div class="content">
+                            <div class="ui header">华为科技</div>
+                            <div>移动互联网/中企</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="hr"></div>
+    </div> -->
+</div>

@@ -1,0 +1,44 @@
+<div ng-if="!isLoading" class="corp-table">
+    <div class="ui attached segment segment-normal segment-bottom-shadow list-container" ng-if="displayData.data.length>0">
+        <div>
+            <div class="ui grid dark-title-background white-color">
+                <div class="four wide column center aligned">职位名称</div>
+                <div class="four wide column center aligned">截止日期</div>
+                <div class="three wide column center aligned">职位状态</div>
+                <div class="five wide column center aligned">
+                </div>
+            </div>
+            <div class="ui grid shadow text-color-grey" ng-repeat="data in displayData.data">
+                <div class="four wide column center aligned white-column-background">
+                    <div class="middle-single-text">
+                        {{data.position}}
+                    </div>
+                </div>
+                <div class="four wide column center aligned light-column-background">
+                    <div class="middle-single-text">
+                        {{data.expire_at_text}}
+                    </div>
+                </div>
+                <div class="three wide column center aligned white-column-background">
+                    <div ng-if="data.is_expired && data.status === 'publish'" class="middle-single-text">已过期</div>
+                    <div ng-if="!data.is_expired || data.status !== 'publish'"ng-switch="data.status" class="middle-single-text">
+                        <div ng-switch-when="publish"> 在招 </div>
+                        <div ng-switch-when="tempSave"> 待发布 </div>
+                        <div ng-switch-when="offline"> 已下线 </div>
+                    </div>
+                </div>
+                <div class="five wide column light-column-background">
+                    <div class="ui basic button valign-middle-button" ng-click="offline(data)"ng-if="data.status==='publish'&&!data.is_expired"> 下线 </div> 
+                    <div class="ui basic button valign-middle-button" ng-click="edit(data)"ng-if="data.status!=='publish'||data.is_expired"> 编辑 </div> 
+                    <div class="ui basic button valign-middle-button" ng-click="delete(data)"ng-if="data.status!=='publish'||data.is_expired"> 删除 </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui right floated pagination-container" ng-if="displayData.rawData.length>0">
+        <pagination paginationdata='displayData'></pagination>
+    </div>
+</div>
+<div class="ui segment" ng-if="isLoading">
+    搜索中，请稍后。。
+</div>

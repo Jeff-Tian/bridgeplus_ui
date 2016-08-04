@@ -1,0 +1,9 @@
+<%= __('SignInWithOtherWays') %>
+<a class="wechat link" ng-click="logOnViaWechat()">
+    <i class="big wechat icon"></i>
+</a>
+
+<a class="linkedin link" ng-click="logOnViaLinkedIn()" ng-controller="linkedInLogInCtrl">
+    <i class="big linkedin square icon" ng-class="{'loading': linkedInWorking()}"></i>
+    <span class="linked-in-tip" ng-show="linkedInWorking()" ng-cloak>请在新窗口中操作...</span>
+</a>

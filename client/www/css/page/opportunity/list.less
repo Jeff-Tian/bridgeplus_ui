@@ -1,0 +1,114 @@
+.opportunity-list-red {
+    .content {
+        p {
+            font-size: @fontsize-10xl;
+            color: @color-white;
+            text-align: center;
+            padding-top: 125px;
+        }
+    }
+}
+.opportunity-list-white {
+    .content {
+        p {
+            font-size: @fontsize-10xl;
+            color: @color-brand;
+            text-align: center;
+            padding-top: 125px;
+        }
+    }
+}
+.jobs_administration {
+    background: url('/img/salespage/pic_jobs_administration.png') no-repeat center center;
+    height: 180px;
+}
+.jobs_marketing {
+    background: url('/img/salespage/pic_jobs_marketing.png') no-repeat center center;
+    height: 180px;
+}
+.jobs_sales {
+    background: url('/img/salespage/pic_jobs_sales.png') no-repeat center center;
+    height: 180px;
+}
+.jobs_technology {
+    background: url('/img/salespage/pic_jobs_technology.png') no-repeat center center;
+    height: 180px;
+}
+.jobs_service {
+    background: url('/img/salespage/pic_jobs_service.png') no-repeat center center;
+    height: 180px;
+}
+.jobs_finance {
+    background: url('/img/salespage/pic_jobs_finance.png') no-repeat center center;
+    height: 180px;
+}
+.b-opportunity-action {
+    margin-top: 2rem;
+}
+.four-eight-column {
+    width: 48% !important;
+}
+.four-column {
+    width: 4% !important;
+}
+.check-more-buuton {
+    margin: 0 !important;
+}
+.opportunity-box {
+    .front, .back {
+        max-width: 540px;
+        height: 180px;
+    }
+    .opportunity-container {
+        position: relative;
+        height: 210px;
+        .perspective(1000);
+
+        .back {
+            .rotateX(180deg);
+        }
+        .front, .back {
+            -moz-transition: all .6s ease;
+            -o-transition: all .6s ease;
+            -webkit-transition: all .6s ease;
+            transition: all .6s ease;
+            -moz-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -moz-transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            height: 180px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .opportunity-container:hover {
+        .front {
+            .rotateX(180deg);
+        }
+        .back {
+            .rotateX(360deg);
+        }
+    }
+    .back {
+        background-color: @color-white;
+
+        table {
+            padding: 1em 1em 0 1em;
+            height: 100%;
+            box-shadow: 0 2px 0 #bebebe !important;
+            border-radius: 0;
+
+            th {
+                font-size: @fontsize-xl;
+            }
+            td {
+                font-size: @fontsize-o;
+                color: #787878;
+            }
+        }
+    }
+}

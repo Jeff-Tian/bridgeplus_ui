@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('StatementTitle') %></title>
+    <meta name="description" content="Bridge+">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-controller="AppCtrl" ng-app="bplus">
+<%- include('view-partial/header.html') -%>
+<!-- Page Contents -->
+<%- include('../views/partial/statement.html') -%>
+<%- include('view-partial/footer.html') -%>
+<!--JS-->
+<script src="<%= cdn.normal %>bower/owl.carousel/dist/owl.carousel.js?<%= cdn.version %>"></script>
+<!--Page JS-->
+<script src="<%= cdn.normal %>js/factories/WechatLogon.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/controllers/AppCtrl.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/footer/main.js?<%= cdn.version %>"></script>
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

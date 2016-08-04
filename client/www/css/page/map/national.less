@@ -1,0 +1,102 @@
+/*
+* - @Bridge+
+*/
+.b-map {
+    .national-content {
+        margin-top: 2rem;
+
+        .national-cards {
+            max-height: 500px;
+            overflow-y: scroll;
+            margin: -0.875em -0.5em !important;
+
+            .card {
+                border-radius: 0;
+                box-shadow: 0px 2px 0px 0px #d4d4d5;
+                background-image: url("/img/salespage/national-content.png");
+                background-repeat: no-repeat;
+                background-position: right bottom;
+                background-size: 100px 100px;
+
+                .national-name {
+                    background-image: url("/img/salespage/card-header.png");
+                    background-repeat: no-repeat;
+                    background-position: left;
+                    background-size: 48px 48px;
+                    border-radius: 0 !important;
+
+                    .header {
+                        color: @color-white;
+                    }
+                }
+                .national-dimmer {
+                    .content {
+                        .center {
+                            padding: 0 1.5rem;
+                        }
+                        .dimmer-label {
+                            background-color: transparent;
+                            color: @color-white;
+                            font-size: @fontsize-5xl;
+                        }
+                    }
+                }
+            }
+            .card:last-child, .card:first-child {
+                border-radius: 0 !important;
+            }
+        }
+    }
+}
+.bplus {
+    .b-map {
+        background-image: url('/img/salespage/events_bg.png');
+
+        .national-content {
+            .national-cards {
+                .card {
+                    .national-name {
+                        background-color: #a8a8a8;
+                    }
+                    .ui.dimmer {
+                        background-color: @color-grey-dimmer;
+                    }
+                    &.available {
+                        .national-name {
+                            background-color: @color-brand;
+                        }
+                        .ui.dimmer {
+                            background-color: @color-brand-dimmer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.hcdlearning {
+    .b-map {
+        background-image: url('/img/salespage/events_bg.png');
+
+        .national-content {
+            .national-cards {
+                .card {
+                    .national-name {
+                        background-color: #a8a8a8;
+                    }
+                    .ui.dimmer {
+                        background-color: @color-grey-dimmer;
+                    }
+                    &.available {
+                        .national-name {
+                            background-color: @color-hcdlearning;
+                        }
+                        .ui.dimmer {
+                            background-color: @color-hcdlearning-dimmer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

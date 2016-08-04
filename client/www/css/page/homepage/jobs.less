@@ -1,0 +1,148 @@
+/*
+* - @Bridge+
+*/
+.b-jobs {
+	background-color: @color-white;
+	background-image: url("/img/salespage/jobs_bg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto auto;
+	height: 900px;
+
+	> .ui.container {
+		padding: 10rem 0;
+	}
+	h3 {
+		&.ui.header {
+			color: @color-white;
+			margin-bottom: 3rem;
+		}
+	}
+	.b-jobs-pokesperson {
+		.ui.items {
+			> .item {
+				> .ui.small.image {
+					width: 170px;
+				}
+				> .content {
+					position: relative;
+
+					.b-jobs-pokesperson-sink {
+						position: absolute;
+						bottom: 1rem;
+					}
+					.header {
+						color: @color-white;
+						font-size: @fontsize-5xl;
+					}
+					.meta {
+						color: @color-white;
+						font-size: @fontsize-o;
+					}
+					.ui.divider {
+						border-top-color: @color-white;
+						margin: .4rem 0 .6rem;
+					}
+					.description {
+						> p {
+							line-height: 1.6em;
+							font-size: @fontsize-o;
+							color: @color-grey-lighter;
+						}
+					}
+				}
+			}
+		}
+	}
+	.b-jobs-statistics {
+		position: relative;
+
+		.b-jobs-statistics-sink {
+			position: absolute;
+			bottom: .7rem;
+		}
+		.ui.header {
+			&.sub {
+				color: @color-white;
+				font-weight: normal;
+				font-size: @fontsize-5xl;
+			}
+		}
+		.ui.statistics {
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+
+			> .statistic {
+				display: inline-block;
+				margin-top: 0.5em;
+
+				> .value {
+					color: @color-brand;
+					font-size: @fontsize-21xl;
+					vertical-align: super;
+				}
+				> .label {
+					color: @color-brand;
+					font-size: @fontsize-xl;
+					font-weight: normal;
+					vertical-align: super;
+				}
+				&:first-child {
+					> .value {
+						color: @color-white;
+					}
+				}
+			}
+		}
+	}
+	.ui.grid {
+		+ .grid {
+			margin-top: 0;
+
+			> .column:not(.row) {
+				padding-top: 0;
+			}
+		}
+	}
+	.b-jobs-list {
+		background-color: #f0f0f0;
+		box-shadow: 0 2px 0 #bebebe;
+		padding: 2rem 4rem;
+
+		.ui.header {
+			margin-bottom: 2rem;
+			margin-left: -0.5rem;
+
+			i.icon {
+				&.red {
+					padding-top: 0;
+					color: @color-brand !important;
+				}
+			}
+			.content {
+				font-weight: normal;
+				line-height: 2.25rem;
+			}
+		}
+		.ui.table {
+			th {
+				font-size: @fontsize-xl;
+			}
+			td {
+				font-size: @fontsize-o;
+				color: #787878;
+			}
+		}
+	}
+	.b-jobs-action {
+		margin-top: 2rem;
+	}
+}
+@media only screen and (min-width:768px) and (max-width:991px) {
+	.b-jobs {
+		.b-jobs-list {
+			padding: 1.5rem 2rem;
+		}
+	}
+}

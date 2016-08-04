@@ -1,0 +1,140 @@
+block content
+    div.corp-find(ng-controller="findCtrl")
+        div.ui.twelve.column.centered.grid
+            div.row
+                div.twelve.wide.column
+                    //- div.ui.segment
+                        | advertisement
+                    div.ui.top.attached.tabular.menu.tabular-menu
+                        a.active.item.menu-item(data-tab="smart" ng-click="tabmemuClick(STATIC_PARAM.SMART)" style="height:53px")
+                            img.ui.right.spaced.image.menu-item-image(src="#{cdn.normal}img/corp/smart-recommendation.png?#{cdn.version}")
+                            | 智能推荐
+                        a.menu-item.item(data-tab="winner" ng-click="tabmemuClick(STATIC_PARAM.WINNER)")
+                            img.ui.right.spaced.image.menu-item-image(src="#{cdn.normal}img/corp/contest-winners.png?#{cdn.version}")
+                            | 大赛优胜
+                    div.ui.middle.attached.segment.segment-bottom-shadow.segment-menu.corp-find-option
+                        span.inline-space.corp-find-option-text 职能
+                        div.ui.form.inline-block.inline-space
+                            select.ui.dropdown.dropdown-inline(name="position",ng-model="searchOption.position")
+                                option(ng-repeat="data in positions",value="{{data.text}}"){{data.text}}
+                    div.ui.active.tab.list-tab
+                        div(ng-if="isloading") 加载中，请稍后……
+                        div.ui.equal.width.grid.position-relative(ng-if="!isloading")
+                            i.icon.angle.left.arrow-left.arrow-attr.clickable(ng-click="arrowClick(STATIC_PARAM.LEFT)",ng-class="{'disabled':page<=1}")
+                            div.column(ng-repeat="data in displayData", ng-class="{'hidden': data.hide}")
+                                div.corp-find-item-container.clickable(ng-click="cvClick(data)")
+                                    div.corp-find-item-overlay
+                                        | 简历详情
+                                    div.corp-find-item-head
+                                        div.corp-find-route-label
+                                            div.corp-find-route-label-line
+                                            div.corp-find-route-label-text {{data.job_title}}
+                                    div.corp-find-item-body
+                                        <img ng-src="{{data.member.avatar}}" class="ui circular image headshot inline-block" ng-class="{'F': 'female', 'M': 'male','':'unknown','U':'unknown'}[data.member.gender]">
+                                        div.corp-find-item-body-name {{data.member.real_name}}
+                                        div.corp-find-item-body-info
+                                            span {{data.education.university}}
+                                            span &nbsp;|&nbsp;
+                                            span {{data.education.major}}
+                                            span &nbsp;|&nbsp;
+                                            span {{data.education.qualifications}}
+                                    div.corp-find-item-foot.segment-bottom-shadow
+                                        div.ui.grid
+                                            div.sixteen.wide.column.center.aligned
+                                                img(ng-src="img/opd/match_{{levelMapping(data.member_job_match)}}.png?<%= cdn.version %>")
+                                                div.corp-find-item-foot-matchtext 职位匹配度
+                                            //- div.eleven.wide.column
+                                            //-     div.corp-find-item-foot-label(ng-repeat="label in data.label") {{label}}
+                            i.icon.angle.right.arrow-right.arrow-attr.clickable(ng-click="arrowClick(STATIC_PARAM.RIGHT)",ng-class="{'disabled':page>=maxPage}")
+                        div.corp-pagination-dots.container
+                            div.corp-pagination-dots.inline-block.inline-space.clickable(ng-class="{'active':page===1}",ng-click="onPageClick(1)",ng-show="maxPage>0")
+                            div.corp-pagination-dots.inline-block.inline-space.clickable(ng-class="{'active':page===2}",ng-click="onPageClick(2)",ng-show="maxPage>1")
+                            div.corp-pagination-dots.inline-block.inline-space.clickable(ng-class="{'active':page===3}",ng-click="onPageClick(3)",ng-show="maxPage>2")
+        div.ui.long.modal.corp-cv-modal.cv-detail
+            div.corp-cv-detail-header.light-grey-background
+                div.corp-cv-detail-button-group
+                    button.ui.red.button(ng-click="markCV()",ng-if="resumeStatus===''")
+                        i.reply.icon
+                        | 移至有意向的简历
+                    button.ui.red.button(ng-click="payCV()",ng-if="!resumeDetail.unlocked")
+                        i.unlock.icon
+                        span 解锁联系方式
+                    button.ui.black.button(ng-click="printCV()")
+                        i.print.icon
+                        | 打印简历
+                    button.ui.black.button(ng-click="dropCV()",ng-if="resumeDetail.status==='apply'")
+                        i.trash.icon
+                        | 删除简历
+                    button.ui.red.button(ng-click="restoreCV()",ng-if="resumeDetail.status==='drop'")
+                        i.undo.icon
+                        | 恢复简历
+                    button.right.floated.circular.ui.icon.grey.button.close
+                        i.remove.icon
+            div.corp-cv-detail-body
+                corp-cv-detail(ng-if="!isDetailLoading")
+            div.corp-cv-detail-footer
+                div.corp-cv-detail-right
+                    | Powered by Bridge+
+        div.ui.mini.modal.coupled.corp-cv-modal.corp-cvdetailerror-vip
+            div.corp-cv-detail-body
+                div.removeicon-container
+                    button.right.floated.circular.ui.icon.grey.button.close
+                        i.remove.icon
+                div.centered-content-container
+                    p 抱歉,您还未开通VIP服务,
+                    p 最多只能查看三人。
+                div.blank
+                div.centered-content-container.centertext
+                    button.ui.red.button(ng-click="errorConfirm()")
+                        | 我知道了
+                div.blank
+        div.ui.mini.modal.coupled.corp-cv-modal.corp-cvdetailerror
+            div.corp-cv-detail-body(ng-if="errorInfo.code===70008")
+                div.removeicon-container
+                    button.right.floated.circular.ui.icon.grey.button.close
+                        i.remove.icon
+                div.centered-content-container
+                    p 抱歉,您的剩余简历解锁数量不足。
+                    p 请联系您的专属招聘顾问为您开通。
+                div.blank
+                div.centered-content-container.centertext
+                    button.ui.red.button(ng-click="errorConfirm()")
+                        | 我知道了
+                div.blank
+            div.corp-cv-detail-body(ng-if="errorInfo.code!==70008")
+                div.removeicon-container
+                    button.right.floated.circular.ui.icon.grey.button.close
+                        i.remove.icon
+                div.centered-content-container
+                    p 抱歉,您刚才简历操作失败。
+                    p 请稍后尝试再次操作。
+                div.blank
+                div.centered-content-container.centertext
+                    button.ui.red.button(ng-click="errorConfirm()")
+                        | 确认
+                div.blank
+        div.ui.mini.modal.coupled.corp-cv-modal.corp-cvdetailsuccess
+            div.corp-cv-detail-body
+                div.removeicon-container
+                    button.right.floated.circular.ui.icon.grey.button.close
+                        i.remove.icon
+                div.centered-content-container
+                    p 解锁成功！ 
+                    p 剩余点数：{{couponLeft}}
+                div.blank
+                div.centered-content-container.centertext
+                    button.ui.red.button(ng-click="successConfirm()")
+                        | 确认
+                div.blank
+block extraJs
+    script(src="#{cdn.normal}js/page/corp/directives/corpCVDetail.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/proxy/corp/main.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/proxy/corp/resource.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/page/corp/find/main.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/proxy/corp/find.js?#{cdn.version}")
+    script.
+        angular.module('bplusModule')
+                .run(['$rootScope', function ($rootScope) {
+                    $rootScope.current_page = 'find';
+                }])
+        ;

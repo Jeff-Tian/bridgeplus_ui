@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bridge+</title>
+    <meta name="description" content="<%= __('SEODesc_SignIn') %>">
+    <%- include('header.html') -%>
+</head>
+<body class="b-background" ng-app="mobile" ng-controller="AppCtrl">
+<%- include('head.html') -%>
+<div class="main body b-mobile back-color white color has-header">
+    <div class="ui container b-mobile-game-training-container">
+        <div class="ui two item tabs menu b-mobile-game-training-container-menu">
+            <a class="item active b-mobile-game-training-container-item-download" data-tab="download">下载培训资料</a>
+            <a class="item b-mobile-game-training-container-item-watch" data-tab="video">观看教学视频</a>
+            <a style="display:none">&nbsp;</a>
+        </div>
+        <div class="ui container b-mobile-game-training-detail-container">
+            <div class="ui active tab" data-tab="download">
+                <div style="display:none" id="download-content">
+                    <a href="http://7xlpjd.com2.z0.glb.qiniucdn.com/gameTraining1.pdf"
+                       class="ui grid b-mobile-game-training-detail-item">
+                        <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-download">
+                            学员手册
+                        </div>
+                    </a>
+
+                    <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                    <a href="http://7xlpjd.com2.z0.glb.qiniucdn.com/gameTraining2.pdf"
+                       class="ui grid b-mobile-game-training-detail-item">
+                        <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-download">
+                            比赛形式及界面介绍
+                        </div>
+                    </a>
+
+                    <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                    <a href="http://7xlpjd.com2.z0.glb.qiniucdn.com/gameTraining3.pdf"
+                       class="ui grid b-mobile-game-training-detail-item">
+                        <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-download">
+                            赛前阅读材料
+                        </div>
+                    </a>
+
+                    <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                    <a href="http://7xlpjd.com2.z0.glb.qiniucdn.com/gameTraining4.pdf"
+                       class="ui grid b-mobile-game-training-detail-item">
+                        <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-download">
+                            快消品行业常用术语
+                        </div>
+                    </a>
+
+                    <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                    <a href="http://7xlpjd.com2.z0.glb.qiniucdn.com/gameTraining5.pdf"
+                       class="ui grid b-mobile-game-training-detail-item">
+                        <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-download">
+                            常见问题
+                        </div>
+                    </a>
+
+                    <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                </div>
+                <div style="display:none" class="b-mobile-android-warning" id="download-warning">
+                    为了保证您的体验，安卓用户请用电脑登陆bridgeplus.cn进入游戏板块下载培训资料。
+                </div>
+            </div>
+            <div class="ui tab" data-tab="video">
+                <a href="http://v.youku.com/v_show/id_XOTM1MDgxMTY4.html"
+                   class="ui grid b-mobile-game-training-detail-item">
+                    <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-play">
+                        介绍视频
+                    </div>
+                </a>
+
+                <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                <a href="http://v.youku.com/v_show/id_XOTYxMzQyNDg4.html"
+                   class="ui grid b-mobile-game-training-detail-item">
+                    <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-play">
+                        预习视频一
+                    </div>
+                </a>
+
+                <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                <a href="http://v.youku.com/v_show/id_XOTU2Njc2NDQw.html"
+                   class="ui grid b-mobile-game-training-detail-item">
+                    <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-play">
+                        预习视频二
+                    </div>
+                </a>
+
+                <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                <a href="http://v.youku.com/v_show/id_XMTM0NDAwNTMyMA==.html"
+                   class="ui grid b-mobile-game-training-detail-item">
+                    <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-play">
+                        游戏操作介绍
+                    </div>
+                </a>
+
+                <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                <a href="http://v.youku.com/v_show/id_XMTM5NjUwODU4OA==.html"
+                   class="ui grid b-mobile-game-training-detail-item">
+                    <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-play">
+                        MarkSimos Intro
+                    </div>
+                </a>
+
+                <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                <a href="http://v.youku.com/v_show/id_XMTM5NjMyNTYwMA==.html"
+                   class="ui grid b-mobile-game-training-detail-item">
+                    <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-play">
+                        Training-Strategy
+                    </div>
+                </a>
+
+                <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                <a href="http://v.youku.com/v_show/id_XMTM5NjMyMzE2NA==.html"
+                   class="ui grid b-mobile-game-training-detail-item">
+                    <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-play">
+                        Training-Decision Making
+                    </div>
+                </a>
+
+                <div class="ui inverted divider b-mobile-game-training-divider"></div>
+                <a href="http://v.youku.com/v_show/id_XMTM5NjMyMDkwOA==.html"
+                   class="ui grid b-mobile-game-training-detail-item">
+                    <div class="column b-mobile-game-training-detail-text b-mobile-game-training-detail-icon-play">
+                        Training-Analyzing Reports
+                    </div>
+                </a>
+
+                <div class="ui inverted divider b-mobile-game-training-divider"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Contents -->
+<%- include('footer.html') -%>
+<!--JS-->
+<!--Page JS-->
+<script>
+    angular
+            .module('mobile', [
+                'ng.utils',
+                'pascalprecht.translate',
+                'ui.router'
+            ])
+            .config(angular.bplus.translate)
+            .controller('AppCtrl', angular.bplus.AppCtrl)
+            .factory('translationLoader', angular.bplus.translationLoader)
+            .factory('FormValidation', angular.bplus.FormValidation)
+            .factory('DeviceHelper', angular.bplus.DeviceHelper)
+            .factory('service', angular.bplus.service)
+            .factory('MessageStore', angular.bplus.MessageStore)
+            .factory('queryParser', angular.bplus.queryParser)
+            .factory('WechatLogon', angular.bplus.WechatLogon)
+    ;
+    $(".menu .item").tab();
+    if (navigator.userAgent.indexOf('Android') > -1) {
+        $("#download-warning").show();
+    } else {
+        $("#download-content").show();
+    }
+</script>
+</body>
+</html>

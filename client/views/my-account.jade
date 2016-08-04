@@ -1,0 +1,14 @@
+block customizedHead
+    include ../www/view-partial/slim-head.html
+block customizedHeader
+    div#my-header(ng-controller="AppCtrl")
+        include ../www/view-partial/header.html
+block customizedFooter
+    div#my-footer
+        include ../www/view-partial/footer.html
+        script(type="text/javascript").
+            angular.element(document).ready(function () {
+                angular.bootstrap(document.getElementById('my-header'), ['bplusModule']);
+                angular.bootstrap(document.getElementById('my-footer'), ['bplusModule']);
+            });
+        include ../www/view-partial/external-js.html

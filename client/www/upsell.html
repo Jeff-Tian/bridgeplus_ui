@@ -1,0 +1,126 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:wb="http://open.weibo.com/wb"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Bridge+</title>
+
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" /> -->
+    <!-- <link href="favicon.ico" rel="icon" type="image/x-icon" /> -->
+    <!-- <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" /> -->
+
+    <%- include('view-partial/head.html') -%>
+
+    <!-- <link href="bower/semantic-ui/dist/semantic.css" rel="stylesheet" type="text/css" /> -->
+
+    <script type="text/javascript">document.documentElement.className = document.documentElement.className.replace(new RegExp('(^|\\s)no-js(\\s|$)'), '$1' + 'js' + '$2');</script>
+</head>
+<body ng-controller="AppCtrl" ng-app="bplusUpsell">
+<!-- Header Begin -->
+<%- include('view-partial/header.html') -%>
+<!-- Header End -->
+
+<!-- Page Contents -->
+<div ng-controller="UpsellCtrl" class="b-upsell-body" ng-init="paymentMethod='b_alipay'">
+    <div class="b-upsell-items-container">
+        <div class="b-upsell-optionA-choose">
+            <div class="ui tiny buttons">
+                <button class="ui b-upsell-white button" ng-click="itemASelect('1')">中文</button>
+                <div class="or" data-text="or"></div>
+                <button class="ui b-upsell-darkred button" ng-click="itemASelect('2')">EN</button>
+            </div>
+        </div>
+        <div class="ui three column grid">
+            <div class="column b-upsell-hotarea" ng-mouseleave="mouseleave()" ng-mouseover="select('upsellA')"
+                 ng-click="pay()">
+                <div class="b-upsell-items-header-container">
+                    <div class="b-upsell-items-header">证书</div>
+                </div>
+                <div class="b-upsell-item-A{{itemAOption}}">&nbsp;</div>
+
+                <!-- <div class="b-upsell-item-A2">&nbsp;</div> -->
+                <div class="b-upsell-item-price-container">
+                    <div class="b-upsell-item-price" ng-bind-template="￥{{itemA.price}}元"></div>
+                </div>
+                <img class="b-upsell-item-arrow" src="<%= cdn.normal %>img/upsell/arrow.png?<%= cdn.version %>">
+            </div>
+
+            <div class="column b-upsell-hotarea" ng-mouseleave="mouseleave()" ng-mouseover="select('upsellB')"
+                 ng-click="pay()">
+                <div class="b-upsell-items-header-container">
+                    <div class="b-upsell-items-header">报告</div>
+                </div>
+                <div class="b-upsell-item-B1">&nbsp;</div>
+                <div class="b-upsell-item-price-container">
+                    <div class="b-upsell-item-price" ng-bind-template="￥{{itemB.price}}元"></div>
+                </div>
+                <img class="b-upsell-item-arrow" src="<%= cdn.normal %>img/upsell/arrow.png?<%= cdn.version %>">
+            </div>
+            <div class="column b-upsell-hotarea" ng-mouseleave="mouseleave()" ng-mouseover="select('upsellC')"
+                 ng-click="pay()">
+                <div class="b-upsell-items-header-container">
+                    <div class="b-upsell-items-header">导师</div>
+                </div>
+                <div class="b-upsell-item-C1">&nbsp;</div>
+                <div class="b-upsell-item-price-container">
+                    <div class="b-upsell-item-price" ng-bind-template="￥{{itemC.price}}元"></div>
+                </div>
+                <img class="b-upsell-item-arrow" src="<%= cdn.normal %>img/upsell/arrow.png?<%= cdn.version %>">
+            </div>
+
+        </div>
+        <div class="b-upsell-detail">
+            <div class="ui four column grid">
+                <div class="column">
+                    <img class="ui spaced image b-upsell-detail-picture"
+                         ng-src="<%= cdn.normal %>img/upsell/icon-a{{detail.certificationType}}.png?<%= cdn.version %>">
+                    <span class="b-upsell-detail-number" ng-bind-template="X{{detail.certification}}"></span>
+
+                    <div style="display:inline-block;vertical-align:middle">
+                        <div ng-show="detail.certificationType==='2'" class="b-upsell-detail-text">大赛英文证书</div>
+                        <div class="b-upsell-detail-text">大赛中文证书</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img class="ui spaced image b-upsell-detail-picture"
+                         src="<%= cdn.normal %>img/upsell/icon-b.png?<%= cdn.version %>">
+                    <span class="b-upsell-detail-number" ng-bind-template="X{{detail.report}}"></span>
+                    <span class="b-upsell-detail-text">大赛详细报告</span>
+                </div>
+                <div class="column">
+                    <img class="ui spaced image b-upsell-detail-picture"
+                         src="<%= cdn.normal %>img/upsell/icon-c.png?<%= cdn.version %>">
+                    <span class="b-upsell-detail-number" ng-bind-template="X{{detail.comment}}"></span>
+                    <span class="b-upsell-detail-text">大赛专业分析点评</span>
+                </div>
+                <div class="column b-upsell-detail-totalNumber" ng-bind-template="￥{{detail.price}}元">
+                </div>
+            </div>
+        </div>
+        <div class="b-upsell-hidden-banner"></div>
+    </div>
+    <div class="b-upsell-refund-container">
+        <div class="b-upsell-refund-text">
+            <img src="<%= cdn.normal %>img/upsell/icon-refund.png?<%= cdn.version %>" class="ui right spaced image">14天无理由退款
+        </div>
+    </div>
+</div>
+<!-- Footer Begin -->
+<%- include('view-partial/footer.html') -%>
+<!-- Footer End -->
+<!-- Page visit tracking-->
+<script type="text/javascript">
+    window.t_PageName = "upsell";
+</script>
+<!-- Page visit End -->
+<%- include('view-partial/upsell-js.html') -%>
+<%- include('view-partial/external-js.html') -%>
+</body>
+</html>

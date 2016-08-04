@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bridge+</title>
+    <meta name="description" content="Bridge+">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-controller="AppCtrl" ng-app="bplus" ng-init="current_page='opportunity'"
+      ng-class="{'chinese':language==='zh','english':language==='en'}">
+<%- include('view-partial/header.html') -%>
+<!-- Page Contents -->
+<div class="pusher">
+    <div class="b-opportunity-masthead">
+        <div class="ui opportunity-banner">
+            <div class="ui container" ng-cloak>
+                <h1 class="ui header"><%= __('OpportunityTitle') %></h1>
+
+                <h2><%= __('OpportunityInfoLine1') %><br>
+                    <%= __('OpportunityInfoLine2') %></h2>
+
+                <div class="column">
+                    <a class="ui opportunity-gray large button b-sp"
+                       href="<%= localeLinkSwitch('/profile', '/signin#/register') %>"><%=
+                        __('OpportunityApply') %></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="b-opportunity">
+            <div class="ui container">
+                <h3 class="ui header b-sp">
+                    <%= __('OpportunityJobList') %>
+                </h3>
+
+                <div class="ui container grid opportunity-box">
+                    <div class="four-eight-column wide column opportunity-container">
+                        <div class="column opportunity-list-red jobs_administration front">
+                            <div class="content">
+                                <p><%= __('OpportunityJobList1') %></p>
+                            </div>
+                        </div>
+                        <div class="column opportunity-list-white back">
+                            <table class="ui very basic table unstackable" ng-cloak>
+                                <thead>
+                                <tr>
+                                    <th><%= __('OpportunityTablePosition') %></th>
+                                    <th><%= __('OpportunityTableCompany') %></th>
+                                    <th><%= __('OpportunityTablePlace') %></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><%= __('OpportunityJobList1Position1') %></td>
+                                    <td><%= __('OpportunityJobList1Company1') %></td>
+                                    <td><%= __('OpportunityJobList1Place1') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList1Position2') %></td>
+                                    <td><%= __('OpportunityJobList1Company2') %></td>
+                                    <td><%= __('OpportunityJobList1Place2') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList1Position3') %></td>
+                                    <td><%= __('OpportunityJobList1Company3') %></td>
+                                    <td><%= __('OpportunityJobList1Place3') %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="four-column wide column"></div>
+
+                    <div class="four-eight-column wide column opportunity-container">
+                        <div class="column opportunity-list-white jobs_marketing front">
+                            <div class="content">
+                                <p><%= __('OpportunityJobList2') %></p>
+                            </div>
+                        </div>
+                        <div class="column opportunity-list-red back">
+                            <table class="ui very basic table unstackable" ng-cloak>
+                                <thead>
+                                <tr>
+                                    <th><%= __('OpportunityTablePosition') %></th>
+                                    <th><%= __('OpportunityTableCompany') %></th>
+                                    <th><%= __('OpportunityTablePlace') %></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><%= __('OpportunityJobList2Position1') %></td>
+                                    <td><%= __('OpportunityJobList2Company1') %></td>
+                                    <td><%= __('OpportunityJobList2Place1') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList2Position2') %></td>
+                                    <td><%= __('OpportunityJobList2Company2') %></td>
+                                    <td><%= __('OpportunityJobList2Place2') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList2Position3') %></td>
+                                    <td><%= __('OpportunityJobList2Company3') %></td>
+                                    <td><%= __('OpportunityJobList2Place3') %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="four-eight-column wide column opportunity-container">
+                        <div class="column opportunity-list-white jobs_sales front">
+                            <div class="content">
+                                <p><%= __('OpportunityJobList3') %></p>
+                            </div>
+                        </div>
+                        <div class="column opportunity-list-red back">
+                            <table class="ui very basic table unstackable" ng-cloak>
+                                <thead>
+                                <tr>
+                                    <th><%= __('OpportunityTablePosition') %></th>
+                                    <th><%= __('OpportunityTableCompany') %></th>
+                                    <th><%= __('OpportunityTablePlace') %></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><%= __('OpportunityJobList3Position1') %></td>
+                                    <td><%= __('OpportunityJobList3Company1') %></td>
+                                    <td><%= __('OpportunityJobList3Place1') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList3Position2') %></td>
+                                    <td><%= __('OpportunityJobList3Company2') %></td>
+                                    <td><%= __('OpportunityJobList3Place2') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList3Position3') %></td>
+                                    <td><%= __('OpportunityJobList3Company3') %></td>
+                                    <td><%= __('OpportunityJobList3Place3') %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="four-column wide column"></div>
+
+                    <div class="four-eight-column wide column opportunity-container">
+                        <div class="column opportunity-list-red jobs_technology front">
+                            <div class="content">
+                                <p><%= __('OpportunityJobList4') %></p>
+                            </div>
+                        </div>
+                        <div class="column opportunity-list-white back">
+                            <table class="ui very basic table unstackable" ng-cloak>
+                                <thead>
+                                <tr>
+                                    <th><%= __('OpportunityTablePosition') %></th>
+                                    <th><%= __('OpportunityTableCompany') %></th>
+                                    <th><%= __('OpportunityTablePlace') %></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><%= __('OpportunityJobList4Position1') %></td>
+                                    <td><%= __('OpportunityJobList4Company1') %></td>
+                                    <td><%= __('OpportunityJobList4Place1') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList4Position2') %></td>
+                                    <td><%= __('OpportunityJobList4Company2') %></td>
+                                    <td><%= __('OpportunityJobList4Place2') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList4Position3') %></td>
+                                    <td><%= __('OpportunityJobList4Company3') %></td>
+                                    <td><%= __('OpportunityJobList4Place3') %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="four-eight-column wide column opportunity-container">
+                        <div class="column opportunity-list-red jobs_service front">
+                            <div class="content">
+                                <p><%= __('OpportunityJobList5') %></p>
+                            </div>
+                        </div>
+                        <div class="column opportunity-list-white back">
+                            <table class="ui very basic table unstackable" ng-cloak>
+                                <thead>
+                                <tr>
+                                    <th><%= __('OpportunityTablePosition') %></th>
+                                    <th><%= __('OpportunityTableCompany') %></th>
+                                    <th><%= __('OpportunityTablePlace') %></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><%= __('OpportunityJobList5Position1') %></td>
+                                    <td><%= __('OpportunityJobList5Company1') %></td>
+                                    <td><%= __('OpportunityJobList5Place1') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList5Position2') %></td>
+                                    <td><%= __('OpportunityJobList5Company2') %></td>
+                                    <td><%= __('OpportunityJobList5Place2') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList5Position3') %></td>
+                                    <td><%= __('OpportunityJobList5Company3') %></td>
+                                    <td><%= __('OpportunityJobList5Place3') %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="four-column wide column"></div>
+
+                    <div class="four-eight-column wide column opportunity-container">
+                        <div class="column opportunity-list-white jobs_finance front">
+                            <div class="content">
+                                <p><%= __('OpportunityJobList6') %></p>
+                            </div>
+                        </div>
+                        <div class="column opportunity-list-red back">
+                            <table class="ui very basic table unstackable" ng-cloak>
+                                <thead>
+                                <tr>
+                                    <th><%= __('OpportunityTablePosition') %></th>
+                                    <th><%= __('OpportunityTableCompany') %></th>
+                                    <th><%= __('OpportunityTablePlace') %></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><%= __('OpportunityJobList6Position1') %></td>
+                                    <td><%= __('OpportunityJobList6Company1') %></td>
+                                    <td><%= __('OpportunityJobList6Place1') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList6Position2') %></td>
+                                    <td><%= __('OpportunityJobList6Company2') %></td>
+                                    <td><%= __('OpportunityJobList6Place2') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('OpportunityJobList6Position3') %></td>
+                                    <td><%= __('OpportunityJobList6Company3') %></td>
+                                    <td><%= __('OpportunityJobList6Place3') %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui right aligned container b-opportunity-action">
+                    <a class="ui red large button b-sp check-more-buuton"
+                       href="<%= localeLinkSwitch('/profile', '/signin#/register') %>"><%=
+                        __('OpportunityCheckMoreJob')
+                        %></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-opportunity-client">
+            <div class="ui container">
+                <h3 class="ui header b-sp" ng-cloak><%= __('OpportunityCompanies') %></h3>
+
+                <div class="ui five column grid">
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/tencent.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/cocacola.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/tencent.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/huawei.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/tsinghua.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/cas.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/tencent.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/cocacola.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/tencent.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/huawei.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/tsinghua.png">
+                    </div>
+                    <div class="column">
+                        <img class="ui image" src="<%= cdn.normal %>img/client/1x/cas.png">
+                    </div>
+                </div>
+                <div class="ui right aligned container b-opportunity-action">
+                    <a class="ui red large button b-sp check-more-buuton"
+                       href="<%= localeLinkSwitch('/profile', '/signin#/register') %>"><%=
+                        __('OpportunityCheckMoreCompany') %></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-opportunity-jobs">
+            <%- include('../views/partial/sun-meng-qing.html') -%>
+        </div>
+
+        <div class="b-opportunity-trial">
+            <div class="ui center aligned container grid">
+                <div class="column">
+                    <a class="ui red large button b-sp" href="<%= localeLinkSwitch('/profile', '/signin#/register') %>"><%=
+                        __('OpportunityStart') %></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('view-partial/footer.html') -%>
+
+<!--Page JS-->
+<script src="<%= cdn.normal %>js/factories/WechatLogon.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/controllers/AppCtrl.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/opportunity/main.js?<%= cdn.version %>"></script>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<div class="b-profile-award" ng-show="dataLoaded">
+    <div class="ui clearing segment b-profile-header" ng-click="isExtend=!isExtend" ng-init="isExtend=false">
+        <div class="ui tiny left floated header b-profile-tip-title">
+            <i class="icon"></i>
+            <div class="content">{{'Award' | translate}}</div>
+        </div>
+        <div ng-hide="hasData" class="ui grey sub tiny right floated header b-profile-tip-fill">
+            <img class="ui image" src="/img/profile/icon_remind_g.png" />
+            <div class="content">{{'NotFullfilled' | translate}}</div>
+        </div>
+    </div>
+    <div ng-show="isExtend">
+      <div ng-repeat="data in dataCollection" class="b-profile-section">
+          <bplusaward data="data"/>
+      </div>
+      <div ng-show="showAddButton" class="b-profile-btn-append">
+          <button class="fluid ui button" type="button" ng-click="add()">{{'AddAward' | translate}}</button>
+      </div>
+    </div>
+</div>

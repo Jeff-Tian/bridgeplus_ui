@@ -1,0 +1,53 @@
+// The params which can be overridden by parent less
+@pagination-active-red: #F53C43;
+@pagination-disabled-color: inherit;
+@pagination-disabled-background-color: inherit;
+@pagination-border-grey: #C8C8C8;
+
+.loose.pagination.menu {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.loose.pagination.menu .item {
+    margin: 5px !important;
+    min-width: 0 !important;
+    border: solid 1px @pagination-border-grey!important;
+    width: 36px !important;
+    height: 36px !important;
+    line-height: 36px !important;
+    display: inline;
+    padding: 0 !important;
+    border-radius: 3px !important;
+}
+
+.loose.pagination.menu .disabled.item {
+    // border: none !important;
+    // color: black !important;
+    // line-height: 26px !important;
+    // font-weight: bold !important;
+    // font-size: 200% !important;
+    // margin-left: 0 !important;
+    // margin-right: 0 !important;
+}
+
+.loose.pagination.menu .item::before {
+    content: '' !important;
+    display: none !important;
+}
+
+.loose.pagination.menu .item:not(.icon) {
+    font-size: 120% !important;
+}
+
+.loose.pagination.menu .disabled.item {
+    background-color: @pagination-disabled-color!important;
+    color: @pagination-disabled-background-color!important;
+}
+
+.loose.pagination.menu .active.item {
+    background-color: @pagination-active-red!important;
+    color: white !important;
+    padding: 0 !important;
+}

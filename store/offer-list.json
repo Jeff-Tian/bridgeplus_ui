@@ -1,0 +1,56 @@
+[
+  {
+    "offerId": "dcb33391-baad-4dd0-9c05-aa2e4f05c940",
+    "focusDetail": {
+      "detailUrl": "javascript: tracking.send('storeProduct.learnMore.click', {currentProduct: '优惠组合', offerId: 'dcb33391-baad-4dd0-9c05-aa2e4f05c940'}); angular.bplus.interactives.englishCertificate();",
+      "description": [
+        "5个小班课课程券，由资深行业专家和企业高管组成的教学团队",
+        "88折"
+      ]
+    },
+    "specialSign": "/bower_components/SHARED-UI/assistFiles/onlineStore/img/hot.png"
+  },
+  {
+    "offerId": "dcb33391-baad-4dd0-9c05-aa2e4f05c940",
+    "focusDetail": {
+      "detailUrl": "javascript: tracking.send('storeProduct.learnMore.click', {currentProduct: '优惠组合', offerId: 'dcb33391-baad-4dd0-9c05-aa2e4f05c940'}); angular.bplus.interactives.privateClass();",
+      "description": [
+        "复活赛门票",
+        "１对５小组点评"
+      ]
+    },
+    "specialSign": ""
+  },
+  {
+    "offerId": "dcb33391-baad-4dd0-9c05-aa2e4f05c940",
+    "focusDetail": {
+      "detailUrl": "javascript: tracking.send('storeProduct.learnMore.click', {currentProduct: '优惠组合', offerId: 'dcb33391-baad-4dd0-9c05-aa2e4f05c940'}); angular.bplus.interactives.reportDetail();",
+      "description": [
+        "复活赛门票",
+        "１对１专家点评"
+      ]
+    },
+    "specialSign": ""
+  },
+  {
+    "offerId": "dcb33391-baad-4dd0-9c05-aa2e4f05c940",
+    "focusDetail": {
+      "detailUrl": "javascript: tracking.send('storeProduct.learnMore.click', {currentProduct: '优惠组合', offerId: 'dcb33391-baad-4dd0-9c05-aa2e4f05c940'}); angular.bplus.interactives.englishCertificate();",
+      "description": [
+        "由中国商战模拟和体验式学习协会和中欧国际工商学院前教务长 Wilfried 教授共同颁发的中文版成绩查看详情"
+      ]
+    },
+    "specialSign": ""
+  },
+  {
+    "offerId": "dcb33391-baad-4dd0-9c05-aa2e4f05c940",
+    "focusDetail": {
+      "detailUrl": "javascript: tracking.send('storeProduct.learnMore.click', {currentProduct: '优惠组合', offerId: 'dcb33391-baad-4dd0-9c05-aa2e4f05c940'}); angular.bplus.interactives.one2oneDetail();",
+      "description": [
+        "复活赛门票",
+        "１对１专家点评"
+      ]
+    },
+    "specialSign": ""
+  }
+]

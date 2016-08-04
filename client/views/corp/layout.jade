@@ -1,0 +1,38 @@
+mixin headerPart()
+    div#my-header(style="z-index: 99999; position: fixed; width: 100%;")
+        include message_holder
+        include header
+    block content
+
+html
+    head
+        title!= title
+        link(rel="stylesheet", type="text/css", href="#{cdn.normal}css/semantic-ui/semantic.min.css?#{cdn.version}")
+        include ../../www/view-partial/slim-head.html
+        link(rel="stylesheet", type="text/css", href="#{cdn.normal}css/corp.css?#{cdn.version}")
+    body(class="light-grey-background")
+
+        if !legacy
+            div#corp-content(ng-app="corpModule")
+                + headerPart
+        else
+            div#corp-content
+                + headerPart
+
+        div#my-footer
+            include footer
+            include ../../www/view-partial/js.html
+            script(src="#{cdn.normal}js/widget/main.js?#{cdn.version}")
+            script(src="#{cdn.normal}js/widget/pagination.js?#{cdn.version}")
+            script(src="#{cdn.normal}js/proxy/corp/main.js")
+            script(src="#{cdn.normal}js/common/file-reader.js?#{cdn.version}")
+            script(src="#{cdn.normal}js/page/corp/app.js?#{cdn.version}")
+            script(src="#{cdn.normal}js/page/corp/directives/corpSignInWidget.js?#{cdn.version}")
+            script(src="#{cdn.normal}js/directives/captcha.js?#{cdn.version}")
+            script(type="text/javascript").
+                angular.element(document).ready(function () {
+                    angular.bootstrap(document.getElementById('my-footer'), ['bplusModule']);
+                });
+            block extraJs
+            block adhocJs
+            //include ../../www/view-partial/external-js.html

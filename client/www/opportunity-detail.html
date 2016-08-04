@@ -1,0 +1,120 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:wb="http://open.weibo.com/wb"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Bridge+</title>
+    <%- include('view-partial/head.html') -%>
+
+    <link rel="stylesheet" href="<%= cdn.normal %>bower/angular-chart.js/dist/angular-chart.min.css?<%= cdn.version %>">
+    <script type="text/javascript">document.documentElement.className = document.documentElement.className.replace(new RegExp('(^|\\s)no-js(\\s|$)'), '$1' + 'js' + '$2');</script>
+</head>
+<body ng-controller="AppCtrl" ng-app="opdModule">
+<!-- Header Begin -->
+<%- include('view-partial/header.html') -%>
+<!-- Header End -->
+<!-- Page Contents -->
+<div class="b-opd-body b-background" ng-controller="OpdCtrl" style="padding-top: 5em;">
+    <div class="ui grid container  b-opd-content-container">
+        <div class="four wide column">
+            <div class="b-opd-content-menu-container">
+                <bopdmenu menus="menus"/>
+            </div>
+        </div>
+        <div class="twelve wide column">
+            <div ui-view class="b-opd-content-detail-container"></div>
+            <script type="text/ng-template" id="home.html">
+                <bopdhomepage/>
+            </script>
+            <script type="text/ng-template" id="job.html">
+                <bopdjob/>
+            </script>
+            <script type="text/ng-template" id="job-detail.html">
+                <bopdjobdetail/>
+            </script>
+            <script type="text/ng-template" id="job-corporation.html">
+                <bopdjobcorporation/>
+            </script>
+            <script type="text/ng-template" id="favorite.html">
+                <bopdfavourite/>
+            </script>
+            <script type="text/ng-template" id="recommended-positions.html">
+                <bopdrecommendation/>
+            </script>
+            <script type="text/ng-template" id="applied-positions.html">
+                <bopddelivered/>
+            </script>
+            <script type="text/ng-template" id="training.html">
+                <bopdtraining/>
+            </script>
+        </div>
+    </div>
+</div>
+<!-- Page Contents End-->
+<%- include('view-partial/footer.html') -%>
+<!--Page JS-->
+<script src="<%= cdn.normal %>bower/angular-ui-router/release/angular-ui-router.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/devbridge-autocomplete/dist/jquery.autocomplete.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/directives/autocomplete.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/controllers/OpdCtrl.js?<%= cdn.version %>" type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/controllers/OpdMenuCtrl.js?<%= cdn.version %>" type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/factories/PipeCacheService.js?<%= cdn.version %>" type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/main.js?<%= cdn.version %>" type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/menuDirective.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/menu.js?<%= cdn.version %>" type="text/javascript"></script>
+
+<script src="<%= cdn.normal %>js/page/opportunity-detail/widget/competitiveness/competitiveDirective.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/widget/competitiveness/main.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/widget/chartpentagon/main.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/widget/joblist/main.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/widget/traininglist/main.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+
+<script src="<%= cdn.normal %>js/page/opportunity-detail/widget/search/main.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/widget/filter/main.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+
+<script src="<%= cdn.normal %>js/page/opportunity-detail/paginationDirective.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-pagination-pattern.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-position-pattern.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-companylist-pattern.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-homepage.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-job.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-job-detail.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-job-corporation.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-favourite.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-recommendation.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-delivered.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+<script src="<%= cdn.normal %>js/page/opportunity-detail/detail-training.js?<%= cdn.version %>"
+        type="text/javascript"></script>
+
+<script type="text/javascript" src="<%= cdn.normal %>bower/Chart.js/Chart.min.js?<%= cdn.version %>"></script>
+<script type="text/javascript"
+        src="<%= cdn.normal %>bower/angular-chart.js/dist/angular-chart.min.js?<%= cdn.version %>"></script>
+<script>
+    window.t_PageName = "opportunityDetail";
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<div class="ui bottom attached active tab segment">
+    <div class="ui grid">
+        <div class="row" ng-repeat="data in displayData.data">
+            <div class="eight wide column clickable hovergrey" ng-click="displayData.onClick(data)">
+                <div class="ui items">
+                    <div class="item">
+                        <div class="image">
+                            <img ng-src="{{data.pic}}">
+                        </div>
+                        <div class="content">
+                            <div class="ui tiny header" ng-bind="data.name"></div>
+                            <div ng-bind="data.description"></div>
+                            <div>
+                                推荐星级
+                                <i class="star orange icon" ng-class="{'empty':data.rate<1}"></i>
+                                <i class="star orange icon" ng-class="{'empty':data.rate<2}"></i>
+                                <i class="star orange icon" ng-class="{'empty':data.rate<3}"></i>
+                                <i class="star orange icon" ng-class="{'empty':data.rate<4}"></i>
+                                <i class="star orange icon" ng-class="{'empty':data.rate<5}"></i>
+                                <span><i class="unhide icon" ng-bind="data.read"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-bind-template="适合想进入{{data.field}}的你"></div>
+                <div>
+                    职场竞争力提升指标：
+                    <span ng-repeat="label in data.labels" class="ui label" ng-bind="label"></span>
+                </div>
+            </div>
+            <div class="eight wide column shape-flip" shape-flip>
+                <div class="clickable" >
+                    <div class="ui cube shape">
+                        <div class="sides">
+                            <div ng-repeat="detail in data.details" class="side" ng-class="{'active':$index===0}" ng-click="displayData.onItemClick(detail)">
+                                <img ng-src="{{detail.pic}}" />
+                                <div ng-bind="detail.title"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn-preview" href="javascript:void(0)"><i class="angle left big grey icon"></i></a>
+                <a class="btn-next" href="javascript:void(0)"><i class="angle right big grey icon"></i></a>
+            </div>
+            <div ng-show="data.isRecommended" class="ribbon yellow right corner label">推荐
+                <i class="star icon"></i>
+            </div>
+            <div ng-show="data.isAD" class="ribbon teal right corner label">广告</div>
+        </div>
+    </div>
+    <div class="ui equal width center aligned padded grid" ng-show="displayData.showPageMenu">
+        <div class="pagination row">
+            <bopdpaginationpattern displayData="displayData" rawData="rawData"/>
+        </div>
+    </div>
+    <div class="ui right aligned grid" ng-show="displayData.showPageMore">
+        <div class="sixteen wide column">
+            <div class="ui red button button-more" ng-click="displayData.onMoreClick()">更多</div>
+        </div>
+    </div>
+</div>

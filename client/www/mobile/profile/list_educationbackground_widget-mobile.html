@@ -1,0 +1,56 @@
+<div>
+    <!--EDIT MODE-->
+    <div ng-show="property.status===ENUM_STATUS.STATUS_EDIT" class="b-profile-form">
+        <form name="educationbackground" novalidate class="ui {{isSubmitting ? 'loading' : ''}} form {{(clicked && (!dateTo.fulfilled || !dateFrom.fulfilled || educationbackground.$error.required)) ? 'error' : ''}}">
+            <div>
+                <div class="ui error message">{{'FormRequired' | translate}}</div>
+                <div class="required field {{!clicked || data.name ? '' : 'error'}}">
+                    <label>{{'SchoolName' | translate}}</label>
+                    <input type="text" name="schoolname" bplus-autocomplete datasource-bplus-autocomplete="schoolname.json" ng-model="data.name" required placeholder="" />
+                </div>
+                <div class="required field {{!clicked || data.major ? '' : 'error'}}">
+                    <label>{{'Major' | translate}}</label>
+                    <input type="text" name="major" bplus-autocomplete datasource-bplus-autocomplete="major.json" ng-model="data.major" required placeholder="" />
+                </div>
+                <div class="required field {{!clicked || data.background.id ? '' : 'error'}}">
+                    <label>{{'Qualification' | translate}}</label>
+                    <select name="background" ng-model="data.background.id" ng-options="value.id as value.text for value in backgrounds" required class="ui fluid dropdown">
+                        <option value="">{{'PleaseSelect' | translate}}</option>
+                    </select>
+                </div>
+                <div class="required field">
+                    <label>{{'StudyPeriod' | translate}}</label>
+                    <bplusdate value="dateFrom.value" config="dateFrom.config" fulfilled="dateFrom.fulfilled" class="inline fields" />
+                </div>
+                <div class="required field">
+                    <label>{{'GraduateIn' | translate}}</label>
+                    <bplusdate value="dateTo.value" config="dateTo.config" fulfilled="dateTo.fulfilled" class="inline fields" />
+                </div>
+                <div class="field">
+                  <label>{{'SpecialExperience' | translate}}</label>
+                  <bplustag value="data.tags" description="data.description" />
+                </div>
+                <button type="button" ng-click="submit()" ng-init="clicked=false" class="fluid ui red large button">{{'Save' | translate}}</button>
+                <button type="button" ng-click="cancel()" class="b-profile-editmode-other-button fluid ui basic large button b-profile-btn-cancel">{{'Cancel' | translate}}</button>
+                <button type="button" ng-show="data.id!==''" ng-click="del()" class="b-profile-editmode-other-button fluid ui basic large button b-profile-btn-cancel">{{'Delete' | translate}}</button>
+            </div>
+        </form>
+    </div>
+    <!--DISPLAY MODE-->
+    <div ng-show="property.status===ENUM_STATUS.STATUS_READONLY" class="b-profile-displaymode">
+        <h2 ng-bind="data.name" ng-click="edit()"></h2>
+        <div ng-bind="data.major" class="b-profile-txt" ng-click="edit()"></div>
+        <div ng-bind="data.background.value" class="b-profile-txt" ng-click="edit()"></div>
+        <div class="b-profile-txt" ng-click="edit()">
+            <span ng-bind-template="{{data.dateFrom.displayValue}}"></span>
+            <span>----</span>
+            <span ng-bind-template="{{data.dateTo.displayValue}}"></span>
+        </div>
+        <div ng-bind="data.specialDescription" class="b-profile-txt b-profile-minorinfo" ng-click="edit()"></div>
+        <div class="b-profile-txt b-profile-minorinfo" ng-click="edit()">
+            <i class="tags icon"></i>
+            <span class="b-profile-txt-tags">{{'Tag' | translate}}:</span>
+            <span ng-bind="data.tags"></span>
+        </div>
+    </div>
+</div>

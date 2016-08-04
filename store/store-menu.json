@@ -1,0 +1,46 @@
+{
+  "offer-a": {
+    "text": "证书报告",
+    "image": "img/online-store/icon_discount_red_30x30.png",
+    "activeImage": "img/online-store/icon_discount_white_30x30.png",
+    "state": "offer-a",
+    "target": "#/offer-a",
+    "offerListSource": "/store/json/offer-list.json",
+    "productTypeId": "1"
+  },
+  "offer-b": {
+    "text": "小班课",
+    "image": "images/icons/product_type_3_red.png",
+    "activeImage": "images/icons/product_type_3_white.png",
+    "state": "offer-b",
+    "target": "#/offer-b",
+    "offerListSource": "//source.bridgeplus.cn/json/offer-list.json",
+    "productTypeId": "3"
+  },
+  "offer-d": {
+    "text": "一对一导师",
+    "image": "images/icons/product_type_5_red.png",
+    "activeImage": "images/icons/product_type_5_white.png",
+    "state": "offer-d",
+    "target": "#/offer-d",
+    "offerListSource": "//source.bridgeplus.cn/json/offer-list.json",
+    "productTypeId": "5"
+  },
+  "offer-e": {
+    "text": "公开课",
+    "image": "images/icons/product_type_8_red.png",
+    "activeImage": "images/icons/product_type_8_white.png",
+    "state": "offer-e",
+    "target": "#/offer-e",
+    "offerListSource": "//source.bridgeplus.cn/json/offer-list.json",
+    "productTypeId": "8"
+  },
+  "offer-c": {
+    "text": "激活码兑换",
+    "image": "img/online-store/icon_barcode_red_35x30.png",
+    "activeImage": "img/online-store/icon_barcode_white_35x30.png",
+    "state": "offer-c",
+    "target": "#/offer-c",
+    "offerListSource": "//source.bridgeplus.cn/json/offer-list.json"
+  }
+}

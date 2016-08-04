@@ -1,0 +1,16 @@
+form(class="ui form", ng-submit="addFeedback(c)", ng-disabled="c.feedback.disabled", ng-hide="c.feedback.disabled")
+    div(style="padding: 20px;")
+        div(class="field")
+            label 发表评论
+            textarea(rows="2", placeholder="写下对课程的感受吧 ! 对他人的帮助很大喔 ~", ng-model="c.feedback.comment", ng-disabled="c.feedback.disabled")
+    div(class="inline field", style="background-color: #f9f9f9; padding: 5px 20px;")
+        label 总体评分
+        + rating(5, 0, 'mini')(model="c.feedback.generalEvaluation")
+    div(style="padding: 20px;")
+        div(class="inline field", ng-repeat="(key, item) in c.feedback.evaluations")
+            label(ng-bind="key")
+            + rating(5, 'item', 'mini')(model="c.feedback.evaluations['{{key}}']")
+
+            div(class="right floated", ng-if="$index === countItems(c.feedback.evaluations) - 1")
+                button(class="ui mini red button", type="button", ng-click="c.showRating = false") 取消
+                button(class="ui mini red button", type="submit", ng-disabled="!canAddFeedback(c) || c.feedback.disabled") 完成

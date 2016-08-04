@@ -1,0 +1,14 @@
+<div class="ui segment">
+    <strong ng-repeat-start="f in filters">{{f.label}}</strong>
+    <span class="ui light label" ng-repeat="l in f.list" style="cursor: pointer;"
+          ng-class="{'red': equals(filterSetting[f.key], l), 'transparent': !equals(filterSetting[f.key], l)}"
+          ng-click="filterSetting.sortingClick(f.key, l)" ng-if="f.type !== 'dropdown'">
+        {{l.text}}
+    </span>
+<!--     <select ng-if="f.type === 'dropdown'" style="width: auto; display: inline;">
+        <option ng-repeat="l in f.list" value="l.id" ng-selected="equals(filterSetting[f.key], l)">
+            {{l.text}}
+        </option>
+    </select> -->
+    <span ng-repeat-end>&nbsp;&nbsp;</span>
+</div>

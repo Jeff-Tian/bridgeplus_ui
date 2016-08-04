@@ -1,0 +1,15 @@
+<div class="b-opd-delivered">
+    <div ng-if="!hasLoggedin()" class="ui segment">
+        <a href="/signin#/login?return_url=opportunity-detail%23%2Fapplied-positions">登录</a>
+        查看已投递的职位。
+    </div>
+    <div ng-if="hasLoggedin()">
+        <div class="ui segment" ng-if="isSearching">搜索中。。。</div>
+        <div ng-if="!isSearching">
+            <bopdpositionpattern ng-if="positions.totalPage!==0" positions="positions"/>
+            <div ng-if="positions.totalPage===0" class="hidedata">
+                你目前没有任何已投递的职位。
+            </div>
+        </div>
+    </div>
+</div>

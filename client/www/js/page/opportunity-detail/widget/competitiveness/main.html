@@ -1,0 +1,22 @@
+﻿<div class="bopd-competitiveness bopd-competitiveness-{{data.progressRate}}" , ng-class="{true: classes.classes}[true]">
+    <div class="bopd-competitiveness-body">
+        <div class="bopd-competitiveness-left">
+            <div class="bopd-competitiveness-left-cycle" ng-class="{true: classes.classes}[true]">
+            </div>
+        </div>
+        <div class="bopd-competitiveness-right">
+            <div class="bopd-competitiveness-right-cycle" ng-class="{true: classes.classes}[true]">
+            </div>
+        </div>
+        <div class="bopd-competitiveness-txt" ng-show="!data.text" ng-bind-template="{{ data.progressRate }}">%
+        </div>
+        <div class="ui middle aligned one column centered grid" style="margin: 0;">
+            <div class="row">
+                <div class="column" style="font-size: x-small; white-space: nowrap; text-align: center; padding: 0;"
+                     ng-show="data.text"
+                     ng-bind-template="{{t}}" ng-repeat="t in data.text"
+                     ng-style="$index === 0 && {'font-weight': 'bold'}"></div>
+            </div>
+        </div>
+    </div>
+</div>

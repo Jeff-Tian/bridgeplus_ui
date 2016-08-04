@@ -1,0 +1,167 @@
+{
+  "sms": {
+    "host": "uat.service.hcd.com",
+    "port": "10002",
+    "code": "BP_S1"
+  },
+  "mail": {
+    "host": "uat.service.hcd.com",
+    "port": "10002",
+    "code": "BP_M1",
+    "verificationCode": "BP_M2"
+  },
+  "captcha": {
+    "host": "uat.bridgeplus.cn",
+    "port": "10001"
+  },
+  "captchaInternal": {
+    "host": "10.20.32.51",
+    "port": "10001"
+  },
+  "upload": {
+    "public": {
+      "host": "uat.bridgeplus.cn",
+      "port": 10003,
+      "code": "HCD_S1"
+    },
+    "inner": {
+      "host": "uat.bridgeplus.cn",
+      "port": 10003
+    }
+  },
+  "sso": {
+    "host": "uat.service.hcd.com",
+    "port": "10086"
+  },
+  "bplusService": {
+    "host": "uat.service.hcd.com",
+    "port": "12345"
+  },
+  "wechat": {
+    "host": "uat.service.hcd.com",
+    "port": "10101",
+    "app_id": "bridgeplus_web",
+    "corp_app_id": "bridgeplus_corp",
+    "pytui": "PYTUI"
+  },
+  "thirdPartyLogon": {
+    "host": "uat.service.hcd.com",
+    "port": "10101",
+    "app_id": "bridgeplus_web",
+    "corp_app_id": "bridgeplus_corp"
+  },
+  "newCommerce": {
+    "inner": {
+      "host": "uat.service.hcd.com",
+      "port": "12888"
+    }
+  },
+  "commerce": {
+    "inner": {
+      "host": "uat.service.hcd.com",
+      "port": "12888"
+    }
+  },
+  "info": {
+    "ranking": {
+      "host": "uat.service.hcd.com",
+      "port": "10666"
+    }
+  },
+  "product": {
+    "inner": {
+      "host": "uat.service.hcd.com",
+      "port": "10333"
+    }
+  },
+  "payment": {
+    "public": {
+      "host": "uat.service.hcd.com",
+      "port": "12666"
+    },
+    "inner": {
+      "host": "uat.service.hcd.com",
+      "port": "12666"
+    }
+  },
+  "usercenter": {
+    "inner": {
+      "host": "uat.service.hcd.com",
+      "port": "12777"
+    }
+  },
+  "games": {
+    "national-2015": {
+      "egameId": "d00b2d92-1995-4a22-a86c-3115518bd635",
+      "productTypeId": "aab1a3f3-fb46-41da-8a6d-326f09c0a79c"
+    },
+    "national-2015-middle": {
+      "egameId": "d00b2d92-1995-4a22-a86c-3115518bd635",
+      "productTypeId": "97e4623d-9223-427f-b35b-84f9e4e6aa8e"
+    },
+    "national-2015-economy": {
+      "egameId": "d00b2d92-1995-4a22-a86c-3115518bd635",
+      "productTypeId": "88dade23-dd95-4894-9be0-123fb28de780"
+    },
+    "repechages-2015": {
+      "egameId": "d00b2d92-1995-4a22-a86c-3115518bd635",
+      "productTypeId": "5ba52711-7fad-435f-b4fc-1ffe67cca18b"
+    },
+    "repechages-2015-middle": {
+      "egameId": "d00b2d92-1995-4a22-a86c-3115518bd635",
+      "productTypeId": "21722ee1-af6a-4996-ae93-8cef9cf64c27"
+    },
+    "repechages-2015-economy": {
+      "egameId": "d00b2d92-1995-4a22-a86c-3115518bd635",
+      "productTypeId": "d093b44b-3aa2-433d-bd32-bd7540500030"
+    },
+    "national-2015-upsell-basic": {
+      "egameId": "d00b2d92-1995-4a22-a86c-3115518bd635",
+      "productTypeId": "88dade23-dd95-4894-9be0-123fb28de780"
+    },
+    "national-2015-upsell-medium": {
+      "egameId": "d00b2d92-1995-4a22-a86c-3115518bd635",
+      "productTypeId": "88dade23-dd95-4894-9be0-123fb28de780"
+    },
+    "national-2015-upsell-advanced": {
+      "egameId": "d00b2d92-1995-4a22-a86c-3115518bd635",
+      "productTypeId": "88dade23-dd95-4894-9be0-123fb28de780"
+    }
+  },
+  "competitions": {
+    "national-2015": {
+      "seriesId": "9f65c807-b725-4788-96f3-3871652d74b5"
+    }
+  },
+  "logger": {
+    "appName": "BridgePlus"
+  },
+  "corpLogger": {
+    "appName": "BridgePlusCorp"
+  },
+  "applicationId": "2b33cf2c-e5dd-4e82-8687-d3fe099a3504",
+  "port": 12000,
+  "corpport": 12001,
+  "cdn": {
+    "normal": "/"
+  },
+  "userCenterService": {
+    "inner": {
+      "host": "uat.service.hcd.com",
+      "port": 12777
+    }
+  },
+  "cmsService": {
+    "inner": {
+      "host": "uat.service.hcd.com",
+      "port": 12555
+    }
+  },
+  "version": "3.0.9",
+  "date": "20160804_0609",
+  "trackingUrl": "http://uat.tracking.hcd.com",
+  "trackingJs": "http://uat.tracking.hcd.com/js/t.js",
+  "onlineStoreMenuSource": "/store/json/store-menu.json",
+  "durableMessageSource_local": "/messages",
+  "durableMessageSource": "//source.bridgeplus.cn/json/messages.json"
+}

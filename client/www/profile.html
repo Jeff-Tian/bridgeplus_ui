@@ -1,0 +1,206 @@
+﻿<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:wb="http://open.weibo.com/wb"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Bridge+</title>
+
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" /> -->
+    <!-- <link href="favicon.ico" rel="icon" type="image/x-icon" /> -->
+    <!-- <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" /> -->
+
+    <%- include('view-partial/head.html') -%>
+
+    <!-- <link href="bower/semantic-ui/dist/semantic.css" rel="stylesheet" type="text/css" /> -->
+
+    <script type="text/javascript">document.documentElement.className = document.documentElement.className.replace(new RegExp('(^|\\s)no-js(\\s|$)'), '$1' + 'js' + '$2');</script>
+</head>
+<body ng-controller="AppCtrl">
+<!-- Header Begin -->
+<%- include('view-partial/header.html') -%>
+<!-- Header End -->
+
+<!-- Page Contents -->
+<div class="b-profile-body">
+    <div class="b-profile-banner" ng-controller="banner">
+        <div class="img" ng-mouseover="hoverBtn='hover'" ng-mouseleave="hoverBtn=''">
+            <img ng-src="{{imageBanner}}" />
+        </div>
+        <div class="ui container b-profile-banner-btns {{hoverBtn}}  hidden" ng-mouseover="hoverBtn='hover'" ng-mouseleave="hoverBtn=''">
+            <a href="javascript:void(0);" ng-click="switchBanner();"><i class="photo big icon"></i></a>
+        </div>
+    </div>
+    <div class="b-profile-main-wrapper">
+        <div class="ui grid container b-profile-main">
+            <div class="five wide column">
+                <div class="b-profile-body-bg-1 b-profile-body-bg-specific"></div>
+                <div class="b-profile-body-bg-2"></div>
+                <div class="b-profile-left-section" ng-controller="achievement">
+                    <div class="b-profile-face">
+                        <div class="b-profile-face-line"></div>
+                        <div class="b-profile-face-percentage" ng-show="dataLoaded" ng-bind-template="{{data.rate}}%"></div>
+                        <div class="b-profile-face-txt" ng-show="dataLoaded"
+                             ng-bind-template="{{data.tip | translate}}"></div>
+                        <div class="progress-circle">
+                            <div class="progress-pie-left">
+                                <div id="progressLeft" class="progress-left" style="transform:rotate(0deg);"></div>
+                            </div>
+                            <div class="progress-pie-right">
+                                <div id="progressRight" class="progress-right" style="transform:rotate(0deg);"></div>
+                            </div>
+                        </div>
+                        <div class="b-profile-face-img" ng-mouseover="classNameFaceEdit='editHover'"
+                             ng-mouseleave="classNameFaceEdit=''" ng-click="editface()">
+                            <img ng-src="{{data.face}}"/>
+                            <img src="<%= cdn.normal %>img/profile/icon_profile_picture_edit.png?<%= cdn.version %>"
+                                 class="edit {{classNameFaceEdit}}"/>
+                        </div>
+                        <div id="avatarUpload" class="hidden" upload handle="handle">
+                        </div>
+                    </div>
+                    <div class="b-profile-preview" style="visibility: hidden;">
+                        <button class="ui basic button"><i class="icon"></i>预览简历</button>
+                    </div>
+                    <div class="b-profile-area">
+                        <div class="ui medium header">
+                            <img class="ui image" src="<%= cdn.normal %>img/profile/icon_profile_achievement.png?<%= cdn.version %>">
+                            <div class="content"><%= __('Achievement') %></div>
+                        </div>
+                        <!--<div class="b-profile-achievement">
+                            <div class="ui five column grid">
+                                <div class="column" ng-repeat="i in data.pics"><img ng-src="{{i.img}}"/></div>
+                            </div>
+                            <div class="ui horizontal list b-profile-achievement-imgs">
+                                <div class="item b-profile-achievement-imgs-level">
+                                    <i class="icon"></i>
+
+                                    <div class="content" ng-bind="'等级' + data.level"></div>
+                                </div>
+                                <div class="item b-profile-achievement-imgs-fraction">
+                                    <i class="icon"></i>
+
+                                    <div class="content" ng-bind="'积分' + data.score"></div>
+                                </div>
+                            </div>
+                            <div class="ui list b-profile-li">
+                                <div class="item" ng-repeat="i in data.list">
+                                    <i class="icon"></i>
+
+                                    <div class="content" ng-bind="i.title + i.score"></div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="b-profile-left-section" ng-controller="growing">
+                    <div class="b-profile-area">
+                        <div class="ui medium header">
+                            <img class="ui image" src="<%= cdn.normal %>img/profile/icon_profile_growing.png?<%= cdn.version %>">
+                            <div class="content"><%= __('GrowthRootprints') %></div>
+                        </div>
+                        <!--<div class="b-profile-growing">
+                            <div class="ui list b-profile-li">
+                                <div class="item" ng-repeat="i in data.list">
+                                    <i class="icon"></i>
+
+                                    <div class="content" ng-bind="i.title"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b-profile-growing-buttons">
+                            <button class="fluid ui basic button" ng-repeat="i in data.buttons" ng-bind="i.title"></button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="eleven wide column">
+                <div class="ui medium red header b-profile-right-tip"><%= __('ProfileHint') %></div>
+                <div class="b-profile-right-section">
+                    <bpluspersonalinfooverall/>
+                </div>
+                <div class="b-profile-right-section">
+                    <bpluseducationbackgroundall/>
+                </div>
+                <div class="b-profile-right-section">
+                    <bplusclubexperienceall/>
+                </div>
+                <div class="b-profile-right-section">
+                    <bplusworkexperienceall/>
+                </div>
+                <div class="b-profile-right-section">
+                    <bpluslanguageall/>
+                </div>
+                <div class="b-profile-right-section">
+                    <bplusskillsoverall/>
+                </div>
+                <div class="b-profile-right-section">
+                    <bplusawardall/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Begin -->
+<%- include('view-partial/footer.html') -%>
+<!-- Footer End -->
+
+<!--JS-->
+<script src="<%= cdn.normal %>bower/requirejs/require.js?<%= cdn.version %>" type="text/javascript"></script>
+<script type="text/javascript">
+    require.config({
+    "waitSeconds": 0,
+    "baseUrl": "<%= cdn.normal %>bower",
+    "packages": [{
+        "name": "jquery",
+        "location": "jquery/dist",
+        "main": "jquery.min"
+    }, {
+        "name": "when",
+        "location": "when",
+        "main": "when"
+    }, {
+        "name": "bplus-ui",
+        "location": "../js"
+    }],
+    "paths": {
+        "text": "requirejs-plugins/lib/text",
+        "image": "requirejs-plugins/src/image",
+        "json": "requirejs-plugins/src/json",
+        "propertyParser": "requirejs-plugins/src/propertyParser",
+        'domReady': 'requirejs-domready/domReady',
+        "angular": "angular/angular.min",
+        "angular-translate": "angular-translate/angular-translate.min",
+        "semantic": "semantic-ui/dist/semantic.min",
+        "autoComplete": "devbridge-autocomplete/dist/jquery.autocomplete.min"
+    },
+    "shim": {
+        'angular': {
+            exports: 'angular'
+        },
+        "angular-translate": {
+            deps: ["angular"],
+            exports: "angular-translate"
+        },
+        'autoComplete': {
+            deps: ["jquery"]
+        },
+        'semantic': {
+            deps: ["jquery"]
+        }
+    }
+});
+</script>
+<!--Page JS-->
+<script src="<%= cdn.normal %>js/page/profile/main-build.js?<%= cdn.version %>" type="text/javascript"></script>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<div class="ui loose pagination menu">
+    <a class="icon item"
+       ng-class="{'disabled':paginationMenu.leftArrowDisabled}"
+       ng-click="paginationMenu.pageMenuClick(paginationMenu.PREVIOUS)">
+        <i class="left chevron icon"></i>
+    </a>
+    <a class="item" ng-class="{'active':paginationMenu.activeItem==paginationMenu.FIRST_ITEM}"
+       ng-click="paginationMenu.pageMenuClick(1)">1</a>
+    <a class="disabled item" ng-show="paginationMenu.showPreEllipsis">...</a>
+    <a class="item" ng-class="{'active':paginationMenu.activeItem==paginationMenu.MIDDLE_ITEM1}"
+       ng-show="paginationMenu.totalPages>2" ng-bind="paginationMenu.middleNumber-1"
+       ng-click="paginationMenu.pageMenuClick(paginationMenu.middleNumber-1)">2</a>
+    <a class="item" ng-class="{'active':paginationMenu.activeItem==paginationMenu.MIDDLE_ITEM}"
+       ng-show="paginationMenu.totalPages>3" ng-bind="paginationMenu.middleNumber"
+       ng-click="paginationMenu.pageMenuClick(paginationMenu.middleNumber)"></a>
+    <a class="item" ng-class="{'active':paginationMenu.activeItem==paginationMenu.MIDDLE_ITEM3}"
+       ng-show="paginationMenu.totalPages>4" ng-bind="paginationMenu.middleNumber+1"
+       ng-click="paginationMenu.pageMenuClick(paginationMenu.middleNumber+1)">2</a>
+    <a class="disabled item" ng-show="paginationMenu. showPostEllipsis">...</a>
+    <a class="item" ng-show="paginationMenu.totalPages>1"
+       ng-class="{'active':paginationMenu.activeItem==paginationMenu.LAST_ITEM}" ng-bind="paginationMenu.totalPages"
+       ng-click="paginationMenu.pageMenuClick(paginationMenu.totalPages)"></a>
+    <a class="icon item" ng-class="{'disabled':paginationMenu.rightArrowDisabled}"
+       ng-disabled="paginationMenu.rightArrowDisabled" ng-click="paginationMenu.pageMenuClick(paginationMenu.NEXT)">
+        <i class="right chevron icon"></i>
+    </a>
+</div>

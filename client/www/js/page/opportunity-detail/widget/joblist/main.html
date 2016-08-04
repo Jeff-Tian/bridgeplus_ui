@@ -1,0 +1,40 @@
+﻿<div class="ui bottom attached active tab segment">
+    <div class="ui top attached grid">
+        <div class="two wide center aligned column">
+            <div class="ui tiny header">职位匹配度</div>
+        </div>
+        <div class="two wide center aligned column">
+            <div class="ui tiny header">你的竞争力</div>
+        </div>
+        <div class="seven wide center aligned column">
+            <div class="ui tiny header">职位</div>
+        </div>
+        <div class="five wide center aligned column">
+            <div class="ui tiny header">公司</div>
+        </div>
+    </div>
+    <div class="ui grid">
+        <div class="row" ng-repeat="i in joblist track by $index">
+            <div class="two wide center aligned column matching">
+                <img src="/img/opd/match_a.png" />
+            </div>
+            <div class="two wide center aligned column competitiveness">
+                <div bopd-competitiveness="{{i.competitiveness}}"></div>
+            </div>
+            <div class="seven wide column txt">
+                <a href="javascript:void(0);">互联网用户体验设计师 [上海]</a>
+                <div>
+                    <span class="smooth">全职</span>
+                    <span>9k-16k</span> <span>学历不限</span>
+                    <span>一天前发布</span>
+                </div>
+            </div>
+            <div class="five wide column corporation">
+                <img src="" />
+                <div class="ui header">阿里巴巴集团</div>
+                <div>移动互联网/中企</div>
+            </div>
+            <span class="recommend-label"><span></span>推荐<i class="star icon"></i></span>
+        </div>
+    </div>
+</div>

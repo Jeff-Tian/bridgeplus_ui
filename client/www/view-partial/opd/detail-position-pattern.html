@@ -1,0 +1,204 @@
+<table class="ui celled table positions">
+    <colgroup>
+        <col style="background-color: #F9F9F9; width: 100px; text-align: center;">
+        <col style="width: 100px; text-align: center;">
+        <col style="background-color: #F9F9F9;">
+        <col style="width: 220px;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>
+                <h4 class="ui white header">
+                    职位匹配度
+                    <i class="help circle icon b-opd-help-position"></i>
+                </h4>
+            </th>
+            <th>
+                <h4 class="ui white header">
+                    你的竞争力
+                    <i class="help circle icon b-opd-help-competitiveness"></i>
+                </h4>
+            </th>
+            <th>
+                <h4 class="ui white header">
+                    职位
+                </h4>
+            </th>
+            <th ng-show="positions.showPosition">
+                <h4 class="ui white header">
+                    公司
+                </h4>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="data in displayData.data track by $index">
+            <td style="padding: 1.5em;">
+                <div class="b-opd-position-matchlevel-container" ng-click="displayData.onMatchlevelClick('position', data.matchLevel)">
+                    <img ng-src="img/opd/match_{{data.matchLevel}}.png?<%= cdn.version %>" class="b-opd-position-matchlevel" data-content="{{displayData.loginin?'你与职位的匹配等级'+data.matchLevel.toUpperCase()+'!':'登陆查看你的职业匹配度!'}}" data-variation="inverted"/>
+                </div>
+            </td>
+            <td>
+                <div class="b-opd-position-progressrate" data-content="{{displayData.loginin?'你赢过'+data.progressRate+'%的竞争对手!':'登陆查看你在竞争对手中的竞争力!'}}" data-variation="inverted" ng-click="displayData.onMatchlevelClick('competitiveness', data.progressRate)">
+                    <bopdcompetitiveness data="data" ng-if="data.progressRate!==''"></bopdcompetitiveness>
+                    <img ng-if="data.progressRate===''" ng-src="img/opd/rate_.png?<%= cdn.version %>"/>
+                </div>
+            </td>
+            <td class="desc" ng-click="displayData.onClick(data, $index)">
+                <h3 class="ui header">
+                    <span class="position-title" >{{data.position.name}}[{{data.location}}]</span>
+                    <!-- <span class="ui right floated grey color status-text" ng-show="data.status!='delivered'&&data.status!='finished'" ng-bind="data.statusText"></span> -->
+                    <button class="ui grey small button right floated" ng-show="data.status==='finished'">已结束</button>
+                    <button class="ui grey small button right floated" ng-show="data.status==='apply'">已投递</button>
+                </h3>
+                <div class="grey color">
+                    <span class="ui smooth label" ng-bind="data.position.type" ng-hide="data.position.type===''"></span>
+                    <span class="grey color loose" ng-bind="data.position.salary==='-'?'面议':data.position.salary"></span>
+                    <span class="grey color" ng-bind="data.position.certification"></span>
+                    <span class="ui right floated light grey color" ng-bind-template="{{data.issueTime}}" ng-show="data.appiedTime === ''" style="padding-top:2px"></span>
+                    <span class="ui right floated light grey color status-text" ng-bind="data.appiedTime" style="padding-top:2px"></span>
+                </div>
+                <div ng-if="displayData.deleteable" class="removeIcon" ng-click="displayData.onDelete(data, $event)">
+                    <div class="ui red right corner label">
+                        <i class="remove icon"></i>
+                    </div>
+                </div>
+            </td>
+            <td class="description clickable" ng-show="displayData.showPosition" ng-click="displayData.onCompanyClick(data, $event)">
+                <div ng-show="data.companyinfo.flag==='recommendation'" class="ribbon yellow right corner label">推荐
+                <i class="star icon"></i>
+                </div>
+                <div ng-show="data.companyinfo.flag==='latest'" class="ribbon red right corner label">最新</div>
+                <div ng-show="data.companyinfo.flag==='ad'" class="ribbon teal right corner label">广告</div>
+                <img ng-src="{{data.companyinfo.logo}}" class="left-floated-image">
+                <div class="company" ng-bind="data.companyinfo.displayname"></div>
+                <div class="field grey color" ng-bind="data.companyinfo.field"></div>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot ng-if="displayData.showPageMenu">
+        <tr class="transparent">
+            <th colspan="10" class="ui center aligned">
+                <bopdpaginationpattern  paginationData="displayData" ng-if="!isRending"/>
+            </th>
+        </tr>
+    </tfoot>
+    <tfoot ng-if="displayData.showPageMore">
+        <tr class="transparent">
+            <th colspan="10" class="ui right aligned">
+                <div class="ui red button button-more" ng-click="displayData.onMoreClick()">更多</div>
+            </th>
+        </tr>
+    </tfoot>
+</table>
+<div class="ui popup b-opd-popup-help-matchlevel">
+    <div class="header popup-margin">职位匹配度</div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_a.png?<%= cdn.version %>" >
+        <span>等级A</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_b.png?<%= cdn.version %>" >
+        <span>等级B</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_c.png?<%= cdn.version %>" >
+        <span>等级C</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_d.png?<%= cdn.version %>" >
+        <span>等级D</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/match_e.png?<%= cdn.version %>" >
+        <span>等级E</span>
+    </div>
+</div>
+<div class="ui popup b-opd-popup-help-progressrate">
+    <div class="header popup-margin">你的竞争力</div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/level100.png?<%= cdn.version %>" >
+        <span>100%</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/level80.png?<%= cdn.version %>" >
+        <span>80%</span>
+    </div>
+
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/level40.png?<%= cdn.version %>" >
+        <span>40%</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/level20.png?<%= cdn.version %>" >
+        <span>20%</span>
+    </div>
+    <div class="popup-margin">
+        <img class="ui spaced image rate-image-size" src="img/opd/level0.png?<%= cdn.version %>" >
+        <span>0%</span>
+    </div>
+</div>
+<div class="ui modal b-opd-matchLevelDescription b-opd-modal-position-matchlevel-{{sid}}">
+    <div class="header">
+        你与职位匹配度说明
+        <i class="close grey icon inverted circular"></i>
+    </div>
+    <div class="body">
+        <div class="description">
+            <p>我们将你的简历和游戏成绩,与职业的需求进行匹配,得到 ABCDE 五个等级的职位匹配度。</p>
+            <p>等级越高,代表你与职业越匹配!</p>
+        </div>
+        <div class="ui grid">
+            <div class="six wide column" >
+                <div class="detail" ng-class="{'match': chosenLevel==='a'||chosenLevel==='b'}">
+                    <div class="detail-title">你与职位匹配度A、B</div>
+                    <img class="detail-image rate-image-size" src="img/opd/match_a.png?<%= cdn.version %>">
+                    <img class="detail-image rate-image-size" src="img/opd/match_b.png?<%= cdn.version %>">
+                    <div class="detail-content">代表你很适合这个职位,快去投简历吧!</div>
+                </div>
+            </div>
+            <div class="ten wide column">
+                <div class="detail" ng-class="{'match': chosenLevel==='c'||chosenLevel==='d'||chosenLevel==='e'}">
+                    <div class="detail-title">你与职位匹配度C、D、E</div>
+                    <img class="detail-image rate-image-size" src="img/opd/match_c.png?<%= cdn.version %>">
+                    <img class="detail-image rate-image-size" src="img/opd/match_d.png?<%= cdn.version %>">
+                    <img class="detail-image rate-image-size" src="img/opd/match_e.png?<%= cdn.version %>">
+                    <div class="detail-content">如果你与职位匹配度在C以下,有可能你与职位并不匹配,或者是简历尚未完善,游戏成绩不高。你可以完善线上简历或进行游戏来提高与职业匹配的程度。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="ui modal b-opd-matchLevelDescription b-opd-modal-competitiveness-matchlevel-{{sid}}">
+    <div class="header">
+        你的应征竞争力说明
+        <i class="close grey icon inverted circular"></i>
+    </div>
+    <div class="body">
+        <div class="description">
+            <p>我们将你的简历和游戏成绩,与应征者进行比较,得到80%, 60%, 40%, 20%四个百分等级。</p>
+            <p>百分比越高,代表你赢过的对手越多,竞争力越强!</p>
+        </div>
+        <div class="ui grid">
+            <div class="six wide column" >
+                <div class="detail" ng-class="{'match':chosenLevel !== '' && chosenLevel>=60}">
+                    <div class="detail-title">你应征竞争力 80%、60%</div>
+                    <img class="detail-image rate-image-size" src="img/opd/level80.png?<%= cdn.version %>">
+                    <img class="detail-image rate-image-size" src="img/opd/level60.png?<%= cdn.version %>">
+                    <div class="detail-content">你赢过 60% 以上的应征者,竞争力很强,快去投简历吧!</div>
+                </div>
+            </div>
+            <div class="ten wide column">
+                <div class="detail" ng-class="{'match': chosenLevel !== '' && chosenLevel<60}">
+                    <div class="detail-title">你应征竞争力 40%、20%</div>
+                    <img class="detail-image rate-image-size" src="img/opd/level40.png?<%= cdn.version %>">
+                    <img class="detail-image rate-image-size" src="img/opd/level20.png?<%= cdn.version %>">
+                    <img class="detail-image rate-image-size" src="img/opd/level0.png?<%= cdn.version %>">
+                    <div class="detail-content">如果你的应征竞争力在 40% 以下,有可能你的竞争力不够强,或者是简历尚未完善,游戏成绩不高。你可以完善线上简历或进行游戏来提高竞争力。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

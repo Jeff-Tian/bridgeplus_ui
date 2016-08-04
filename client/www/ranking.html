@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Bridge+</title>
+    <meta name="description" content="Bridge+">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-controller="AppCtrl" ng-app="bplusRanking" ng-init="current_page='ranking'">
+<%- include('view-partial/header.html') -%>
+<!-- Page Contents -->
+<div class="b-ranking-body" ng-controller="RankingCtrl">
+    <div class="b-ranking-bg1"></div>
+    <div class="b-ranking-bg2"></div>
+    <h2 class="b-ranking-content-title">
+        <span style="vertical-align:middle">
+            <img src="<%= cdn.normal %>img/ranking/title.png?<%= cdn.version %>">
+        </span>
+        <span>
+            &nbsp;
+        </span>
+        <span>
+            排行榜
+        </span>
+    </h2>
+    <div class="ui equal width center aligned padded grid b-ranking-content-container">
+        <div class="row b-ranking-row b-ranking-title-container">
+            <div ng-class="{'b-ranking-active':option===$index}" class="column b-ranking-options b-ranking-cell" ng-click="rankChange($index)" ng-repeat="titleOption in titleOptions">{{titleOption[0]}} - {{subTitleOptions[subOption[$index]]}}
+                <div ng-show="option===$index" class="b-ranking-subtitle-container">
+                    <div ng-class="{'b-ranking-suboption-active':subOption[option]===$index}" class="b-ranking-subtitle-item" ng-click="subTileChange($index)" ng-repeat="subTitleOption in subTitleOptions" ng-bind-template="{{subTitleOption}}"></div>
+                </div>
+            </div>
+        </div>
+        <div ng-class="'b-ranking-detail'+$index" class="row b-ranking-row" ng-repeat="detail in details">
+            <div class="four wide column b-ranking-rank b-ranking-cell" ng-bind-template="{{detail.rank}}">
+            </div>
+            <div class="seven wide column b-ranking-name b-ranking-cell" ng-bind-template="{{detail.name}}">
+            </div>
+            <div class="five wide column b-ranking-score b-ranking-cell" ng-bind-template="{{detail.score}}">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page End -->
+<!-- Footer Begin -->
+<%- include('view-partial/footer.html') -%>
+<!-- Footer End -->
+<!-- Page visit tracking-->
+<script type="text/javascript">
+    window.t_PageName = "ranking";
+</script>
+<!-- Page visit End -->
+<script src="<%= cdn.normal %>bower/competion-ui/public/js/rankingCtrl.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/ranking/main.js?<%= cdn.version %>"></script>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+</html>

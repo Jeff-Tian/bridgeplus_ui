@@ -1,0 +1,18 @@
+<div class="ui container" ng-show="durableMessages && durableMessages.length && !hideDurableMessage"
+     ng-init="hideDurableMessage = false" ng-cloak
+     ng-controller="DurableMessageCtrl">
+    <div class="ui left aligned brand durable-message-wrapper">
+        <div class="ui black message">
+            <i class="right floated large remove circle icon" ng-click="hideDurableMessage = true"></i>
+            <a class="ui tiny right floated more" target="_blank" ng-hide="true">更多 >>&nbsp;&nbsp;</a>
+
+            <div style="font-size: smaller;" ng-repeat="m in durableMessages">
+                <a ng-href="{{m.link}}"
+                   class="" target="{{m.target}}">
+                    {{m.text}}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="ui horizontal divider"></div>
+</div>

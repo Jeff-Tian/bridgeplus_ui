@@ -1,0 +1,22 @@
+div(class="ui b-header")
+    div(class="ui menu b-header-account")
+        div(class="ui container")
+            div(class="right item")
+                if typeof hcd_user !== 'undefined' && hcd_user.member_id
+                    a.ui.button(ng-cloak="") 您好, {{corpBasicInfo.companyName}}
+                    a(class="center ui button", href="/edit")
+                        i.setting.icon
+                        | 账户管理
+                    a(class="center ui button", ng-click="corpSignOut()")
+                        i.power.icon
+                        | #{__('安全退出')}
+                else
+                    a(href="/#login", class="ui button") #{__('SignIn')}
+                    a(href="/#register", class="ui button") #{__('SignUp')}
+                    a(class="ui button", ng-href="#{otherLocaleLink}{{hash}}") #{__(otherLocale)}
+    div(class="ui menu b-header-nav")
+        div(class="ui container")
+            a(href="/", class="b-header-logo")
+                img(src="#{cdn.normal}img/logo.png?#{cdn.version}", height="60")
+            div(class="right item")
+                include header_nav

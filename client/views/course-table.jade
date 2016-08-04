@@ -1,0 +1,173 @@
+mixin unfinishedCourseBlocks(c)
+    td(style="position: relative", class="dimmable", ng-mouseleave="hideDimmer($event)")
+        include share-course
+        bopdcompetitiveness(data="{progressRate: #{c}.status, text: #{c}.statusText}", classes="{classes: 'red small'}")
+    td
+        p(style="font-size: smaller; white-space: nowrap;", class="ui red color", ng-show="showProgressCountDown(#{c})") 已进行 {{-#{c}.countdown.value | countdown}}
+
+        p(style="font-size: smaller; white-space: nowrap;", class="ui color", ng-show="showCountDown(#{c})", ng-class="{'red': #{c}.countdown.value <= timeThreshold, 'grey': !#{c}.countdown.value || #{c}.countdown.value > timeThreshold }") 距离上课 {{#{c}.countdown.value | countdown}}
+
+        p(ng-show="enableCourseButton(#{c})")
+            a(class="ui mini button", ng-class="{'red': #{c}.countdown.value <= timeThreshold, 'grey': !#{c}.countdown.value || #{c}.countdown.value > timeThreshold}", ng-disabled="#{c}.status === -1 || #{c}.countdown.value <= timeThreshold", ng-href="{{#{c}.classUrl}}", target="_blank") {{ #{c}.status === - 1 ? '还未开课': (#{c}.countdown.value <= timeThreshold ? '进入课程' : '未到时间')}}
+
+        p(ng-show="#{c}.status === -1 || #{c}.countdown.value > timeThreshold")
+            button(class="ui mini button", ng-class="{'red': #{c}.countdown.value <= timeThreshold, 'grey': !#{c}.countdown.value || #{c}.countdown.value > timeThreshold}", ng-disabled="#{c}.status === -1 || #{c}.countdown.value <= timeThreshold", ng-href="{{#{c}.classUrl}}", target="_blank") {{ #{c}.status === - 1 ? '还未开课': (#{c}.countdown.value <= timeThreshold ? '进入课程' : '未到时间')}}
+
+mixin finishedUnratedCourseBlocks(c)
+    td
+        span(style="white-space: nowrap;") {{#{c}.rated ? '已评价' : '尚未评价'}}
+    td
+        button(class="ui mini red button", ng-click="#{c}.showRating=true", ng-disabled="#{c}.showRating") 立刻评价
+
+mixin bookedCourseBlocks(c)
+    td {{#{c}.requestStatus}}
+    td
+        button(class="ui mini red button", ng-if="#{c}.requestStatus === '待确认'", ng-click="cancelBooking(#{c})", ng-class="{'loading': loading || cancelling[c.request_id]}") 取消预约
+
+mixin rating(max, rating, classes)
+    - classes = classes || 'tiny'
+    div(class="ui #{classes} star rating", data-max-rating="5", data-rating="{{#{rating}}}")&attributes(attributes)
+
+mixin finishedRatedCourseBlocks(c)
+    td
+        + rating(5, 'c.generalEvaluation')
+    td
+        button(class="ui mini red button", ng-click="c.showRating=!c.showRating; showEvaluationDetail(c)", style="white-space: nowrap;") 评价详情
+
+mixin courseTable()
+    table(class="ui basic table positions", style="border: none; background-color: white;")
+        block
+
+mixin courseTableColumnDef()
+    colgroup
+        col
+        col(style="background-color: #f6f6f6;")
+        col
+        col
+
+mixin courseTableHead()
+    thead
+        tr
+            block
+
+mixin courseTableHeader
+    + courseTableColumnDef
+    + courseTableHead
+        block
+
+mixin courseTableBody(courses, rating, rated, singlePage)
+    tbody
+        tr(ng-mouseenter="hovering[$index]=true", ng-mouseleave="hovering[$index]=false", ng-repeat-start="c in (#{courses}.displayData || #{courses}.records[#{courses}.pageIndex]) track by $index")
+            td
+                h3(class="ui grey header")
+                    a(ng-href="/study-center/course.html?class_id={{c.class_id}}&teacher_id={{c.teacherInfo.teacher_id}}&course_id={{c.course_id}}", target="_blank", style="color: #666;", ng-if="c.class_id && c.course_id") {{c.name}}
+                    span(style="color: #666;", ng-if="!c.class_id || ! c.course_id") {{c.name}}
+                    div(class="sub header")
+                        a(ng-href="/study-center/teacher.html?teacher_id={{c.teacherInfo.teacher_id}}", target="_blank", style="color: #666;") {{c.teacher}}
+                    div(class="sub header", style="margin-top: 10px;")
+                        span(class="ui mini red label", ng-repeat="t in c.tags", ng-style="($index === 0) && {'margin-left': 0}", ng-class="{'light': !t.special}", style="font-size: 0.5rem;") {{t.text}}
+            td
+                div(class="ui tiny grey header") {{c.startAt | date : 'yyyy.MM.dd'}}
+                    div(class="sub header", style="white-space: nowrap;") ({{c.startAt | date : 'EEE' | translate}}) {{c.startAt | date : 'HH:mm' }}~{{c.endAt | date : 'HH:mm' }}
+            block
+        tr.rating(ng-repeat-end, ng-show="c.showRating")
+            td(colspan="4", style="padding: 0;")
+                if rating
+                    include evaluation-form
+                else if rated
+                    include evaluated-form
+
+    if !singlePage
+        include ../www/bower/angular-service/views/pagination2
+        tfoot(ng-if="#{courses}.displayData")
+            tr
+                th(colspan="4", style="text-align: right;")
+                    pagination(paginationdata="#{courses}", auto-fetch="true")
+        tfoot(ng-if="#{courses}.records")
+            tr
+                th(colspan="4", style="padding: 0; background-color: white;")
+                    + pagination2(courses)
+
+
+mixin comingCourses(courses)
+    + courseTable
+        + courseTableHeader
+            th
+                h4(class="ui white header left aligned") 课程名称
+            th
+                h4(class="ui white header left aligned") 开课时间
+            th
+                h4(class="ui white header left aligned") 报名状态
+            th
+                h4(class="ui white header left aligned")
+        + courseTableBody(courses, null, null, true)
+            + unfinishedCourseBlocks('c')
+
+mixin bookedCourses(courses)
+    + courseTable
+        + courseTableHeader
+            th
+                h4(class="ui white header left aligned") 课程名称
+            th
+                h4(class="ui white header left aligned") 预约时间
+            th
+                h4(class="ui white header left aligned") 预约状态
+            th
+                h4(class="ui white header left aligned")
+        + courseTableBody(courses, null, null, false)
+            + bookedCourseBlocks('c')
+
+mixin finishedCourseTable(courses, header, rating, rated)
+    + courseTable
+        + courseTableHeader
+            th(colspan="4")
+                h4(class="ui white header left aligned") #{header}
+        + courseTableBody(courses, rating, rated)
+            block
+
+mixin finishedUnratedCourseTable(courses)
+    + finishedCourseTable(courses, '待评价', true, false)
+        + finishedUnratedCourseBlocks('c')
+
+mixin finishedRatedCourseTable(courses)
+    + finishedCourseTable(courses, '已评价', false, true)
+        + finishedRatedCourseBlocks('c')
+
+mixin teacherTable(teachers)
+    + courseTable
+        colgroup
+            col(style="width: 45%;")
+            col(style="width: 40%;")
+            col(style="width: 15%;")
+        + courseTableHead
+            th
+                h4(class="ui white header left aligned") 导师名称
+            th
+                h4(class="ui white header left aligned") 最新课程
+            th
+        tbody
+            tr(ng-repeat="t in #{teachers}")
+                td(class="ui items")
+                    div.item
+                        a(class="ui tiny image", ng-href="/study-center/teacher.html?teacher_id={{t.id}}", target="_blank")
+                            img(ng-src="/{{t.image}}", class="avatar", style="border: none;")
+                        div.content
+                            h5(class="ui header")
+                                a(ng-href="/study-center/teacher.html?teacher_id={{t.id}}", target="_blank", style="color: black;") {{t.name}}
+                                div(class="sub header") {{t.title}}
+                                div(class="sub header", style="margin-top: 5px; margin-bottom: 10px;")
+                                    + rating(5, 't.rank')
+                                div(class="sub header")
+                                    span(class="ui light mini red label", ng-style="$index === 0 && {'margin-left': '0'}", ng-repeat="tag in t.tags", style="font-size: 0.5rem;") {{tag}}
+                td
+                    p(ng-repeat="c in t.courses | limitTo: 3")
+                        a(href="/study-center/course.html?class_id={{c.class_id}}&teacher_id={{c.teacher_id}}&course_id={{c.course_id}}", target="_blank", style="color: black;") {{c.title}}
+                        | &nbsp;
+                        span(class="ui mini red label", ng-repeat="courseTag in c.class_tags", style="font-size: 0.5rem;", ng-show="false") {{courseTag}}
+                td
+                    button(class="ui red mini button", ng-click="removeFavTeacher(t)", style="white-space: nowrap;") 取消收藏
+
+mixin sticky
+    div(class="right ui rail", style="margin: 0; padding: 0;")
+        div(class="ui sticky")
+            div(style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 5px; width: 2em; text-orientation: upright;") 今日课程

@@ -1,0 +1,46 @@
+{
+  "name": "bplus_site-ui",
+  "description": "Bridge+ Site UI",
+  "version": "1.0.0",
+  "homepage": "",
+  "license": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "angular-semantic-ui": "0.0.3",
+    "angular-translate": "2.7.2",
+    "echarts": "2.2.7",
+    "jquery-address": "https://github.com/asual/jquery-address.git",
+    "owl.carousel": "2.0.0-beta.3",
+    "preheating-ui": "git@bitbucket.org:hcdlearning/preheating-ui.git",
+    "competion-ui": "git@github.com:Jeff-Tian/cmpt2015-ui.git#develop-ui",
+    "devbridge-autocomplete": "1.2.25",
+    "angular-chart.js": "0.8.9",
+    "angular-sanitize": "1.5.7",
+    "mock-tracking": "git@bitbucket.org:hcdlearning/mock-tracking.git",
+    "angular-service": "https://github.com/Jeff-Tian/angular-service.git",
+    "angularQueryParserModule": "angular-query-parser#^0.0.2",
+    "angular-auto-complete": "angular-j-auto-complete#^1.0.0",
+    "bridgeplus_ui": "git@github.com:Jeff-Tian/bridgeplus_ui.git#develop"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.4.12",
+    "angular-ui-router": "0.2.18",
+    "less": "2.5.3",
+    "semantic-ui": "2.0.8",
+    "requirejs": "2.1.22",
+    "requirejs-domready": "2.0.1",
+    "requirejs-plugins": "1.0.3",
+    "underscore": "1.8.3",
+    "when": "3.7.7"
+  },
+  "resolutions": {
+    "angular": "1.5.7"
+  }
+}

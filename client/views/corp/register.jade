@@ -1,0 +1,120 @@
+block content
+    div.ui.container.crop-container(ng-controller="corpRegister", corp-register)
+        div(ng-if="status == -1 || loadingData", ng-cloak="")
+            div.ui.loading.form
+                span &nbsp;
+        div.step-container(ng-if="status != -1", ng-cloak="")
+            div.bg-red
+            div.bg
+            div.ui.grid
+                div.three.wide.column
+                    div.ui.header.title 注册流程
+                div.one.wide.column
+                div.twelve.wide.column
+                    div.ui.seven.column.center.aligned.grid.step-grid
+                        div.column
+                            img(ng-src="#{cdnify('img/corp/step-1.png')}")
+                            span 注册
+                        div.column
+                            img.arrow(ng-src="#{cdnify('img/corp/step-arrow.png')}")
+                        div.column
+                            img(ng-src="#{cdnify('img/corp/step-2.png')}")
+                            span 完善资料
+                        div.column
+                            img.arrow(ng-src="#{cdnify('img/corp/step-arrow.png')}")
+                        div.column
+                            img(ng-src="#{cdnify('img/corp/step-3.png')}", ng-if="status != 0")
+                            img(ng-src="#{cdnify('img/corp/step-3-white.png')}", ng-if="status == 0")
+                            span 注册审核
+                        div.column
+                            img.arrow(ng-src="#{cdnify('img/corp/step-arrow.png')}")
+                        div.column
+                            img(ng-src="#{cdnify('img/corp/step-4.png')}", ng-if="status == 2")
+                            img(ng-src="#{cdnify('img/corp/step-4-white.png')}", ng-if="status != 2")
+                            span 立即招聘服务
+        div.title(ng-if="status != -1", ng-cloak="")
+            div.ui.two.column.grid
+                div.column
+                    span.ui.small.header(ng-if="status == 0")
+                        i.icon.step1
+                        div.content 填写信息资料
+                    span.ui.small.header(ng-if="(status == 1) || (status == 3)")
+                        i.icon
+                        div.content 注册审核
+                    span.ui.small.header(ng-if="status == 2")
+                        i.icon
+                        div.content 注册完成
+                div.column.tel 客服热线：4009-200-152
+        div(ng-if="status == 'init'", ng-cloak="")
+            div.frm-container
+                link(rel="stylesheet", type="text/css", href="#{cdn.normal}css/module/form.css?#{cdn.version}")
+                form.ui.form(corp-register-form, name="corpInfoForm", ng-submit="saveBasicCorpInfo($event)", ng-class="{'loading': saving, 'error': (errorMessages || $parent.errorMessages || $root.errorMessages).length}")
+                    form-error
+                    div.field.required
+                        label 公司名称
+                        input(type="text", name="corporation", placeholder="请务必和营业执照一致", data-prompt="请输入公司名称", ng-model="data.companyName", ng-required="true")
+                    div.field.required
+                        label 所在地
+                        input(type="text", name="city", placeholder="请填入所在城市", ng-model="data.city", ng-required="true")
+                    div.field.required
+                        label 营业执照上传
+                        div.ui.grid(style="position: relative; overflow: hidden;")
+                            input(type="file", style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; height: 100%; width: 100%; z-index: 100; padding-left: 2000px; cursor: pointer; border: none; outline: none;", accept=".pdf,.png,.gif,.jpeg,.jpg", fileread="data.license", file-changed-handler="clearOldFile")
+                            div.twelve.wide.column
+                                input(type="text", name="businesslicense", placeholder="营业执照", data-text-placeholder="营业执照", data-prompt="请上传营业执照", ng-model="data.license.name", ng-required="true")
+                            div.four.wide.column
+                                div.ui.red.button
+                                    i.attach.icon
+                                    span 添加文件
+                    div.field.required
+                        label 联系人
+                        input(type="text", name="contact", placeholder="请填入联系人", ng-model="data.contact", ng-required="true")
+                    div.field.required
+                        label 性别
+                        select(name="gender", class="ui dropdown", placeholder="请选择联系人性别", ng-required="true", ng-model="data.contact_gender")
+                            option(value="") 请选择
+                            option(value="U") 保密
+                            option(value="M") 男
+                            option(value="F") 女
+                    div.field.required
+                        label 职位
+                        input(type="text", name="position", placeholder="请填入职位", ng-model="data.position", ng-required="true")
+                    div.field.required
+                        label 邮箱
+                        input(type="text", name="email", placeholder="xxxxxx@xxxxxx.xxx", data-prompt="请输入正确的邮箱地址", ng-model="data.email", ng-required="true")
+                    div.field.required
+                        label 电话
+                        div.ui.grid
+                            div.twelve.wide.column
+                                input(type="text", name="telephone", placeholder="13800000000", data-prompt="请输入正确的手机号码", ng-model="data.mobile", ng-required="true")
+                            div.four.wide.column
+                                div.ui.red.button.btn-sendCAPTCHA(ng-click="sendCAPTCHA()", data-text-resend="重新发送验证码") 发送验证码
+                    div.field.required
+                        label 验证码
+                        input(type="text", name="CAPTCHA", placeholder="请输入短信提示的验证码", ng-model="data.verificationCode", ng-required="true")
+                    div.submit-container
+                        button.ui.red.button(type="submit", ng-disabled="!corpInfoForm.$valid") 下一步
+        div.review-container(ng-if="status == 'audit'", ng-cloak="")
+            div.title 您好，我们已收到您的注册申请，将于48小时内完成注册信息审核，人工审核通过后将发送通知短信至您的手机。如未收到短信或有任何疑问，请电洽客服专线4009-200-152。
+            div.image
+                img(ng-src="#{cdnify('img/corp/regist_status1.png')}")
+                div.ui.huge.header 审核中
+        div.success-container(ng-if="status == 'passed'", ng-cloak="")
+            div.title
+                span 感谢您的申请，欢迎立即享受高质量的智能人才推荐服务页，页面将于
+                span(count-down="", href="/") 5
+                span 秒后跳转至首页
+            div.image
+                img(ng-src="#{cdnify('img/corp/regist_status3.png')}")
+                div.ui.huge.header 审核通过
+        div.fail-container(ng-if="status == 'fail'", ng-cloak="")
+            div.title 很抱歉，审核未通过，请重新修改您的注册信息，完成修改后系统会立即进行人工审核。如有任何疑问，请电洽客服专线40090152。
+            div.image
+                img(ng-src="#{cdnify('img/corp/regist_status2.png')}")
+                div.ui.huge.header 审核未通过
+            div.btn
+                button.ui.red.button(ng-click="edit();") 立即修改
+block extraJs
+    script(src="#{cdn.normal}js/directives/countDown.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/page/corp/register/main.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/directives/form-error.js?#{cdn.version}")

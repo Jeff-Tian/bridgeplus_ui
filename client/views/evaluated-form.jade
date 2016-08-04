@@ -1,0 +1,33 @@
+mixin detailRatingFor(item)
+    div(class="four wide column", ng-repeat="(key, item) in c.evaluationDetail.evaluation", style="white-space: nowrap;", ng-show="key === '#{item}'")
+        label(ng-bind="key", style="font-size: smaller;")
+        | &nbsp;
+        + rating(5, 'item', 'mini')
+
+
+form(class="ui form", style="background-color: #f9f9f9; margin-bottom: 0; height: 100%;")
+    div(class="inline field", style="padding: 20px 20px 5px 20px;")
+        label 总体评分
+        + rating(5, 'c.generalEvaluation')
+    div(style="padding: 10px 20px 20px 20px;")
+        div(class="", style="border: solid 2px white; border-radius: 3px; padding: 10px;")
+            div(class="ui grid")
+                + detailRatingFor('准时')
+                + detailRatingFor('态度')
+                + detailRatingFor('专业度')
+                + detailRatingFor('通话质量')
+    div(class="ui fitted clearing horizontal divider")
+    div(style="padding: 0 20px;")
+        p 我的反馈评价
+        div(style="border: solid 2px white; border-radius: 3px; padding: 10px;")
+            | {{c.evaluationDetail.comment}}
+    div(class="right floated", style="padding: 20px;")
+        button(class="ui mini red button", type="submit", ng-show="false") 追加评论
+    div(class="ui fitted clearing horizontal divider")
+    div(style="padding: 0 20px;", ng-show="false")
+        p 追加评论
+        textarea(rows="2", placeholder="写下对课程的感受吧 ! 对他人的帮助很大喔 ~")
+    div(class="right floated field", style="padding: 20px;", ng-show="false")
+        button(class="ui mini red button", type="reset") 取消
+        button(class="ui mini red button", type="submit") 完成
+    div(class="ui fitted clearing horizontal divider")

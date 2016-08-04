@@ -1,0 +1,144 @@
+/*
+* - @Bridge+
+*/
+.ui.b-secondary.buttons .button, .ui.b-secondary.button {
+	background-color: #1b1c1d;
+	color: #ffffff;
+	text-shadow: none;
+	background-image: none;
+}
+.ui.b-secondary.button {
+	box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.ui.b-secondary.buttons .button:hover, .ui.b-secondary.button:hover, .ui.b-secondary.buttons .button:focus, .ui.b-secondary.button:focus, .ui.b-secondary.buttons .button:active, .ui.b-secondary.button:active, .ui.b-secondary.buttons .active.button, .ui.b-secondary.active.button {
+	color: #ffffff;
+	text-shadow: none;
+}
+.b-map {
+	.record-content {
+		padding: 1rem;
+		background-color: @color-white;
+
+		.profile-box {
+			text-align: center;
+			border-right: 2px solid rgba(34, 36, 38, 0.15);
+		}
+		.target-list {
+			.target-button {
+				width: 100%;
+				max-width: 120px;
+			}
+		}
+		.large-rader {
+			#rader-map {
+				height: 300px;
+				min-width: 300px;
+				width: 100%;
+			}
+		}
+	}
+	.record-list {
+		padding: 1em;
+
+		.ui.grid {
+			margin-top: 2rem;
+
+			.record-card {
+				border-radius: 0;
+				box-shadow: 0px 2px 0px 0px #d4d4d5;
+				width: 100%;
+
+				.ui.grid {
+					margin-top: 0;
+				}
+				.record-name {
+					border-radius: 0 !important;
+					background-image: url("/img/salespage/card-header.png");
+					background-repeat: no-repeat;
+					background-position: left top;
+					background-size: 70px 70px;
+					width: 100%;
+					background-color: #a8a8a8;
+					padding: 1em 1em 0.5em 1em !important;
+
+					img {
+						float: left;
+						height: 50px;
+						margin-right: 1em;
+
+						&.national {
+							padding-left: 6px;
+							padding-right: 6px;
+						}
+					}
+					.header {
+						color: @color-white;
+						font-size: @fontsize-12xl !important;
+					}
+					.meta {
+						color: @color-white;
+					}
+				}
+				.sesson-content {
+					h2 {
+						padding: 3px 0;
+						float: left;
+						width: 20%;
+						margin-bottom: 0;
+					}
+					.button {
+						float: right;
+					}
+				}
+				.info-content {
+					h2 {
+						padding: 10px 0;
+						float: left;
+						width: 80px;
+						margin-bottom: 0;
+					}
+					h5 {
+						float: left;
+						padding: 17px 0;
+						width: 130px;
+						margin-top: 0;
+						margin-bottom: 0;
+					}
+					.button {
+						float: right;
+					}
+					.team-list {
+						float: right;
+
+						img {
+							width: 50px;
+							height: 50px;
+						}
+					}
+				}
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+.bplus {
+	.ui.b-secondary.buttons .button:hover, .ui.b-secondary.button:hover, .ui.b-secondary.buttons .button:focus, .ui.b-secondary.button:focus, .ui.b-secondary.buttons .button:active, .ui.b-secondary.button:active, .ui.b-secondary.buttons .active.button, .ui.b-secondary.active.button {
+		background-color: @color-brand;
+	}
+}
+.hcdlearning {
+	.ui.b-secondary.buttons .button:hover, .ui.b-secondary.button:hover, .ui.b-secondary.buttons .button:focus, .ui.b-secondary.button:focus, .ui.b-secondary.buttons .button:active, .ui.b-secondary.button:active, .ui.b-secondary.buttons .active.button, .ui.b-secondary.active.button {
+		background-color: @color-hcdlearning;
+	}
+}
+@media only screen and (min-width:768px) and (max-width:991px) {
+	.record-name {
+		.ui.horizontal.list {
+			.item {
+				margin-left: 0 !important;
+			}
+		}
+	}
+}

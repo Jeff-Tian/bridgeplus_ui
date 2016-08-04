@@ -1,0 +1,288 @@
+.b-opd-body {
+    .white.header {
+        color: white !important;
+    }
+
+    table.positions {
+        thead th {
+            background-color: #F53C43 !important;
+            color: white !important;
+            text-align: center !important;
+            white-space: nowrap;
+            .icon {
+                font-size: small !important;
+                vertical-align: top!important;
+            }
+            padding-left: 1.5em;
+        }
+        td {
+            padding: 1.5em;
+            &.desc {
+                position: relative;
+                cursor: pointer;
+                .title {
+
+                }
+                .company {
+                    color: black;
+                }
+                .removeIcon {
+                    visibility: hidden;
+                }
+                &:hover {
+                    background-color: #e6e6e6;
+                    .removeIcon {
+                        visibility: visible;
+                        .icon {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hoverable {
+            tbody tr:hover:not(.rating) {
+                background-color: @color-grey;
+
+                color: white;
+
+                .ui.header {
+                    color: white;
+
+                    .sub.header {
+                        color: white;
+                    }
+                }
+
+                .red.hover {
+                    color: @color-brand;
+                }
+            }
+        }
+
+        tfoot {
+        }
+    }
+
+    .smooth.label {
+        border-radius: 30px;
+        color: white !important;
+        background-color: #787878;
+    }
+
+    .loose {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .light.grey.color {
+        color: #cccccc;
+    }
+
+    .left-floated-image {
+        float: left;
+        width: 60px;
+        margin-right: 10px;
+        margin-top: 20px;
+    }
+    .description {
+        position: relative;
+        padding-left: 11px;
+        padding-right: 11px;
+        .company {
+            color: black;
+            font-size: 16px;
+            margin-top: 26px;
+        }
+        .field {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+    }
+    .clickable {
+        cursor: pointer;
+        &.hovergrey:hover,
+        &.description:hover {
+            background-color: #e6e6e6!important;
+        }
+    }
+    .status-text {
+        font-size: 11px;
+    }
+    .company-label {
+        left: 132px!important;
+        top: -10px;
+    }
+
+    .ribbon.right.corner.label {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5px 10px;
+        color: white;
+        z-index: 4;
+    }
+
+    .ribbon.teal.right.corner.label::before {
+        display: block;
+        width: 0;
+        content: ' ';
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: -15px;
+        border-left: solid 15px transparent;
+        border-top: solid 15px #2990B6;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .ribbon.teal.right.corner.label::after {
+        display: block;
+        width: 0;
+        content: ' ';
+        height: 0;
+        position: absolute;
+        bottom: 0;
+        left: -15px;
+        border-left: solid 15px transparent;
+        border-bottom: solid 15px #2990B6;
+        border-right: none;
+        border-top: none;
+    }
+
+    .ribbon.teal {
+        background-color: #2990B6;
+    }
+
+    .ribbon.yellow {
+        background-color: #F88D02;
+    }
+
+    .ribbon.yellow.right.corner.label::before {
+        display: block;
+        width: 0;
+        content: ' ';
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: -15px;
+        border-left: solid 15px transparent;
+        border-top: solid 15px #F88D02;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .ribbon.yellow.right.corner.label::after {
+        display: block;
+        width: 0;
+        content: ' ';
+        height: 0;
+        position: absolute;
+        bottom: 0;
+        left: -15px;
+        border-left: solid 15px transparent;
+        border-bottom: solid 15px #F88D02;
+        border-right: none;
+        border-top: none;
+    }
+
+    .ribbon.red.right.corner.label::before {
+        display: block;
+        width: 0;
+        content: ' ';
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: -15px;
+        border-left: solid 15px transparent;
+        border-top: solid 15px #DB2828;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .ribbon.red.right.corner.label::after {
+        display: block;
+        width: 0;
+        content: ' ';
+        height: 0;
+        position: absolute;
+        bottom: 0;
+        left: -15px;
+        border-left: solid 15px transparent;
+        border-bottom: solid 15px #DB2828;
+        border-right: none;
+        border-top: none;
+    }
+
+    .ribbon.red {
+        background-color: #DB2828;
+    }
+    .b-opd-companylist {
+        .red.title {
+            color: #ff3c42;
+        }
+    }
+    .button-more {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+    .popup-margin {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .b-opd-position-matchlevel-container,
+    .b-opd-position-progressrate {
+        cursor: pointer;
+    }
+    .position-title {
+        color: #ff3c42;
+    }
+}
+.rate-image-size {
+    height: 77px;
+    width: 77px;
+}
+.b-opd-matchLevelDescription {
+    .header,
+    .body {
+        padding: 1.5em!important;
+    }
+    .header {
+        font-weight: 100!important;
+        background-color: #e6e6e6!important;
+    }
+    i.inverted.circular.icon.grey {
+        background-color: grey!important;
+    }
+    .description {
+        margin-left: 0.5em;
+        margin-bottom: 1.5em;
+    }
+    .detail {
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        padding: 1em;
+        height: 250px;
+        .detail-title {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 1em;
+        }
+        .detail-content {
+            line-height: 24px;
+            margin-top: 1em;
+        }
+        .detail-image {
+            margin: 1em;
+        }
+        .detail-image-like {
+            display: inline-block;
+            margin: 1em;
+        }
+        &.match {
+            border: 2px solid red;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+<form class="ui large form b-sign-up" name="signUpForm" ng-submit="trySignUp($event)"
+      ng-class="{'loading': submittingForm}" ng-show="!isFromAndroid" ng-cloak>
+    <div class="ui error message brand"></div>
+    <div class="field">
+        <div class="ui left icon input">
+            <input type="text" name="mobile" placeholder="{{'PleaseInputMobileNumber'| translate}}"
+                   ng-model="signUpData.mobile"
+                   ng-enter>
+            <i class="phone icon"></i>
+        </div>
+    </div>
+    <div class="field absolute-prompt">
+        <div class="ui left icon input fluid">
+
+            <input type="text" name="captcha" placeholder="{{'PleaseInputCaptcha' | translate}}"
+                   ng-model="signUpData.captcha" ng-enter>
+            <i class="write icon"></i>
+            &nbsp;
+            <div captcha ng-model="signUpData.captchaId" class="ui fluid b-captcha"></div>
+        </div>
+        <div class="ui right aligned container subcontainer">
+            <a href="javascript: void(0);" ng-click="refreshCaptcha()">{{'RefreshCaptcha' | translate}}</a>
+        </div>
+    </div>
+    <div class="field" ng-show="sendCodeButtonClicked">
+        <div class="ui left icon input fluid">
+            <input type="text" name="verificationCode"
+                   placeholder="{{'PleaseInputMobileVerificationCode' | translate}}"
+                   ng-model="signUpData.verificationCode" autocomplete="off">
+            <i class="write icon"></i>
+            &nbsp;
+            <button type="button" class="ui red button" ng-show='sendCodeButtonClicked'
+                    ng-disabled="!(allowGetCode && isSignUpFormPartiallyValid())"
+                    ng-click="getVerificationCode()" ng-class="{'loading' : sendingMobileCode}">
+                {{verificationCodeButtonText | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="field" ng-hide="sendCodeButtonClicked">
+        <button type="button" class="ui red button fluid" ng-click="getVerificationCode()"
+                ng-disabled="!(allowGetCode && isSignUpFormPartiallyValid())"
+                ng-class="{'loading': sendingMobileCode}">
+            {{verificationCodeButtonText | translate}}
+        </button>
+    </div>
+    <div class="field">
+        <div class="ui left icon input fluid">
+            <input type="password" name="password" placeholder="{{passwordPlaceholder | translate}}"
+                   ng-model="signUpData.password" autocomplete="off">
+            <i class="lock icon"></i>
+        </div>
+    </div>
+    <div class="field">
+        <button type="submit" class="ui fluid red submit button"
+                ng-disabled="!isSignUpFormFullyValid()">{{'Done' | translate}}
+        </button>
+        <p class="ui mini grey color privacy-declaration" style="font-size: 90%;">
+            <a class="ui mini grey color privacy-declaration"
+               ng-href="/statement" target="_blank">{{ footerTip |
+                translate}}</a>
+        </p>
+    </div>
+</form>
+
+<form class="ui large form b-sign-up" name="signUpForm" ng-submit="trySignUp($event)"
+      ng-class="{'loading': submittingForm}" ng-show="isFromAndroid" ng-cloak>
+    <div class="ui error message brand"></div>
+    <div class="field">
+        <input type="text" name="mobile" placeholder="{{'PleaseInputMobileNumber'| translate}}"
+               ng-model="signUpData.mobile"
+               ng-enter>
+    </div>
+    <div class="fields absolute-prompt">
+        <div class="field">
+            <input type="text" name="captcha" placeholder="{{'PleaseInputCaptcha' | translate}}"
+                   ng-model="signUpData.captcha" ng-enter autocomplete="off">
+        </div>
+        <div class="field">
+            <div captcha ng-model="signUpData.captchaId" class="ui fluid b-captcha"></div>
+            <div class="ui right aligned container subcontainer">
+                <a href="javascript: void(0);" ng-click="refreshCaptcha()">{{'RefreshCaptcha' | translate}}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="fields" ng-show="sendCodeButtonClicked">
+        <div class="field">
+            <input type="text" name="verificationCode"
+                   placeholder="{{'PleaseInputMobileVerificationCode' | translate}}"
+                   ng-model="signUpData.verificationCode" autocomplete="off">
+        </div>
+        <div class="field">
+            <button type="button" class="ui red button" ng-show='sendCodeButtonClicked'
+                    ng-disabled="!(allowGetCode && isSignUpFormPartiallyValid())"
+                    ng-click="getVerificationCode()" ng-class="{'loading' : sendingMobileCode}">
+                {{verificationCodeButtonText | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="field" ng-hide="sendCodeButtonClicked">
+        <button type="button" class="ui red button fluid" ng-click="getVerificationCode()"
+                ng-disabled="!(allowGetCode && isSignUpFormPartiallyValid())"
+                ng-class="{'loading': sendingMobileCode}">
+            {{verificationCodeButtonText | translate}}
+        </button>
+    </div>
+
+    <div class="field">
+        <input type="password" name="password" placeholder="{{passwordPlaceholder | translate}}"
+               ng-model="signUpData.password" autocomplete="off">
+    </div>
+    </div>
+    <div class="field">
+        <button type="submit" class="ui fluid red submit button"
+                ng-disabled="!isSignUpFormFullyValid()">{{'Done' | translate}}
+        </button>
+    </div>
+    <div class="field ui mini grey color privacy-declaration">
+        <a class="ui mini grey color privacy-declaration"
+           ng-href="/statement" target="_blank">{{ footerTip |
+            translate}}</a>
+    </div>
+</form>

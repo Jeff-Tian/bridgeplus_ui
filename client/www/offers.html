@@ -1,0 +1,166 @@
+<!doctype html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Bridge+</title>
+
+    <%- include('view-partial/head.html') -%>
+    <style type="text/css">
+        .b-upsell-item-A1 {
+            background-image: url('<%= cdn.normal %>img/upsell/offer1.png?<%= cdn.version %>');
+        }
+
+        .b-upsell-item-B1 {
+            background-image: url('<%= cdn.normal %>img/upsell/offer2.png?<%= cdn.version %>');
+        }
+
+        .b-upsell-item-C1 {
+            background-image: url('<%= cdn.normal %>img/upsell/offer3.png?<%= cdn.version %>');
+        }
+    </style>
+</head>
+<body ng-controller="AppCtrl" ng-app="bplusUpsell">
+<!-- Header Begin -->
+<%- include('view-partial/header.html') -%>
+<!-- Header End -->
+
+<!-- Page Contents -->
+<div ng-controller="OffersCtrl" class="b-upsell-body" ng-init="paymentMethod='b_alipay'">
+    <div class="b-upsell-items-container">
+        <div class="ui horizontal divider"></div>
+        <div class="ui horizontal divider"></div>
+        <div class="ui horizontal divider"></div>
+        <div class="ui three column grid">
+            <div class="column b-upsell-hotarea" ng-mouseleave="mouseleave()" ng-mouseover="select('upsellA')"
+                 ng-click="pay()">
+                <div class="b-upsell-items-header-container">
+                    <div class="b-upsell-items-header">复活赛</div>
+                </div>
+                <div class="b-upsell-item-A1">&nbsp;</div>
+
+                <!-- <div class="b-upsell-item-A2">&nbsp;</div> -->
+                <div class="b-upsell-item-price-container">
+                    <div class="b-upsell-item-price" ng-bind-template="￥{{itemA.price}}元"></div>
+                </div>
+                <img class="b-upsell-item-arrow" src="<%= cdn.normal %>img/upsell/arrow.png?<%= cdn.version %>">
+            </div>
+
+            <div class="column b-upsell-hotarea" ng-mouseleave="mouseleave()" ng-mouseover="select('upsellB')"
+                 ng-click="pay()">
+                <div class="b-upsell-items-header-container">
+                    <div class="b-upsell-items-header">小组点评</div>
+                </div>
+                <div class="b-upsell-item-B1">&nbsp;</div>
+                <div class="b-upsell-item-price-container">
+                    <div class="b-upsell-item-price" ng-bind-template="￥{{itemB.price}}元"></div>
+                </div>
+                <img class="b-upsell-item-arrow" src="<%= cdn.normal %>img/upsell/arrow.png?<%= cdn.version %>">
+            </div>
+            <div class="column b-upsell-hotarea" ng-mouseleave="mouseleave()" ng-mouseover="select('upsellC')"
+                 ng-click="pay()">
+                <div class="b-upsell-items-header-container">
+                    <div class="b-upsell-items-header">1对1导师</div>
+                </div>
+                <div class="b-upsell-item-C1">&nbsp;</div>
+                <div class="b-upsell-item-price-container">
+                    <div class="b-upsell-item-price" ng-bind-template="￥{{itemC.price}}元"></div>
+                </div>
+                <img class="b-upsell-item-arrow" src="<%= cdn.normal %>img/upsell/arrow.png?<%= cdn.version %>">
+            </div>
+
+        </div>
+        <div class="b-upsell-detail">
+            <div class="ui four column grid">
+                <div class="column">
+                    <img class="ui spaced image b-upsell-detail-picture"
+                         ng-src="<%= cdn.normal %>img/upsell/icon-a{{detail.certificationType}}.png?<%= cdn.version %>">
+                    <span class="b-upsell-detail-number" ng-bind-template="X{{detail.certification}}"></span>
+
+                    <div style="display:inline-block;vertical-align:middle">
+                        <div class="b-upsell-detail-text">复活赛门票</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img class="ui spaced image b-upsell-detail-picture"
+                         src="<%= cdn.normal %>img/upsell/icon-b.png?<%= cdn.version %>">
+                    <span class="b-upsell-detail-number" ng-bind-template="X{{detail.report}}"></span>
+                    <span class="b-upsell-detail-text">大赛详细报告</span>
+                </div>
+                <div class="column">
+                    <img class="ui spaced image b-upsell-detail-picture"
+                         src="<%= cdn.normal %>img/upsell/icon-c.png?<%= cdn.version %>">
+                    <span class="b-upsell-detail-number" ng-bind-template="X{{detail.comment}}"></span>
+                    <span class="b-upsell-detail-text">大赛专业分析点评</span>
+                </div>
+                <div class="column b-upsell-detail-totalNumber" ng-bind-template="￥{{detail.price}}元">
+                </div>
+            </div>
+        </div>
+        <div class="b-upsell-hidden-banner"></div>
+    </div>
+    <div class="b-upsell-refund-container">
+        <div class="b-upsell-refund-text">
+            <img src="<%= cdn.normal %>img/upsell/icon-refund.png?<%= cdn.version %>" class="ui right spaced image">14天无理由退款
+        </div>
+    </div>
+    <div class="b-upsell-items-container" style="background-color: #E5E5E5; padding: 20px; margin-top: 50px;">
+        <div class="ui horizontal clearing divider"></div>
+        <div class="ui horizontal clearing divider"></div>
+        <div class="ui horizontal clearing divider"></div>
+        <div class="ui container">
+            <form name="redemptionForm" novalidate class="ui form redemption-form"
+                  ng-submit="buyWithRedemptionCode($event)">
+                <div class="ui error message brand"></div>
+                <div class="inline fields">
+                    <label>&nbsp;&nbsp;&nbsp;&nbsp;<%= __('使用邀请码参赛:') %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+
+                    <div class="field">
+                        <input type="text" style="width:390px" placeholder="" ng-required="true"
+                               ng-model="payData.redemptionCode">
+                    </div>
+                    <div class="field">
+                        <button class="ui red right floated button" ng-disabled="!redemptionForm.$valid"
+                                type="submit"
+                                style="padding-left: 2em; padding-right: 2em;">
+                            <%=
+                            __('确定') %>
+                        </button>
+                    </div>
+                </div>
+                <div class="ui horizontal divider"></div>
+                <div class="ui horizontal divider"></div>
+                <div class="ui segment" style="width: 350px; margin: 0 auto;">
+                    <div class="ui items">
+                        <div class="item">
+                            <div class="ui tiny image" style="width: 0;"></div>
+                            <div class="middle aligned content" style="padding-left: 0;">
+                                <h5 class="ui left aligned header">没有邀请码？
+                                    <div class="sub header">
+                                        扫码关注服务号回复"邀请码"立即赢取！
+                                    </div>
+                                </h5>
+                            </div>
+                            <div class="ui middle aligned tiny image">
+                                <img src="<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg?<%= cdn.version %>">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Footer Begin -->
+<%- include('view-partial/footer.html') -%>
+<!-- Footer End -->
+<!-- Page visit tracking-->
+<script type="text/javascript">
+    window.t_PageName = "upsell2";
+</script>
+<!-- Page visit End -->
+<%- include('view-partial/upsell-js.html') -%>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+</html>

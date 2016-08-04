@@ -1,0 +1,140 @@
+@import "../../../js/page/opportunity-detail/widget/competitiveness/main.less";
+@import "../../../js/page/opportunity-detail/widget/chartpentagon/main.less";
+@import "../../../js/page/opportunity-detail/widget/joblist/main.less";
+@import "../../../js/page/opportunity-detail/widget/traininglist/main.less";
+@import "../../../js/page/opportunity-detail/widget/search/main.less";
+@import "../../../js/page/opportunity-detail/widget/filter/main.less";
+@import "../pagination";
+@import "./job/detail/main.less";
+@import "./job/corporation/main.less";
+@import "./job/favorite/main.less";
+@import "./job/homepage/main.less";
+@import "./job/pattern.less";
+
+.b-opd-body {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    > .ui.grid.b-opd-content-container {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top: 2rem !important;
+        > .wide.column {
+            padding-left: 2rem;
+            padding-left: 2rem;
+        }
+    }
+    .item {
+
+    }
+}
+
+.progress-radial {
+    border: solid 2px #DDDDDD;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    padding: 1px;
+    position: relative;
+
+    .ring {
+        border-radius: 50%;
+        background-color: #319B67;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .progress {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 50%;
+    }
+
+    .generate-progresses(@n, @i:1) when (@i =< @n) {
+        .progress.progress-@{i} {
+            background-image: linear-gradient((90deg + (@i * 3.6)), transparent 50%, white 50%),
+            linear-gradient(90deg, white 50%, transparent 50%);
+
+            &:before {
+                content: '@{i}%';
+            }
+        }
+
+        .generate-progresses(@n, (@i + 1));
+    }
+
+    .generate-progresses-2(@n, @i:51) when (@i =< @n) {
+        .progress.progress-@{i} {
+            background-image: linear-gradient((90deg + (@i * 3.6)), #319B67 50%, transparent 50%),
+            linear-gradient(90deg, white 50%, #319B67 50%);
+            left: 1px;
+            right: 1px;
+            top: 1px;
+            bottom: 1px;
+
+            &:before {
+                content: '@{i}%';
+            }
+        }
+
+        .generate-progresses-2(@n, (@i + 1));
+    }
+
+    .generate-progresses(50);
+    .generate-progresses-2(100);
+
+    .progress::before {
+        position: absolute;
+        left: 7px;
+        right: 7px;
+        top: 7px;
+        bottom: 7px;
+        font-weight: bold;
+        border-radius: 50%;
+        padding-top: 30%;
+        text-align: center;
+        background-color: white;
+    }
+}
+
+.loose.tag {
+    margin: 1em;
+}
+
+.transparent.label {
+    background: transparent;
+    cursor: pointer;
+}
+
+.light.red.label {
+    background-color: #F76E73 !important;
+    cursor: pointer;
+}
+
+.transparent {
+    background: transparent;
+}
+
+.search-list {
+    margin-top: 2em;
+    > div:first-child {
+        margin-bottom: 0.5em;
+    }
+    > * > table.positions {
+        border: 0;
+        border-bottom: solid 1px rgba(34, 36, 38, 0.1);
+        border-radius: 0;
+        > thead > tr:first-child {
+            > th:first-child,
+            > th:last-child {
+                border-radius: 0;
+            }
+        }
+        > tfoot > tr > th {
+            background-color: #fff;
+        }
+    }
+}

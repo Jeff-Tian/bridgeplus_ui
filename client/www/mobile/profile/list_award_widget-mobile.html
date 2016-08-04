@@ -1,0 +1,41 @@
+<div>
+    <!--EDIT MODE-->
+    <div ng-show="property.status===ENUM_STATUS.STATUS_EDIT" class="b-profile-form">
+        <form name="award" novalidate class="ui {{isSubmitting ? 'loading' : ''}} form {{(clicked && (!dateSelect.fulfilled || award.$error.required)) ? 'error' : ''}}">
+            <div>
+                <div class="ui error message">{{'FormRequired' | translate}}</div>
+                <div class="required field {{!clicked || data.name ? '' : 'error'}}">
+                    <label>{{'Award' | translate}}</label>
+                    <input type="text" name="prizename" ng-model="data.name" required placeholder="" />
+                </div>
+                <div class="field">
+                    <label>{{'IssuedBy' | translate}}</label>
+                    <input type="text" name="organization" ng-model="data.organization" placeholder="" />
+                </div>
+                <div class="required field">
+                    <label>{{'IssueDate' | translate}}</label>
+                    <bplusdate value="dateSelect.value" config="dateSelect.config" fulfilled="dateSelect.fulfilled" class="inline fields" />
+                </div>
+                <div class="field">
+                    <label>{{'AwardDescription' | translate}}</label>
+                    <bplustag value="data.tags" description="data.description" />
+                </div>
+                <button type="button" ng-click="submit()" ng-init="clicked=false" class="fluid ui red large button">{{'Save' | translate}}</button>
+                <button type="button" ng-click="cancel()" class="b-profile-editmode-other-button fluid ui basic large button b-profile-btn-cancel">{{'Cancel' | translate}}</button>
+                <button type="button" ng-show="data.id!==''" ng-click="del()" class="b-profile-editmode-other-button fluid ui basic large button b-profile-btn-cancel">{{'Delete' | translate}}</button>
+            </div>
+        </form>
+    </div>
+    <!--DISPLAY MODE-->
+    <div ng-show="property.status===ENUM_STATUS.STATUS_READONLY" class="b-profile-displaymode">
+        <h2 ng-bind="data.name" ng-click="edit()"></h2>
+        <div ng-bind="data.organization" class="b-profile-txt" ng-click="edit()"></div>
+        <div ng-bind-template="{{data.prizeDate.displayValue}}" class="b-profile-txt" ng-click="edit()"></div>
+        <div ng-bind="data.description" class="b-profile-txt b-profile-minorinfo" ng-click="edit()"></div>
+        <div class="b-profile-txt b-profile-minorinfo" ng-click="edit()">
+            <i class="tags icon"></i>
+            <span class="b-profile-txt-tags">{{'Tag' | translate}}:</span>
+            <span ng-bind="data.tags"></span>
+        </div>
+    </div>
+</div>

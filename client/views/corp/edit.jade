@@ -1,0 +1,54 @@
+block content
+    link(rel="stylesheet", type="text/css", href="#{cdn.normal}css/module/form.css?#{cdn.version}")
+    include ../partial/error-form.jade
+    div.ui.container.crop-edit-container(corp-edit)
+        div.ui.top.aligned.grid
+            div.four.wide.column
+                include changeLogo
+            div.twelve.wide.column
+                div.corp-edit-section
+                    div.title(ng-click="showAccountInfo = !showAccountInfo")
+                        h2.ui.medium.header
+                            i.account-info-icon.icon
+                            div.content 账户信息
+                    div.form-container.account-info-form-container(ng-if="showAccountInfo")
+                        form.ui.form(form-username, ng-class="{'loading': loadingSSO}")
+                            div.field
+                                label 用户名
+                                input(type="text", name="username", data-prompt="请输入用户名", ng-model="ssoInfo.nick_name", readonly="readonly", disabled="disabled")
+                                //button(type="submit")
+                        form.ui.form
+                            div.field
+                                label 密码修改
+                                input(type="password", name="password", readonly, value="*********")
+                                i.icon(ng-click="modalPassword()")
+                            div.field
+                                label 手机绑定
+                                input(type="text", name="telephone", readonly, ng-model="corpProfile.contact_mobile")
+                                i.icon(ng-click="modalTelephone()")
+                        form.ui.form(form-email, ng-submit="changeEmail()", ng-class="{'loading': changingEmail}")
+                            div.field
+                                label 邮箱绑定
+                                input(type="text", name="email", data-prompt="请输入正确的邮箱地址", ng-model="corpProfile.contact_mail")
+                                button(type="submit")
+                div.corp-edit-section
+                    div.title(ng-click="showBasicInfo = !showBasicInfo")
+                        h2.ui.medium.header
+                            i.basic-info-icon.icon
+                            div.content 基本信息
+                    div.form-container(ng-if="showBasicInfo")
+                        include changeBasicInfo
+                div.corp-edit-section
+                    div.title(ng-click="showCompanyInfo = !showCompanyInfo")
+                        h2.ui.medium.header
+                            i.company-info-icon.icon
+                            div.content 公司介绍
+                    div.form-container(ng-if="showCompanyInfo")
+                        include changeDescription
+    include changePassword
+    include changeMobile
+block extraJs
+    script(src="#{cdn.normal}js/page/corp/edit/main.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/directives/form-error.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/common/validationPatterns.js?#{cdn.version}")
+    script(src="#{cdn.normal}js/directives/resend-verification.js?#{cdn.version}")

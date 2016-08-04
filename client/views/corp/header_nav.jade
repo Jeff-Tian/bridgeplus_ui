@@ -1,0 +1,13 @@
+a(href="/", class="ui button nav-button", ng-class="{'active': current_page === 'home'}")
+    i(class="large home icon", style="vertical-align: bottom;")
+    | #{__('企业首页')}
+a(href="/find", class="ui button nav-button", ng-class="{'active': current_page === 'find'}")
+    i(class="large search icon", style="vertical-align: bottom;")
+    | #{__('找人才')}
+a(href="/jobpost", class="ui button nav-button", ng-class="{'active': current_page === 'jobpost'}")
+    i(class="large suitcase icon", style="vertical-align: bottom;")
+    | #{__('职位管理')}
+a(href="/cv", class="ui button nav-button", ng-class="{'active': current_page === 'cv'}")
+    i(class="large file text icon", style="vertical-align: bottom;")
+    | #{__('简历管理')}
+

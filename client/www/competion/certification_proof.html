@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>参赛证明 Bridge+</title>
+    <meta name="description" content="Bridge+">
+    <link type="text/css" rel="stylesheet"
+          href="<%= cdn.normal %>bower/semantic-ui/dist/semantic.min.css?<%= cdn.version %>" media="all"/>
+    <link type="text/css" rel="stylesheet" href="<%= cdn.normal %>css/main.css?<%= cdn.version %>" media="all"/>
+    <link type="text/css" rel="stylesheet" href="<%= cdn.normal %>cmpt/dist/competion.css?<%= cdn.version %>"
+          media="all"/>
+</head>
+
+<body class="bplus" ng-init="page='<%=page%>';lang='<%=lang%>';site='bplus'" ng-app="bplus" ng-controller="AppCtrl">
+<%- include('../view-partial/header.html') -%>
+
+<div class="game-ui cloak" ng-controller="epicBaseCtrl">
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="three wide column">
+            </div>
+            <div class="twelve wide column">
+                <game-certificate-proof></game-certificate-proof>
+            </div>
+            <div class="one wide column">
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../view-partial/footer.html') -%>
+<script src="/cmpt/config.js"></script>
+<script src="<%= cdn.normal %>cmpt/libs/jquery-qrcode/jquery.qrcode.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>cmpt/dist/main.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/competion/main.js?<%= cdn.version %>"></script>
+<script>
+    window.t_PageName = "certification_report";
+</script>
+</body>
+
+</html>

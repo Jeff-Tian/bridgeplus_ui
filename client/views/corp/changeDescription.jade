@@ -1,0 +1,20 @@
++ errorForm('savingCorpDescription')(name="descriptionForm", ng-submit="saveCorpDescription()")
+    form-error
+    div.field
+        label 一句话公司宣传标语
+        input(type="text", name="slogan", ng-model="corpProfile.abstraction")
+    div.field
+        label 对外品牌名称
+        input(type="text", name="displayname", ng-model="corpProfile.display_name")
+    div.field
+        label 公司简介
+        textarea(name="description", rows="5", ng-model="corpProfile.description")
+        div.ui.bottom.attached.segment
+            div.inline.field
+                label
+                    i.tags.icon
+                    span 标签
+                select.ui.fluid.search.dropdown(multiple="", ng-model="corpProfile.tags", name="tags", remoteUrl="#{serviceUrls.corp.resources.tags}", search-dropdown="", allow-additions="true", use-labels="true")
+    div.field
+        button.ui.red.button(type="submit") 保存
+        button.ui.basic.button(type="reset", ng-click="errorMessages = []") 取消

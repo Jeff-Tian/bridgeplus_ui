@@ -1,0 +1,13 @@
+<div class="ui secondary segment" ng-hide="filterSetting.showThumb || !f.showMore"
+     style="border-top: none; border-bottom: 1px solid rgba(34,36,38,.15);">
+    <p ng-repeat="m in f.more" ng-if="m.label">
+        <strong style="color: black;">{{m.label}}</strong>
+            <span class="ui light label" ng-repeat="ml in m.list"
+                  ng-class="{'red': equals(filterSetting[f.key], ml), 'transparent': !equals(filterSetting[f.key], ml)}"
+                  ng-click="filterSetting[f.key] = ml">{{ml.text}}</span>
+    </p>
+
+    <span class="ui light label" ng-repeat="ml in f.more"
+          ng-class="{'red': equals(filterSetting[f.key], ml), 'transparent': !equals(filterSetting[f.key], ml)}"
+          ng-click="filterSetting[f.key] = ml" ng-if="!ml.label">{{ml.text}}</span>
+</div>

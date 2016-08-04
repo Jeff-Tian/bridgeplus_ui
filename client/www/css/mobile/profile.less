@@ -1,0 +1,217 @@
+@import "./circle.less";
+
+.b-profile-body {
+  background-color: #efefef!important;
+  display: block;
+}
+.b-profile-body .ui.header{
+  margin: 0px;
+}
+
+/*achievement*/
+.b-profile-body-achievement-bg-1 {
+  position: absolute;
+  top: -2rem;
+  left: -250px;
+  width: 340px;
+  height: 500px;
+  background-color: #df363d;
+}
+.b-profile-body-achievement-bg-2 {
+  position: absolute;
+  top: -500px;
+  left: -50px;
+  width: 150px;
+  height: calc(1500px);
+  background-color: #ff3b42;
+  transform: rotate(30deg);
+}
+.b-profile-achievement {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 180px;
+  background-color: #fff;
+}
+.b-profile-avatar {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.b-profile-face-img {
+    position: absolute;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.b-profile-face-img img {
+    width: 100px;
+    border-radius: 50%;
+}
+.b-profile-face-img img.edit {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.b-profile-face-img img.editHover {
+    display: block;
+}
+.b-profile-completetion {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 20px;
+    display: inline-block;
+}
+.b-profile-face-percentage {
+    color: #FFF;
+}
+.b-profile-face-txt {
+    font-size: 1.28em;
+}
+
+/*tip*/
+.b-profile-content {
+    width: 100%;
+    height: 100%;
+}
+.ui.header.b-profile-tip {
+    color: #db2828;
+    margin-top: 10px !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/*detail lists*/
+.b-profile-detail {
+    margin-bottom: 0.8em;
+    width: 100%;
+}
+/*container*/
+.b-profile-section {
+    margin-bottom: 1px;
+}
+.b-profile-section:last-child {
+    margin-bottom: 0;
+}
+.b-profile-btn-append button {
+    color: #fff !important;
+    border-radius: 0 !important;
+    background-color: #C0C0C0 !important;
+}
+.b-profile-header {
+    margin: 0 !important;
+    border: 0  !important;
+    border-bottom: solid 2px #BEBEBE !important;
+    padding: 1rem 2rem !important;
+    background-color: #fff;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    cursor: pointer;
+}
+.b-profile-tip-fill img {
+    margin-top: 4px !important;
+    width: 1.2em !important;
+}
+.b-profile-header > .ui.header.b-profile-tip-title > .content {
+    color: #787878;
+}
+.b-profile-tip-fill {
+    margin-top: 4px !important;
+}
+.b-profile-header > .ui.header.b-profile-tip-fill > .content {
+    padding-left: 1px;
+    margin-top: .14285em;
+}
+.b-profile-header > .ui.header.b-profile-tip-fill.grey > .content {
+    color: #deddde;
+}
+.b-profile-header > .ui.header > .icon {
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+}
+.b-profile-personalinfo .b-profile-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_personal.png);
+}
+.b-profile-skills .b-profile-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_skill.png);
+}
+.b-profile-educationbackground .b-profile-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_education.png);
+}
+.b-profile-clubexperience .b-profile-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_league.png);
+}
+.b-profile-workingexperience .b-profile-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_experience.png);
+}
+.b-profile-language .b-profile-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_language.png);
+}
+.b-profile-award .b-profile-header > .ui.header > .icon {
+    background-image: url(/img/profile/icon_profile_award.png);
+}
+/*detail items*/
+/*display model*/
+.b-profile-displaymode {
+    background-color: #fff;
+}
+.b-profile-displaymode div {
+    color: #787878;
+}
+.b-profile-displaymode h2 {
+    color: #323232;
+}
+.b-profile-displaymode .b-profile-minorinfo {
+    color: #c6c6c6;
+}
+.b-profile-form form,
+.b-profile-displaymode {
+    padding: 1.5rem 2rem;
+}
+.b-profile-editmode-other-button.ui.basic.button{
+    margin-top: 0.5em !important;
+    background-color: #fff !important;
+}
+/*tags*/
+.b-profile-form-textarea-tags textarea {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.b-profile-form-textarea-tags .b-profile-form-textarea-tags-tag-container {
+    border: solid 1px rgba(34, 36, 38, 0.15);
+    border-top: 0;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0 0 0.28571429rem 0.28571429rem;
+}
+.b-profile-form-textarea-tags .inline.fields:last-child {
+    margin-bottom: 0;
+}
+.b-profile-form-textarea-tags .inline.fields .field {
+    padding-right: 0;
+    width: 100%;
+}
+.b-profile-form-textarea-tags .inline.fields .field > :first-child i.icon {
+    margin-right: 0.75rem;
+}
+.b-profile-form-textarea-tags .inline.fields .field > input {
+    width: 75% !important;
+}
+.ui.checkbox input[type=checkbox] {
+    cursor: auto !important;
+}
+.ui.toggle.checkbox input:checked~.box:before, .ui.toggle.checkbox input:checked~label.b-profile-checkbox-label:before {
+    background-color: #db2828 !important;
+}
+/* Active Focus */
+.ui.toggle.checkbox input:focus:checked ~ .box:before,
+.ui.toggle.checkbox input:focus:checked ~ label.b-profile-checkbox-label:before {
+  background-color: #db2828 !important;
+}

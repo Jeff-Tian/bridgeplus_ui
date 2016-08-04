@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bridge+</title>
+    <meta name="description" content="Bridge+">
+    <%- include('view-partial/head.html') -%>
+</head>
+
+<body ng-controller="AppCtrl" ng-app="bplus" ng-init="current_page='study'"
+      ng-class="{'chinese':language==='zh','english':language==='en'}">
+<%- include('view-partial/header.html') -%>
+<!-- Page Contents -->
+<div class="pusher">
+
+    <div class="b-study">
+        <div class="b-study-content">
+            <div class="study-gif">
+                <img src="<%= cdn.normal %>img/salespage/gif/study.gif" ng-show="language==='zh'">
+                <img src="<%= cdn.normal %>img/salespage/gif/study-en.gif" ng-show="language==='en'">
+            </div>
+        </div>
+    </div>
+
+</div>
+<%- include('view-partial/footer.html') -%>
+
+<!--Page JS-->
+<script src="<%= cdn.normal %>js/factories/WechatLogon.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/controllers/AppCtrl.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/study/main.js?<%= cdn.version %>"></script>
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

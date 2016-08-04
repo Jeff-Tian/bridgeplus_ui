@@ -1,0 +1,50 @@
+.b-masthead, .b-feedback {
+    .owl-theme {
+        .owl-nav {
+            margin-top: 0;
+
+            .owl-prev, .owl-next {
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.2);
+                opacity: 0.8;
+                width: 3.6rem;
+                height: 6rem;
+                line-height: 5.5rem;
+                border-radius: 2px;
+                text-align: center;
+
+                i {
+                    color: @color-black;
+                    font-weight: lighter;
+                    font-size: 2.8em;
+                    width: 14px;
+                    margin-right: 0;
+                }
+            }
+            .owl-prev {
+                left: 2.5rem;
+            }
+            .owl-next {
+                right: 2.5rem;
+            }
+            .owl-prev:hover, .owl-next:hover {
+                opacity: 1;
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+@media only screen and (min-width:768px) and (max-width:900px), only screen and (min-width:992px) and (max-width:1099px), only screen and (min-width:1200px) and (max-width:1320px) {
+    .b-masthead, .b-feedback {
+        .owl-theme {
+            .owl-nav {
+                .owl-prev {
+                    left: 0;
+                }
+                .owl-next {
+                    right: 0;
+                }
+            }
+        }
+    }
+}

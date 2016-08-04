@@ -1,0 +1,97 @@
+/*
+* - @Bridge+
+*/
+.b-map {
+    .official-content {
+        margin-top: 2rem;
+
+        .official-card {
+            border-radius: 0;
+            box-shadow: 0px 2px 0px 0px #d4d4d5;
+            background-image: url("/img/salespage/official-content.png");
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: 100px 100px;
+
+            .official-name {
+                display: table;
+                border-radius: 0 !important;
+                background-image: url("/img/salespage/card-header.png");
+                background-repeat: no-repeat;
+                background-position: left;
+                background-size: 70px 70px;
+                width: 100%;
+
+                .header {
+                    color: @color-white;
+                    display: table-cell;
+                    vertical-align: middle;
+                    height: 46px;
+                }
+            }
+            .official-dimmer {
+                .content {
+                    .center {
+                        padding: 0 1.5rem;
+                    }
+                    .dimmer-label {
+                        background-color: transparent;
+                        color: @color-white;
+                        font-size: @fontsize-5xl;
+                    }
+                }
+            }
+        }
+        .official-card:last-child, .official-card:first-child {
+            border-radius: 0 !important;
+        }
+    }
+}
+.bplus {
+    .b-map {
+        background-image: url('/img/salespage/events_bg.png');
+
+        .official-content {
+            .official-card {
+                .official-name {
+                    background-color: #a8a8a8;
+                }
+                .ui.dimmer {
+                    background-color: @color-grey-dimmer;
+                }
+                &.available {
+                    .official-name {
+                        background-color: @color-brand;
+                    }
+                    .ui.dimmer {
+                        background-color: @color-brand-dimmer;
+                    }
+                }
+            }
+        }
+    }
+}
+.hcdlearning {
+    .b-map {
+        background-image: url('/img/salespage/events_bg.png');
+
+        .official-content {
+            .official-card {
+                .official-name {
+                    background-color: #a8a8a8;
+                }
+                .ui.dimmer {
+                    background-color: @color-grey-dimmer;
+                }
+                &.available {
+                    .official-name {
+                        background-color: @color-hcdlearning;
+                    }
+                    .ui.dimmer {
+                        background-color: @color-hcdlearning-dimmer;
+                    }
+                }
+            }
+        }
+    }
+}

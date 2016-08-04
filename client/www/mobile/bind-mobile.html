@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('SEOTitle_MobileBinding') %></title>
+    <meta name="description" content="<%= __('SEODesc_MobileBinding') %>">
+    <link rel="stylesheet" type="text/css" href="<%= cdn.normal %>css/main.css?<%= cdn.version %>">
+    <%- include('head.html') -%>
+</head>
+
+<body ng-app="signIn" ng-controller="AppCtrl" class="b-background">
+<%- include('header.html') -%>
+<div class="ui b-signin-wrapper">
+    <div class="ui column b-signin-container padded container subcontainer">
+        <div class="b-signin-wide ui padded container subcontainer">
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui center aligned container subcontainer">
+                <h2 class="grey color"><%= __('BindMobile') %></h2>
+            </div>
+
+            <div class="ui horizontal divider"></div>
+            <div class="ui bind-mobile" ng-controller="BindMobileCtrl">
+                <register-form action="bindMobile" control="bindMobileFormCtrl"
+                               footer-tip="'绑定手机即代表你接受我们的隐私条款'"></register-form>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('footer.html') -%>
+
+<% if (dev_mode) { %>
+<script src="js/factories/FormValidation.js"></script>
+<script src="js/directives/captcha.js"></script>
+<script src="js/directives/ngEnter.js"></script>
+<script src="js/directives/dropdown.js"></script>
+<script src="js/directives/registerForm.js"></script>
+<script src="js/page/register/main.js"></script>
+
+<% } else { %>
+<script src="<%= config.normal %>js/cdn/m/bind-mobile.js?<%= cdn.version %>"></script>
+<% } %>
+</body>
+
+</html>

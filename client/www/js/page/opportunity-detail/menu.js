@@ -1,0 +1,1 @@
+angular.module('opdModule').directive('bopdmenu', angular.bplus.leftColumnMenu);

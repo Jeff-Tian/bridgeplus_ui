@@ -1,0 +1,145 @@
+@namespace: corp-edit-completion;
+
+@widthBorder: 1px;
+@colorBorder: @color-corp-text-dark-grey-header;
+
+@paddingBorder: 1px;
+
+@widthCycle: 7px;
+@colorCycle: @color-corp-red;
+
+.@{namespace} {
+    position: relative;
+    border: solid @widthBorder @colorBorder;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+.@{namespace} .@{namespace}-body {
+    position: absolute;
+    top: @paddingBorder;
+    left: @paddingBorder;
+    width: calc(~"100% - " @paddingBorder * 2);
+    height: calc(~"100% - " @paddingBorder * 2);
+}
+.@{namespace} .@{namespace}-body .@{namespace}-logo {
+    position: absolute;
+    top: @widthCycle - 1;
+    left: @widthCycle - 1;
+    border-radius: 50%;
+    width: calc(~"100% - " (@widthCycle - 1) * 2);
+    height: calc(~"100% - " (@widthCycle - 1) * 2);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.@{namespace} .@{namespace}-body .@{namespace}-left,
+.@{namespace} .@{namespace}-body .@{namespace}-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+.@{namespace} .@{namespace}-body .@{namespace}-left {
+    left: 50%;
+}
+.@{namespace} .@{namespace}-body .@{namespace}-right {
+    left: 0;
+}
+.@{namespace} .@{namespace}-body .@{namespace}-left .@{namespace}-left-cycle,
+.@{namespace} .@{namespace}-body .@{namespace}-right .@{namespace}-right-cycle {
+    position: absolute;
+    top: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 50%;
+    border-width: @widthCycle;
+    /* width: calc(~"200% - " @widthCycle * 2); */
+    /* height: calc(~"100% - " @widthCycle * 2); */
+    width: 200%;
+    height: 100%;
+}
+.@{namespace} .@{namespace}-body .@{namespace}-left .@{namespace}-left-cycle {
+    left: -101%;
+    border-top-color: @colorCycle;
+    border-left-color: @colorCycle;
+    transform: rotate(-45deg);
+    /*animation: @{namespace}-left 1s forwards linear;*/
+}
+.@{namespace} .@{namespace}-body .@{namespace}-right .@{namespace}-right-cycle {
+    left: 1%;
+    border-right-color: @colorCycle;
+    border-bottom-color: @colorCycle;
+    transform: rotate(-45deg);
+    /* animation: @{namespace}-right 1s forwards linear; */
+}
+@keyframes corp-edit-completion-left {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(135deg);
+    }
+    100% {
+        transform: rotate(135deg);
+    }
+}
+@keyframes corp-edit-completion-right {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(135deg);
+    }
+}
+
+.loop-corp-edit-completion(@i) when (@i > 0) {
+    .loop-corp-edit-completion((@i - 1));
+    .@{namespace}.@{namespace}-@{i} .@{namespace}-body .@{namespace}-left .@{namespace}-left-cycle {
+        animation: ~"@{namespace}-left-@{i}" 1s forwards linear;
+    }
+    .@{namespace}.@{namespace}-@{i} .@{namespace}-body .@{namespace}-right .@{namespace}-right-cycle when (@i > 50) {
+        animation: ~"@{namespace}-right-@{i}" 1s forwards linear;
+    }
+}
+.loop-corp-edit-completion(100);
+
+.loop-corp-edit-completion-left(@i) when (@i > 0) {
+    .loop-corp-edit-completion-left((@i - 1));
+    @keyframes ~"@{namespace}-left-@{i}" {
+        0% {
+            transform: rotate(-45deg);
+        }
+        50% when (@i > 50) {
+            transform: rotate(135deg);
+        }
+        100% when (@i <= 50) {
+            transform: rotate(unit(-45 + ceil(3.6 * @i), deg));
+        }
+        100% when (@i > 50) {
+            transform: rotate(135deg);
+        }
+    }
+}
+.loop-corp-edit-completion-left(100);
+
+.loop-corp-edit-completion-right(@i) when (@i > 50) {
+    .loop-corp-edit-completion-right((@i - 1));
+    @keyframes ~"@{namespace}-right-@{i}" {
+        0% {
+            transform: rotate(-45deg);
+        }
+        50% {
+            transform: rotate(-45deg);
+        }
+        100% when (@i > 50) {
+            transform: rotate(unit(-45 + ceil(3.6 * (@i - 50)), deg));
+        }
+    }
+}
+.loop-corp-edit-completion-right(100);

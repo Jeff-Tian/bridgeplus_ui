@@ -1,0 +1,19 @@
+<a href="/" class="ui button nav-button"
+   ng-class="{'active':current_page==='index'}"><%= __('Home') %></a>
+<a href="/study-center/" class="ui button nav-button"
+   ng-class="{'active':current_page==='study-center'}">
+    导师
+    <div class="floating ui mini red circular label" style="font-weight: normal;;">BETA</div>
+</a>
+<a class="ui disabled mini button nav-button" style="padding: 10px;"></a>
+<a href="<%= localeLink('/game') %>" class="ui button nav-button"
+   ng-class="{'active':current_page==='game'}"><%= __('Play') %></a>
+<a href="<%= localeLink('/opportunity') %>" class="ui button nav-button"
+   ng-class="{'active':current_page==='opportunity'}"><%= __('Opportunity') %></a>
+<% if (false) { %>
+<a href="<%= localeLink('/youth') %>" class="ui button nav-button"
+   ng-class="{'active': current_page === 'poster'}"><%= __('全国大赛') %></a>
+<% } %>
+<a href="<%= localeLink('/store/offers') %>" class="ui button nav-button"
+   ng-class="{'active': current_page === 'store'}"><%=
+    __('商城') %></a>

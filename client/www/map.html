@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bridge+</title>
+    <meta name="description" content="Bridge+">
+    <%- include('view-partial/head.html') -%>
+    <link rel="stylesheet" type="text/css" href="/bower/cmpt2015-ui/public/dist/gameteam.css">
+</head>
+
+<body ng-controller="gameCtrl" ng-app="bplus" ng-class="{'chinese':language==='zh','english':language==='en'}">
+<%- include('view-partial/header.html') -%>
+
+<!-- Page Contents -->
+<div class="pusher">
+    <div class="page-content" ng-class="{'bplus':selectedStyle==='bplus','hcdlearning':selectedStyle==='hcdlearning'}">
+        <div class="b-map">
+            <div class="ui container grid">
+                <div class="four wide column" ng-if="!css.home">
+                    <div class="ui fluid large vertical menu">
+                        <a class="item" ng-class="{'active':css.home===true}" ng-click="selectItem('home')">
+                            <i class="b-home icon"></i>{{'MapHome' | translate}}
+                        </a>
+                        <a class="item" ng-class="{'active':css.official===true}" ng-click="selectItem('official')">
+                            <i class="b-official icon"></i>{{'MapOfficial' | translate}}
+                        </a>
+                        <a class="item" ng-class="{'active':css.national===true}" ng-click="selectItem('national')">
+                            <i class="b-national icon"></i>{{'MapNational' | translate}}
+                        </a>
+                        <a class="item" ng-class="{'active':css.season===true}" ng-click="selectItem('season')">
+                            <i class="b-season icon"></i>{{'MapSeason' | translate}}
+                        </a>
+                        <a class="item" ng-class="{'active':css.personalRecord===true}"
+                           ng-click="selectItem('personalRecord')">
+                            <i class="b-record icon"></i>{{'MapPersonalRecord' | translate}}
+                        </a>
+                        <a class="item" ng-class="{'active':css.rankingList===true}"
+                           ng-click="selectItem('rankingList')">
+                            <i class="b-rank icon"></i>{{'MapRankingList' | translate}}
+                        </a>
+                    </div>
+                    <button class="ui button" ng-click="selectStyle('bplus')">bplus</button>
+                    <button class="ui button" ng-click="selectStyle('hcdlearning')">hcdlearning</button>
+                </div>
+                <div class="column" ng-class="{'twelve wide':!css.home}">
+                    <game-home ng-if="css.home" css="css" data="raderData"></game-home>
+                    <game-official ng-if="css.official"></game-official>
+                    <game-national ng-if="css.national"></game-national>
+                    <game-season ng-if="css.season"></game-season>
+                    <game-personal-record ng-if="css.personalRecord" data="raderData"></game-personal-record>
+                    <game-ranking-list ng-if="css.rankingList"></game-ranking-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('view-partial/footer.html') -%>
+<!--Page JS-->
+<script src="<%= cdn.normal %>bower/echarts/build/dist/echarts.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/directives/map.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/controllers/GameCtrl.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/directives/game.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/map/main.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/cmpt2015-ui/public/dist/main.js?<%= cdn.version %>"></script>
+
+<%- include('view-partial/external-js.html') -%>
+</body>
+
+</html>

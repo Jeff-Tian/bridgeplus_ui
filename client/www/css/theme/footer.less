@@ -1,0 +1,51 @@
+/*
+* - @Bridge+
+*/
+.footer {
+	background-color: #2e363d;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+
+	.footer-list {
+		width: 100%;
+
+		.item {
+			.content {
+				a {
+					span {
+						color: #7F7F7F;
+					}
+					&.header {
+						font-weight: normal;
+						padding-left: 0.25em;
+						font-size: @fontsize-o;
+						color: @color-white !important;
+
+						&:hover, &:active {
+							color: #FF3C42 !important;
+							text-decoration: none;
+						}
+					}
+				}
+			}
+			&:last-child {
+				float: right;
+			}
+			.ui.image {
+				border-radius: 0 !important;
+			}
+		}
+	}
+	.list {
+		> .item {
+			font-size: @fontsize-s;
+			line-height: 1.6em;
+		}
+	}
+	.b-copyright {
+		color: rgba(255, 255, 255, 0.498039);
+		font-size: @fontsize-s;
+		line-height: 1.6em;
+		margin-top: 1rem;
+	}
+}

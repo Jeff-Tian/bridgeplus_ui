@@ -1,0 +1,21 @@
+{
+  "base": "semantic/",
+  "paths": {
+    "source": {
+      "config": "src/theme.config",
+      "definitions": "src/definitions/",
+      "site": "src/site/",
+      "themes": "src/themes/"
+    },
+    "output": {
+      "packaged": "../client/www/css/semantic-ui/",
+      "uncompressed": "../client/www/css/semantic-ui/components/",
+      "compressed": "../client/www/css/semantic-ui/components/",
+      "themes": "../client/www/css/semantic-ui/themes/"
+    },
+    "clean": "../client/www/css/semantic-ui/"
+  },
+  "permission": false,
+  "rtl": false,
+  "version": "2.1.8"
+}

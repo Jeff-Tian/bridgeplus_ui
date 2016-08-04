@@ -1,0 +1,40 @@
+/*
+* - @Bridge+
+*/
+.b-events {
+    background-size: auto auto;
+    background: #d2d2d2 url("/img/salespage/events_bg.png") no-repeat top center;
+    min-height: 584px;
+
+    > .ui.container {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+    h3 {
+        &.ui.header {
+            color: @color-white;
+            margin-bottom: 2rem;
+        }
+    }
+    .events-table {
+        background-color: @color-white !important;
+        box-shadow: 0 2px 0 #bebebe !important;
+        border-radius: 0;
+
+        .icon {
+            color: @color-brand;
+        }
+
+        td:not(.text-right) {
+            font-size: @fontsize-o;
+        }
+
+        td {
+            padding: 1rem 2rem !important;
+        }
+
+        tr.disabled {
+            background-color: #f6f6f6;
+        }
+    }
+}

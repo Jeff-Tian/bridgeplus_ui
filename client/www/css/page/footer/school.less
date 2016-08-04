@@ -1,0 +1,113 @@
+/*
+* - @Bridge+
+*/
+.b-school {
+    min-height: 60rem;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: auto auto;
+    background-color: #EFEFEF;
+    padding-top: 70px;
+    padding-bottom: 1rem;
+    background-image: url('/img/salespage/events_bg.png');
+
+    .b-school-content {
+        background-color: transparent;
+        padding-top: 8rem;
+        padding-bottom: 10rem;
+
+        .what {
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: auto auto;
+            background-color: #EFEFEF;
+            background-image: url('/img/salespage/school_bg_1.png');
+            height: 224px;
+
+            h2 {
+                line-height: 112px;
+                font-size: @fontsize-10xl;
+                text-align: center;
+                color: @color-white;
+                margin-bottom: 0;
+            }
+            p {
+                margin-top: 20px;
+                padding: 0 3em;
+                font-size: @fontsize-xxl;
+            }
+        }
+        .question {
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: auto auto;
+            background-color: #EFEFEF;
+            height: 164px;
+            margin-top: 7em;
+
+            h2 {
+                line-height: 88px;
+                font-size: @fontsize-10xl;
+                padding-left: 10em;
+                color: #C8C3C0;
+                margin-bottom: 0;
+
+                span {
+                    font-size: 0.6em;
+                    padding-left: 1em;
+                }
+            }
+            p {
+                line-height: 78px;
+                padding: 0 3em 0 16.6em;
+                color: #595757;
+                font-size: @fontsize-xxl;
+
+                a {
+                    color: #595757;
+
+                    &:hover, &:active {
+                        color: #595757;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            &.q1 {
+                background-image: url('/img/salespage/school_bg_2.png');
+            }
+            &.q2 {
+                background-image: url('/img/salespage/school_bg_3.png');
+            }
+            &.q3 {
+                background-image: url('/img/salespage/school_bg_4.png');
+            }
+        }
+    }
+}
+@media only screen and (min-width:768px) and (max-width:991px) {
+    .b-school {
+        .b-school-content {
+            .what {
+                p {
+                    margin-top: 8px;
+                }
+            }
+            .question {
+                background-position: -100px;
+
+                h2 {
+                    padding-left: 160px;
+                }
+                p {
+                    padding-left: 160px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:1599px) {
+    .b-school {
+        background-position: left top;
+    }
+}

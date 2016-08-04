@@ -1,0 +1,10 @@
+html
+    head
+        title!= title
+        link(rel="stylesheet", type="text/css", href="#{cdn.normal}semantic/dist/semantic.min.css?#{cdn.version}")
+        block customizedHead
+    body(class="light grey background", style="background-image: url('#{cdn.normal}images/events_bg_#{theme || 'red'}.png?#{cdn.version}');  background-position: left -100px top; background-repeat: no-repeat;")
+        block customizedHeader
+        block content
+
+        block customizedFooter

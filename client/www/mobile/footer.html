@@ -1,0 +1,52 @@
+<div class="fullscreen modal wechat-modal">
+    <div class="ui transparent segment" style="margin-top: 50px;">
+        <h3 class="ui white icon header">
+            <i class="loading spinner icon"></i>
+
+            <div class="content">
+                微信拼命登录中，请稍等片刻……
+            </div>
+        </h3>
+    </div>
+</div>
+
+<script src="<%= cdn.normal %>bower/jquery/dist/jquery.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/semantic-ui/dist/semantic.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/underscore/underscore-min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/jquery-address/src/jquery.address.js?<%= cdn.version %>"></script>
+<!--Angular JS-->
+<script src="<%= cdn.normal %>bower/angular/angular.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/angular-ui-router/release/angular-ui-router.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/angular-translate/angular-translate.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/angular-sanitize/angular-sanitize.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/angular-service/dist/scripts/all.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/angularQueryParserModule/dist/scripts/all.min.js?<%= cdn.version %>"></script>
+
+<% if (dev_mode) { %>
+<script src="/js/factories/service.js"></script>
+<script src="/js/factories/MessageStore.js"></script>
+<script src="/js/config/translate.js"></script>
+<script src="/js/config/xhr.js"></script>
+<script src="/js/factories/translationLoader.js"></script>
+<script src="/js/directives/loading.js"></script>
+<% } else { %>
+<script src="<%= cdn.normal %>js/cdn/m/com1.js?<%= cdn.version %>"></script>
+<% } %>
+<script src="<%= cdn.normal %>translation/localeHelper.js?<%= cdn.version %>"></script>
+<%/* Never cdnify config.js! */%>
+<script src="/config.js?<%= cdn.version %>"></script>
+<script src="/config/all.js?<%= cdn.version %>"></script>
+
+<% if (dev_mode) { %>
+<script src="/js/factories/DeviceHelper.js"></script>
+<script src="/js/factories/queryParser.js"></script>
+<script src="/js/factories/WechatLogon.js"></script>
+<script src="/js/controllers/AppCtrl.js"></script>
+<script src="/js/page/bplusModule.js"></script>
+<!--Utils JS-->
+<script src="/js/utils/utils.js"></script>
+<script src="/js/utils/msgbus.js"></script>
+<script src="/js/utils/underscore.js"></script>
+<% } else { %>
+<script src="<%= cdn.normal %>js/cdn/m/com2.js?<%= cdn.version %>"></script>
+<% } %>

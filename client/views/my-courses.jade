@@ -1,0 +1,38 @@
+script(type="text/ng-template", id="course.html")
+    div.b-opd-favorite(ng-controller="MyCoursesCtrl")
+        div(class="ui top attached tabular menu")
+            a(class="item", data-tab="booked") 待确认
+            a(class="active item", data-tab="unfinished-courses") 待上课
+            a(class="item", data-tab="finished-courses")  已完成
+        div.ui.bottom.attached.tab.segment.b-opd-body(data-tab="booked", style="background-color: transparent;", ng-controller="BookedCoursesCtrl", ng-class="{'loading': loading}")
+            + bookedCourses('courses')
+            div.ui.horizontal.divider
+        div(class="ui bottom attached active tab segment b-opd-body", data-tab="unfinished-courses", style="background: transparent;", ng-controller="ComingCoursesCtrl", ng-class="{'loading': loading}")
+            + comingCourses('courses')
+            div(class="ui horizontal divider")
+            //+ sticky
+        div(class="ui bottom attached tab segment b-opd-body", data-tab="finished-courses", style="background: transparent;", ng-controller="FinishedCoursesCtrl", ng-class="{'loading': fetching || fetchingRated}")
+            div.unrated
+                + finishedUnratedCourseTable('courses')
+            div.rated
+                + finishedRatedCourseTable('ratedCourses', '已评价')
+            div(class="ui horizontal divider")
+            //+ sticky
+    script(type="text/javascript").
+        angular.element(document).ready(function () {
+            $('.tabular.menu .item')
+                    .tab()
+            ;
+            $('.dimmable')
+                    .dimmer({
+                        opacity: 0.5
+                    })
+                    .dimmer('set opacity', 0.5)
+            ;
+            $('.ui.sticky')
+                    .sticky({
+                        context: '.tab'
+                    })
+            ;
+        });
+           

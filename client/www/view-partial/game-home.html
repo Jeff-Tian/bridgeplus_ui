@@ -1,0 +1,117 @@
+<div class="ui container grid">
+    <div class="four wide column">
+
+        <div class="profile-box">
+            <div class="base-profile">
+                <img class="ui middle aligned image"
+                     src="<%= cdn.normal %>img/salespage/wilfried.png?<%= cdn.version %>">
+                <span>陈大民</span>
+            </div>
+            <div class="ui divider"></div>
+            <div class="ui two column grid">
+                <div class="column">
+                    <i class="dollar big icon"></i>
+                    {{'MapHomeBridgeCoins' | translate}}：99
+                </div>
+                <div class="column">
+                    <i class="configure big icon"></i>
+                    {{'MapHomeSkills' | translate}}：5
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <div radar-map class="small-rader" data="data"></div>
+
+            <div class="lists">
+                <i class="flag big icon"></i>
+                {{'MapHomeAchievement' | translate}}
+            </div>
+            <div class="lists">
+                <button class="ui grey basic button fluid" ng-click="selectDirectiveItem('personalRecord')">
+                    {{'MapHomePersonalRecord' | translate}}
+                </button>
+            </div>
+            <div>
+                <button class="ui grey basic button fluid" ng-click="selectDirectiveItem('rankingList')">
+                    {{'MapHomeRankingList' | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="twelve wide column">
+        <h3>{{'MapHomeNews' | translate}}：Bridge+商赛华东区／2015.5.30／731人已报名！</h3>
+        <div class="banner" ng-click="selectDirectiveItem('official')">
+            <img src="<%= cdn.normal %>img/salespage/banner_official.png?<%= cdn.version %>" width="100%"
+                 style="max-width:843px">
+        </div>
+        <div class="available-lists">
+            <div class="available-list">
+                <div class="ui grid">
+                    <div class="twelve wide column">
+                        <div class="list-title">
+                            <h3>Bridge+青年商业实战大赛华东赛区，还有3天13:50:21比赛开始</h3>
+                        </div>
+                        <div class="list-content">
+                            <i class="user icon"></i>
+                            5/5 陈大民的团队
+                        </div>
+                    </div>
+                    <div class="two wide column" ng-show="showQRCode">
+                        <div class="wechat">
+                            <i class="big wechat icon home-wechat-share"
+                               data-html="<img src='<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg<%= cdn.version %>' class='ui large image'>"
+                               data-position="left center"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="available-list">
+                <div class="ui grid">
+                    <div class="twelve wide column">
+                        <div class="list-title">
+                            <h3>Bridge+青年商业实战大赛华东赛区，还有3天13:50:21比赛开始</h3>
+                        </div>
+                        <div class="list-content">
+                            <i class="user icon"></i>
+                            5/5 陈大民的团队
+                        </div>
+                    </div>
+                    <div class="two wide column" ng-show="showQRCode">
+                        <div class="wechat">
+                            <i class="big wechat icon home-wechat-share"
+                               data-html="<img src='<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg?<%= cdn.version %>' class='ui large image'>"
+                               data-position="left center"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="available-list">
+                <div class="ui grid">
+                    <div class="twelve wide column">
+                        <div class="list-title">
+                            <h3>Bridge+青年商业实战大赛华东赛区，还有3天13:50:21比赛开始</h3>
+                        </div>
+                        <div class="list-content">
+                            <i class="user icon"></i>
+                            5/5 陈大民的团队
+                        </div>
+                    </div>
+                    <div class="two wide column" ng-show="showQRCode">
+                        <div class="wechat">
+                            <i class="big wechat icon home-wechat-share"
+                               data-html="<img src='<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg?<%= cdn.version %>' class='ui large image'>"
+                               data-position="left center"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner" ng-click="selectDirectiveItem('national')">
+            <img src="<%= cdn.normal %>img/salespage/banner_national.png?<%= cdn.version %>" width="100%"
+                 style="max-width:843px">
+        </div>
+        <div class="banner" ng-click="selectDirectiveItem('season')">
+            <img src="<%= cdn.normal %>img/salespage/banner_seasons.png?<%= cdn.version %>" width="100%"
+                 style="max-width:843px">
+        </div>
+    </div>
+</div>

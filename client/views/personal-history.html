@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('SEOTitle_PersonalHistory') %></title>
+    <meta name="description" content="<%= __('SEODesc_PersonalHistory') %>">
+    <%- include('../www/view-partial/head.html') -%>
+</head>
+
+<body ng-app="personalHistory" ng-controller="AppCtrl" class="b-background">
+<%- include('../www/view-partial/header.html') -%>
+<div class="ui b-signin-wrapper">
+
+    <h4 class="ui centered header" style="display: none;">
+        <%= __('完成信息填写与付费,即可组队参赛!', {competition: __('全国大赛'), fee: __('{{how_much}}元', {how_much: '300'})}) %>
+    </h4>
+
+    <div class="ui column b-step-container b-separator">
+        <div class="ui center aligned container subcontainer">
+            <h2 class="grey color"><%= __('PersonalInfo') %></h2>
+        </div>
+    </div>
+    <div class="ui column">
+        <div class="ui text shape personal-history" ng-controller="PersonalHistoryCtrl">
+            <div class="sides">
+                <div class="active first side">
+                    <form name="personalInfoForm" class="ui form personal-history step-1"
+                          ng-submit="tryNextStep($event)">
+                        <div class="b-step-container">
+                            <div class="ui error message brand"></div>
+                            <div class="field">
+                                <label><i class="ui large red icon">*</i><%= __('RealName') %></label>
+                                <input type="text" name="realName" placeholder="<%= __('PleaseInputRealName') %>"
+                                       ng-model="memberInfo.real_name">
+                            </div>
+                            <div class="field">
+                                <label><i class="ui large red icon">*</i><%= __('Gender') %></label>
+                                <select class="ui dropdown" name="gender" ng-model="memberInfo.gender">
+                                    <option value=""><%= __('PleaseSelect') %></option>
+                                    <!-- Use ng-bind instead of {{}} to avoid issues caused by semantic ui -->
+                                    <option value="U"><%= __('Unknown') %></option>
+                                    <option value="M"><%= __('Male') %></option>
+                                    <option value="F"><%= __('Female') %></option>
+                                </select>
+                            </div>
+                            <div class="fields mobile-hidden">
+                                <div class="four wide field">
+                                    <label><i class="ui large red icon">*</i><%= __('Birthday') %></label>
+
+                                    <div class="inline fields">
+                                        <div class="no-padded field">
+                                            <select class="ui fluid search dropdown defer" name="yearOfBirth"
+                                                    ng-model="personalInfo.yearOfBirth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{y}}" ng-repeat="y in birthYearList" dropdown>{{y}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="no-padded field">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<%= __('Year') %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="four wide field">
+                                    <label>&nbsp;</label>
+
+                                    <div class="inline fields">
+                                        <div class="no-paddedfield">
+                                            <select class="ui fluid search dropdown defer" name="monthOfBirth"
+                                                    ng-model="personalInfo.monthOfBirth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{m}}" ng-repeat="m in monthList" dropdown>{{m}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="no-padded field">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<%= __('Month') %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="four wide field">
+                                    <label>&nbsp;</label>
+
+                                    <div class="inline fields">
+                                        <div class="no-padded field">
+                                            <select class="ui fluid search dropdown defer dayOfBirth" name="dayOfBirth"
+                                                    ng-model="personalInfo.dayOfBirth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{d}}" ng-repeat="d in getBirthDayList()" dropdown>
+                                                    {{d}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="no-padded field">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<%= __('Day') %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="four wide field">
+                                    <label>&nbsp;</label>
+
+                                    <div class="ui right aligned container subcontainer"
+                                         style="height: 35px; line-height: 35px;">
+                                        <div class="ui checkbox set-privacy">
+                                            <input type="checkbox" name="setPrivacy"
+                                                   ng-model="personalInfo.setPrivacy">
+                                            <label><%= __('SetPrivacy') %></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fields mobile">
+                                <div class="five wide field">
+                                    <label><i class="ui large red icon">*</i><%= __('Birthday') %></label>
+
+                                    <div class="inline fields">
+                                        <div class="no-padded field">
+                                            <select class="ui fluid search dropdown defer" name="yearOfBirth"
+                                                    ng-model="personalInfo.yearOfBirth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{y}}" ng-repeat="y in birthYearList" dropdown>{{y}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="no-padded field">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<%= __('Year') %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="five wide field">
+                                    <label>&nbsp;</label>
+
+                                    <div class="inline fields">
+                                        <div class="no-paddedfield">
+                                            <select class="ui fluid search dropdown defer" name="monthOfBirth"
+                                                    ng-model="personalInfo.monthOfBirth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{m}}" ng-repeat="m in monthList" dropdown>{{m}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="no-padded field">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<%= __('Month') %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="five wide field">
+                                    <label>&nbsp;</label>
+
+                                    <div class="inline fields">
+                                        <div class="no-padded field">
+                                            <select class="ui fluid search dropdown defer dayOfBirth" name="dayOfBirth"
+                                                    ng-model="personalInfo.dayOfBirth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{d}}" ng-repeat="d in getBirthDayList()" dropdown>
+                                                    {{d}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="no-padded field">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<%= __('Day') %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label><i class="ui large red icon">*</i><%= __('CurrentLocation') %></label>
+                                <input type="text" name="currentLocation" ng-model="personalInfo.currentLocation"
+                                       placeholder="<%= __('PleaseInputCurrentLocation') %>">
+                            </div>
+                        </div>
+                        <div class="ui horizontal divider"></div>
+                        <div class="ui right aligned container subcontainer mobile-hidden">
+                            <button type="reset" ng-show="false" class="ui large red basic button"
+                                    ng-click="gotoNextStep()"><%=
+                                __('Skip') %>
+                            </button>
+                            <button type="submit" class="ui large red button"><%= __('NextStepEducation') %></button>
+                        </div>
+                        <div class="ui container subcontainer mobile">
+                            <button type="submit" class="ui large fluid red button"><%= __('NextStepEducation') %>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="second side">
+                    <form name="personalInfoForm2" class="ui form personal-history step-2 brand"
+                          ng-submit="trySubmit($event)">
+                        <div class="b-step-container">
+                            <div class="ui error message brand"></div>
+                            <div class="field">
+                                <label><i class="ui large red icon">*</i><%= __('SchoolName') %></label>
+                                <input type="text" name="schoolName" placeholder="<%= __('PleaseInputSchoolName') %>"
+                                       ng-model="schoolInfo.name" auto-complete
+                                       datasource="/mock/schoolname.{{locale}}.json" min-chars="0">
+                            </div>
+                            <div class="field">
+                                <label><i class="ui large red icon">*</i><%= __('Major') %></label>
+                                <input type="text" name="schoolMajor" placeholder="<%= __('PleaseInputMajor') %>"
+                                       ng-model="schoolInfo.major" auto-complete
+                                       datasource="/mock/major.{{locale}}.json" min-chars="0">
+                            </div>
+                            <div class="field">
+                                <label><i class="ui large red icon">*</i><%= __('Qualification')
+                                    %></label>
+                                <select class="ui fluid search dropdown defer" ng-model="schoolInfo.educationBackground"
+                                        name="schoolEducationBackground">
+                                    <option value=""><%= __('PleaseSelect') %></option>
+                                    <option value="{{q.value}}" ng-repeat="q in qualifications" dropdown>{{q.text}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="two fields mobile-hidden">
+                                <div class="nine wide field">
+                                    <label><i class="ui large red icon">*</i><%= __('StudyPeriod') %></label>
+
+                                    <div class="inline tense fields">
+                                        <div class="field">
+                                            <select class="ui fluid search dropdown defer" name="schoolStartYear"
+                                                    ng-model="schoolInfo.startYear">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{y}}" ng-repeat="y in startYearList" dropdown>{{y}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <%= __('Year') %>
+                                        </div>
+                                        <div class="field">
+                                            <select class="ui fluid search dropdown defer" name="schoolStartMonth"
+                                                    ng-model="schoolInfo.startMonth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{m}}" ng-repeat="m in monthList" dropdown>{{m}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <%= __('Month') %>
+                                        </div>
+                                        <div class="field">
+                                            —
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="eight wide field">
+                                    <label><i class="ui large red icon">*</i><%= __('GraduateIn') %> (<%= __('至今请不填')
+                                        %>)</label>
+
+                                    <div class="inline tense fields">
+                                        <div class="field">
+                                            <select class="ui fluid search dropdown defer" name="schoolEndYear"
+                                                    ng-model="schoolInfo.endYear">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{y}}" ng-repeat="y in endYearList" dropdown>{{y}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <%= __('Year') %>
+                                        </div>
+                                        <div class="field">
+                                            <select class="ui fluid search dropdown defer" name="schoolEndMonth"
+                                                    ng-model="schoolInfo.endMonth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{m}}" ng-repeat="m in monthList" dropdown>{{m}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <%= __('Month') %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobile">
+                                <div class="field">
+                                    <label><i class="ui large red icon">*</i><%= __('StudyPeriod') %></label>
+
+                                    <div class="inline tense fields">
+                                        <div class="field">
+                                            <select class="ui fluid search dropdown defer" name="schoolStartYear"
+                                                    ng-model="schoolInfo.startYear">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{y}}" ng-repeat="y in startYearList" dropdown>{{y}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <%= __('Year') %>
+                                        </div>
+                                        <div class="field">
+                                            <select class="ui fluid search dropdown defer" name="schoolStartMonth"
+                                                    ng-model="schoolInfo.startMonth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{m}}" ng-repeat="m in monthList" dropdown>{{m}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <%= __('Month') %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label><i class="ui large red icon">*</i><%= __('GraduateIn') %></label>
+
+                                    <div class="inline tense fields">
+                                        <div class="field">
+                                            <select class="ui fluid search dropdown defer" name="schoolEndYear"
+                                                    ng-model="schoolInfo.endYear">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{y}}" ng-repeat="y in endYearList" dropdown>{{y}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <%= __('Year') %>
+                                        </div>
+                                        <div class="field">
+                                            <select class="ui fluid search dropdown defer" name="schoolEndMonth"
+                                                    ng-model="schoolInfo.endMonth">
+                                                <option value=""><%= __('Select') %></option>
+                                                <option value="{{m}}" ng-repeat="m in monthList" dropdown>{{m}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <%= __('Month') %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui horizontal divider"></div>
+                        <div class="ui right aligned container subcontainer mobile-hidden">
+                            <button type="button" class="ui large red basic button left floated" ng-click="prevStep()">
+                                <%= __('PreviousStep') %>
+                            </button>
+                            <button type="reset" class="ui large red basic button" ng-show="false"
+                                    ng-click="gotoComplete()"><%=
+                                __('Skip') %>
+                            </button>
+                            <button type="submit" class="ui large red button"><%= __('Done') %>
+                            </button>
+                        </div>
+                        <div class="ui container subcontainer mobile">
+                            <button type="submit" class="ui fluid large red button"><%= __('Done')
+                                %>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%- include('../www/view-partial/footer.html') -%>
+<!--Page JS-->
+
+<script src="<%= cdn.normal %>js/directives/dropdown.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/devbridge-autocomplete/dist/jquery.autocomplete.min.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/personal-history/PersonalHistoryCtrl.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>js/page/personal-history/main.js?<%= cdn.version %>"></script>
+<script src="<%= cdn.normal %>bower/angular-auto-complete/dist/scripts/app.js?<%= cdn.version %>"></script>
+<script>
+    window.t_PageName = "personalHis";
+</script>
+<%- include('../www/view-partial/external-js.html') -%>
+</body>
+
+</html>

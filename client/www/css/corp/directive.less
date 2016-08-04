@@ -1,0 +1,222 @@
+@import "./variable";
+@male: #206CB6;
+@female: #EB6754;
+.headshotimage(@gender){
+    border: 3px solid @gender;
+}
+
+.corp-table {
+    font-size: 16px;
+    .light-color {
+        color: @color-corp-table-light;
+    }
+    .light-segment-background,
+    .light-column-background {
+        background-color: @color-corp-table-light;
+    }
+    .dark-title-background,
+    .dark-column-background,
+    .column-hover-dark-background:hover {
+        background-color: @color-corp-table-dark;
+    }
+    .white-color {
+        color: @color-corp-table-white;
+    }
+    .white-column-background {
+        background-color: @color-corp-table-white;
+    }
+    .mediumdark-column-background {
+        background-color: @color-corp-table-medium-dark;
+    }
+    .column-selected-background:hover {
+        background-color: @color-corp-table-medium-dark;
+    }
+    .shadow {
+        border-bottom: 2px solid @color-corp-table-shadow;
+    }
+    .clickable-column {
+        cursor: pointer;
+        &:hover {
+            background-color: @color-corp-table-dark;
+            color: @color-corp-table-white;
+            .personal-name {
+                border-bottom: 1px solid @color-corp-table-white;
+            }
+        }
+    }
+    .pagination-container {
+        margin-top: 10px;
+    }
+    .column-checked {
+        background-color: @color-corp-table-medium-dark!important;
+    }
+    .middle-single-text {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .valign-middle-button {
+        margin-top: 22px;
+    }
+    .inline-checkbox-position {
+        margin-left: 22px;
+    }
+    .segment.list-container {
+        padding: 1rem;
+    }
+    .headshot.image {
+        width: 72px;
+        height: 72px;
+        &.male {
+            .headshotimage(@male);
+        }
+        &.female {
+            .headshotimage(@female);
+        }
+        &.unknown {
+            border: 3px dashed @color-corp-background-light-grey;
+        }
+    }
+    .personal-name-container {
+        font-size: 20px;
+        height: 1.25em;
+    }
+    .personal-name {
+        border-bottom: 1px solid @color-corp-text-dark-grey-text;
+    }
+    .checked {
+        &.white-column-background,
+        &.light-column-background {
+            background-color: @color-corp-table-medium-dark;
+        }
+    }
+    .text {
+        &.smaller {
+            font-size: 12px;
+        }
+    }
+    .hint-warning-text {
+        color: @color-corp-text-light-grey-text;
+        font-size: 12px;
+        margin-top: 0.5em;
+    }
+    .editable-item:hover {
+        .editable-item-icon {
+            color: @color-corp-red;
+        }
+    }
+}
+.corp-cv-detail {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    .headshot.image {
+        width: 72px;
+        height: 72px;
+        &.male {
+            .headshotimage(@male);
+        }
+        &.female {
+            .headshotimage(@female);
+        }
+        &.unknown {
+            border: 3px dashed @color-corp-background-light-grey;
+        }
+    }
+    .corp-cv-detail-segment {
+        .corp-cv-detail-segment-header,
+        .corp-cv-detail-segment-body {
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+    }
+    .corp-cv-detail-body-head {
+        font-size: 18px;
+        color: @color-corp-text-light-grey-header;
+    }
+    .corp-cv-detail-row {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    .corp-cv-detail-name {
+        font-size: 30px;
+        margin-right: 1em;
+    }
+    .corp-cv-detail-period {
+        background-color: @color-corp-background-light-grey;
+        height: 3em;
+        padding: 1em;
+        border-radius: 4px;
+     }
+    .corp-cv-detail-description {
+        background-color: @color-corp-background-light-grey;
+        height: 3em;
+        border-radius: 4px;
+        .corp-cv-detail-description-text {
+            padding: 1em;
+        }
+        .corp-cv-detail-description-tag {
+            padding: 0.25em;
+            margin: 0.75em 1.5em 0.75em 0;
+            border: 1px solid;
+            border-radius: 4px;
+        }
+    }
+    .corp-cv-detail-additional {
+        padding: 1em;
+        height: 3em;
+    }
+    .corp-cv-detail-period {
+        text-align: center;
+    }
+    .corp-cv-detail-language {
+        height: 1.6em;
+    }
+}
+.corp-cv-modal {
+    .corp-cv-detail-header {
+        padding: 1.5em;
+    }
+    .corp-cv-detail-footer {
+        width: 100%;
+        padding: 1.5em;
+        background-color: @color-corp-background-shadow-grey;
+        .corp-cv-detail-right {
+            text-align: right;
+            font-weight: 700;
+            color: white;
+            margin-right: 2em;
+        }
+    }
+    .removeicon-container {
+        height: 3em;
+        margin-top: 1em;
+        margin-right: 1em;
+    }
+    .centered-content-container, 
+    .centered-content-container {
+        margin: 1em 20%;
+        width: 60%;
+        font-size: 17px;
+        &.centertext {
+            text-align: center;
+        }
+        .button {
+            width: 100%;
+        }
+    }
+    &.mini {
+        width: 500px;
+        margin: 0 0 0 -250px;
+    }
+    .blank {
+        height:1em;
+        width: 100%;
+    }
+    &.corp-cvdetail-positionconfirm {
+        .title {
+            font-size: 24px;
+            padding-left: 2em;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+angular.module('opdModule').directive('bopdpaginationpattern', angular.bplus.paginationDirective);

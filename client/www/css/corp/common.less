@@ -1,0 +1,161 @@
+@import "./variable";
+
+@ribbon-yellow: #F88D02;
+
+.color-red {
+    color: @color-corp-red;
+}
+
+.text-color-grey {
+    color: @color-corp-text-dark-grey-text;
+}
+
+.light-grey-background {
+    background-color: #EAE8E4;
+}
+
+.clickable {
+    cursor: pointer;
+    &.disabled {
+        cursor: auto;
+    }
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+.inline-space {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.smaller-text {
+    font-size: smaller;
+}
+
+.x-small-text {
+    font-size: x-small;
+}
+
+.valign-middle {
+    vertical-align: middle;
+}
+
+.ribbon {
+    &.yellow {
+        background-color: @ribbon-yellow;
+    }
+    &.red {
+        background-color: @color-corp-red;
+    }
+    &.right.corner.label {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5px 10px;
+        color: white;
+        z-index: 4;
+        &::before,
+        &::after {
+            display: block;
+            width: 0;
+            content: ' ';
+            height: 0;
+            position: absolute;
+            left: -15px;
+            border-left: solid 15px transparent;
+            border-right: none;
+        }
+        &.yellow::before {
+            top: 0;
+            border-top: solid 15px @ribbon-yellow;
+            border-bottom: none;
+        }
+        &.yellow::after {
+            bottom: 0;
+            border-bottom: solid 15px @ribbon-yellow;
+            border-top: none;
+        }
+        &.red::before {
+            top: 0;
+            border-top: solid 15px @color-corp-red;
+            border-bottom: none;
+        }
+        &.red::after {
+            bottom: 0;
+            border-bottom: solid 15px @color-corp-red;
+            border-top: none;
+        }
+    }
+}
+
+.segment-bottom-shadow {
+    border-bottom: 2px solid @color-corp-table-shadow !important;
+}
+
+.segment-menu {
+    border-left: 0px !important;
+    border-right: 0px !important;
+}
+
+.segment-normal {
+    border-radius: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    box-shadow: none !important;
+}
+
+.segment-after {
+    &:after {
+        content: '';
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.red.bulleted.list {
+    list-style: none;
+
+    li {
+        &:before {
+            content: '• ';
+            color: @color-corp-red;
+        }
+    }
+}
+
+.sharp.steps {
+    border: none !important;
+
+    .step {
+        border-radius: 0 !important;
+
+        &.active {
+            background-color: @color-corp-red !important;
+
+            &:after {
+                background-color: @color-corp-red !important;
+            }
+        }
+
+        &:after {
+            width: 2em !important;
+            height: 2em !important;
+        }
+    }
+}

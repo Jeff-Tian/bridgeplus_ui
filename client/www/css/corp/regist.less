@@ -1,0 +1,223 @@
+.ui.container.crop-container {
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+    max-width: 860px !important;
+
+    > div {
+        > .ui.loading.form {
+            > span {
+                line-height: 3em;
+            }
+        }
+        > .ui.loading.form:before {
+            background-color: transparent;
+        }
+    }
+
+    > .step-container {
+        position: relative;
+        overflow: hidden;
+        > .bg-red {
+            position: absolute;
+            z-index: -1;
+            top: -250%;
+            left: 0;
+            width: 20%;
+            height: 500%;
+            background-color: @color-corp-red;
+            transform: rotate(45deg);
+        }
+        > .bg {
+            position: absolute;
+            z-index: -2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: @color-corp-background-dark-grey;
+        }
+        > .ui.grid {
+            margin: 0;
+            > .column {
+                padding: 0;
+                > .title {
+                    margin: 0;
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem;
+                    color: @color-corp-text-white;
+                    text-align: center;
+                }
+                > .step-grid {
+                    margin: 0;
+                    > .column {
+                        position: relative;
+                        padding: 0;
+                        height: 6.642857142857143rem;
+                        > img {
+                            margin-top: 0.5rem;
+                            width: 4.285714285714286rem;
+                            height: 4.285714285714286rem;
+                        }
+                        > span {
+                            display: block;
+                            font-size: 12px;
+                            color: @color-corp-text-white;
+                        }
+                        > img.arrow {
+                            margin-top: 1.928571428571429rem;
+                            width: 1.428571428571429rem;
+                            height: 1.428571428571429rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    > .title {
+        border-bottom: solid 2px @color-corp-table-shadow;
+        padding: 1em 4%;
+        background-color: @color-corp-table-light;
+        > .ui.grid {
+            margin: 0;
+            >.column {
+                padding: 0;
+                > .ui.header {
+                    color: @color-corp-text-light-grey-header;
+                    > i.icon {
+                        background: url(/img/corp/regist_step2.png) no-repeat center center;
+                        background-size: contain;
+                    }
+                    > i.icon.step1 {
+                        background-image: url(/img/corp/regist_step1.png);
+                    }
+                    > .content {
+                        padding-left: 0.5rem;
+                    }
+                }
+            }
+            > .tel {
+                font-size: 12px;
+                line-height: 1.571428571428571rem;
+                color: @color-corp-text-light-grey-header;
+                text-align: right;
+            }
+        }
+    }
+
+    > div > .frm-container,
+    > .review-container,
+    > .success-container,
+    > .fail-container {
+        border-bottom: solid 2px @color-corp-table-shadow;
+        background-color: @color-corp-table-medium-dark;
+    }
+
+    > div {
+        > .frm-container {
+            padding: 2rem 4%;
+            > .ui.form {
+                > .field {
+                    position: relative;
+                    > label {
+                        color: @color-corp-text-dark-grey-header;
+                    }
+                    > .ui.grid {
+                        margin: 0;
+                        > .column {
+                            padding: 0;
+                            > .ui.button {
+                                margin-top: 1px;
+                                margin-left: 4%;
+                                width: 96%;
+                                > i.attach.icon {
+                                    -webkit-transform: rotate(-138deg);
+                                    transform: rotate(-138deg);
+                                    font-size: 1.25em;
+                                }
+                            }
+                        }
+                    }
+                    > .prompt {
+                        position: absolute;
+                        top: -0.7rem;
+                        left: 7rem;
+                        margin-top: 0;
+                        margin-left: 0;
+                    }
+                    > .prompt:before {
+                        top: auto;
+                        bottom: -0.7em;
+                        -webkit-transform: translateX(-50%) translateY(-50%) rotate(225deg);
+                        transform: translateX(-50%) translateY(-50%) rotate(225deg);
+                    }
+                }
+                > .field.required {
+                    > label:before {
+                        display: inline-block;
+                        vertical-align: top;
+                        margin: 0.2em 0 -0.2em 0;
+                        content: '*';
+                        color: #eb4143;
+                    }
+                    > label:after {
+                        display: none;
+                    }
+                }
+                > .submit-container {
+                    margin-top: 3rem;
+                    text-align: right;
+                    > .ui.button {
+                        width: 25%;
+                    }
+                }
+            }
+            > .ui.loading.form:before {
+                top: -2rem;
+                left: -4.3%;
+                width: 108.6%;
+                height: calc(~"100% + 5rem");
+            }
+        }
+    }
+
+    > .review-container,
+    > .success-container,
+    > .fail-container {
+        padding: 4rem 15.5%;
+        > .title {
+            font-weight: bold;
+            color: @color-corp-text-dark-grey-text;
+            text-align: left;
+        }
+        > .image {
+            position: relative;
+            margin-top: 3rem;
+            text-align: center;
+            > img {
+                width: 26rem;
+                height: 22rem;
+            }
+            > .ui.huge.header {
+                position: absolute;
+                bottom: 3.5rem;
+                left: 0;
+                width: 100%;
+                margin-top: 0;
+                font-family: SimHei;
+                font-size: 38px;
+                text-align: center;
+            }
+        }
+    }
+    > .success-container {
+        > .title {
+            text-align: center;
+        }
+    }
+    > .fail-container {
+        > .btn {
+            margin-top: 2rem;
+            text-align: center;
+        }
+    }
+}

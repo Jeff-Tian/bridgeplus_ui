@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= __('MobileAoutusTitle') %></title>
+    <meta name="description" content="<%= __('SEODesc_SignIn') %>">
+    <%- include('header.html') -%>
+</head>
+<body ng-app="mobile" ng-controller="AppCtrl" class="b-mobile back-color white color shadowed">
+<%- include('head.html') -%>
+
+<div class="full-height">
+    <div class="ui center stuck">
+        <div class="content center">
+            <div class="ui padded container">
+                <img src="<%= cdn.normal %>img/logo.png?<%= cdn.version %>">
+
+                <h3 class="ui white header"><%= __('MobileAoutusHeader') %></h3>
+                <h5><%= __('MobileAoutusInfo') %></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('footer.html') -%>
+
+<% if (dev_mode) { %>
+<script src="js/page/mobile/MobileMenuCtrl.js"></script>
+<script src="js/page/mobile/MobileHeadCtrl.js"></script>
+<script src="js/page/mobile/MobileNationalCtrl.js"></script>
+<script src="js/page/mobile/MobileAboutusCtrl.js"></script>
+<script src="js/page/mobile/MobileIndexCtrl.js"></script>
+<script src="js/page/mobile/index.js"></script>
+
+<% } else { %>
+<script src="<%= config.normal %>js/cdn/m/aboutus.js?<%= cdn.version %>"></script>
+<% } %>
+</body>
+
+</html>

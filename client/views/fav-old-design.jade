@@ -1,0 +1,86 @@
+div(class="ui bottom attached active tab segment b-opd-body", data-tab="teacher", style="background: transparent;", ng-controller="FavTeachersCtrl", ng-show="false")
+    div(class="ui segments", style="border: none;")
+        div(class="ui red inverted clearing segment")
+            | 导师名称
+        div(class="ui tertiary inverted segment", style="padding-bottom: 5px; padding-top: 5px;", ng-repeat-start="t in teachers", ng-show="false")
+            h4(class="ui right floated header", style="margin-bottom: 0;") {{t.title}}
+            h4(class="ui left floated white header", style="margin-bottom: 0;")
+                i(class="large user icon")
+                div.content
+                    | {{t.name}}
+                    | &nbsp;&nbsp;&nbsp;&nbsp;
+                    span(class="", style="font-size: x-small; font-weight: normal;") {{t.description}}
+            div(class="ui horizontal fitted clearing divider")
+        div(class="ui segment items")
+            div.item
+                div(class="ui tiny image")
+                    img(ng-src="/{{t.image}}", class="avatar")
+                div.content
+                    h5(class="ui header") {{t.name}}
+                        div(class="sub header") {{t.title}}
+                        div(class="sub header", style="margin-top: 5px; margin-bottom: 10px;")
+                            + rating(5, 4)
+                        div(class="sub header")
+                            span(class="ui light mini red label", style="margin-left: 0;") HBS
+                            span(class="ui light mini red label") CEO
+                div.content
+                    h5(class="ui header")
+                        i(class="ui red book icon")
+                        | 最新话题
+                    div(class="ui middle aligned link list", style="width: 50%;")
+                        div.item(ng-repeat="topic in t.topics")
+                            div(class="right floated content")
+                                | (
+                                a(ng-href="topic.link", target="topic.target") more
+                                | )
+                            div.content(style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;", ng-bind="topic.title + '.........................................................................................'")
+                    div.description
+                    div.extra
+                        button(class="ui right floated black mini button", ng-click="showMessage = true", ng-disabled="showMessage") 小纸条记录
+                        button(class="ui right floated black mini button") 取消收藏
+        div(class="ui black secondary inverted segment", ng-if="showMessage") 小纸条记录
+        div(class="ui segment", style="max-height: 600px; background-color: #f0f0f0; color: gray; overflow: auto;", ng-if="showMessage")
+            p(class="", style="text-align: center;") 尚有 5 则新留言
+            p(class="", style="text-align: center") Sep 30 2015 23:09
+            div(class="ui items")
+                div(class="right floated container", style="clear: both; margin-bottom: 20px;", ng-repeat-start="m in t.messages", ng-show="m.from === 'me'")
+                    div(class="ui image", style="text-align: center; float: right;")
+                        img(src="/img/feedback/about-team-1.jpg", class="ui mini avatar bordered image", style="border: solid 3px #cc0000;")
+                        div CEO
+                    div.content
+                        h5(class="ui right floated header", style="clear: left; margin-bottom: 5px;")
+                            a.user YIYI CHEN / 台湾交通大学 / 设计师
+                        div(class="right floated description", style="position: relative;")
+                            div(style="border-top: solid 6px transparent; border-left: solid 10px white; border-bottom: solid 6px transparent; border-right: solid 0px transparent; width: 0; height: 0; position: absolute; right: 12px; top: 5px;")
+                            div(style="max-width: 400px; background-color: white; padding: 10px 20px; border-radius: 5px; margin-right: 10px; display: inline-block;")
+                                p {{m.text}}
+                div.item(ng-repeat-end, ng-show="m.from === 'teacher'")
+                    div(class="ui mini avatar image", style="text-align: center;")
+                        img(src="/img/feedback/about-team-1.jpg", class="ui bordered image", style="border: solid 3px #000099;")
+                        span 导师
+                    div.content
+                        h5(class="ui header")
+                            a.user 钱申 / 合得国际CTO
+                        div(class="description", style="padding: 0; position: relative;")
+                            div(style="border-top: solid 6px transparent; border-right: solid 10px white; border-bottom: solid 6px transparent; border-left: solid 0px transparent; width: 0; height: 0; position: absolute; left: -10px; top: 5px;")
+                            div(style="max-width: 400px; background-color: white; padding: 10px 20px; border-radius: 5px; width: auto; display: inline-block;")
+                                p {{m.text}}
+                div(class="ui horizontal clearing divider")
+        div(class="ui segment", ng-repeat-end, style="clear: both;", ng-if="showMessage")
+            form(class="ui form")
+                div.field
+                    textarea(rows="5", placeholder="聊聊你对于导师的想法吧 !", ng-model="replyData.text")
+                div.field
+                    div(class="ui tiny images")
+                        div(class="ui image", ng-repeat="p in replyData.pictures", style="position: relative;")
+                            i(class="ui red link large remove circle icon", style="position: absolute; right: -15px; top: -5px; cursor: pointer;", ng-click="removePicture($index)")
+                            img(ng-src="{{p.picture}}")
+                div.field
+                    button(class="ui tiny red button right floated") 确定送出
+                    button(class="ui tiny red button right floated", style="position: relative; overflow: hidden;")
+                        i(class="ui photo icon")
+                        input(type="file", accept="image/*", onchange="angular.element(this).scope().picturesAdded(this)", multiple="multiple", style="position: absolute; left: 0; right: 0; bottom: 0; top: 0; padding-left: 10000px; cursor: pointer;")
+                        | 上传照片
+                div(class="ui clearing fitted horizontal divider")
+        div(class="ui tertiary inverted segment center aligned") 查看更多
+    p &nbsp;

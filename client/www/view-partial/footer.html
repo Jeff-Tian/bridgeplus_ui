@@ -1,0 +1,48 @@
+<div class="ui inverted vertical footer">
+    <div class="ui container">
+        <div class="ui horizontal list footer-list">
+            <div class="item">
+                <div class="content">
+                    <a class="header" href="/portal/zh/about-us" ng-cloak><span>|</span>
+                        <%=__('FooterAboutUs') %></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <a class="header" href="<%= localeLink('/school') %>" ng-cloak><span>|</span>
+                        <%=__('FooterBusinessCooperation') %></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <a class="header" href="/portal/zh/contact-us" ng-cloak><span>|</span>
+                        <%=__('FooterContactUs') %></a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <a class="header" href="<%= localeLink('/statement') %>" ng-cloak><span>|</span>
+                        <%=__('FooterServiceStatement') %></a>
+                </div>
+            </div>
+            <div class="item" style="white-space: nowrap;">
+                <wb:follow-button uid="5563573128" type="red_1" width="67" height="24"></wb:follow-button>
+            </div>
+        </div>
+
+        <div class="ui container">
+            <div class="ui right floated footer-wechat-share"
+                 data-html="<img src='<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg?<%= cdn.version %>' class='ui large image'>"
+                 data-position="left center">
+                <img class="ui tiny image wechat"
+                     src="<%= cdn.normal %>img/wechat/bplus_fuwuhao.jpg?<%= cdn.version %>">
+            </div>
+
+            <p class="b-copyright floatd left" style="line-height: 80px;">&copy; 2015 Bridge+ <%=__('FooterReserved') %>
+                |
+                <%=__('FooterLicense') %></p>
+        </div>
+    </div>
+</div>
+<%- include('js.html') -%>
+<!-- <%= process.env.DATACENTER || process.env.RUN_FROM %> -->

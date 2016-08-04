@@ -1,0 +1,74 @@
+/*
+* - @Bridge+
+*/
+.b-popularity {
+    background-color: #2e363d;
+    background-image: url("/img/salespage/popularity_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto auto;
+    height: 700px;
+
+    > .ui.container {
+        padding-top: 2rem;
+    }
+    h3 {
+        &.ui.header {
+            color: @color-white;
+            font-size: @fontsize-10xl;
+        }
+    }
+    .b-theory-header {
+        padding: 2.8rem 1rem;
+
+        .content {
+            > div {
+                color: @color-white;
+                font-size: @fontsize-o;
+
+                p {
+                    line-height: 2.4em;
+                }
+            }
+        }
+    }
+    .b-theory-content {
+        padding-top: 0rem;
+        margin-top: 7rem !important;
+        height: 30rem;
+        overflow: auto;
+
+        > h3 {
+            color: @color-white;
+            font-size: @fontsize-5xl;
+            font-weight: normal;
+        }
+        > p {
+            color: @color-white;
+            font-size: @fontsize-o;
+            line-height: 2.4em;
+        }
+    }
+}
+.english {
+    .b-popularity {
+        > .ui.container {
+        }
+        .b-theory-header {
+            padding: 0 1rem;
+
+            .content {
+                > div {
+                    p {
+                        line-height: 2em;
+                    }
+                }
+            }
+        }
+        .b-theory-content {
+            > p {
+                line-height: 2em;
+            }
+        }
+    }
+}

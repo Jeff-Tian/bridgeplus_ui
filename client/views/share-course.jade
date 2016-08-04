@@ -1,0 +1,17 @@
+div(class="ui dimmer")
+    div.content
+        div.center(ng-if="#{c}.status !== '100'")
+            i(class="big long arrow right icon")
+            div 火速邀请小伙伴
+        div.center(ng-click="showSharingQRCode($event)", ng-if="#{c}.status === '100'", style="cursor: pointer;")
+            i(class="big long arrow right icon")
+            div 分享给小伙伴
+            div(class="ui modal qrcode", style="width: 250px; margin-left: -125px;")
+                div(class="image content")
+                    div(class="ui small centered image")
+                        img(ng-src="#{cdn.normal}img/wechat/bplus_fuwuhao.jpg?#{cdn.version}")
+                div(class="description")
+                    div(class="ui center aligned container") 距离课程开始还有2天,扫我快速进入
+                    div(class="ui horizontal divider")
+        a(class="ui transparent right corner label", ng-mouseenter="showDimmer($event)", ng-mouseover="showDimmer($event)")
+            i(class="share alternate icon", ng-show="false")

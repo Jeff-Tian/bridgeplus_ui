@@ -1,0 +1,101 @@
+<!--[if lt IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- Following(fixed) Menu -->
+<div class="ui center aligned container brand message-wrapper" ng-show="message || shamelessMessage" ng-cloak>
+    <div class="ui black brand message">
+        {{message || shamelessMessage}}
+        <i class="large remove circle icon" ng-click="message = null; shamelessMessage = null"></i>
+    </div>
+</div>
+
+<div class="ui top fixed hidden b-header" data-action="fixedHeader">
+    <div class="ui menu b-header-account">
+        <div class="ui container">
+            <a class="toc item">
+                <i class="sidebar icon"></i>
+            </a>
+
+            <div class="right item">
+                <% if (signedIn) { %>
+                <div class="ui right dropdown b-profile item" ng-cloak>
+                    <img ng-src="{{memberInfo.avatar ? getAvatarUrl(memberInfo.avatar, '-minor'): '/img/anonymous_default.png'}}"
+                         class="ui circular image avatar">
+                    <span class="ui button">{{memberInfo.displayName}} <i class="large angle down icon"></i></span>
+
+                    <div class="ui inverted vertical center aligned b-profile menu">
+                        <img
+                                ng-src="{{memberInfo.avatar ? getAvatarUrl(memberInfo.avatar, '-small') : (memberInfo.gender.toString().toUpperCase() !== 'F' ? '<%= cdn.normal %>img/male_default.png?<%= cdn.version %>' : '<%= cdn.normal %>img/female_default.png?<%= cdn.version %>')}}"
+                                class="ui circular image avatar">
+                        <a class="center aligned item" href="<%= localeLink('profile') %>"><%= __('Profile') %></a>
+                        <a class="center aligned item" href="<%= localeLink('account-setting') %>"><%=
+                            __('AccountSetting') %></a>
+                        <a class="center aligned item" ng-click="signOut()"><%= __('SignOut') %></a>
+                    </div>
+                </div>
+                <% } else { %>
+                <a href="<%= localeLink('/signin#/login') %>" class="ui button"><%= __('SignIn') %></a>
+                <a href="<%= localeLink('/signin#/register') %>" class="ui button"><%= __('SignUp') %></a>
+                <% } %>
+                <a ng-href="<%= otherLocaleLink %>{{hash}}" class="ui button"><%= __(otherLocale) %></a>
+            </div>
+        </div>
+    </div>
+    <div class="ui menu b-header-nav">
+        <div class="ui container">
+            <a href="<%= localeLink('/index') %>" class="b-header-logo">
+                <img src="<%= cdn.normal %>img/logo.png?<%= cdn.version %>" height="60">
+            </a>
+
+            <div class="right item">
+                <%- include('../../views/partial/main_nav.html') %>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+    <a href="<%= localeLink('/index') %>" class="item" ng-class="{'active':current_page==='index'}"><%= __('Home')
+        %></a>
+    <a href="<%= localeLink('/study') %>" class="item" ng-class="{'active':current_page==='study'}"><%= __('Learn')
+        %></a>
+    <a href="<%= localeLink('/game') %>" class="item" ng-class="{'active':current_page==='game'}"><%= __('Play') %></a>
+    <a href="<%= localeLink('/opportunity') %>" class="item" ng-class="{'active':current_page==='opportunity'}"><%=
+        __('Opportunity') %></a>
+    <% if (false) { %>
+    <a href="<%= localeLink('/youth') %>" class="item"
+       ng-class="{'active': current_page === 'poster'}"><%= __('全国大赛') %></a>
+    <% } %>
+</div>
+<!-- Initial Menu -->
+<div class="ui b-header">
+    <div class="ui menu b-header-account">
+        <div class="ui container">
+            <a class="toc item">
+                <i class="sidebar icon"></i>
+            </a>
+
+            <div class="right item">
+                <% if (typeof hcd_user !== 'undefined' && hcd_user.member_id) { %>
+                <%- include('dropdown-menu.html') -%>
+                <% } else { %>
+                <a href="<%= localeLink('/signin#/login') %>" class="ui button"><%= __('SignIn') %></a>
+                <a href="<%= localeLink('/signin#/register') %>" class="ui button"><%= __('SignUp') %></a>
+                <% } %>
+                <a ng-href="<%= otherLocaleLink %>{{hash}}" class="ui button"><%= __(otherLocale) %></a>
+            </div>
+        </div>
+    </div>
+    <div class="ui menu b-header-nav">
+        <div class="ui container">
+            <a href="<%= localeLink('/index') %>" class="b-header-logo">
+                <img src="<%= cdn.normal %>img/logo.png?<%= cdn.version %>" height="60">
+            </a>
+
+            <div class="right item">
+                <%- include('../../views/partial/main_nav.html') %>
+            </div>
+        </div>
+    </div>
+</div>

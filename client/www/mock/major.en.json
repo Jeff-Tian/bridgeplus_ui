@@ -1,0 +1,1522 @@
+﻿[{
+    "value": "philosophy",
+    "data": "philosophy"
+}, {
+    "value": "logic",
+    "data": "logic"
+}, {
+    "value": "religion",
+    "data": "religion"
+}, {
+    "value": "economics",
+    "data": "economics"
+}, {
+    "value": "The economic statistics",
+    "data": "The economic statistics"
+}, {
+    "value": "finance",
+    "data": "finance"
+}, {
+    "value": "taxation",
+    "data": "taxation"
+}, {
+    "value": "finance",
+    "data": "finance"
+}, {
+    "value": "Financial engineering",
+    "data": "Financial engineering"
+}, {
+    "value": "insurance",
+    "data": "insurance"
+}, {
+    "value": "investment",
+    "data": "investment"
+}, {
+    "value": "International economy and trade",
+    "data": "International economy and trade"
+}, {
+    "value": "Trade and economic",
+    "data": "Trade and economic"
+}, {
+    "value": "A law",
+    "data": "A law"
+}, {
+    "value": "Political science and public administration",
+    "data": "Political science and public administration"
+}, {
+    "value": "International political",
+    "data": "International political"
+}, {
+    "value": "diplomacy",
+    "data": "diplomacy"
+}, {
+    "value": "sociology",
+    "data": "sociology"
+}, {
+    "value": "Social work",
+    "data": "Social work"
+}, {
+    "value": "ethnology",
+    "data": "ethnology"
+}, {
+    "value": "Scientific socialism",
+    "data": "Scientific socialism"
+}, {
+    "value": "The history of the communist party of China",
+    "data": "The history of the communist party of China"
+}, {
+    "value": "The ideological and political education",
+    "data": "The ideological and political education"
+}, {
+    "value": "Order to learn",
+    "data": "Order to learn"
+}, {
+    "value": "investigation",
+    "data": "investigation"
+}, {
+    "value": "Border management",
+    "data": "Border management"
+}, {
+    "value": "pedagogy",
+    "data": "pedagogy"
+}, {
+    "value": "Science education",
+    "data": "Science education"
+}, {
+    "value": "Humanities education",
+    "data": "Humanities education"
+}, {
+    "value": "Education technology",
+    "data": "Education technology"
+}, {
+    "value": "Art education",
+    "data": "Art education"
+}, {
+    "value": "Preschool education",
+    "data": "Preschool education"
+}, {
+    "value": "Primary school education",
+    "data": "Primary school education"
+}, {
+    "value": "Special education",
+    "data": "Special education"
+}, {
+    "value": "The sports education",
+    "data": "The sports education"
+}, {
+    "value": "Sports training",
+    "data": "Sports training"
+}, {
+    "value": "Social sports guidance and management",
+    "data": "Social sports guidance and management"
+}, {
+    "value": "Martial arts and traditional sports",
+    "data": "Martial arts and traditional sports"
+}, {
+    "value": "Human movement science",
+    "data": "Human movement science"
+}, {
+    "value": "Chinese language and literature",
+    "data": "Chinese language and literature"
+}, {
+    "value": "Chinese language and",
+    "data": "Chinese language and"
+}, {
+    "value": "Chinese international education",
+    "data": "Chinese international education"
+}, {
+    "value": "Chinese language and literature of ethnic minorities",
+    "data": "Chinese language and literature of ethnic minorities"
+}, {
+    "value": "Classical text",
+    "data": "Classical text"
+}, {
+    "value": "English",
+    "data": "English"
+}, {
+    "value": "Russian",
+    "data": "Russian"
+}, {
+    "value": "German",
+    "data": "German"
+}, {
+    "value": "French",
+    "data": "French"
+}, {
+    "value": "Spanish",
+    "data": "Spanish"
+}, {
+    "value": "The Arabic language",
+    "data": "The Arabic language"
+}, {
+    "value": "Japanese",
+    "data": "Japanese"
+}, {
+    "value": "Persian",
+    "data": "Persian"
+}, {
+    "value": "Korean",
+    "data": "Korean"
+}, {
+    "value": "Filipino",
+    "data": "Filipino"
+}, {
+    "value": "Sanskrit pali",
+    "data": "Sanskrit pali"
+}, {
+    "value": "Indonesian",
+    "data": "Indonesian"
+}, {
+    "value": "Hindi",
+    "data": "Hindi"
+}, {
+    "value": "Cambodian",
+    "data": "Cambodian"
+}, {
+    "value": "Lao",
+    "data": "Lao"
+}, {
+    "value": "Burmese",
+    "data": "Burmese"
+}, {
+    "value": "Malay",
+    "data": "Malay"
+}, {
+    "value": "Mongolian",
+    "data": "Mongolian"
+}, {
+    "value": "sinhala",
+    "data": "sinhala"
+}, {
+    "value": "Thai",
+    "data": "Thai"
+}, {
+    "value": "Urdu",
+    "data": "Urdu"
+}, {
+    "value": "Hebrew",
+    "data": "Hebrew"
+}, {
+    "value": "Vietnamese",
+    "data": "Vietnamese"
+}, {
+    "value": "hausa",
+    "data": "hausa"
+}, {
+    "value": "swahili",
+    "data": "swahili"
+}, {
+    "value": "Albanian",
+    "data": "Albanian"
+}, {
+    "value": "Bulgarian",
+    "data": "Bulgarian"
+}, {
+    "value": "polish",
+    "data": "polish"
+}, {
+    "value": "Czech",
+    "data": "Czech"
+}, {
+    "value": "slovak",
+    "data": "slovak"
+}, {
+    "value": "romanian",
+    "data": "romanian"
+}, {
+    "value": "Portuguese",
+    "data": "Portuguese"
+}, {
+    "value": "Swedish",
+    "data": "Swedish"
+}, {
+    "value": "Serbian",
+    "data": "Serbian"
+}, {
+    "value": "Turkish",
+    "data": "Turkish"
+}, {
+    "value": "Greek",
+    "data": "Greek"
+}, {
+    "value": "hun",
+    "data": "hun"
+}, {
+    "value": "Italian",
+    "data": "Italian"
+}, {
+    "value": "Tamil",
+    "data": "Tamil"
+}, {
+    "value": "pashto",
+    "data": "pashto"
+}, {
+    "value": "esperanto",
+    "data": "esperanto"
+}, {
+    "value": "Bengali",
+    "data": "Bengali"
+}, {
+    "value": "Nepali",
+    "data": "Nepali"
+}, {
+    "value": "Croatian",
+    "data": "Croatian"
+}, {
+    "value": "Dutch",
+    "data": "Dutch"
+}, {
+    "value": "Finnish",
+    "data": "Finnish"
+}, {
+    "value": "Ukrainian",
+    "data": "Ukrainian"
+}, {
+    "value": "Norwegian",
+    "data": "Norwegian"
+}, {
+    "value": "Danish",
+    "data": "Danish"
+}, {
+    "value": "Icelandic",
+    "data": "Icelandic"
+}, {
+    "value": "The Irish language",
+    "data": "The Irish language"
+}, {
+    "value": "latvian",
+    "data": "latvian"
+}, {
+    "value": "Lithuanian",
+    "data": "Lithuanian"
+}, {
+    "value": "slovenian",
+    "data": "slovenian"
+}, {
+    "value": "Estonian",
+    "data": "Estonian"
+}, {
+    "value": "Maltese",
+    "data": "Maltese"
+}, {
+    "value": "The kazak",
+    "data": "The kazak"
+}, {
+    "value": "uzbek",
+    "data": "uzbek"
+}, {
+    "value": "Zulu",
+    "data": "Zulu"
+}, {
+    "value": "Latin",
+    "data": "Latin"
+}, {
+    "value": "translation",
+    "data": "translation"
+}, {
+    "value": "Business English",
+    "data": "Business English"
+}, {
+    "value": "journalism",
+    "data": "journalism"
+}, {
+    "value": "Radio and television to learn",
+    "data": "Radio and television to learn"
+}, {
+    "value": "advertising",
+    "data": "advertising"
+}, {
+    "value": "communication",
+    "data": "communication"
+}, {
+    "value": "Editorial and publishing subject",
+    "data": "Editorial and publishing subject"
+}, {
+    "value": "history",
+    "data": "history"
+}, {
+    "value": "History of the world",
+    "data": "History of the world"
+}, {
+    "value": "archaeology",
+    "data": "archaeology"
+}, {
+    "value": "Cultural relics and museums",
+    "data": "Cultural relics and museums"
+}, {
+    "value": "Mathematics and applied mathematics",
+    "data": "Mathematics and applied mathematics"
+}, {
+    "value": "Information and computing science",
+    "data": "Information and computing science"
+}, {
+    "value": "physics",
+    "data": "physics"
+}, {
+    "value": "Applied physics",
+    "data": "Applied physics"
+}, {
+    "value": "Nuclear physics",
+    "data": "Nuclear physics"
+}, {
+    "value": "chemical",
+    "data": "chemical"
+}, {
+    "value": "Applied chemistry",
+    "data": "Applied chemistry"
+}, {
+    "value": "astronomy",
+    "data": "astronomy"
+}, {
+    "value": "Geographical science",
+    "data": "Geographical science"
+}, {
+    "value": "Natural geography and resources and environment",
+    "data": "Natural geography and resources and environment"
+}, {
+    "value": "Human geography and planning in urban and rural areas",
+    "data": "Human geography and planning in urban and rural areas"
+}, {
+    "value": "Geographic information science",
+    "data": "Geographic information science"
+}, {
+    "value": "Atmospheric sciences",
+    "data": "Atmospheric sciences"
+}, {
+    "value": "Applied meteorology",
+    "data": "Applied meteorology"
+}, {
+    "value": "Marine science",
+    "data": "Marine science"
+}, {
+    "value": "Marine technology",
+    "data": "Marine technology"
+}, {
+    "value": "geophysics",
+    "data": "geophysics"
+}, {
+    "value": "Space science and technology",
+    "data": "Space science and technology"
+}, {
+    "value": "geology",
+    "data": "geology"
+}, {
+    "value": "The geochemical",
+    "data": "The geochemical"
+}, {
+    "value": "Biological sciences",
+    "data": "Biological sciences"
+}, {
+    "value": "biotechnology",
+    "data": "biotechnology"
+}, {
+    "value": "bioinformatics",
+    "data": "bioinformatics"
+}, {
+    "value": "ecology",
+    "data": "ecology"
+}, {
+    "value": "psychology",
+    "data": "psychology"
+}, {
+    "value": "Applied psychology",
+    "data": "Applied psychology"
+}, {
+    "value": "statistical",
+    "data": "statistical"
+}, {
+    "value": "Applied statistics",
+    "data": "Applied statistics"
+}, {
+    "value": "Theoretical and applied mechanics",
+    "data": "Theoretical and applied mechanics"
+}, {
+    "value": "Engineering mechanics",
+    "data": "Engineering mechanics"
+}, {
+    "value": "Mechanical engineering",
+    "data": "Mechanical engineering"
+}, {
+    "value": "Mechanical design manufacturing and automation",
+    "data": "Mechanical design manufacturing and automation"
+}, {
+    "value": "Material forming and control engineering",
+    "data": "Material forming and control engineering"
+}, {
+    "value": "Machinery and electronics engineering",
+    "data": "Machinery and electronics engineering"
+}, {
+    "value": "Industrial design",
+    "data": "Industrial design"
+}, {
+    "value": "Process equipment and control engineering",
+    "data": "Process equipment and control engineering"
+}, {
+    "value": "Vehicle engineering",
+    "data": "Vehicle engineering"
+}, {
+    "value": "Automobile service engineering",
+    "data": "Automobile service engineering"
+}, {
+    "value": "The measurement and control technology and instrument",
+    "data": "The measurement and control technology and instrument"
+}, {
+    "value": "Materials science and engineering",
+    "data": "Materials science and engineering"
+}, {
+    "value": "Material physics",
+    "data": "Material physics"
+}, {
+    "value": "Materials chemistry",
+    "data": "Materials chemistry"
+}, {
+    "value": "Metallurgical engineering",
+    "data": "Metallurgical engineering"
+}, {
+    "value": "Metal material engineering",
+    "data": "Metal material engineering"
+}, {
+    "value": "Inorganic non-metallic materials engineering",
+    "data": "Inorganic non-metallic materials engineering"
+}, {
+    "value": "Polymer materials and engineering",
+    "data": "Polymer materials and engineering"
+}, {
+    "value": "Composite materials and engineering",
+    "data": "Composite materials and engineering"
+}, {
+    "value": "Energy and power engineering",
+    "data": "Energy and power engineering"
+}, {
+    "value": "Electrical engineering and its automation",
+    "data": "Electrical engineering and its automation"
+}, {
+    "value": "Electronic information engineering",
+    "data": "Electronic information engineering"
+}, {
+    "value": "Electronic science and technology",
+    "data": "Electronic science and technology"
+}, {
+    "value": "Communication engineering",
+    "data": "Communication engineering"
+}, {
+    "value": "Microelectronics science and engineering",
+    "data": "Microelectronics science and engineering"
+}, {
+    "value": "Optoelectronic information science and engineering",
+    "data": "Optoelectronic information science and engineering"
+}, {
+    "value": "Information engineering",
+    "data": "Information engineering"
+}, {
+    "value": "automation",
+    "data": "automation"
+}, {
+    "value": "Computer science and technology",
+    "data": "Computer science and technology"
+}, {
+    "value": "Software engineering",
+    "data": "Software engineering"
+}, {
+    "value": "Network engineering",
+    "data": "Network engineering"
+}, {
+    "value": "Information security",
+    "data": "Information security"
+}, {
+    "value": "The Internet of things engineering",
+    "data": "The Internet of things engineering"
+}, {
+    "value": "Digital media technology",
+    "data": "Digital media technology"
+}, {
+    "value": "Civil engineering",
+    "data": "Civil engineering"
+}, {
+    "value": "Building environment and energy application engineering",
+    "data": "Building environment and energy application engineering"
+}, {
+    "value": "Water supply and drainage science and engineering",
+    "data": "Water supply and drainage science and engineering"
+}, {
+    "value": "Electrical and intelligent building",
+    "data": "Electrical and intelligent building"
+}, {
+    "value": "Water resources and hydropower engineering",
+    "data": "Water resources and hydropower engineering"
+}, {
+    "value": "Hydrology and water resources engineering",
+    "data": "Hydrology and water resources engineering"
+}, {
+    "value": "The port channel and coastal engineering",
+    "data": "The port channel and coastal engineering"
+}, {
+    "value": "Surveying and mapping engineering",
+    "data": "Surveying and mapping engineering"
+}, {
+    "value": "Remote sensing science and technology",
+    "data": "Remote sensing science and technology"
+}, {
+    "value": "Chemical engineering and technology",
+    "data": "Chemical engineering and technology"
+}, {
+    "value": "Pharmaceutical engineering",
+    "data": "Pharmaceutical engineering"
+}, {
+    "value": "Geological engineering",
+    "data": "Geological engineering"
+}, {
+    "value": "Exploration technology and engineering",
+    "data": "Exploration technology and engineering"
+}, {
+    "value": "Resource exploration engineering",
+    "data": "Resource exploration engineering"
+}, {
+    "value": "Mining engineering",
+    "data": "Mining engineering"
+}, {
+    "value": "Petroleum engineering",
+    "data": "Petroleum engineering"
+}, {
+    "value": "Mineral processing engineering",
+    "data": "Mineral processing engineering"
+}, {
+    "value": "Oil and gas storage and transportation engineering",
+    "data": "Oil and gas storage and transportation engineering"
+}, {
+    "value": "Textile engineering",
+    "data": "Textile engineering"
+}, {
+    "value": "Clothing design and engineering",
+    "data": "Clothing design and engineering"
+}, {
+    "value": "Light chemical engineering",
+    "data": "Light chemical engineering"
+}, {
+    "value": "Packaging engineering",
+    "data": "Packaging engineering"
+}, {
+    "value": "Printing engineering",
+    "data": "Printing engineering"
+}, {
+    "value": "The transportation",
+    "data": "The transportation"
+}, {
+    "value": "Traffic engineering",
+    "data": "Traffic engineering"
+}, {
+    "value": "Navigation technology",
+    "data": "Navigation technology"
+}, {
+    "value": "Marine engineering",
+    "data": "Marine engineering"
+}, {
+    "value": "Flight technology",
+    "data": "Flight technology"
+}, {
+    "value": "Ship and ocean engineering",
+    "data": "Ship and ocean engineering"
+}, {
+    "value": "Aerospace engineering",
+    "data": "Aerospace engineering"
+}, {
+    "value": "Aircraft design and engineering",
+    "data": "Aircraft design and engineering"
+}, {
+    "value": "Aircraft manufacturing engineering",
+    "data": "Aircraft manufacturing engineering"
+}, {
+    "value": "Aircraft power engineering",
+    "data": "Aircraft power engineering"
+}, {
+    "value": "Aircraft environment and life support project",
+    "data": "Aircraft environment and life support project"
+}, {
+    "value": "Weapon systems and engineering",
+    "data": "Weapon systems and engineering"
+}, {
+    "value": "Weapon launch project",
+    "data": "Weapon launch project"
+}, {
+    "value": "Detection guidance and control technology",
+    "data": "Detection guidance and control technology"
+}, {
+    "value": "Ammunition engineering technology and explosion",
+    "data": "Ammunition engineering technology and explosion"
+}, {
+    "value": "Special energy technology and engineering",
+    "data": "Special energy technology and engineering"
+}, {
+    "value": "Armored vehicle engineering",
+    "data": "Armored vehicle engineering"
+}, {
+    "value": "The technology of information confrontation",
+    "data": "The technology of information confrontation"
+}, {
+    "value": "Nuclear engineering and nuclear technology",
+    "data": "Nuclear engineering and nuclear technology"
+}, {
+    "value": "Radiation protection and nuclear safety",
+    "data": "Radiation protection and nuclear safety"
+}, {
+    "value": "Engineering physics",
+    "data": "Engineering physics"
+}, {
+    "value": "Nuclear chemical and nuclear engineering",
+    "data": "Nuclear chemical and nuclear engineering"
+}, {
+    "value": "Agricultural engineering",
+    "data": "Agricultural engineering"
+}, {
+    "value": "Agricultural mechanization and automation",
+    "data": "Agricultural mechanization and automation"
+}, {
+    "value": "Rural electrification",
+    "data": "Rural electrification"
+}, {
+    "value": "Agricultural building environment and energy engineering",
+    "data": "Agricultural building environment and energy engineering"
+}, {
+    "value": "Agricultural water conservancy engineering",
+    "data": "Agricultural water conservancy engineering"
+}, {
+    "value": "Forest engineering",
+    "data": "Forest engineering"
+}, {
+    "value": "Wood science and engineering",
+    "data": "Wood science and engineering"
+}, {
+    "value": "Forest chemical",
+    "data": "Forest chemical"
+}, {
+    "value": "Environmental science and engineering",
+    "data": "Environmental science and engineering"
+}, {
+    "value": "Environmental engineering",
+    "data": "Environmental engineering"
+}, {
+    "value": "Environmental science",
+    "data": "Environmental science"
+}, {
+    "value": "Environmental ecological engineering",
+    "data": "Environmental ecological engineering"
+}, {
+    "value": "Biomedical engineering",
+    "data": "Biomedical engineering"
+}, {
+    "value": "Food science and engineering",
+    "data": "Food science and engineering"
+}, {
+    "value": "Food quality and safety",
+    "data": "Food quality and safety"
+}, {
+    "value": "Food engineering",
+    "data": "Food engineering"
+}, {
+    "value": "Dairy engineering",
+    "data": "Dairy engineering"
+}, {
+    "value": "Wine making engineering",
+    "data": "Wine making engineering"
+}, {
+    "value": "architecture",
+    "data": "architecture"
+}, {
+    "value": "Urban and rural planning",
+    "data": "Urban and rural planning"
+}, {
+    "value": "Landscape architecture",
+    "data": "Landscape architecture"
+}, {
+    "value": "Safety engineering",
+    "data": "Safety engineering"
+}, {
+    "value": "Biological engineering",
+    "data": "Biological engineering"
+}, {
+    "value": "Criminal science and technology",
+    "data": "Criminal science and technology"
+}, {
+    "value": "Fire engineering",
+    "data": "Fire engineering"
+}, {
+    "value": "agronomy",
+    "data": "agronomy"
+}, {
+    "value": "gardening",
+    "data": "gardening"
+}, {
+    "value": "Plant protection",
+    "data": "Plant protection"
+}, {
+    "value": "Plant science and technology",
+    "data": "Plant science and technology"
+}, {
+    "value": "The seed science and engineering",
+    "data": "The seed science and engineering"
+}, {
+    "value": "Facility agriculture science and engineering",
+    "data": "Facility agriculture science and engineering"
+}, {
+    "value": "Agricultural resources and environment",
+    "data": "Agricultural resources and environment"
+}, {
+    "value": "Wildlife and nature reserve management",
+    "data": "Wildlife and nature reserve management"
+}, {
+    "value": "Soil and water conservation and desertification control",
+    "data": "Soil and water conservation and desertification control"
+}, {
+    "value": "Animal science",
+    "data": "Animal science"
+}, {
+    "value": "Animal medicine",
+    "data": "Animal medicine"
+}, {
+    "value": "Animal medicine",
+    "data": "Animal medicine"
+}, {
+    "value": "forestry",
+    "data": "forestry"
+}, {
+    "value": "The botanical garden",
+    "data": "The botanical garden"
+}, {
+    "value": "Forest protection",
+    "data": "Forest protection"
+}, {
+    "value": "aquaculture",
+    "data": "aquaculture"
+}, {
+    "value": "Marine fishery science and technology",
+    "data": "Marine fishery science and technology"
+}, {
+    "value": "Pratacultural science",
+    "data": "Pratacultural science"
+}, {
+    "value": "Basic medical",
+    "data": "Basic medical"
+}, {
+    "value": "Clinical medicine",
+    "data": "Clinical medicine"
+}, {
+    "value": "Oral medicine",
+    "data": "Oral medicine"
+}, {
+    "value": "Preventive medicine",
+    "data": "Preventive medicine"
+}, {
+    "value": "The food hygiene and nutrition",
+    "data": "The food hygiene and nutrition"
+}, {
+    "value": "Traditional Chinese medicine",
+    "data": "Traditional Chinese medicine"
+}, {
+    "value": "Acupuncture and massage to learn",
+    "data": "Acupuncture and massage to learn"
+}, {
+    "value": "Tibetan medicine",
+    "data": "Tibetan medicine"
+}, {
+    "value": "Mongolian medicine",
+    "data": "Mongolian medicine"
+}, {
+    "value": "D medical",
+    "data": "D medical"
+}, {
+    "value": "Zhuang medicine",
+    "data": "Zhuang medicine"
+}, {
+    "value": "Ha medicine",
+    "data": "Ha medicine"
+}, {
+    "value": "Chinese and western medicine clinical medicine",
+    "data": "Chinese and western medicine clinical medicine"
+}, {
+    "value": "A pharmaceutical",
+    "data": "A pharmaceutical"
+}, {
+    "value": "Pharmaceutical preparations",
+    "data": "Pharmaceutical preparations"
+}, {
+    "value": "Chinese materia medica",
+    "data": "Chinese materia medica"
+}, {
+    "value": "Traditional Chinese medicine resources and development",
+    "data": "Traditional Chinese medicine resources and development"
+}, {
+    "value": "Forensic science",
+    "data": "Forensic science"
+}, {
+    "value": "Medical inspection technology",
+    "data": "Medical inspection technology"
+}, {
+    "value": "Medical experimental technology",
+    "data": "Medical experimental technology"
+}, {
+    "value": "Medical imaging technology",
+    "data": "Medical imaging technology"
+}, {
+    "value": "Eye optometry",
+    "data": "Eye optometry"
+}, {
+    "value": "Rehabilitation treatment to learn",
+    "data": "Rehabilitation treatment to learn"
+}, {
+    "value": "Oral medical technology",
+    "data": "Oral medical technology"
+}, {
+    "value": "Health inspection and quarantine",
+    "data": "Health inspection and quarantine"
+}, {
+    "value": "nursing",
+    "data": "nursing"
+}, {
+    "value": "Management science",
+    "data": "Management science"
+}, {
+    "value": "Information management and information system",
+    "data": "Information management and information system"
+}, {
+    "value": "Engineering management",
+    "data": "Engineering management"
+}, {
+    "value": "Real estate development and management",
+    "data": "Real estate development and management"
+}, {
+    "value": "The project cost",
+    "data": "The project cost"
+}, {
+    "value": "Industrial and commercial management",
+    "data": "Industrial and commercial management"
+}, {
+    "value": "marketing",
+    "data": "marketing"
+}, {
+    "value": "accounting",
+    "data": "accounting"
+}, {
+    "value": "The financial management",
+    "data": "The financial management"
+}, {
+    "value": "International business",
+    "data": "International business"
+}, {
+    "value": "Human resource management",
+    "data": "Human resource management"
+}, {
+    "value": "Science of auditing",
+    "data": "Science of auditing"
+}, {
+    "value": "The asset appraisal",
+    "data": "The asset appraisal"
+}, {
+    "value": "The property management",
+    "data": "The property management"
+}, {
+    "value": "Culture industry management",
+    "data": "Culture industry management"
+}, {
+    "value": "Agriculture and forestry economics and management",
+    "data": "Agriculture and forestry economics and management"
+}, {
+    "value": "The development of rural areas",
+    "data": "The development of rural areas"
+}, {
+    "value": "Public utilities management",
+    "data": "Public utilities management"
+}, {
+    "value": "The administrative management",
+    "data": "The administrative management"
+}, {
+    "value": "Labor and social security",
+    "data": "Labor and social security"
+}, {
+    "value": "Land resources management",
+    "data": "Land resources management"
+}, {
+    "value": "Urban management",
+    "data": "Urban management"
+}, {
+    "value": "Library science",
+    "data": "Library science"
+}, {
+    "value": "discusse",
+    "data": "discusse"
+}, {
+    "value": "Information resources management",
+    "data": "Information resources management"
+}, {
+    "value": "Logistics management",
+    "data": "Logistics management"
+}, {
+    "value": "Logistics engineering",
+    "data": "Logistics engineering"
+}, {
+    "value": "Industrial engineering",
+    "data": "Industrial engineering"
+}, {
+    "value": "The electronic commerce",
+    "data": "The electronic commerce"
+}, {
+    "value": "Tourism management",
+    "data": "Tourism management"
+}, {
+    "value": "Hotel management",
+    "data": "Hotel management"
+}, {
+    "value": "Exhibition economy and management",
+    "data": "Exhibition economy and management"
+}, {
+    "value": "Art history",
+    "data": "Art history"
+}, {
+    "value": "Music performance",
+    "data": "Music performance"
+}, {
+    "value": "musicology",
+    "data": "musicology"
+}, {
+    "value": "Composition and technology of composition theory",
+    "data": "Composition and technology of composition theory"
+}, {
+    "value": "Dance performance",
+    "data": "Dance performance"
+}, {
+    "value": "The dance",
+    "data": "The dance"
+}, {
+    "value": "choreographer",
+    "data": "choreographer"
+}, {
+    "value": "performance",
+    "data": "performance"
+}, {
+    "value": "theater",
+    "data": "theater"
+}, {
+    "value": "The film to learn",
+    "data": "The film to learn"
+}, {
+    "value": "Drama, film and television literature",
+    "data": "Drama, film and television literature"
+}, {
+    "value": "Radio and television playwright-director",
+    "data": "Radio and television playwright-director"
+}, {
+    "value": "Drama, film and television director",
+    "data": "Drama, film and television director"
+}, {
+    "value": "Drama, film and television art design",
+    "data": "Drama, film and television art design"
+}, {
+    "value": "Recording arts",
+    "data": "Recording arts"
+}, {
+    "value": "Broadcasting and hosting art",
+    "data": "Broadcasting and hosting art"
+}, {
+    "value": "animation",
+    "data": "animation"
+}, {
+    "value": "'",
+    "data": "'"
+}, {
+    "value": "painting",
+    "data": "painting"
+}, {
+    "value": "sculpture",
+    "data": "sculpture"
+}, {
+    "value": "photography",
+    "data": "photography"
+}, {
+    "value": "Art design",
+    "data": "Art design"
+}, {
+    "value": "Visual communication design",
+    "data": "Visual communication design"
+}, {
+    "value": "Environmental design",
+    "data": "Environmental design"
+}, {
+    "value": "The product design",
+    "data": "The product design"
+}, {
+    "value": "Clothing and apparel design",
+    "data": "Clothing and apparel design"
+}, {
+    "value": "Public art",
+    "data": "Public art"
+}, {
+    "value": "Arts and crafts",
+    "data": "Arts and crafts"
+}, {
+    "value": "Digital media art",
+    "data": "Digital media art"
+}, {
+    "value": "ethics",
+    "data": "ethics"
+}, {
+    "value": "",
+    "data": ""
+}, {
+    "value": "Resource and environmental economics",
+    "data": "Resource and environmental economics"
+}, {
+    "value": "Business economics",
+    "data": "Business economics"
+}, {
+    "value": "Energy economy",
+    "data": "Energy economy"
+}, {
+    "value": "Financial mathematics",
+    "data": "Financial mathematics"
+}, {
+    "value": "Credit management",
+    "data": "Credit management"
+}, {
+    "value": "Economic and financial",
+    "data": "Economic and financial"
+}, {
+    "value": "Intellectual property rights",
+    "data": "Intellectual property rights"
+}, {
+    "value": "prisons",
+    "data": "prisons"
+}, {
+    "value": "International affairs and international relations",
+    "data": "International affairs and international relations"
+}, {
+    "value": "Political science, economics and philosophy",
+    "data": "Political science, economics and philosophy"
+}, {
+    "value": "anthropology",
+    "data": "anthropology"
+}, {
+    "value": "Women learn",
+    "data": "Women learn"
+}, {
+    "value": "Home economics",
+    "data": "Home economics"
+}, {
+    "value": "Drug control study",
+    "data": "Drug control study"
+}, {
+    "value": "Police dog technology",
+    "data": "Police dog technology"
+}, {
+    "value": "Economic crime investigation",
+    "data": "Economic crime investigation"
+}, {
+    "value": "The frontier command",
+    "data": "The frontier command"
+}, {
+    "value": "Fire command",
+    "data": "Fire command"
+}, {
+    "value": "The guards to learn",
+    "data": "The guards to learn"
+}, {
+    "value": "The public security information science",
+    "data": "The public security information science"
+}, {
+    "value": "criminology",
+    "data": "criminology"
+}, {
+    "value": "The public security management",
+    "data": "The public security management"
+}, {
+    "value": "Concerning foreign affairs police",
+    "data": "Concerning foreign affairs police"
+}, {
+    "value": "Domestic security",
+    "data": "Domestic security"
+}, {
+    "value": "The police command and tactics",
+    "data": "The police command and tactics"
+}, {
+    "value": "The Chinese language education",
+    "data": "The Chinese language education"
+}, {
+    "value": "Motor recovery",
+    "data": "Motor recovery"
+}, {
+    "value": "Leisure sports",
+    "data": "Leisure sports"
+}, {
+    "value": "Applied linguistics",
+    "data": "Applied linguistics"
+}, {
+    "value": "Secretarial science",
+    "data": "Secretarial science"
+}, {
+    "value": "Internet and new media",
+    "data": "Internet and new media"
+}, {
+    "value": "Digital publishing",
+    "data": "Digital publishing"
+}, {
+    "value": "Technology for the protection of cultural relics",
+    "data": "Technology for the protection of cultural relics"
+}, {
+    "value": "Foreign language and foreign history",
+    "data": "Foreign language and foreign history"
+}, {
+    "value": "The mathematical basic science",
+    "data": "The mathematical basic science"
+}, {
+    "value": "acoustic",
+    "data": "acoustic"
+}, {
+    "value": "Chemical biology",
+    "data": "Chemical biology"
+}, {
+    "value": "Molecular science and engineering",
+    "data": "Molecular science and engineering"
+}, {
+    "value": "Marine resources and the environment",
+    "data": "Marine resources and the environment"
+}, {
+    "value": "Military oceanography",
+    "data": "Military oceanography"
+}, {
+    "value": "The earth information science and technology",
+    "data": "The earth information science and technology"
+}, {
+    "value": "paleontology",
+    "data": "paleontology"
+}, {
+    "value": "Mechanical technology",
+    "data": "Mechanical technology"
+}, {
+    "value": "Microelectromechanical systems engineering",
+    "data": "Microelectromechanical systems engineering"
+}, {
+    "value": "Electrical and mechanical technology education",
+    "data": "Electrical and mechanical technology education"
+}, {
+    "value": "Vehicle maintenance engineering education",
+    "data": "Vehicle maintenance engineering education"
+}, {
+    "value": "Powder materials science and engineering",
+    "data": "Powder materials science and engineering"
+}, {
+    "value": "Precious stones and materials technology",
+    "data": "Precious stones and materials technology"
+}, {
+    "value": "Welding technology and engineering",
+    "data": "Welding technology and engineering"
+}, {
+    "value": "Functional materials",
+    "data": "Functional materials"
+}, {
+    "value": "Nano materials and technology",
+    "data": "Nano materials and technology"
+}, {
+    "value": "New energy material and devices",
+    "data": "New energy material and devices"
+}, {
+    "value": "Energy and environment systems engineering",
+    "data": "Energy and environment systems engineering"
+}, {
+    "value": "New energy science and engineering",
+    "data": "New energy science and engineering"
+}, {
+    "value": "",
+    "data": ""
+}, {
+    "value": "The light source and lighting",
+    "data": "The light source and lighting"
+}, {
+    "value": "Electrical engineering and intelligent control",
+    "data": "Electrical engineering and intelligent control"
+}, {
+    "value": "Radio and television engineering",
+    "data": "Radio and television engineering"
+}, {
+    "value": "Underwater acoustic engineering",
+    "data": "Underwater acoustic engineering"
+}, {
+    "value": "Electronic packaging technology",
+    "data": "Electronic packaging technology"
+}, {
+    "value": "Integrated circuit design and integration system",
+    "data": "Integrated circuit design and integration system"
+}, {
+    "value": "Medical information engineering",
+    "data": "Medical information engineering"
+}, {
+    "value": "Electromagnetic field and wireless technology",
+    "data": "Electromagnetic field and wireless technology"
+}, {
+    "value": "Wave propagation and antenna",
+    "data": "Wave propagation and antenna"
+}, {
+    "value": "Electronic information science and technology",
+    "data": "Electronic information science and technology"
+}, {
+    "value": "Telecommunication engineering and management",
+    "data": "Telecommunication engineering and management"
+}, {
+    "value": "The application of electronic technology education",
+    "data": "The application of electronic technology education"
+}, {
+    "value": "Rail transit signal and control",
+    "data": "Rail transit signal and control"
+}, {
+    "value": "Intelligent science and technology",
+    "data": "Intelligent science and technology"
+}, {
+    "value": "Spatial information and digital technology",
+    "data": "Spatial information and digital technology"
+}, {
+    "value": "Electrical and computer engineering",
+    "data": "Electrical and computer engineering"
+}, {
+    "value": "Urban underground space project",
+    "data": "Urban underground space project"
+}, {
+    "value": "Road and bridge and river crossing engineering",
+    "data": "Road and bridge and river crossing engineering"
+}, {
+    "value": "Water engineering",
+    "data": "Water engineering"
+}, {
+    "value": "Navigation engineering",
+    "data": "Navigation engineering"
+}, {
+    "value": "Geographical conditions monitoring",
+    "data": "Geographical conditions monitoring"
+}, {
+    "value": "Science and engineering resources circularly",
+    "data": "Science and engineering resources circularly"
+}, {
+    "value": "Energy chemical engineering",
+    "data": "Energy chemical engineering"
+}, {
+    "value": "Chemical engineering and biological engineering industry",
+    "data": "Chemical engineering and biological engineering industry"
+}, {
+    "value": "Groundwater science and engineering",
+    "data": "Groundwater science and engineering"
+}, {
+    "value": "Mineral resources engineering",
+    "data": "Mineral resources engineering"
+}, {
+    "value": "Marine oil and gas engineering",
+    "data": "Marine oil and gas engineering"
+}, {
+    "value": "Nonwoven materials and engineering",
+    "data": "Nonwoven materials and engineering"
+}, {
+    "value": "Clothing design and technology education",
+    "data": "Clothing design and technology education"
+}, {
+    "value": "Transportation equipment and control engineering",
+    "data": "Transportation equipment and control engineering"
+}, {
+    "value": "Rescue and salvage the project",
+    "data": "Rescue and salvage the project"
+}, {
+    "value": "Electronic electrical engineering of the ship",
+    "data": "Electronic electrical engineering of the ship"
+}, {
+    "value": "Marine engineering science and technology",
+    "data": "Marine engineering science and technology"
+}, {
+    "value": "Marine resources development technology",
+    "data": "Marine resources development technology"
+}, {
+    "value": "Vehicle quality and reliability",
+    "data": "Vehicle quality and reliability"
+}, {
+    "value": "Aircraft airworthiness technology",
+    "data": "Aircraft airworthiness technology"
+}, {
+    "value": "Environmental protection equipment engineering",
+    "data": "Environmental protection equipment engineering"
+}, {
+    "value": "Resources and environment science",
+    "data": "Resources and environment science"
+}, {
+    "value": "Water quality science and technology",
+    "data": "Water quality science and technology"
+}, {
+    "value": "The prosthetic orthopaedic engineering",
+    "data": "The prosthetic orthopaedic engineering"
+}, {
+    "value": "Grape and wine project",
+    "data": "Grape and wine project"
+}, {
+    "value": "Food nutrition and education",
+    "data": "Food nutrition and education"
+}, {
+    "value": "Cooking and nutrition education",
+    "data": "Cooking and nutrition education"
+}, {
+    "value": "Historical building protection engineering",
+    "data": "Historical building protection engineering"
+}, {
+    "value": "biopharmaceutical",
+    "data": "biopharmaceutical"
+}, {
+    "value": "Transportation management engineering",
+    "data": "Transportation management engineering"
+}, {
+    "value": "Safety engineering",
+    "data": "Safety engineering"
+}, {
+    "value": "The public security audio-visual technology",
+    "data": "The public security audio-visual technology"
+}, {
+    "value": "Emergency rescue command and technology",
+    "data": "Emergency rescue command and technology"
+}, {
+    "value": "Fire exploration",
+    "data": "Fire exploration"
+}, {
+    "value": "Network security and law enforcement",
+    "data": "Network security and law enforcement"
+}, {
+    "value": "Nuclear and biological fire",
+    "data": "Nuclear and biological fire"
+}, {
+    "value": "Tea science",
+    "data": "Tea science"
+}, {
+    "value": "tobacco",
+    "data": "tobacco"
+}, {
+    "value": "The application of biological sciences",
+    "data": "The application of biological sciences"
+}, {
+    "value": "Agricultural education",
+    "data": "Agricultural education"
+}, {
+    "value": "Gardening education",
+    "data": "Gardening education"
+}, {
+    "value": "Silkworm to learn",
+    "data": "Silkworm to learn"
+}, {
+    "value": "Bees to learn",
+    "data": "Bees to learn"
+}, {
+    "value": "Animal and plant quarantine",
+    "data": "Animal and plant quarantine"
+}, {
+    "value": "Aquatic science and technology",
+    "data": "Aquatic science and technology"
+}, {
+    "value": "anesthesiology",
+    "data": "anesthesiology"
+}, {
+    "value": "Medical imaging",
+    "data": "Medical imaging"
+}, {
+    "value": "Eye optical medical",
+    "data": "Eye optical medical"
+}, {
+    "value": "psychiatry",
+    "data": "psychiatry"
+}, {
+    "value": "Radiation medicine",
+    "data": "Radiation medicine"
+}, {
+    "value": "Maternal and child health care medicine",
+    "data": "Maternal and child health care medicine"
+}, {
+    "value": "Health supervision",
+    "data": "Health supervision"
+}, {
+    "value": "The global health",
+    "data": "The global health"
+}, {
+    "value": "Clinical pharmacy",
+    "data": "Clinical pharmacy"
+}, {
+    "value": "Pharmaceutical affairs management",
+    "data": "Pharmaceutical affairs management"
+}, {
+    "value": "Pharmaceutical analysis",
+    "data": "Pharmaceutical analysis"
+}, {
+    "value": "Pharmaceutical chemistry",
+    "data": "Pharmaceutical chemistry"
+}, {
+    "value": "Marine medicine",
+    "data": "Marine medicine"
+}, {
+    "value": "CangYaoXue",
+    "data": "CangYaoXue"
+}, {
+    "value": "Mongolian learning",
+    "data": "Mongolian learning"
+}, {
+    "value": "Traditional Chinese medicine pharmaceutical",
+    "data": "Traditional Chinese medicine pharmaceutical"
+}, {
+    "value": "Cultivation and identification of Chinese herbal medicine",
+    "data": "Cultivation and identification of Chinese herbal medicine"
+}, {
+    "value": "Hearing and speech rehabilitation",
+    "data": "Hearing and speech rehabilitation"
+}, {
+    "value": "Confidentiality management",
+    "data": "Confidentiality management"
+}, {
+    "value": "Labor relations",
+    "data": "Labor relations"
+}, {
+    "value": "Sports economics and management",
+    "data": "Sports economics and management"
+}, {
+    "value": "The financial accounting education",
+    "data": "The financial accounting education"
+}, {
+    "value": "Marketing education",
+    "data": "Marketing education"
+}, {
+    "value": "The customs administration",
+    "data": "The customs administration"
+}, {
+    "value": "Traffic management",
+    "data": "Traffic management"
+}, {
+    "value": "The maritime management",
+    "data": "The maritime management"
+}, {
+    "value": "Public relations",
+    "data": "Public relations"
+}, {
+    "value": "Purchasing and supply management",
+    "data": "Purchasing and supply management"
+}, {
+    "value": "Industrial engineering",
+    "data": "Industrial engineering"
+}, {
+    "value": "Standardization of engineering",
+    "data": "Standardization of engineering"
+}, {
+    "value": "Quality management project",
+    "data": "Quality management project"
+}, {
+    "value": "Electronic commerce and law",
+    "data": "Electronic commerce and law"
+}, {
+    "value": "Education tourism management and service",
+    "data": "Education tourism management and service"
+}, {
+    "value": "The film and television production with photography",
+    "data": "The film and television production with photography"
+}, {
+    "value": "Learn calligraphy",
+    "data": "Learn calligraphy"
+}, {
+    "value": "Traditional Chinese painting",
+    "data": "Traditional Chinese painting"
+}, {
+    "value": "Art and technology",
+    "data": "Art and technology"
+}]
