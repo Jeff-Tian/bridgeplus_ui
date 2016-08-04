@@ -1,3 +1,28 @@
+.ui.b-header {
+    background: rgba(0, 0, 0, 1);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+    &.fixed {
+        background: rgba(0, 0, 0, 0.8);
+
+        .active.ui.button.nav-button {
+            background-color: @color-corp-red;
+            color: white;
+            align-self: stretch;
+            line-height: 3em;
+        }
+
+        .b-header-account {
+            display: none;
+        }
+    }
+}
+
 .b-header .menu.b-header-account {
-    background-color: @color-corp-red;
+    background-color: transparent;
+}
+
+.b-header .menu.b-header-nav {
+    position: static;
+    background-color: transparent !important;
 }

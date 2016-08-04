@@ -168,3 +168,21 @@ block extraJs
                     $rootScope.current_page = 'home';
                 }])
         ;
+
+        function setHeader(event) {
+            var scrollTop = $(document).scrollTop();
+
+            var $uiHeader = $('.ui.b-header');
+
+            if (scrollTop > 100) {
+                $uiHeader.addClass('fixed');
+            } else {
+                $uiHeader.removeClass('fixed');
+            }
+        }
+
+        $(document).ready(function () {
+            setHeader();
+
+            $(window).bind('scroll', setHeader);
+        });
