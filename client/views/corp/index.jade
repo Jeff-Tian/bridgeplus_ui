@@ -48,7 +48,7 @@ block content
             div(class="ui horizontal divider")
             div(class="ui horizontal divider")
             div(class="ui horizontal divider")
-    div(style="background-color: #2D353C;")
+    div(style="background-color: #2D353C; background-image: url('#{cdn.normal}img/corp/home-page/bg_1.png?#{cdn.version}'); background-position: bottom;")
         div.ui.basic.segment
             div.ui.horizontal.divider
             h1.ui.inverted.centered.header 按照效果付费, 无忧
@@ -90,7 +90,7 @@ block content
                 div.ui.horizontal.divider
                 div.ui.horizontal.divider
                 div.ui.horizontal.divider
-    div(style="background-image: url(#{cdn.normal}img/salespage/jobs_bg.png?#{cdn.version});")
+    div(style="background-image: url(#{cdn.normal}img/corp/home-page/bg_2.png?#{cdn.version}); background-position: top;")
         div.ui.very.padded.container.basic.segment
             h1.ui.inverted.header.centered 为什么企业信赖我们
                 div.wave
@@ -168,21 +168,3 @@ block extraJs
                     $rootScope.current_page = 'home';
                 }])
         ;
-
-        function setHeader(event) {
-            var scrollTop = $(document).scrollTop();
-
-            var $uiHeader = $('.ui.b-header');
-
-            if (scrollTop > 100) {
-                $uiHeader.addClass('fixed');
-            } else {
-                $uiHeader.removeClass('fixed');
-            }
-        }
-
-        $(document).ready(function () {
-            setHeader();
-
-            $(window).bind('scroll', setHeader);
-        });
