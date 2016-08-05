@@ -1,7 +1,7 @@
 module.exports = function () {
     return {
         js: {
-            files: ['client/config/*.js', 'client/serviceProxy/*.js', 'locales/*.js', 'locales/*.json'],
+            files: ['config/*.js', 'serviceProxy/*.js', 'locales/*.js', 'locales/*.json'],
             options: {
                 livereload: true,
                 nospawn: true
@@ -19,7 +19,7 @@ module.exports = function () {
             }
         },
         css: {
-            files: ['client/www/css/**/*.less', 'client/www/css/transition.css'],
+            files: ['client/www/css/**/*.less'],
             tasks: ['less:development'],
             options: {
                 livereload: true,
