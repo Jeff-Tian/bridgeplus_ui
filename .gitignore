@@ -1,6 +1,7 @@
 logs/*
 !.gitkeep
 !/bin/*
+!/client/www/semantic-online-store/*
 
 tmp
 .DS_Store
