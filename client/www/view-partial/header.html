@@ -80,7 +80,7 @@
                 <% if (typeof hcd_user !== 'undefined' && hcd_user.member_id) { %>
                 <%- include('dropdown-menu.html') -%>
                 <% } else { %>
-                <a href="<%= localeLink('/sign-in#/login') %>" class="ui button"><%= __('sign-in') %></a>
+                <a href="<%= localeLink('/sign-in#/login') %>" class="ui button"><%= __('SignIn') %></a>
                 <a href="<%= localeLink('/sign-in#/register') %>" class="ui button"><%= __('SignUp') %></a>
                 <% } %>
                 <a ng-href="<%= otherLocaleLink %>{{hash}}" class="ui button"><%= __(otherLocale) %></a>
