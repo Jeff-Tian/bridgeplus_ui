@@ -35,8 +35,8 @@
                     </div>
                 </div>
                 <% } else { %>
-                <a href="<%= localeLink('/signin#/login') %>" class="ui button"><%= __('SignIn') %></a>
-                <a href="<%= localeLink('/signin#/register') %>" class="ui button"><%= __('SignUp') %></a>
+                <a href="<%= localeLink('/sign-in#/login') %>" class="ui button"><%= __('SignIn') %></a>
+                <a href="<%= localeLink('/sign-in#/register') %>" class="ui button"><%= __('SignUp') %></a>
                 <% } %>
                 <a ng-href="<%= otherLocaleLink %>{{hash}}" class="ui button"><%= __(otherLocale) %></a>
             </div>
@@ -69,7 +69,7 @@
     <% } %>
 </div>
 <!-- Initial Menu -->
-<div class="ui b-header">
+<div class="ui b-header top-nav">
     <div class="ui menu b-header-account">
         <div class="ui container">
             <a class="toc item">
@@ -80,8 +80,8 @@
                 <% if (typeof hcd_user !== 'undefined' && hcd_user.member_id) { %>
                 <%- include('dropdown-menu.html') -%>
                 <% } else { %>
-                <a href="<%= localeLink('/signin#/login') %>" class="ui button"><%= __('SignIn') %></a>
-                <a href="<%= localeLink('/signin#/register') %>" class="ui button"><%= __('SignUp') %></a>
+                <a href="<%= localeLink('/sign-in#/login') %>" class="ui button"><%= __('sign-in') %></a>
+                <a href="<%= localeLink('/sign-in#/register') %>" class="ui button"><%= __('SignUp') %></a>
                 <% } %>
                 <a ng-href="<%= otherLocaleLink %>{{hash}}" class="ui button"><%= __(otherLocale) %></a>
             </div>
