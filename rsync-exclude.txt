@@ -6,6 +6,14 @@ client/grunt
 client/css
 client/js
 client/test
-client/www
+client/www/api
 client/www/bower
+client/www/competion
+client/www/css
+client/www/icon
+client/www/img
+client/www/js
+client/www/mock
+client/www/semantic-online-store
+client/www/test
 /semantic
