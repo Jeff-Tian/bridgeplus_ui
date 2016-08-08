@@ -145,6 +145,9 @@
   "cdn": {
     "normal": "/"
   },
+  "featureSwitcher": {
+    "enableLogoutOnMobile": false
+  },
   "userCenterService": {
     "inner": {
       "host": "uat.service.hcd.com",
