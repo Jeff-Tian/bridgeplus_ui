@@ -2,6 +2,8 @@ var proxy = require('node-service-proxy');
 
 function proxyTo(router, which, fromMethod, toMethod, upstreamConfig) {
     return router[fromMethod](which.abbr, function (req, res, next) {
+        console.log('proxy from ', req.originalUrl, ' to ', upstreamConfig.host + ':' + upstreamConfig.port + which.upstream);
+
         proxy(req, res, next, {
             host: upstreamConfig.host,
             port: upstreamConfig.port,
@@ -12,7 +14,7 @@ function proxyTo(router, which, fromMethod, toMethod, upstreamConfig) {
                         d = m.dataMapper(d);
                     }
                 });
-                
+
                 return d;
             },
             method: toMethod
