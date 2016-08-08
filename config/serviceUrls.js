@@ -171,6 +171,15 @@ var serviceUrls = {
         }
     },
     commerceCenter: {
+        bbOffer: {
+            frontEnd: '/service-proxy/commerce-center/bb-offers',
+            abbr: '/bb-offers',
+            upstream: '/service/offer/loadBBOffer',
+            methodMapping: {
+                frontEnd: 'get',
+                upstream: 'GET'
+            }
+        },
         orderHistory: {
             frontEnd: '/service-proxy/commerce-center/order-history',
             abbr: '/order-history',

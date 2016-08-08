@@ -3,10 +3,18 @@ var proxyTo = require('./proxyTo');
 var router = require('express').Router();
 
 for (var r in config.serviceUrls.commerceCenter) {
-    proxyTo.proxyPostToPost(router, config.serviceUrls.commerceCenter[r], config.commerce.inner);
+    var which = config.serviceUrls.commerceCenter[r];
 
-    if (config.serviceUrls.commerceCenter[r].recent) {
-        proxyTo.proxyPostToPost(router, config.serviceUrls.commerceCenter[r].recent, config.commerce.inner);
+    which.methodMapping = which.methodMapping
+        || {
+            frontEnd: 'post',
+            upstream: 'post'
+        };
+
+    proxyTo.proxyTo(router, which, which.methodMapping.frontEnd, which.methodMapping.upstream, config.commerce.inner);
+
+    if (which.recent) {
+        proxyTo.proxyPostToPost(router, which.recent, config.commerce.inner);
     }
 }
 

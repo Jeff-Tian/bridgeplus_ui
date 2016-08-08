@@ -98,7 +98,6 @@ function renderOrRedirect(req, res, template) {
     if (!mobileDetector.isRequestFromMobileOrPad(req)) {
         res.render(template);
     } else {
-        console.log('request from mobile');
         try {
             var stats = fs.lstatSync(staticFolder + '/mobile/' + template + '.html');
             if (stats.isFile()) {

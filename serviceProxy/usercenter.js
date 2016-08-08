@@ -1,8 +1,6 @@
-var http = require('http');
 var config = require('../config');
 var usercenterConfig = config.usercenter.inner;
 var proxy = require('./proxy');
-var bplusService = config.bplusService;
 
 function proxyUsercenter(config) {
     return proxy({
