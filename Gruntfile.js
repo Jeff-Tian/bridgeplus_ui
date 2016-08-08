@@ -316,7 +316,7 @@ module.exports = function (grunt) {
         console.log(process.env.PHANTOMJS_BIN);
     });
 
-    grunt.registerTask('build', ['mochacli', 'karma', 'clean:dist', 'replace', 'copy', 'inlineTranslation', 'less:production', 'ngtemplates', 'concat', 'uglify:production', 'htmlmin', 'requirejs', 'cdnify' /*, 'cssmin'*/]);
+    grunt.registerTask('build', ['mochacli', /*'karma',*/ 'clean:dist', 'replace', 'copy', 'inlineTranslation', 'less:production', 'ngtemplates', 'concat', 'uglify:production', 'htmlmin', 'requirejs', 'cdnify' /*, 'cssmin'*/]);
 
     grunt.registerTask('inlineTranslation', 'Inline Translation', function () {
         var fs = require('fs');
