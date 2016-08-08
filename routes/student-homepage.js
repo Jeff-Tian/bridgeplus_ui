@@ -3,7 +3,7 @@ var fs = require('fs');
 var urlParser = require('url');
 var localeHelper = require('../locales/localeHelper.js');
 var supportedLocales = localeHelper.supportedLocales;
-var Portal = process.env.RUN_FROM === 'jeff' ? require('/Users/tianjie/bridgeplus_ui') : require('../client/www/bower/bridgeplus_ui');
+var Portal = process.env.RUN_FROM === 'jeff' ? require('/Users/tianjie/bridgeplus_ui') : require('../client/dist/bower/bridgeplus_ui');
 
 function renderIndex(req, res, next) {
     if (!mobileDetector.isRequestFromMobileOrPad(req)) {
