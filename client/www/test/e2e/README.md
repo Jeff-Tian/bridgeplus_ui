@@ -1,0 +1,1 @@
+If you feel e2e testing is much much slower than normal, then please check and make sure you are not using proxy servers!

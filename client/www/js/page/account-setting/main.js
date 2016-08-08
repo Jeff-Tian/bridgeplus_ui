@@ -28,10 +28,6 @@ angular.module('accountSetting', ['bplusModule'])
         };
     }])
     .controller('changeWechatCtrl', ['$scope', 'service', '$filter', 'FormValidation', '$timeout', 'msgBus', '$sce', 'queryParser', function ($scope, service, $filter, FormValidation, $timeout, msgBus, $sce, queryParser) {
-        if (angular.bplus.config.featureSwitcher.enableWechat !== true) {
-            return;
-        }
-
         var opening = false;
         $scope.logOnViaWechat = function () {
             if (opening) {

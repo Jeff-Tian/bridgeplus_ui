@@ -262,7 +262,7 @@ module.exports = function (grunt) {
             e2e: {
                 options: {
                     keepAlive: true,
-                    configFile: __dirname + '/client/www/test/conf.js'
+                    configFile: __dirname + '/client/www/test/e2e/conf.js'
                 }
             }
         },

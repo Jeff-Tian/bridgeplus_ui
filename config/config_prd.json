@@ -145,6 +145,9 @@
   "cdn": {
     "normal": "//cdn.bridgeplus.cn/"
   },
+  "featureSwitcher": {
+    "enableLogoutOnMobile": false
+  },
   "userCenterService": {
     "inner": {
       "host": "service.bridgeplus.cn",

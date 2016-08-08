@@ -55,7 +55,8 @@ function jumpToReturnUrl(req, res) {
 function createLogoutProcessor(clearingJobs) {
     return function (req, res, next) {
         proxySSO({
-            path: '/logon/logout', requestInterceptor: function (requestFrom, requestTo) {
+            path: '/logon/logout',
+            requestInterceptor: function (requestFrom, requestTo) {
                 if (requestFrom.headers.cookie) {
                     var token = requestFrom.headers.cookie.match(/(?:^|;) *token=([^;]*)/)[1];
 
@@ -69,14 +70,13 @@ function createLogoutProcessor(clearingJobs) {
                     clearingJobs(req, res, next);
                 }
 
-                var locale = localeHelper.getLocale(req.url, req);
                 if (!req.xhr) {
-                    res.redirect(localeHelper.generateLocaleLink('/', locale));
+                    res.redirect(req.query.return_url || '/');
                 } else {
                     res.json({
                         isSuccess: false,
                         code: '302',
-                        message: localeHelper.generateLocaleLink('/', locale)
+                        message: req.query.return_url || '/'
                     });
                 }
 
