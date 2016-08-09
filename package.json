@@ -20,7 +20,7 @@
     "jade": "1.11.0",
     "log4js_cassandra": "git+ssh://git@bitbucket.org/hcdlearning/log4js-cassandra.git#v1.0.0",
     "node-service-proxy": "git+ssh://git@bitbucket.org/hcdlearning/node-proxy.git",
-    "online-store": "git+ssh://git@bitbucket.org/hcdlearning/online-store.git#develop",
+    "online-store": "git+ssh://git@bitbucket.org/hcdlearning/online-store.git#release-20160819",
     "q": "^1.4.1",
     "study-center-proxy": "git@bitbucket.org:hcdlearning/studycenterproxy.git#develop"
   },
