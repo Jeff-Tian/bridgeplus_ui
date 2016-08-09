@@ -33,7 +33,7 @@ angular.module('corpModule')
         }
         return ret;
     };
-    var getData = function(currentPage, defautlSort){
+    var getData = function(currentPage, defautlSort, judgementFunction){
         $scope.isSortDesc = defautlSort ? true : $scope.isSortDesc;
         $scope.isLoading = true;
         //Get data according $scope.displayData.currentTab;
@@ -64,7 +64,13 @@ angular.module('corpModule')
             sortField: sortFieldKey,
             sortDirection: $scope.isSortDesc ? 'desc' : 'asc'
         };
-        return cvService.getCV($scope.displayData.currentTab, param).then(function(ret){
+        return cvService.getCV($scope.displayData.currentTab, param).then(function(ret) {
+            if (judgementFunction) {
+                return judgementFunction.call(this, ret);
+            } else {
+                return ret;
+            }
+        }).then(function(ret){
             $scope.displayData.allChecked = false;
             $scope.displayData.rawData = [];
             $scope.displayData.data = [];
@@ -189,12 +195,27 @@ angular.module('corpModule')
     $scope.resumeParam = {};
     $scope.positionConfirmOption = "";
     $scope.STATIC_PARAM = STATIC_PARAM;
+    var currentTabMenuClick = null;
+    var judgeTabFunction = function(meItem) {
+        return function(ret) {
+            if (meItem.me === currentTabMenuClick) {
+                return ret;
+            } else {
+                return $q.reject(ret);
+            }
+        };
+    };
     $scope.tabmemuClick = function(target){
         if ($scope.displayData.currentTab !== target) {
             $scope.displayData.currentTab = target;
             $scope.option.type = "";
             $(".corp-cv .ui.checkbox").checkbox("set unchecked");
-            getData(FIRST_PAGE, true);
+            var itemMe = {
+                me: currentTabMenuClick
+            };
+            currentTabMenuClick = getData(FIRST_PAGE, true, judgeTabFunction(itemMe));
+            itemMe.me = currentTabMenuClick;
+            return currentTabMenuClick;
         }
     };
     $scope.errorConfirm = function(){
