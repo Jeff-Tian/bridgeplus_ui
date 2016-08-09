@@ -33,7 +33,7 @@
                     </span> -->
                 </div>
                 <div ng-if="!isLoggedin" class="level-percentage">
-                    <a ng-href="/signin#/login?return_url=opportunity-detail%23%2Fjob%2F{{jobData.jobID}}">登录</a>
+                    <a ng-href="/sign-in#/login?return_url=opportunity-detail%23%2Fjob%2F{{jobData.jobID}}">登录</a>
                     得知你的职位匹配等级与竞争力!
                 </div>
                 <div ng-if="isLoggedin" class="level-percentage">你的职位匹配等级
@@ -103,7 +103,7 @@
     </div>
     <!-- todoend -->
     <div class="operation section" ng-if="!isLoggedin">
-        <a ng-href="/signin#/login?return_url=opportunity-detail%23%2Fjob%2F{{jobData.jobID}}">登录</a>
+        <a ng-href="/sign-in#/login?return_url=opportunity-detail%23%2Fjob%2F{{jobData.jobID}}">登录</a>
                     进行职位收藏或者简历投递
     </div>
     <div class="corporation section">
