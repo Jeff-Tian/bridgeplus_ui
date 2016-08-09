@@ -27,7 +27,7 @@
     "angular-service": "https://github.com/Jeff-Tian/angular-service.git",
     "angularQueryParserModule": "angular-query-parser#^0.0.2",
     "angular-auto-complete": "angular-j-auto-complete#^1.0.0",
-    "bridgeplus_ui": "git@bitbucket.org:hcdlearning/bridgeplus_ui.git#develop"
+    "bridgeplus_ui": "git@bitbucket.org:hcdlearning/bridgeplus_ui.git#latest"
   },
   "devDependencies": {
     "angular-mocks": "1.4.12",

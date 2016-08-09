@@ -20,14 +20,24 @@ angular.module('corpModule')
                             <input type="password" name="password" placeholder="5位以上密码" ng-model="registerData.password" ng-required="true" pattern=".{5,}">\
                         </div>\
                     </div>\
-                    <div class="inline field" style="margin-bottom: 5px;">\
-                        <div class="ui left icon input">\
-                            <i class="pencil icon"></i>\
-                            <input type="text" name="captcha" placeholder="请输入图形验证码" ng-model="registerData.captcha" style="width: 162px;" ng-required="true" ng-maxlength="4" maxlength="4">&nbsp;\
-                            <div captcha ng-model="registerData.captchaId" style="height: 42px; cursor: pointer;"></div> \
-                        </div> \
+                    <div class="ui grid fields" style="margin-bottom: 0; padding-bottom: 0;">\
+                        <div class="row" style="padding-bottom: 0;">\
+                            <div class="ten wide column" style="padding-right: 0;">\
+                                <div class="field"> \
+                                    <div class="ui left icon input">\
+                                        <i class="pencil icon"></i>\
+                                        <input type="text" name="captcha" placeholder="请输入图形验证码" ng-model="registerData.captcha" style="width: 162px;" ng-required="true" ng-maxlength="4" maxlength="4">&nbsp;\
+                                    </div> \
+                                </div> \
+                            </div>\
+                            <div class="six wide column" style="padding-left: 0;">\
+                                <div class="field ui right aligned container" style="padding: 0; margin: 0;"> \
+                                    <div captcha ng-model="registerData.captchaId" style="height: 42px; cursor: pointer;"></div> \
+                                </div> \
+                            </div>\
+                        </div>\
                     </div>\
-                    <div class="right floated field" style="margin-top: 0;">\
+                    <div class="right floated field" style="margin-top: 0; padding-top: 0;">\
                         <a href="javascript: void(0);" ng-click="refreshCaptcha()">换一张</a> \
                     </div> \
                     <div class="field">\
