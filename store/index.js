@@ -49,6 +49,11 @@ router.get('/my-account/used', membership.ensureAuthenticated, function (req, re
     renderMixin(res, 'my-account.jade', 'my-account-used-sublayout.jade', Object.assign(data, {title: '我的产品使用记录'}));
 });
 
+router.get('/my-account/deposit-callback', membership.ensureAuthenticated, function (req, res, next) {
+    var onlineStorePath = process.env.RUN_FROM === 'jeff' ? '/Users/tianjie/online-store/' : __dirname + '/../node_modules/online-store/';
+    res.render(onlineStorePath + 'views/my-account/deposit-callback.jade');
+});
+
 router.get('/my-account/deposit', membership.ensureAuthenticated, function (req, res, next) {
     renderMixin(res, 'my-account.jade', 'my-account-deposit-sublayout.jade', {
         cdn: config.cdn,
@@ -58,12 +63,6 @@ router.get('/my-account/deposit', membership.ensureAuthenticated, function (req,
         title: '充值发条到我的账户'
     });
 });
-
-function onlineOfflinePathSwitch(onlinePath, offlinePath) {
-    return !(process.env.RUN_FROM === 'jeff') ? onlinePath : offlinePath;
-}
-
-// router.use('/', require(onlineOfflinePathSwitch('online-store', '../../online-store')));
 
 router.get('/json/:json', function (req, res, next) {
     res.send(fs.readFileSync(__dirname + '/./' + req.params.json));

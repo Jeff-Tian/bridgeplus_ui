@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="studyCenter">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <title>BridgePlus直播课程</title>
+    <link type="text/css" rel="stylesheet"
+          href="<%=cdn.normal%>bower/semantic-ui/dist/semantic.min.css?<%=cdn.version%>" media="all"/>
+    <link type="text/css" rel="stylesheet" href="<%=cdn.normal%>studycenter/dist/main.css?<%=cdn.version%>"
+          media="all"/>
+</head>
+
+<body>
+    <div class="course" ng-controller="studyCenterBaseCtrl">
+        <course-live></course-live>
+    </div>
+    <script src="<%=cdn.normal%>bower/jquery/dist/jquery.min.js?<%=cdn.version%>"></script>
+    <script src="<%=cdn.normal%>bower/angular/angular.min.js?<%=cdn.version%>"></script>
+    <script src="<%=cdn.normal%>bower/angular-translate/angular-translate.min.js?<%=cdn.version%>"></script>
+    <script src="<%=cdn.normal%>studycenter/jwplayer-7.5.0/jwplayer.js?<%=cdn.version%>"></script>
+    <script src="<%=cdn.normal%>studycenter/easemob/strophe.js?<%=cdn.version%>"></script>
+    <script src="<%=cdn.normal%>studycenter/easemob/easemob.im-1.1.1.js?<%=cdn.version%>"></script>
+    <script src="<%=cdn.normal%>studycenter/easemob/easemob.im.shim.js?<%=cdn.version%>"></script>
+    <script src="/studycenter/config.js"></script>
+    <script>
+    jwplayer.key = chatConfig.jwplayerKey;
+    Easemob.im.config = (function() {
+        var protocol = location.protocol === 'https:' ? 'https:' : 'http:';
+
+        return {
+            xmppURL: 'im-api.easemob.com',
+            apiURL: protocol + '//a1.easemob.com',
+            appkey: chatConfig.chatAppKey,
+            https: protocol === 'https:',
+            multiResources: true
+        };
+    }());
+    </script>
+    <script src="/studycenter/dist/main.js"></script>
+</body>
+
+</html>

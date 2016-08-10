@@ -311,11 +311,6 @@ module.exports = function (grunt) {
         process.env.RUN_FROM = 'local';
     });
 
-    grunt.registerTask('ensurePhantomJsPath', function () {
-        process.env.PHANTOMJS_BIN = './node_modules/phantomjs-prebuilt/bin/phantomjs';
-        console.log(process.env.PHANTOMJS_BIN);
-    });
-
     grunt.registerTask('build', ['mochacli', /*'karma',*/ 'clean:dist', 'replace', 'copy', 'inlineTranslation', 'less:production', 'ngtemplates', 'concat', 'uglify:production', 'htmlmin', 'requirejs', 'cdnify' /*, 'cssmin'*/]);
 
     grunt.registerTask('inlineTranslation', 'Inline Translation', function () {
