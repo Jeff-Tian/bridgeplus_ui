@@ -298,7 +298,7 @@ module.exports = function (grunt) {
     ]);
 
     // Default task.
-    grunt.registerTask('default', ['mochacli', 'karma', 'concurrent']);
+    grunt.registerTask('default', ['mochacli', /*'karma', */'concurrent']);
 
     grunt.registerTask('ng', ['ngtemplates', 'concat']);
 
