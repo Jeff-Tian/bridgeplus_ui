@@ -28,6 +28,7 @@
                     </div>
                 </div>
                 <div class="five wide column light-column-background">
+                    <div class="ui basic button valign-middle-button" ng-click="browse(data)"ng-if="data.status==='publish'&&!data.is_expired"> 查看 </div> 
                     <div class="ui basic button valign-middle-button" ng-click="offline(data)"ng-if="data.status==='publish'&&!data.is_expired"> 下线 </div> 
                     <div class="ui basic button valign-middle-button" ng-click="edit(data)"ng-if="data.status!=='publish'||data.is_expired"> 编辑 </div> 
                     <div class="ui basic button valign-middle-button" ng-click="delete(data)"ng-if="data.status!=='publish'||data.is_expired"> 删除 </div> 

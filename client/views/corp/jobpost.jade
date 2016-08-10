@@ -25,40 +25,40 @@ block content
                             div.field(ng-class="{'error': hasSubmitted && postData.position ==='' }")
                                 div.corp-jobpost-content-title.required-title 职位名称
                                 div.corp-jobpost-content-input-container
-                                    input(type="text" ng-model="postData.position" ng-disabled="status===STATUS.EDIT")
+                                    input(type="text" ng-model="postData.position" ng-disabled="status===STATUS.EDIT||status===STATUS.READONLY")
                             div.field(ng-class="{'error': hasSubmitted && postData.jobtitle==='' }")
                                 div.corp-jobpost-content-title.required-title 职能类别
                                 div.corp-jobpost-content-input-container
-                                    select.corp-jobpost-select(name="jobtitle" ng-model="postData.jobtitle" ng-disabled="status===STATUS.EDIT")
+                                    select.corp-jobpost-select(name="jobtitle" ng-model="postData.jobtitle" ng-disabled="status===STATUS.EDIT||status===STATUS.READONLY")
                                         option(value="") 请选择
                                         option(value="{{item.id}}" ng-repeat='item in displayForm.jobtitles') {{item.text}}
                             div.field(ng-class="{'error': hasSubmitted && postData.jobtype ==='' }")
                                 div.corp-jobpost-content-title.required-title 职位类别
                                 div.corp-jobpost-content-input-container
-                                   select.corp-jobpost-select(name="jobtype" ng-model="postData.jobtype" ng-disabled="status===STATUS.EDIT")
+                                   select.corp-jobpost-select(name="jobtype" ng-model="postData.jobtype" ng-disabled="status===STATUS.EDIT||status===STATUS.READONLY")
                                         option(value="") 请选择
                                         option(value="71bb0925-cbc6-4aa1-93dd-0906b1a19a5d") 全职
                                         //- option(value="{{item.id}}" ng-repeat='item in displayForm.jobtypes') {{item.text}}
                             div.field(ng-class="{'error': hasSubmitted && postData.department ==='' }")
                                 div.corp-jobpost-content-title.required-title 所属部门
                                 div.corp-jobpost-content-input-container
-                                    input(type="text" ng-model="postData.department" ng-disabled="status===STATUS.EDIT")
+                                    input(type="text" ng-model="postData.department" ng-disabled="status===STATUS.EDIT||status===STATUS.READONLY")
                             div.field(ng-class="{'error': hasSubmitted && postData.location ==='' }")
                                 div.corp-jobpost-content-title.required-title 工作地点
                                 div.corp-jobpost-content-input-container
-                                    input(type="text",ng-model="postData.location" ng-disabled="status===STATUS.EDIT")
+                                    input(type="text",ng-model="postData.location" ng-disabled="status===STATUS.EDIT||status===STATUS.READONLY")
                             div.corp-jobpost-content-title.required-title 待遇
                             div.field.inline-block(ng-class="{'error': hasSubmitted && postData.salarytype ===''}")
                                 div.corp-jobpost-content-input-container
-                                    select.corp-jobpost-select(name="jobtitle" ng-model="postData.salarytype" ng-disabled="status===STATUS.EDIT")
+                                    select.corp-jobpost-select(name="jobtitle" ng-model="postData.salarytype" ng-disabled="status===STATUS.EDIT||status===STATUS.READONLY")
                                         option(value="") 请选择
                                         option(value="{{item.id}}" ng-repeat='item in displayForm.salarytypes') {{item.text}}
                             div.inline-block.width5
                             div.field.inline-block(ng-class="{'error': hasSubmitted && (postData.salaryfrom ==='' || postData.salaryto === '') && postData.salarytype !=='e0495498-07e5-420a-9788-603e57e602fc'}")
                                 div.corp-jobpost-content-input-container.corp-jobpost-content-inlinefield
-                                    input.width30(type="text",ng-disabled="postData.salarytype ==='e0495498-07e5-420a-9788-603e57e602fc'||postData.salarytype ===''||status===STATUS.EDIT",ng-model="postData.salaryfrom")
+                                    input.width30(type="text",ng-disabled="postData.salarytype ==='e0495498-07e5-420a-9788-603e57e602fc'||postData.salarytype ===''||status===STATUS.EDIT||status===STATUS.READONLY",ng-model="postData.salaryfrom")
                                     span &nbsp;&nbsp;元 ----&nbsp;&nbsp;
-                                    input.width30(type="text",ng-disabled="postData.salarytype ==='e0495498-07e5-420a-9788-603e57e602fc'||postData.salarytype ===''||status===STATUS.EDIT",ng-model="postData.salaryto")
+                                    input.width30(type="text",ng-disabled="postData.salarytype ==='e0495498-07e5-420a-9788-603e57e602fc'||postData.salarytype ===''||status===STATUS.EDIT||status===STATUS.READONLY",ng-model="postData.salaryto")
                                     span &nbsp;&nbsp;元
                     div.ui.middle.attached.segment.segment-bottom-shadow.corp-jobpost-segment
                         img.ui.right.spaced.image(ng-src="#{cdn.normal}img/corp/jobpost2.png?#{cdn.version}")
@@ -66,7 +66,7 @@ block content
                     div.ui.middle.attached.segment.segment-bottom-shadow.corp-jobpost-dark-segment.corp-jobpost-segment
                         div.corp-jobpost-content-title 职位特色标语
                         div.corp-jobpost-content-input-container
-                            input(type="text",ng-model="postData.slogan",placeholder="一句招募这个职称的宣传特色标语")
+                            input(type="text",ng-model="postData.slogan",placeholder="一句招募这个职称的宣传特色标语",ng-disabled="status===STATUS.READONLY")
                         div.corp-jobpost-content-title 职位诱感
                         div.corp-jobpost-content-input-container
                             div.ui.labeled.input.corp-jobpost-content-input-normal.labled-input-with-tag
@@ -77,7 +77,7 @@ block content
                                     a.ui.label.labled-input-label(ng-repeat="tag in postData.slogantag")
                                         | {{tag}}
                                         i.delete.icon(ng-click="lableDelete('slogantag', tag)")
-                                    input.labeled-input-input(type="text",ng-model="tmpTags.slogantag",ng-change="labelChange('slogantag')",ng-trim="false",placeholder="添加标签并按空格完成添加")
+                                    input.labeled-input-input(type="text",ng-model="tmpTags.slogantag",ng-change="labelChange('slogantag')",ng-trim="false",placeholder="添加标签并按空格完成添加",ng-disabled="status===STATUS.READONLY")
                         div.corp-jobpost-content-title.required-title 任职资格要求
                         div.corp-jobpost-content-input-container
                             div.ui.labeled.input.corp-jobpost-content-input-normal.labled-input-with-tag
@@ -88,37 +88,39 @@ block content
                                     a.ui.label.labled-input-label(ng-repeat="tag in postData.requirementtag")
                                         | {{tag}}
                                         i.delete.icon(ng-click="lableDelete('requirementtag', tag)")
-                                    input.labeled-input-input(type="text",ng-model="tmpTags.requirementtag",ng-change="labelChange('requirementtag')",ng-trim="false",placeholder="添加标签并按空格完成添加")
+                                    input.labeled-input-input(type="text",ng-model="tmpTags.requirementtag",ng-change="labelChange('requirementtag')",ng-trim="false",placeholder="添加标签并按空格完成添加",ng-disabled="status===STATUS.READONLY")
                         div.field(ng-class="{'error': hasSubmitted && postData.qualification==='' }")
                             div.corp-jobpost-content-title.required-title 学历要求
                             div.corp-jobpost-content-input-container
-                                select.corp-jobpost-select(name="jobtitle" ng-model="postData.qualification")
+                                select.corp-jobpost-select(name="jobtitle" ng-model="postData.qualification",ng-disabled="status===STATUS.READONLY")
                                     option(value="") 请选择
                                     option(value="{{item.id}}" ng-repeat='item in displayForm.qualifications') {{item.text}}
                         div.field(ng-class="{'error': hasSubmitted && postData.description ==='' }")
                             div.corp-jobpost-content-title.required-title 职位描述
                             div.corp-jobpost-content-input-container
-                                textarea(ng-model="postData.description")
+                                textarea(ng-model="postData.description",ng-disabled="status===STATUS.READONLY")
                         div.corp-jobpost-content-title.required-title 招募截止日期
                         div.field.inline-block(ng-class="{'error': hasSubmitted && (postData.expireday ===''||postData.expiremonth ===''||postData.expireyear ==='')}")
                             div.corp-jobpost-content-input-container
-                                select.corp-jobpost-select.inline-block.init-width(name="jobtitle" ng-model="postData.expireyear",ng-change="yearChange()")
+                                select.corp-jobpost-select.inline-block.init-width(name="jobtitle" ng-model="postData.expireyear",ng-change="yearChange()",ng-disabled="status===STATUS.READONLY")
                                     option(value="") 请选择
                                     option(value="{{item.id}}" ng-repeat='item in displayForm.expireyears') {{item.text}}
                                 span &nbsp;&nbsp;年&nbsp;&nbsp;
-                                select.corp-jobpost-select.inline-block.init-width(name="jobtitle",ng-model="postData.expiremonth",ng-change="monthChange()")
+                                select.corp-jobpost-select.inline-block.init-width(name="jobtitle",ng-model="postData.expiremonth",ng-change="monthChange()",ng-disabled="status===STATUS.READONLY")
                                     option(value="") 请选择
                                     option(value="{{item.id}}" ng-repeat='item in displayForm.expiremonths') {{item.text}}
                                 span &nbsp;&nbsp;年&nbsp;&nbsp;
-                                select.corp-jobpost-select.inline-block.init-width(name="jobtitle" ng-model="postData.expireday")
+                                select.corp-jobpost-select.inline-block.init-width(name="jobtitle" ng-model="postData.expireday",ng-disabled="status===STATUS.READONLY")
                                     option(value="") 请选择
                                     option(value="{{item.id}}" ng-repeat='item in displayForm.expiredays') {{item.text}}
                                 span &nbsp;&nbsp;日
-                        div
+                        div(ng-if="status===STATUS.READONLY")
+                            div.ui.red.button.inline-space(ng-click="cancel()") 确认
+                        div(ng-if="status!==STATUS.READONLY")
                             div.ui.red.button.inline-space(ng-click="cancel()") 取消
                             div.ui.red.button.inline-space(ng-click="save()") 保存
                             div.ui.red.button.inline-space(ng-click="submit()") 保存并发布
-                        div.lock-hint-text *保存或发布后，基本职位信息将无法修改
+                        div.lock-hint-text(ng-if="status===STATUS.READONLY") *保存或发布后，基本职位信息将无法修改
         div.ui.small.modal.editconfirm.corp-jobpost-modal
             i.close.icon
             div.content
