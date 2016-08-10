@@ -125,9 +125,9 @@ angular.module('corpModule')
                     requirementtag: target.requirement_tags,
                     description: target.description,
                     qualification: target.required_education_id,
-                    expireyear: "",
-                    expiremonth: "",
-                    expireday: ""
+                    expireyear: expire.getFullYear(),
+                    expiremonth: expire.getMonth(),
+                    expireday: expire.getDate()
                 };
                 $scope.status = $scope.STATUS.READONLY;
             };

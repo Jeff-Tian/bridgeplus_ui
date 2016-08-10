@@ -16,7 +16,7 @@ block content
                             | 发布职位
                         div.hint-warning-text 操作职位后，请等待10秒钟后刷新界面，即可看到职位状态更新
                     corp-job-post-list
-                form.ui.form.corp-jobpost-form(nonvalidate,ng-class="{'error': hasSubmitted && hasError}",ng-if="status===STATUS.POST||status===STATUS.EDIT")
+                form.ui.form.corp-jobpost-form(nonvalidate,ng-class="{'error': hasSubmitted && hasError}",ng-if="status===STATUS.POST||status===STATUS.EDIT||status===STATUS.READONLY")
                     div.ui.error.message 红框处必填字段未完成，请全部填写完成后按下保存
                     div.ui.top.attached.segment.segment-bottom-shadow.corp-jobpost-segment
                         img.ui.right.spaced.image(ng-src="#{cdn.normal}img/corp/jobpost1.png?#{cdn.version}")
@@ -64,31 +64,34 @@ block content
                         img.ui.right.spaced.image(ng-src="#{cdn.normal}img/corp/jobpost2.png?#{cdn.version}")
                         span.corp-jobpost-header  职位要求
                     div.ui.middle.attached.segment.segment-bottom-shadow.corp-jobpost-dark-segment.corp-jobpost-segment
-                        div.corp-jobpost-content-title 职位特色标语
-                        div.corp-jobpost-content-input-container
-                            input(type="text",ng-model="postData.slogan",placeholder="一句招募这个职称的宣传特色标语",ng-disabled="status===STATUS.READONLY")
-                        div.corp-jobpost-content-title 职位诱感
-                        div.corp-jobpost-content-input-container
-                            div.ui.labeled.input.corp-jobpost-content-input-normal.labled-input-with-tag
-                                div.ui.basic.label.corp-jobpost-label-text.label-container
-                                    i.ui.tag.icon.corp-jobpost-tagicon-color
-                                    | 标签
-                                div.corp-jobpost-content-input-with-label.labeled-input-container
-                                    a.ui.label.labled-input-label(ng-repeat="tag in postData.slogantag")
-                                        | {{tag}}
-                                        i.delete.icon(ng-click="lableDelete('slogantag', tag)")
-                                    input.labeled-input-input(type="text",ng-model="tmpTags.slogantag",ng-change="labelChange('slogantag')",ng-trim="false",placeholder="添加标签并按空格完成添加",ng-disabled="status===STATUS.READONLY")
-                        div.corp-jobpost-content-title.required-title 任职资格要求
-                        div.corp-jobpost-content-input-container
-                            div.ui.labeled.input.corp-jobpost-content-input-normal.labled-input-with-tag
-                                div.ui.basic.label.corp-jobpost-label-text.label-container
-                                    i.ui.tag.icon.corp-jobpost-tagicon-color
-                                    | 标签
-                                div.corp-jobpost-content-input-with-label.labeled-input-container(ng-class="{'error': hasSubmitted && postData.requirementtag.length===0}")
-                                    a.ui.label.labled-input-label(ng-repeat="tag in postData.requirementtag")
-                                        | {{tag}}
-                                        i.delete.icon(ng-click="lableDelete('requirementtag', tag)")
-                                    input.labeled-input-input(type="text",ng-model="tmpTags.requirementtag",ng-change="labelChange('requirementtag')",ng-trim="false",placeholder="添加标签并按空格完成添加",ng-disabled="status===STATUS.READONLY")
+                        div.field
+                            div.corp-jobpost-content-title 职位特色标语
+                            div.corp-jobpost-content-input-container
+                                input(type="text",ng-model="postData.slogan",placeholder="一句招募这个职称的宣传特色标语",ng-disabled="status===STATUS.READONLY")
+                        div.field(ng-disabled="status===STATUS.READONLY")
+                            div.corp-jobpost-content-title 职位诱感
+                            div.corp-jobpost-content-input-container
+                                div.ui.labeled.input.corp-jobpost-content-input-normal.labled-input-with-tag
+                                    div.ui.basic.label.corp-jobpost-label-text.label-container
+                                        i.ui.tag.icon.corp-jobpost-tagicon-color
+                                        | 标签
+                                    div.corp-jobpost-content-input-with-label.labeled-input-container
+                                        a.ui.label.labled-input-label(ng-repeat="tag in postData.slogantag")
+                                            | {{tag}}
+                                            i.delete.icon(ng-click="lableDelete('slogantag', tag)",ng-hide="status===STATUS.READONLY")
+                                        input.labeled-input-input(type="text",ng-model="tmpTags.slogantag",ng-change="labelChange('slogantag')",ng-trim="false",placeholder="添加标签并按空格完成添加",ng-disabled="status===STATUS.READONLY")
+                        div.field(ng-disabled="status===STATUS.READONLY")
+                            div.corp-jobpost-content-title.required-title 任职资格要求
+                            div.corp-jobpost-content-input-container
+                                div.ui.labeled.input.corp-jobpost-content-input-normal.labled-input-with-tag
+                                    div.ui.basic.label.corp-jobpost-label-text.label-container
+                                        i.ui.tag.icon.corp-jobpost-tagicon-color
+                                        | 标签
+                                    div.corp-jobpost-content-input-with-label.labeled-input-container(ng-class="{'error': hasSubmitted && postData.requirementtag.length===0}")
+                                        a.ui.label.labled-input-label(ng-repeat="tag in postData.requirementtag")
+                                            | {{tag}}
+                                            i.delete.icon(ng-click="lableDelete('requirementtag', tag)",ng-hide="status===STATUS.READONLY")
+                                        input.labeled-input-input(type="text",ng-model="tmpTags.requirementtag",ng-change="labelChange('requirementtag')",ng-trim="false",placeholder="添加标签并按空格完成添加",ng-disabled="status===STATUS.READONLY")
                         div.field(ng-class="{'error': hasSubmitted && postData.qualification==='' }")
                             div.corp-jobpost-content-title.required-title 学历要求
                             div.corp-jobpost-content-input-container
@@ -102,15 +105,21 @@ block content
                         div.corp-jobpost-content-title.required-title 招募截止日期
                         div.field.inline-block(ng-class="{'error': hasSubmitted && (postData.expireday ===''||postData.expiremonth ===''||postData.expireyear ==='')}")
                             div.corp-jobpost-content-input-container
-                                select.corp-jobpost-select.inline-block.init-width(name="jobtitle" ng-model="postData.expireyear",ng-change="yearChange()",ng-disabled="status===STATUS.READONLY")
+                                select.corp-jobpost-select.inline-block.init-width(ng-if="status===STATUS.READONLY",value="{{postData.expireyear}}",disabled)
+                                    option(value="{{postData.expireyear}}") {{postData.expireyear}}
+                                select.corp-jobpost-select.inline-block.init-width(ng-if="status!==STATUS.READONLY",name="jobtitle" ng-model="postData.expireyear",ng-change="yearChange()",ng-disabled="status===STATUS.READONLY")
                                     option(value="") 请选择
                                     option(value="{{item.id}}" ng-repeat='item in displayForm.expireyears') {{item.text}}
                                 span &nbsp;&nbsp;年&nbsp;&nbsp;
-                                select.corp-jobpost-select.inline-block.init-width(name="jobtitle",ng-model="postData.expiremonth",ng-change="monthChange()",ng-disabled="status===STATUS.READONLY")
+                                select.corp-jobpost-select.inline-block.init-width(ng-if="status===STATUS.READONLY",value="{{postData.expiremonth}}",disabled)
+                                    option(value="{{postData.expiremonth}}") {{postData.expiremonth}}
+                                select.corp-jobpost-select.inline-block.init-width(ng-if="status!==STATUS.READONLY",name="jobtitle",ng-model="postData.expiremonth",ng-change="monthChange()",ng-disabled="status===STATUS.READONLY")
                                     option(value="") 请选择
                                     option(value="{{item.id}}" ng-repeat='item in displayForm.expiremonths') {{item.text}}
                                 span &nbsp;&nbsp;年&nbsp;&nbsp;
-                                select.corp-jobpost-select.inline-block.init-width(name="jobtitle" ng-model="postData.expireday",ng-disabled="status===STATUS.READONLY")
+                                select.corp-jobpost-select.inline-block.init-width(ng-if="status===STATUS.READONLY",value="{{postData.expireday}}",disabled)
+                                    option(value="{{postData.expireday}}") {{postData.expireday}}
+                                select.corp-jobpost-select.inline-block.init-width(ng-if="status!==STATUS.READONLY",name="jobtitle" ng-model="postData.expireday",ng-disabled="status===STATUS.READONLY")
                                     option(value="") 请选择
                                     option(value="{{item.id}}" ng-repeat='item in displayForm.expiredays') {{item.text}}
                                 span &nbsp;&nbsp;日
@@ -120,7 +129,7 @@ block content
                             div.ui.red.button.inline-space(ng-click="cancel()") 取消
                             div.ui.red.button.inline-space(ng-click="save()") 保存
                             div.ui.red.button.inline-space(ng-click="submit()") 保存并发布
-                        div.lock-hint-text(ng-if="status===STATUS.READONLY") *保存或发布后，基本职位信息将无法修改
+                        div.lock-hint-text(ng-hide="status===STATUS.READONLY") *保存或发布后，基本职位信息将无法修改
         div.ui.small.modal.editconfirm.corp-jobpost-modal
             i.close.icon
             div.content
