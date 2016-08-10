@@ -22,7 +22,7 @@
     "node-service-proxy": "git+ssh://git@bitbucket.org/hcdlearning/node-proxy.git",
     "online-store": "git+ssh://git@bitbucket.org/hcdlearning/online-store.git#hotfix-20160809-2",
     "q": "^1.4.1",
-    "study-center-proxy": "git@bitbucket.org:hcdlearning/studycenterproxy.git#develop"
+    "study-center-proxy": "git@bitbucket.org:hcdlearning/studycenterproxy.git#livechat"
   },
   "devDependencies": {
     "less": "2.6.0",
