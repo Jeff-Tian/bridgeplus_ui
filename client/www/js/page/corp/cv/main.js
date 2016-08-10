@@ -7,6 +7,7 @@ angular.module('corpModule')
         POOL: "pool"
     };
     var FIRST_PAGE = 1;
+    var hasInitialed = false;
     var handleHeadshot = function(url, gender) {
         var femaleDefault = "img/corp/female_default.png";
         var maleDefault = "img/corp/male_default.png";
@@ -206,7 +207,7 @@ angular.module('corpModule')
         };
     };
     $scope.tabmemuClick = function(target){
-        if ($scope.displayData.currentTab !== target) {
+        if ($scope.displayData.currentTab !== target && hasInitialed) {
             $scope.displayData.currentTab = target;
             $scope.option.type = "";
             $(".corp-cv .ui.checkbox").checkbox("set unchecked");
@@ -325,6 +326,7 @@ angular.module('corpModule')
         $scope.publishJobs = publishJobs;
         return getData(FIRST_PAGE, true);
     }).then(function(){
+        hasInitialed = true;
         $timeout(function(){
             $(".corp-cv .ui.checkbox.option-win").checkbox({
                 onChecked: function() {
