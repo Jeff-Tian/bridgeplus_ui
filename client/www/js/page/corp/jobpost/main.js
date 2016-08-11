@@ -70,7 +70,8 @@ angular.module('corpModule')
         $scope.STATUS = {
             VIEW: "view",
             POST: "post",
-            EDIT: "edit"
+            EDIT: "edit",
+            READONLY: "readonly"
         };
         $scope.option = {
             type: ""
@@ -105,6 +106,30 @@ angular.module('corpModule')
                     expireday: ""
                 };
                 $scope.status = $scope.STATUS.EDIT;
+            };
+            $scope.browse = function(target){
+                var expire = new Date(target.expire_at);
+                //Job Post functions
+                $scope.postData = {
+                    id: target.id,
+                    position: target.position,
+                    jobtitle: target.title_id,
+                    jobtype: target.job_type_id,
+                    department: target.department,
+                    salarytype: target.salary_type_id,
+                    location: (target.location && target.location[0]) || "",
+                    salaryfrom: target.annual_salary_from || "",
+                    salaryto: target.annual_salary_to || "",
+                    slogan: target.slogan,
+                    slogantag: target.slogan_tags || [],
+                    requirementtag: target.requirement_tags,
+                    description: target.description,
+                    qualification: target.required_education_id,
+                    expireyear: expire.getFullYear(),
+                    expiremonth: expire.getMonth(),
+                    expireday: expire.getDate()
+                };
+                $scope.status = $scope.STATUS.READONLY;
             };
             $scope.offline = function(target){
                 var param = { job_id: target.id };

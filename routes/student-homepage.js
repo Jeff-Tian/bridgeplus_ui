@@ -29,6 +29,9 @@ function renderMobileTemplate(template, req, res) {
 }
 
 function tryRenderMobileTemplate(template, req, res) {
+    var configHelper = require('../config/configHelper');
+    var staticFolder = __dirname + (configHelper.getMode() === 'dev' ? '/../client/www' : '/../client/dist');
+
     try {
         var stats = fs.lstatSync(staticFolder + '/mobile/' + template + '.html');
 
