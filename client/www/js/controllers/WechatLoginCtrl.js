@@ -5,10 +5,7 @@
         $scope.wechatQRPage = $sce.trustAsResourceUrl('about:blank');
         $scope.opening = false;
         $scope.logOnViaWechat = function () {
-            var returnUrl = queryParser.get('return_url');
-            if (!returnUrl) {
-                returnUrl = location.pathname;
-            }
+            var returnUrl = location.pathname + location.search;
 
             var data = {
                 returnUrl: window.location.origin + returnUrl
