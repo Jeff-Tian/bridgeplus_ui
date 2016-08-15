@@ -13,10 +13,7 @@
             },
             sendRequest: function (scope, logging) {
                 return service.executePromiseAvoidDuplicate(scope, logging, function () {
-                    var returnUrl = queryParser.get('return_url');
-                    if (!returnUrl) {
-                        returnUrl = location.pathname;
-                    }
+                    var returnUrl = location.pathname + location.search;
 
                     var data = {
                         returnUrl: window.location.origin + returnUrl
