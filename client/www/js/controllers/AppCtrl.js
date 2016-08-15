@@ -37,7 +37,11 @@
             }
 
             function refreshCurrentView() {
-                window.location.href = window.location.origin + window.location.pathname + window.location.hash;
+                if (/sign-in\/?$/.test(window.location.pathname)) {
+                    window.location.href = '/';
+                } else {
+                    window.location.href = window.location.origin + window.location.pathname + window.location.hash;
+                }
             }
 
             WechatLogon.tryHandleAsyncCallback(bindRegisteredMobileByWechatToken, function () {

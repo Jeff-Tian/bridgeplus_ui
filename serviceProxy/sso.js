@@ -139,8 +139,6 @@ module.exports = {
         if (!jumpToReturnUrl(req, res)) {
             res.send(req.body.token);
         }
-
-        next();
     },
     authenticateCurrentUser: function (req, res, next) {
         var options = {

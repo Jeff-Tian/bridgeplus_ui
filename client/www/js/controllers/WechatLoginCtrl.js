@@ -1,5 +1,5 @@
 (function (exports) {
-    exports.WechatLoginCtrl = function ($scope, FormValidation, service, MessageStore, $filter, $sce, queryParser, $timeout, DeviceHelper, WechatLogon) {
+    exports.WechatLoginCtrl = function ($scope, FormValidation, service, MessageStore, $filter, $sce, queryParser, $timeout, DeviceHelper, WechatLogon, msgBus) {
         var moduleTrack = new window.ModuleTrack(DeviceHelper.isMobile() ? 'm.login' : 'login');
 
         $scope.wechatQRPage = $sce.trustAsResourceUrl('about:blank');
@@ -32,7 +32,9 @@
             $scope.logOnViaWechat();
         } else {
             if (angular.bplus.config.mode !== 'dev') {
-                $scope.logOnFromWechat();
+                msgBus.onWechatLogonCallbackHandled($scope, function () {
+                    $scope.logOnFromWechat();
+                });
             }
         }
 
@@ -44,5 +46,5 @@
         $scope.invertCancelButtonTheme = $('.b-signin-narrow').length > 0;
     };
 
-    exports.WechatLoginCtrl.$inject = ['$scope', 'FormValidation', 'service', 'MessageStore', '$filter', '$sce', 'queryParser', '$timeout', 'DeviceHelper', 'WechatLogon'];
+    exports.WechatLoginCtrl.$inject = ['$scope', 'FormValidation', 'service', 'MessageStore', '$filter', '$sce', 'queryParser', '$timeout', 'DeviceHelper', 'WechatLogon', 'msgBus'];
 })(angular.bplus = angular.bplus || {});
