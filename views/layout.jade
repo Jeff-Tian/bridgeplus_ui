@@ -1,14 +1,18 @@
 doctype html
 html
     head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
         title= title
+        meta(name="description", content="Bridgeplus - 连接学生和企业之间的桥梁")
+        meta(name="keywords", content="Bridgeplus,Bridge+,人才测评,校园招聘,在线学习")
         include partial/site-styles
         link(rel="stylesheet", href="/bower/owl.carousel/dist/assets/owl.carousel.min.css")
         link(rel="stylesheet", href="/bower/owl.carousel/dist/assets/owl.theme.default.min.css")
         block header
         style.
             html, html * {
-                font-family: "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif!important;
+                font-family: "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif !important;
             }
     body
         include partial/main_page_top
