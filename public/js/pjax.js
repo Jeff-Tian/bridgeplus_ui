@@ -9,6 +9,8 @@
     function getAnimation(current, next, inPlaceRefresh, slideLeftwards, slideRightwards) {
         if (alwaysLeftwardsSlides.indexOf(current) >= 0 &&
             alwaysLeftwardsSlides.indexOf(next) >= 0) {
+
+            window.tracker.send('home.goRightBtn');
             return slideLeftwards;
         }
 

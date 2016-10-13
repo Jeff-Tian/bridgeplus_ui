@@ -108,4 +108,6 @@ $(document).ready(function () {
     });
 
     $(window).on('resize', adjustItemWidth);
+
+    window.tracker.send('home');
 });

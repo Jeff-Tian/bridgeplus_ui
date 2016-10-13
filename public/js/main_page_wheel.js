@@ -205,6 +205,7 @@ $(function () {
         })
         .on('click', '.logo_right', function () {
             $(document).trigger('show_right');
+            window.tracker.send('home.talentGapBtn');
         })
         .on('show_group_desc', function (e, svg_group, klass) {
             wheel_text.hide().each(function () {

@@ -1,5 +1,8 @@
 var pages = require('../util/page');
 var router = require('express').Router();
+var config = require('../config/index');
+var dev =
+
 router.get('/', function(req, res, next) {
     var lang = 'zh';
     var page = 'index';
@@ -7,7 +10,8 @@ router.get('/', function(req, res, next) {
     res.render('portal/' + lang + '/' + page, {
         page: page,
         lang: lang,
-        page_info: page_info
+        page_info: page_info,
+        clientConfig: config.clientConfig
     });
 });
 
@@ -24,7 +28,8 @@ router.get('/portal/:lang/:page', function(req, res, next) {
     res.render('portal/' + lang + '/' + page, {
         page: page,
         lang: lang,
-        page_info: page_info
+        page_info: page_info,
+        clientConfig: config.clientConfig
     });
 });
 

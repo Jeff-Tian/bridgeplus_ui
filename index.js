@@ -1,5 +1,6 @@
 "use strict";
 var fs = require('fs');
+var config = require('./config/index');
 var pages = require('./util/page');
 
 module.exports = {
@@ -16,7 +17,8 @@ module.exports = {
             page: page,
             lang: lang,
             title: page_info.title,
-            locals: res.locals
+            locals: res.locals,
+            clientConfig: config.clientConfig
         });
     }
 };
