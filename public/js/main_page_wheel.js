@@ -130,6 +130,7 @@ $(function () {
                         BridgeWheel.start();
                         wheel.addClass('active');
                         $('#bridge_plus_intro').hide();
+                        $('#game_link').addClass('show');
                     }, 1000);
                 }
             }
