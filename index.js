@@ -4,7 +4,7 @@ var config = require('./config/index');
 var pages = require('./util/page');
 
 module.exports = {
-    render: function(lang, page, req, res, next) {
+    render: function (lang, page, req, res, next) {
         if (!(lang == 'zh' || lang == 'en')) {
             return next();
         }
@@ -18,7 +18,11 @@ module.exports = {
             lang: lang,
             title: page_info.title,
             locals: res.locals,
-            config: JSON.stringify(config)
+            config: JSON.stringify(config),
+            cdn: config.cdn,
+            app: {
+                version: config.version
+            }
         });
     }
 };

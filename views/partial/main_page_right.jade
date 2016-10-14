@@ -1,7 +1,7 @@
 .main_page_right
     #pic-entrance
         .left-arrow
-            img.arrow-img(src='/bower/bridgeplus_ui/public/images/GO.png')
+            + image('/bower/bridgeplus_ui/public/images/GO.png').arrow-img
         .pic-item.style-one
             .pic-text-area
                 .intro
@@ -13,7 +13,7 @@
                     span 我们通过体验式的学习内容,帮助大学生提高综合能力素质
                 .button
                     a(href='/zh/cmpt',use-pjax="false") 进入学生平台
-            img.pic-img(src='/bower/bridgeplus_ui/public/images/left.png', alt='student')
+            + image('/bower/bridgeplus_ui/public/images/left.png')(alt='student').pic-img
         .pic-item.style-two
             .pic-text-area
                 .intro
@@ -37,11 +37,11 @@
                         div “小白成长计划“官方体验赛赛事回顾
                     div.news-bottom
                         .news-separator
-                        img.news-logo(src='/bower/bridgeplus_ui/public/images/logo3.png', alt='logo')
+                        + image('/bower/bridgeplus_ui/public/images/logo3.png').news-logo(alt='logo')
                         .news-more
                             div left
                             div right
-            img.pic-img(src='/bower/bridgeplus_ui/public/images/middle.jpg', alt='teacher')
+            + image('/bower/bridgeplus_ui/public/images/middle.jpg').pic-img(alt='teacher')
         .pic-item.style-three
             .pic-text-area
                 .intro
@@ -53,4 +53,4 @@
                     span 我们通过人才素质模型和匹配算法,为企业推荐最合适的人才
                 .button
                     a(href='//corp.bridgeplus.cn',use-pjax="false") 进入企业平台
-            img.pic-img(src='/bower/bridgeplus_ui/public/images/right.png', alt='corporation')
+            + image('/bower/bridgeplus_ui/public/images/right.png')(alt='corporation').pic-img
