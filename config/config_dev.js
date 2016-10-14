@@ -1,6 +1,6 @@
 var config =
 {
-    clientConfig: "/bower/bridgeplus_ui/public/scripts/config/config_dev.js"
+    trackingSite: "http://uat.tracking.hcd.com"
 };
 
 module.exports = config;

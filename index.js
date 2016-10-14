@@ -18,7 +18,7 @@ module.exports = {
             lang: lang,
             title: page_info.title,
             locals: res.locals,
-            clientConfig: config.clientConfig
+            config: JSON.stringify(config)
         });
     }
 };

@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
         page: page,
         lang: lang,
         page_info: page_info,
-        clientConfig: config.clientConfig
+        config: JSON.stringify(config)
     });
 });
 
@@ -29,7 +29,7 @@ router.get('/portal/:lang/:page', function(req, res, next) {
         page: page,
         lang: lang,
         page_info: page_info,
-        clientConfig: config.clientConfig
+        config: JSON.stringify(config)
     });
 });
 
