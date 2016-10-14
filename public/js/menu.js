@@ -4,6 +4,8 @@ $(document).ready(function(){
         if (!isMenuActive) {
             $(".menu").addClass("active");
             $(".menu").removeClass("normal");
+
+            window.tracker.send('home.menuBtn');
         } else {
             $(".menu").removeClass("active");
             $(".menu").addClass("normal");
