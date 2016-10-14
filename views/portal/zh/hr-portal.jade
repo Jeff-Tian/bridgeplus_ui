@@ -20,7 +20,7 @@ block content
 
                     div.col-md-3.services
                         + services_title('热门企业：')
-                            img(src="/bower/bridgeplus_ui/public/images/partners/partners.png", alt="热门企业", style="max-width: 100%;")
+                            + image("/bower/bridgeplus_ui/public/images/partners/partners.png")(alt="热门企业", style="max-width: 100%;")
                     div.col-md-1(style="position: static;")
                         include ../../mixin/to-right
                         + rightArrow('/portal/zh/student-portal')

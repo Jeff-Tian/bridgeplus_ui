@@ -1,3 +1,24 @@
+mixin js(src)
+    if src.indexOf('/bower/bridgeplus_ui/public/js') === 0
+        script(src="#{cdn}#{src.replace('.js', '.min.js')}?#{app.version}")
+    else if src.indexOf('/virtual-scripts') === 0
+        script(src="#{src}?#{app.version}")
+    else
+        script(src="#{cdn}#{src}?#{app.version}")
+
+mixin css(src)
+    if src.indexOf('/stylesheets') === 0
+        link(rel="stylesheet", href="#{cdn}#{src}?#{app.version}")
+    else
+        link(rel="stylesheet", href="#{cdn}#{src}?#{app.version}")
+
+mixin image(src)
+    if src.indexOf('/bower/bridgeplus_ui/public/images') === 0
+        img(src="#{cdn}#{src}?#{app.version}")&attributes(attributes)
+    else
+        img(src="#{src}")&attributes(attributes)
+
+
 doctype html
 html
     head
@@ -7,15 +28,15 @@ html
         meta(name="description", content="Bridgeplus - 连接学生和企业之间的桥梁")
         meta(name="keywords", content="Bridgeplus,Bridge+,人才测评,校园招聘,在线学习")
         include partial/site-styles
-        link(rel="stylesheet", href="/bower/owl.carousel/dist/assets/owl.carousel.min.css")
-        link(rel="stylesheet", href="/bower/owl.carousel/dist/assets/owl.theme.default.min.css")
+        + css('/bower/owl.carousel/dist/assets/owl.carousel.min.css')
+        + css('/bower/owl.carousel/dist/assets/owl.theme.default.min.css')
         block header
         style.
             html, html * {
                 font-family: "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif !important;
             }
         script.
-             window.config = !{config};
+            window.config = !{config};
     body
         include partial/main_page_top
         .main_page_bottom
@@ -25,10 +46,10 @@ html
             include partial/footer
         include partial/main_page_right
         include partial/menu
-        script(src='/bower/raphael/raphael-min.js')
-        script(src='/bower/jquery/dist/jquery.min.js')
+        + js('/bower/raphael/raphael-min.js')
+        + js('/bower/jquery/dist/jquery.min.js')
         include partial/site-scripts
-        script(src='/bower/owl.carousel/dist/owl.carousel.min.js')
-        script(src="/bower/Clamp.js/clamp.js")
+        + js('/bower/owl.carousel/dist/owl.carousel.min.js')
+        + js("/bower/Clamp.js/clamp.js")
         script.
         block js
