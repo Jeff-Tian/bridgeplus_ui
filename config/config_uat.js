@@ -1,7 +1,7 @@
 var config =
 {
     trackingSite: "http://uat.tracking.hcd.com",
-    cdn: "//10.20.32.51:13000",
+    cdn: "//10.20.32.51:12000",
     version: "1.0.0"
 };
 
