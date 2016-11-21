@@ -8,7 +8,7 @@
   "dependencies": {
     "bower": "^1.7.9",
     "express": "~4.13.1",
-    "jade": "~1.11.0"
+    "jade": "1.11.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
