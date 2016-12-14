@@ -3,7 +3,7 @@ mixin teamMember(member)
         div.row
             div.col-md-4
                 div &nbsp;
-                img.circle.image(src="#{member.picture}")
+                img.circle.image.grow(src="#{member.picture}")
             div.col-md-8
                 h2(style="margin-bottom: 5px;")
                     span.name #{member.name}

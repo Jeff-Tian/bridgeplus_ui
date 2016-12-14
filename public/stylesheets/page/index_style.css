@@ -354,6 +354,14 @@ a.round-button:active {
     cursor: pointer;
 }
 
+#index-footer .grow {
+    transition: all .2s ease-in-out;
+}
+
+#index-footer .grow:hover {
+    transform: scale(1.1);
+}
+
 @media screen and (max-width: 1500px) {
     #index-footer .col-md-4 {
         padding-right: 8px;

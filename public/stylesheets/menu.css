@@ -585,7 +585,6 @@ a.item-button {
 .popup:after {
     content: '';
     display: block;
-    // background-color: white;
     position: absolute;
     left: 15px;
     bottom: -5px;
